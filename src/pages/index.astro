@@ -1,11 +1,16 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <div class="container mx-auto">
+    <section id="font-test" class="space-y-2">
+      <p class="font-sans text-4xl">Sans-serif: Gothic 725</p>
+      <p class="font-sans text-4xl font-black">Sans-serif: Gothic 725</p>
+      <p class="font-serif text-4xl">Serif: MgOpen Cosmetica</p>
+      <p class="font-serif text-4xl font-bold">Serif: MgOpen Cosmetica</p>
+      <p class="font-bmspace text-4xl">Other: BM space</p>
+      <p class="font-noto-sans text-4xl">Other: Noto Sans JP</p>
+    </section>
+  </div>
 </Layout>

@@ -1,4 +1,5 @@
 # Contributing
+
 ## Pull Requests
 
 - **Keep PRs focused** - try to keep one feature or fix per PR. Mixed concerns make review hard.

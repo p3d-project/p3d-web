@@ -1,1 +1,59 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "BM space";
+  src: url("../assets/fonts/BMspace.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gothic 725";
+  src: url("../assets/fonts/Gothic725.otf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gothic 725";
+  src: url("../assets/fonts/Gothic725Black.otf");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MgOpen Cosmetica";
+  src: url("../assets/fonts/MgOpenCosmeticaRegular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MgOpen Cosmetica";
+  src: url("../assets/fonts/MgOpenCosmeticaBold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans JP";
+  src: url("../assets/fonts/NotoSansJP.ttf");
+}
+
+@theme {
+  --font-sans:
+    "Gothic 725", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif:
+    "MgOpen Cosmetica", ui-serif, Georgia, Cambria, "Times New Roman", Times,
+    serif;
+
+  --font-noto-sans: "Noto Sans JP", sans-serif;
+  --font-bmspace: "BM space";
+}
+
+@layer base {
+  body {
+    font-family: var(--font-serif);
+  }
+}
