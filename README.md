@@ -1,8 +1,8 @@
-# P3D Web
+# The P3D Project Website
 
-P3D Web is the official website and central community hub for The P3D  Project. Designed to act as the primary gateway for the project, it serves as the main distribution point for project updates.
+This repository hosts the official website and central community hub for The P3D Project. Designed to act as the primary gateway for the project, it serves as the main distribution point for project updates.
 
-Engineered for high performance and long-term maintainability, P3D Web is built on the Astro framework with React components and Tailwind CSS to leverage fast static-site generation and responsive, utility-driven design.
+The P3D Project Website is built on the Astro framework with React components and Tailwind CSS to leverage fast static-site generation and responsive, utility-driven design.
 
 > Want to help? Join the [Discord!](https://discord.gg/CQnkc5gS6a) Any help, big or small, would be greatly appreciated!
 
