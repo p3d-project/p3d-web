@@ -2,19 +2,25 @@
   "name": "p3d-web",
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "pnpm@11.15.1+sha512.81350b07e53c9538a02f1f2303b4290fa2d7be04e56e2a970c4cc4b417dc761de196edabd49d55c7dc9580db81007c44143e4e3d7e462b3000d23c255122d065",
   "engines": {
     "node": ">=22.12.0"
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "check": "astro check",
+    "pretty": "prettier . --write",
+    "pretty:staged": "pretty-quick",
+    "pretty:check": "prettier . --check"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.10",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.1.0",
-    "tailwindcss": "^4.3.3"
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^8.64.0",
@@ -22,6 +28,7 @@
     "eslint-plugin-astro": "^3.0.1",
     "prettier": "3.9.5",
     "prettier-plugin-astro": "0.14.1",
-    "prettier-plugin-tailwindcss": "^0.8.1"
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "pretty-quick": "4.2.2"
   }
 }
