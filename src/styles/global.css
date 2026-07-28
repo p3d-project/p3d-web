@@ -54,6 +54,19 @@
 
 @layer base {
   body {
+    @apply text-gray-100;
+
     font-family: var(--font-serif);
+    background-color: #002c48;
+  }
+}
+
+@layer components {
+  a.hyperlink {
+    color: #00ca69;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
