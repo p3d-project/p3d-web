@@ -20,7 +20,8 @@
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.1.0",
     "tailwindcss": "^4.3.3",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "wrangler": "4.113.0"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^8.64.0",
@@ -30,6 +31,7 @@
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "pretty-quick": "4.2.2",
-    "typescript": "6.0.3"
+    "typescript": "6.0.3",
+    "wrangler": "4.113.0"
   }
 }

@@ -2,7 +2,7 @@ name: Discord Notification
 
 on:
   workflow_run:
-    workflows: ["Deploy to Cloudflare Workers"]
+    workflows: ["Deploy to Cloudflare Pages"]
     types: [completed]
 
   # Fires when a PR is opened, closed, or reopened.
