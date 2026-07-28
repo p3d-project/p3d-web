@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [main, master]
     paths-ignore:
-      - 'src/content/**'
+      - "src/content/**"
 
 jobs:
   astro-check:
