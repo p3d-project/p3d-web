@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Ignore VS Code workspace settings (for now)
+.vscode/settings.json
