@@ -50,14 +50,17 @@
 
   --font-noto-sans: "Noto Sans JP", sans-serif;
   --font-bmspace: "BM space";
+
+  --color-primary: #002c48;
+  --color-secondary: #00ca69;
+  --color-secondary-dark: #004528;
 }
 
 @layer base {
   body {
-    @apply text-gray-100;
-
     font-family: var(--font-serif);
-    background-color: #002c48;
+    /* background-color: #002c48; */
+    color: var(--color-text-white);
   }
 }
 

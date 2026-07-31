@@ -1,5 +1,10 @@
 ---
+import Navbar from "../components/react/Navbar";
+import Footer from "../components/Footer.astro";
+
 import "../styles/global.css";
+
+const currentPath = Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -13,6 +18,10 @@ import "../styles/global.css";
     <title>Persona 3 Dual</title>
   </head>
   <body>
+    <Navbar client:load currentPath={currentPath} />
+
     <slot />
+
+    <Footer />
   </body>
 </html>
