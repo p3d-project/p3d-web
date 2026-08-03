@@ -4,11 +4,11 @@ import logo from "../assets/logo.png";
 import { NAV_LINKS } from "../lib/values";
 ---
 
-<footer class="bg-primary py-8 text-white">
-  <div class="container mx-auto flex justify-between gap-24 px-8">
+<footer class="bg-primary py-4 text-white lg:py-8">
+  <div class="p3d-container flex justify-between gap-24">
     <div class="flex flex-col gap-4">
       <nav>
-        <ul class="flex gap-6 text-lg">
+        <ul class="flex flex-wrap gap-6 text-lg">
           {
             NAV_LINKS.map((v, i) => (
               <li>
@@ -19,7 +19,7 @@ import { NAV_LINKS } from "../lib/values";
         </ul>
       </nav>
 
-      <p class="text-md">
+      <p class="text-sm md:text-base">
         ⓒ Sega ⓒ Atlus ⓒ Nintendo. All Rights Reserved.<br />
         Some assets are the intellectual property of Sega, Atlus, Nintendo and/or
         their respective copyright holders. This project does not, and will never,
@@ -29,6 +29,6 @@ import { NAV_LINKS } from "../lib/values";
       <p>Icons by <a href="https://icons8.com/" class="hyperlink">Icons8</a></p>
     </div>
 
-    <img src={logo.src} class="h-15 w-auto self-center py-2" />
+    <img src={logo.src} class="lg:block hidden h-15 w-auto self-center py-2" />
   </div>
 </footer>
