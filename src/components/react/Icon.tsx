@@ -1,8 +1,11 @@
 import type { ComponentPropsWithoutRef } from "react";
 
-import socialIcons from "../../assets/social-icons.svg?url";
+import icons from "../../assets/icons.svg?url";
 
 const socialIconMap = {
+  // Common
+  menu: "Menu",
+  // Social Media
   youtube: "YouTube",
   reddit: "Reddit",
   xelon: "X",
@@ -15,11 +18,11 @@ type SocialIconProps = ComponentPropsWithoutRef<"svg"> & {
   icon: keyof typeof socialIconMap;
 };
 
-export default function SocialIcon({ icon, ...props }: SocialIconProps) {
+export default function Icon({ icon, ...props }: SocialIconProps) {
   return (
     <svg {...props}>
       {/* <title>{socialIconMap[icon]} icon</title> */}
-      <use href={`${socialIcons}#${icon}`} />
+      <use href={`${icons}#${icon}`} />
     </svg>
   );
 }

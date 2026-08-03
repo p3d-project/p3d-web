@@ -26,6 +26,9 @@ importers:
       astro:
         specifier: ^7.1.0
         version: 7.1.0(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(jiti@2.7.0)(yaml@2.9.0)
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       react:
         specifier: ^19.2.8
         version: 19.2.8
