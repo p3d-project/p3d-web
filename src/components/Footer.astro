@@ -1,0 +1,38 @@
+---
+import logo from "../assets/logo.svg?no-inline";
+
+import { NAV_LINKS } from "../lib/values";
+---
+
+<footer class="bg-primary py-4 text-white lg:py-8">
+  <div class="p3d-container flex justify-between gap-24">
+    <div class="flex flex-col gap-4">
+      <nav>
+        <ul class="flex flex-wrap gap-6 text-lg">
+          {
+            NAV_LINKS.map((v, i) => (
+              <li>
+                <a href={v.href} class="hover:underline">
+                  {v.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <p class="text-sm md:text-base">
+        ⓒ Sega ⓒ Atlus ⓒ Nintendo. All Rights Reserved.<br />
+        Some assets are the intellectual property of Sega, Atlus, Nintendo and/or
+        their respective copyright holders. This project does not, and will never,
+        go up for sale. Nothing monetary is being sought from it.
+      </p>
+
+      <p>Icons by <a href="https://icons8.com/" class="hyperlink">Icons8</a></p>
+    </div>
+
+    <a href="/" class="hidden self-center py-2 lg:block">
+      <img src={logo} class="h-15 w-auto" />
+    </a>
+  </div>
+</footer>

@@ -1,5 +1,10 @@
 ---
+import Navbar from "../components/react/Navbar";
+import Footer from "../components/Footer.astro";
+
 import "../styles/global.css";
+
+const currentPath = Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -7,12 +12,15 @@ import "../styles/global.css";
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.jpeg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>Persona 3 Dual</title>
   </head>
   <body>
+    <Navbar client:load currentPath={currentPath} />
+
     <slot />
+
+    <Footer />
   </body>
 </html>
