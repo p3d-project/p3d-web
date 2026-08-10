@@ -1,5 +1,5 @@
 ---
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.svg?no-inline";
 
 import { NAV_LINKS } from "../lib/values";
 ---
@@ -12,7 +12,9 @@ import { NAV_LINKS } from "../lib/values";
           {
             NAV_LINKS.map((v, i) => (
               <li>
-                <a href={v.href}>{v.name}</a>
+                <a href={v.href} class="hover:underline">
+                  {v.name}
+                </a>
               </li>
             ))
           }
@@ -29,6 +31,8 @@ import { NAV_LINKS } from "../lib/values";
       <p>Icons by <a href="https://icons8.com/" class="hyperlink">Icons8</a></p>
     </div>
 
-    <img src={logo.src} class="lg:block hidden h-15 w-auto self-center py-2" />
+    <a href="/" class="hidden self-center py-2 lg:block">
+      <img src={logo} class="h-15 w-auto" />
+    </a>
   </div>
 </footer>

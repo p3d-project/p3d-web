@@ -7,7 +7,7 @@ import {
 
 import Icon from "./Icon";
 
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.svg?no-inline";
 import { NAV_LINKS } from "../../lib/values";
 import clsx from "clsx";
 
@@ -20,7 +20,7 @@ function DesktopNavItem({
     <li className="grow">
       <a
         href={href}
-        className={`box-content ${active ? "shadow-[inset_0_-7px_0_0]" : "shadow-none"} shadow-secondary flex size-full items-center justify-center`}
+        className={`box-content ${active ? "shadow-[inset_0_-7px_0_0]" : "shadow-none"} shadow-secondary hover:text-secondary flex size-full items-center justify-center transition-colors`}
       >
         <span>{children}</span>
       </a>
@@ -87,7 +87,9 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
       >
         <div className="bg-primary relative z-10">
           <div className="p3d-container flex grow-0 items-center justify-between gap-12">
-            <img src={logo.src} className="h-15 w-auto py-2" />
+            <a href="/" className="">
+              <img src={logo} className="h-15 w-auto py-2" />
+            </a>
 
             {/* Desktop Nav */}
             <nav className="hidden grow self-stretch md:block">
@@ -104,7 +106,13 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
               </ul>
             </nav>
 
-            <Icon icon="discord" className="hidden size-11 grow-0 md:block" />
+            <a
+              href="https://discord.gg/CQnkc5gS6a"
+              target="_blank"
+              className="hover:text-secondary hidden grow-0 transition-colors md:block"
+            >
+              <Icon icon="discord" className="size-11" />
+            </a>
 
             <button
               className="cursor-pointer md:hidden"
