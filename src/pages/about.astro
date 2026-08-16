@@ -3,56 +3,65 @@ import Layout from "../layouts/Layout.astro";
 import Button from "../components/react/Button.tsx";
 import TeamGrid from "../components/react/TeamGrid.tsx";
 import arrowSvg from "../assets/Arrow-7.svg?raw";
-
-// Import exported SVGs from assets
 import dotsPattern from "../assets/Dots.svg";
 import glassBg from "../assets/GlassBG.svg";
 ---
 
 <Layout>
   <main>
-    {/* Hero / About Section - Extends under navbar to y=0 */}
-    <section id="index" class="relative min-h-screen w-full overflow-hidden bg-[#E6F0FA]">
-      
+    {/* Hero / About Section */}
+    <section
+      id="index"
+      class="relative min-h-screen w-full overflow-hidden bg-[#E6F0FA]"
+    >
       {/* Background Layer: Dots Pattern & Glass */}
-      <div class="absolute inset-0 pointer-events-none select-none overflow-hidden">
-        
-        {/* 1. Dots Pattern: Full background on mobile, right-aligned on desktop */}
-        <div 
-          class="absolute inset-0 lg:left-[47%] bg-repeat"
+      <div
+        class="pointer-events-none absolute inset-0 overflow-hidden select-none"
+      >
+        {
+          /* 1. Dots Pattern: Full background on mobile, right-aligned on desktop */
+        }
+        <div
+          class="absolute inset-0 bg-repeat lg:left-[47%]"
           style={`background-image: url('${dotsPattern.src}'); background-size: auto;`}
-        ></div>
+        >
+        </div>
 
         {/* 2a. Glass Overlay (Desktop) */}
-        <img 
-          src={glassBg.src} 
-          alt="" 
-          aria-hidden="true" 
-          class="hidden lg:block absolute top-1/2 right-0 h-[1100px] w-auto max-w-none -translate-y-1/2 translate-x-[30%] object-contain" 
+        <img
+          src={glassBg.src}
+          alt=""
+          aria-hidden="true"
+          class="absolute top-1/2 right-0 hidden h-[1100px] w-auto max-w-none translate-x-[30%] -translate-y-1/2 object-contain lg:block"
         />
-
       </div>
 
       {/* Grid Container */}
-      <div class="w-full grid min-h-screen grid-cols-1 lg:grid-cols-12 relative z-10 px-4 sm:px-12 lg:pl-16 lg:pr-6 pt-16">
-        
+      <div
+        class="relative z-10 grid min-h-screen w-full grid-cols-1 px-4 pt-16 sm:px-12 lg:grid-cols-12 lg:pr-6 lg:pl-16"
+      >
         {/* Left / Top Column: Content Container */}
-        <div class="relative lg:col-span-5 flex flex-col items-center lg:items-start justify-start pt-6 sm:pt-10 lg:pt-28 pb-10 lg:pb-16 text-center lg:text-left pr-0 lg:pr-4">
-          
-          {/* 2b. Glass Overlay (Mobile) - Nudged down just a few more pixels */}
-          <div class="block lg:hidden absolute -inset-x-12 -top-16 -z-10 pointer-events-none">
-            <img 
-              src={glassBg.src} 
-              alt="" 
-              aria-hidden="true" 
-              class="absolute top-1/2 left-1/2 h-[210vw] min-h-[1200px] max-h-[1400px] w-auto max-w-none -translate-x-1/2 -translate-y-[42%] rotate-90 object-contain" 
+        <div
+          class="relative flex flex-col items-center justify-start pt-6 pr-0 pb-10 text-center sm:pt-10 lg:col-span-5 lg:items-start lg:pt-28 lg:pr-4 lg:pb-16 lg:text-left"
+        >
+          {
+            /* 2b. Glass Overlay (Mobile) - Nudged down just a few more pixels */
+          }
+          <div
+            class="pointer-events-none absolute -inset-x-12 -top-16 -z-10 block lg:hidden"
+          >
+            <img
+              src={glassBg.src}
+              alt=""
+              aria-hidden="true"
+              class="absolute top-1/2 left-1/2 h-[210vw] max-h-[1400px] min-h-[1200px] w-auto max-w-none -translate-x-1/2 -translate-y-[42%] rotate-90 object-contain"
             />
           </div>
 
           {/* Header */}
           <h1
             style="font-family: 'BM space'; -webkit-text-stroke: 1.5px #001B3D;"
-            class="mb-3 lg:mb-6 text-4xl sm:text-5xl lg:text-[55px] tracking-[-0.02em] leading-tight text-[#001B3D]"
+            class="mb-3 text-4xl leading-tight tracking-[-0.02em] text-[#001B3D] sm:text-5xl lg:mb-6 lg:text-[55px]"
           >
             About Us
           </h1>
@@ -60,42 +69,46 @@ import glassBg from "../assets/GlassBG.svg";
           {/* Body Paragraph */}
           <p
             style="font-family: 'Noto Sans JP', sans-serif;"
-            class="max-w-[440px] text-base sm:text-xl lg:text-[28.1px] font-semibold leading-snug text-[#001B3D] px-2 sm:px-0"
+            class="max-w-[440px] px-2 text-base leading-snug font-semibold text-[#001B3D] sm:px-0 sm:text-xl lg:text-[28.1px]"
           >
             Our goal and what unites us around that goal are simple: love for
             Persona 3 and for the Nintendo DS. P3D is not simply us asking “what
             if,” but forging a tailored experience from the ground-up. To
             accomplish this, we divided ourselves into several teams.
           </p>
-          
+
           {/* Explore Link & Arrow */}
-          <a 
-            href="#team" 
-            class="group mt-3 sm:mt-5 lg:mt-12 inline-flex flex-col lg:flex-row items-center gap-1.5 sm:gap-2 lg:gap-6 cursor-pointer"
+          <a
+            href="#team"
+            class="group mt-3 inline-flex cursor-pointer flex-col items-center gap-1.5 sm:mt-5 sm:gap-2 lg:mt-12 lg:flex-row lg:gap-6"
           >
-            <p 
-              style="font-family: 'Noto Sans JP', sans-serif;" 
-              class="order-1 lg:order-2 text-xl sm:text-2xl lg:text-[35.2px] font-extrabold leading-tight text-[#000024] lg:w-[229px]"
+            <p
+              style="font-family: 'Noto Sans JP', sans-serif;"
+              class="order-1 text-xl leading-tight font-extrabold text-[#000024] sm:text-2xl lg:order-2 lg:w-[229px] lg:text-[35.2px]"
             >
               Explore the teams
             </p>
-            <div 
-              class="order-2 lg:order-1 flex-shrink-0 transition-transform duration-300 ease-in-out group-hover:translate-y-2 [&>svg]:h-[45px] sm:[&>svg]:h-[70px] lg:[&>svg]:h-[167px] [&>svg]:w-auto" 
-              set:html={arrowSvg} 
+            <div
+              class="order-2 flex-shrink-0 transition-transform duration-300 ease-in-out group-hover:translate-y-2 lg:order-1 [&>svg]:h-[45px] [&>svg]:w-auto sm:[&>svg]:h-[70px] lg:[&>svg]:h-[167px]"
+              set:html={arrowSvg}
             />
           </a>
         </div>
 
         {/* Right / Bottom Column: Character Silhouettes Canvas */}
-        <div class="lg:col-span-7 relative flex items-center justify-center lg:justify-end w-full h-full pt-4 pb-16 lg:py-0 lg:pl-12">
+        <div
+          class="relative flex h-full w-full items-center justify-center pt-4 pb-16 lg:col-span-7 lg:justify-end lg:py-0 lg:pl-12"
+        >
           <TeamGrid client:load />
         </div>
-
       </div>
     </section>
 
     {/* Team Section */}
-    <section id="team" class="w-full bg-[#000024] py-16 scroll-mt-16 relative z-10">
+    <section
+      id="team"
+      class="relative z-10 w-full scroll-mt-16 bg-[#000024] py-16"
+    >
       <div class="container mx-auto px-4 md:px-8">
         <Button size="lg" className="w-full justify-center py-5 text-4xl">
           Join Now!
