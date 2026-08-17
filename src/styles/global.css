@@ -81,3 +81,7 @@
     @apply px-8;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
