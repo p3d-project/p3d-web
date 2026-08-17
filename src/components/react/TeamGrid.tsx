@@ -1,130 +1,118 @@
-import React, { useState } from "react";
 import TeamCard from "./TeamCard";
-import { TEAMS } from "../../lib/teams";
+import { TEAM_SELECTED_EVENT, TEAMS_BY_ID } from "../../lib/teams";
 
+/** Hero grid of team cards. Publishes selection to TeamCarousel via TEAM_SELECTED_EVENT. */
 export default function TeamGrid() {
-  const [selectedTeam, setSelectedTeam] = useState<string | null>(null);
+  /** Notify the carousel and scroll to the team detail section. */
+  const handleTeamClick = (teamId: string) => {
+    const event = new CustomEvent(TEAM_SELECTED_EVENT, { detail: teamId });
+    window.dispatchEvent(event);
 
-  const handleTeamClick = (teamName: string) => {
-    setSelectedTeam(teamName);
     const targetSection = document.getElementById("team");
     if (targetSection) {
-      targetSection.scrollIntoView({ behavior: "smooth" });
+      targetSection.scrollIntoView();
     }
   };
 
-  const byId = (id: string) => TEAMS.find((t) => t.id === id)!;
+  /** Resolve a team by id from the static layout config. */
+  const team = (id: string) => TEAMS_BY_ID[id];
 
   return (
     <div className="flex h-full w-full flex-col justify-center">
-      {/* MOBILE LAYOUT (< lg) */}
+      {/* Mobile layout (< lg) — row structure matches the Figma mockup. */}
       <div className="flex w-full flex-col gap-8 px-1 py-4 sm:gap-10 lg:hidden">
-        {/* Row 1: Game Dev | Web Dev | UX/UI */}
+        {/* Row 1: Game Dev, Web Dev, UX/UI */}
         <div className="grid w-full grid-cols-3 items-end justify-items-center gap-1 sm:gap-3">
           <TeamCard
-            team={byId("game-dev")}
+            team={team("game-dev")}
             onSelect={handleTeamClick}
             breakpoint="mobile"
-            headingClassName="text-base sm:text-lg font-black"
           />
           <TeamCard
-            team={byId("web-dev")}
+            team={team("web-dev")}
             onSelect={handleTeamClick}
             breakpoint="mobile"
-            headingClassName="text-base sm:text-lg font-black"
           />
           <TeamCard
-            team={byId("ux-ui")}
+            team={team("ux-ui")}
             onSelect={handleTeamClick}
             breakpoint="mobile"
-            headingClassName="text-base sm:text-lg font-black"
           />
         </div>
 
         {/* Row 2: Graphics */}
         <TeamCard
-          team={byId("graphics")}
+          team={team("graphics")}
           onSelect={handleTeamClick}
           breakpoint="mobile"
           className="w-full"
-          headingClassName="text-base sm:text-lg font-black"
         />
 
-        {/* Row 3: Music | 3D | Video */}
+        {/* Row 3: Music, 3D, Video */}
         <div className="grid w-full grid-cols-3 items-end justify-items-center gap-1 sm:gap-3">
           <TeamCard
-            team={byId("music")}
+            team={team("music")}
             onSelect={handleTeamClick}
             breakpoint="mobile"
-            headingClassName="text-base sm:text-lg font-black"
           />
           <TeamCard
-            team={byId("3d")}
+            team={team("3d")}
             onSelect={handleTeamClick}
             breakpoint="mobile"
-            headingClassName="text-base sm:text-lg font-black"
           />
           <TeamCard
-            team={byId("video")}
+            team={team("video")}
             onSelect={handleTeamClick}
             breakpoint="mobile"
-            headingClassName="text-base sm:text-lg font-black"
           />
         </div>
       </div>
 
-      {/* DESKTOP LAYOUT (>= lg) */}
+      {/* Desktop layout (>= lg) — row structure matches the Figma mockup. */}
       <div className="hidden w-full flex-col justify-center gap-12 py-4 pr-2 pl-0 lg:flex lg:gap-16">
-        {/* Top Row: Game Dev | Web Dev | UX/UI | 3D */}
+        {/* Top row: Game Dev, Web Dev, UX/UI, 3D */}
         <div className="grid w-full grid-cols-4 items-end justify-items-center gap-4 lg:gap-8">
           <TeamCard
-            team={byId("game-dev")}
+            team={team("game-dev")}
             onSelect={handleTeamClick}
             breakpoint="desktop"
-            headingClassName="text-xl lg:text-2xl font-black"
           />
           <TeamCard
-            team={byId("web-dev")}
+            team={team("web-dev")}
             onSelect={handleTeamClick}
             breakpoint="desktop"
-            headingClassName="text-xl lg:text-2xl font-black"
           />
           <TeamCard
-            team={byId("ux-ui")}
+            team={team("ux-ui")}
             onSelect={handleTeamClick}
             breakpoint="desktop"
-            headingClassName="text-xl lg:text-2xl font-black"
           />
           <TeamCard
-            team={byId("3d")}
+            team={team("3d")}
             onSelect={handleTeamClick}
             breakpoint="desktop"
-            headingClassName="text-xl lg:text-2xl font-black"
           />
         </div>
 
-        {/* Bottom Row: Graphics (2 cols) | Music | Video */}
+        {/* Bottom row: Graphics (span 2), Music, Video */}
         <div className="grid w-full grid-cols-4 items-end justify-items-center gap-4 lg:gap-8">
           <TeamCard
-            team={byId("graphics")}
+            team={team("graphics")}
             onSelect={handleTeamClick}
             breakpoint="desktop"
             className="col-span-2"
-            headingClassName="text-xl lg:text-2xl font-black"
           />
           <TeamCard
-            team={byId("music")}
+            team={team("music")}
             onSelect={handleTeamClick}
             breakpoint="desktop"
             className="col-span-1"
-            headingClassName="text-xl lg:text-2xl font-black"
           />
           <TeamCard
-            team={byId("video")}
+            team={team("video")}
             onSelect={handleTeamClick}
             breakpoint="desktop"
             className="col-span-1"
-            headingClassName="text-xl lg:text-2xl font-black"
           />
         </div>
       </div>

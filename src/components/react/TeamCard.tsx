@@ -1,17 +1,24 @@
-import React from "react";
+import { cn } from "../../lib/utils";
 import type { TeamData } from "../../lib/teams";
+
+/** Default heading styles when headingClassName is not passed. */
+const DEFAULT_HEADING_CLASS: Record<"mobile" | "desktop", string> = {
+  mobile: "text-base sm:text-lg font-black",
+  desktop: "text-xl lg:text-2xl font-black",
+};
 
 interface TeamCardProps {
   team: TeamData;
-  onSelect: (teamName: string) => void;
-  /** Extra classes for the outer wrapper (e.g. col-span utilities on desktop) */
+  onSelect: (teamId: string) => void;
+  /** Optional wrapper classes (e.g. col-span on desktop). */
   className?: string;
-  /** "mobile" uses heightMobile on each silhouette; "desktop" uses heightDesktop */
+  /** Which silhouette heights to use — mobile or desktop. */
   breakpoint: "mobile" | "desktop";
-  /** Tailwind text-size + weight classes for the heading, since mobile/desktop differ */
-  headingClassName: string;
+  /** Optional heading overrides; defaults per breakpoint otherwise. */
+  headingClassName?: string;
 }
 
+/** Single team entry in the hero grid. Dispatches team.id to the parent on click. */
 export default function TeamCard({
   team,
   onSelect,
@@ -20,16 +27,24 @@ export default function TeamCard({
   headingClassName,
 }: TeamCardProps) {
   return (
-    <div
-      onClick={() => onSelect(team.name)}
-      className={`group flex cursor-pointer flex-col items-center transition-transform duration-200 select-none active:scale-95 ${className}`}
+    <button
+      type="button"
+      onClick={() => onSelect(team.id)}
+      aria-label={`View ${team.name} team`}
+      className={cn(
+        "group flex cursor-pointer flex-col items-center border-0 bg-transparent p-0 transition-transform duration-200 select-none active:scale-95",
+        className,
+      )}
     >
       <h3
-        className={`font-noto-sans mb-2 text-center text-[#000024] transition-transform duration-200 group-hover:scale-105 ${headingClassName}`}
+        className={cn(
+          "font-noto-sans mb-2 text-center text-[#000024] transition-transform duration-200 group-hover:scale-105",
+          headingClassName ?? DEFAULT_HEADING_CLASS[breakpoint],
+        )}
       >
         {team.name}
       </h3>
-      <div className="flex items-end justify-center gap-1 lg:gap-3">
+      <div className="flex flex-shrink-0 items-end justify-center gap-1 lg:gap-3">
         {team.silhouettes.map((s) => {
           const height =
             breakpoint === "mobile" ? s.heightMobile : s.heightDesktop;
@@ -39,11 +54,11 @@ export default function TeamCard({
               src={s.src}
               alt={s.alt}
               style={{ height: `${height}px` }}
-              className="object-contain object-bottom transition-transform duration-200 group-hover:scale-105"
+              className="w-auto max-w-none flex-shrink-0 object-contain object-bottom transition-transform duration-200 group-hover:scale-105"
             />
           );
         })}
       </div>
-    </div>
+    </button>
   );
 }
