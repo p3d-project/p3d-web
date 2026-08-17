@@ -83,7 +83,7 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
     <>
       <header
         id="navbar"
-        className="fixed top-0 right-0 left-0 min-h-15 text-white z-50"
+        className="fixed top-0 right-0 left-0 z-50 min-h-15 text-white"
       >
         <div className="bg-primary relative z-10">
           <div className="p3d-container flex grow-0 items-center justify-between gap-12">
