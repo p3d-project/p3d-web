@@ -31,8 +31,18 @@ export const TEAMS: TeamData[] = [
     id: "game-dev",
     name: "Game Dev",
     silhouettes: [
-      { src: makoto, alt: "Makoto Yuki", heightMobile: 195, heightDesktop: 230 },
-      { src: kotone, alt: "Kotone Shiomi", heightMobile: 195, heightDesktop: 230 },
+      {
+        src: makoto,
+        alt: "Makoto Yuki",
+        heightMobile: 195,
+        heightDesktop: 230,
+      },
+      {
+        src: kotone,
+        alt: "Kotone Shiomi",
+        heightMobile: 195,
+        heightDesktop: 230,
+      },
     ],
   },
   {
@@ -46,7 +56,12 @@ export const TEAMS: TeamData[] = [
     id: "ux-ui",
     name: "UX/UI",
     silhouettes: [
-      { src: yukari, alt: "Yukari Takeba", heightMobile: 195, heightDesktop: 230 },
+      {
+        src: yukari,
+        alt: "Yukari Takeba",
+        heightMobile: 195,
+        heightDesktop: 230,
+      },
     ],
   },
   {
@@ -61,23 +76,48 @@ export const TEAMS: TeamData[] = [
     id: "graphics",
     name: "Graphics",
     silhouettes: [
-      { src: akihiko, alt: "Akihiko Sanada", heightMobile: 210, heightDesktop: 230 },
-      { src: mitsuru, alt: "Mitsuru Kirijo", heightMobile: 210, heightDesktop: 230 },
-      { src: shinjiro, alt: "Shinjiro Aragaki", heightMobile: 230, heightDesktop: 245 },
+      {
+        src: akihiko,
+        alt: "Akihiko Sanada",
+        heightMobile: 210,
+        heightDesktop: 230,
+      },
+      {
+        src: mitsuru,
+        alt: "Mitsuru Kirijo",
+        heightMobile: 210,
+        heightDesktop: 230,
+      },
+      {
+        src: shinjiro,
+        alt: "Shinjiro Aragaki",
+        heightMobile: 230,
+        heightDesktop: 245,
+      },
     ],
   },
   {
     id: "music",
     name: "Music",
     silhouettes: [
-      { src: junpei, alt: "Junpei Iori", heightMobile: 195, heightDesktop: 230 },
+      {
+        src: junpei,
+        alt: "Junpei Iori",
+        heightMobile: 195,
+        heightDesktop: 230,
+      },
     ],
   },
   {
     id: "video",
     name: "Video",
     silhouettes: [
-      { src: fuuka, alt: "Fuuka Yamagishi", heightMobile: 180, heightDesktop: 210 },
+      {
+        src: fuuka,
+        alt: "Fuuka Yamagishi",
+        heightMobile: 180,
+        heightDesktop: 210,
+      },
     ],
   },
 ];

@@ -16,11 +16,11 @@ export default function TeamGrid() {
   const byId = (id: string) => TEAMS.find((t) => t.id === id)!;
 
   return (
-    <div className="w-full h-full flex flex-col justify-center">
+    <div className="flex h-full w-full flex-col justify-center">
       {/* MOBILE LAYOUT (< lg) */}
-      <div className="flex flex-col gap-8 sm:gap-10 w-full py-4 px-1 lg:hidden">
+      <div className="flex w-full flex-col gap-8 px-1 py-4 sm:gap-10 lg:hidden">
         {/* Row 1: Game Dev | Web Dev | UX/UI */}
-        <div className="grid grid-cols-3 gap-1 sm:gap-3 items-end justify-items-center w-full">
+        <div className="grid w-full grid-cols-3 items-end justify-items-center gap-1 sm:gap-3">
           <TeamCard
             team={byId("game-dev")}
             onSelect={handleTeamClick}
@@ -51,7 +51,7 @@ export default function TeamGrid() {
         />
 
         {/* Row 3: Music | 3D | Video */}
-        <div className="grid grid-cols-3 gap-1 sm:gap-3 items-end justify-items-center w-full">
+        <div className="grid w-full grid-cols-3 items-end justify-items-center gap-1 sm:gap-3">
           <TeamCard
             team={byId("music")}
             onSelect={handleTeamClick}
@@ -74,9 +74,9 @@ export default function TeamGrid() {
       </div>
 
       {/* DESKTOP LAYOUT (>= lg) */}
-      <div className="hidden lg:flex flex-col justify-center gap-12 lg:gap-16 py-4 pr-2 pl-0 w-full">
+      <div className="hidden w-full flex-col justify-center gap-12 py-4 pr-2 pl-0 lg:flex lg:gap-16">
         {/* Top Row: Game Dev | Web Dev | UX/UI | 3D */}
-        <div className="grid grid-cols-4 gap-4 lg:gap-8 items-end justify-items-center w-full">
+        <div className="grid w-full grid-cols-4 items-end justify-items-center gap-4 lg:gap-8">
           <TeamCard
             team={byId("game-dev")}
             onSelect={handleTeamClick}
@@ -104,7 +104,7 @@ export default function TeamGrid() {
         </div>
 
         {/* Bottom Row: Graphics (2 cols) | Music | Video */}
-        <div className="grid grid-cols-4 gap-4 lg:gap-8 items-end justify-items-center w-full">
+        <div className="grid w-full grid-cols-4 items-end justify-items-center gap-4 lg:gap-8">
           <TeamCard
             team={byId("graphics")}
             onSelect={handleTeamClick}

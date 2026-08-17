@@ -22,7 +22,7 @@ export default function TeamCard({
   return (
     <div
       onClick={() => onSelect(team.name)}
-      className={`group flex cursor-pointer flex-col items-center select-none active:scale-95 transition-transform duration-200 ${className}`}
+      className={`group flex cursor-pointer flex-col items-center transition-transform duration-200 select-none active:scale-95 ${className}`}
     >
       <h3
         className={`font-noto-sans mb-2 text-center text-[#000024] transition-transform duration-200 group-hover:scale-105 ${headingClassName}`}
