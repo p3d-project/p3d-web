@@ -5,7 +5,7 @@ Because Astro renders React components as isolated "Islands," `TeamGrid` and `Te
 Shared constants and team data live in `teams.ts`:
 
 - `TEAM_SELECTED_EVENT` — event name used by both components
-- `TEAMS` — team list (names, silhouettes, provisional cog angles)
+- `TEAMS` — team list (id, name, description, green silhouettes for the grid, blue silhouettes for the carousel)
 - `TEAMS_BY_ID` — O(1) lookup map used by `TeamGrid` layout helpers
 
 ## How it Works
@@ -15,7 +15,7 @@ Shared constants and team data live in `teams.ts`:
 When a user clicks a team card, the grid dispatches a custom event to `window` containing the team id, then scrolls to the team detail section.
 
 ```tsx
-import { TEAM_SELECTED_EVENT } from "../../lib/teams";
+import { TEAM_SELECTED_EVENT, TEAMS_BY_ID } from "../../lib/teams";
 
 const handleTeamClick = (teamId: string) => {
   const event = new CustomEvent(TEAM_SELECTED_EVENT, { detail: teamId });
@@ -28,11 +28,17 @@ const handleTeamClick = (teamId: string) => {
 };
 ```
 
-Team lookup uses `TEAMS_BY_ID` instead of repeated `find()` calls.
+Team lookup for rendering each card uses `TEAMS_BY_ID` instead of repeated `find()` calls:
+
+```tsx
+const team = (id: string) => TEAMS_BY_ID[id];
+```
+
+`TeamGrid` itself holds no team-selection state — it's a pure publisher. Layout is two static grids (mobile: 3/1/3 row split; desktop: 4/3 row split with Graphics spanning two columns), each rendering `TeamCard` per team with a `breakpoint` prop controlling which silhouette heights to use.
 
 ### 2. The Subscriber (`TeamCarousel.tsx`)
 
-The carousel manages its own local state (`currentIndex`). On mount, it listens for `TEAM_SELECTED_EVENT`, resolves the matching index in `TEAMS`, and updates.
+The carousel listens for `TEAM_SELECTED_EVENT` on mount and, when it fires, computes how many steps forward or backward to move from its current position to reach the selected team — then hands that off to its own internal transition state machine (see below).
 
 ```tsx
 import { TEAMS, TEAM_SELECTED_EVENT } from "../../lib/teams";
@@ -44,7 +50,15 @@ useEffect(() => {
 
     const targetIndex = TEAMS.findIndex((t) => t.id === selectedTeamId);
     if (targetIndex !== -1) {
-      setCurrentIndex(targetIndex);
+      setStep((prev) => {
+        const currentIndex = ((prev % TEAMS.length) + TEAMS.length) % TEAMS.length;
+        let diff = targetIndex - currentIndex;
+
+        if (diff > 3) diff -= TEAMS.length;
+        if (diff < -3) diff += TEAMS.length;
+
+        return prev + diff;
+      });
     }
   };
 
@@ -53,20 +67,12 @@ useEffect(() => {
 }, []);
 ```
 
+The `diff > 3` / `diff < -3` clamping picks whichever direction is the shorter way around the 7-team wheel, so jumping from Video to Web Dev (adjacent going forward) doesn't spin the cog almost all the way around backward.
+
 ## Why this approach?
 
 - **Zero dependencies:** Uses built-in Web APIs; no need for external stores.
 - **Decoupled:** The grid and carousel do not import each other. Removing one from the page will not break the other.
-
-## Extra Notes
-
-- **Astro client directives:** Both components must be hydrated on the client. In `about.astro`, they are loaded with `client:load`.
-- **Scroll behavior:** Clicking a grid card scrolls to `#team` via `scrollIntoView()`. Smooth scrolling is handled globally by `scroll-behavior: smooth` in `global.css`.
-- **Animation re-triggering:** In `TeamCarousel.tsx`, `key={currentIndex}` on the silhouette wrapper forces a remount so the enter animation replays on every team change.
-- **Type safety:** The event payload (`detail`) is a `string` (the team id). Cast to `CustomEvent<string>` in the subscriber so TypeScript recognizes the payload.
-- **Memory leak prevention:** The listener is attached to `window`, not a component instance. Always remove it in the `useEffect` cleanup to avoid dangling references and duplicate handlers.
-- **Accessibility:** `TeamCard` renders as a `<button>` so grid items are keyboard-focusable. Carousel prev/next buttons include `aria-label` attributes.
-- **Cog wheel angles:** Each entry in `TEAMS` has a provisional `angle` field (evenly spaced at 360 / 7). Re-tune these once the cog asset exists — final values depend on its dimensions and label placement.
 
 ## Understanding `TeamCarousel`'s Internal State
 
@@ -139,6 +145,23 @@ team can animate out while the incoming team animates in.
 This means the JS timer and the CSS animation duration are two independent
 mechanisms that happen to be kept equal — see the caveat below.
 
+### Rendering the cog itself
+
+`Cog.svg` is drawn once as a plain `<img>`, rotated by a running total
+(`rotation = step * 60`) via a CSS `transform`, and transitions smoothly
+between rotations using a Tailwind `transition-transform duration-700`
+class — this is a separate, simpler rotation than the enter/exit content
+animation described above. The title text, description circle, and (on
+desktop) the ghost silhouettes are layered on top as separate absolutely
+positioned elements anchored to fixed coordinates within the cog's own
+`viewBox` (see `COG_ANCHORS` and the `cogPct()` helper, which converts a
+raw SVG coordinate into a percentage of the cog's rendered size).
+
+Mobile and desktop use different anchor points and different title
+treatments (`FlatTeamName` on mobile, `ArchedTeamName` via SVG `textPath`
+on desktop) — this was a deliberate layout choice, not a bug, so the title
+placement doesn't need to match 1:1 between breakpoints.
+
 ### Things to watch out for when editing this component
 
 - **`SPIN_DURATION_MS` and the CSS keyframe duration are linked via
@@ -166,14 +189,49 @@ mechanisms that happen to be kept equal — see the caveat below.
   reason about, and worth manually testing (rapid-fire clicking through
   several teams) after any changes here.
 - **Silhouette scale/offset adjustments are derived from `alt` text, not
-  from team id.** `getSilhouetteAdjustments` lower-cases each silhouette's
-  `alt` string and checks it with `.includes("fuuka")`,
-  `.includes("aigis")`, `.includes("yukari")`, or
+  from team id.** `getSilhouetteAdjustments` (inside `TeamCarousel.tsx`)
+  lower-cases each blue silhouette's `alt` string and checks it with
+  `.includes("fuuka")`, `.includes("aigis")`, `.includes("yukari")`, or
   `.includes("ken")`/`.includes("koromaru")` to decide per-character scale
-  and horizontal offset. This means **changing a silhouette's `alt` text
-  for accessibility reasons can silently change its visual position** on
-  the carousel, with no error or warning — the two are coupled by an
-  implicit string match, not an explicit relationship. If you add a new
+  and horizontal offset, layered on top of a base value that depends on
+  whether the team has exactly 3 silhouettes (`isTrio`). This means
+  **changing a silhouette's `alt` text for accessibility reasons can
+  silently change its visual position** on the carousel, with no error or
+  warning — the two are coupled by an implicit string match inside
+  `TeamCarousel.tsx`, not an explicit field in `teams.ts`. If you add a new
   character or rename an existing one's `alt` text, double-check this
   function's `if`/`else if` chain to see whether it's still matching
-  correctly.
+  correctly. This logic only affects the carousel's blue silhouettes — the
+  green silhouettes in `TeamGrid`/`TeamCard` use their `heightMobile`/
+  `heightDesktop` fields directly from `teams.ts` with no string matching.
+
+## Extra Notes
+
+- **Astro client directives:** Both components must be hydrated on the
+  client (e.g. `client:load` in `about.astro`) since both rely on
+  `window`, event listeners, and interactive state.
+- **Scroll behavior:** Clicking a grid card scrolls to `#team` via a plain
+  `scrollIntoView()` call with no options object. Smooth scrolling is
+  expected to come from a global `scroll-behavior: smooth` rule rather
+  than being passed per-call — confirm this is still set in your global
+  CSS if the scroll ever starts jumping instead of animating.
+- **Type safety:** The event payload (`detail`) is a `string` (the team
+  id). Cast to `CustomEvent<string>` in the subscriber so TypeScript
+  recognizes the payload.
+- **Memory leak prevention:** The listener is attached to `window`, not a
+  component instance. Always remove it in the `useEffect` cleanup to avoid
+  dangling references and duplicate handlers.
+- **Accessibility:** `TeamCard` renders as a `<button>` (not a `<div>`
+  with a click handler), so grid items are keyboard-focusable and have an
+  `aria-label` of `View {team.name} team`. Carousel prev/next buttons
+  similarly use `aria-label` (`Go to {team.name}`) rather than relying on
+  their visible text alone.
+- **Reduced motion:** Both the cog's rotation transition and the
+  enter/exit content animations are disabled under
+  `prefers-reduced-motion: reduce` (`motion-reduce:transition-none` on the
+  cog wrapper, and an explicit `@media (prefers-reduced-motion: reduce)`
+  block turning off the keyframe animations entirely).
+- **Cog asset:** `Cog.svg` is a real design asset pulled from Figma (not a
+  placeholder or a generic "gear with teeth" shape) — it's imported once
+  and reused for every team; only the CSS rotation changes between teams,
+  not the underlying image.
