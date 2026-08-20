@@ -75,7 +75,7 @@ import glassBg from "../assets/GlassBG.svg";
           <button
             id="scroll-cue-btn"
             type="button"
-            class="group mt-3 inline-flex cursor-pointer flex-col items-center bg-transparent border-0 p-0 gap-1.5 sm:mt-5 sm:gap-2 lg:mt-12 lg:flex-row lg:gap-6"
+            class="group mt-3 inline-flex cursor-pointer flex-col items-center gap-1.5 border-0 bg-transparent p-0 sm:mt-5 sm:gap-2 lg:mt-12 lg:flex-row lg:gap-6"
           >
             <span
               class="font-noto-sans order-1 text-xl leading-tight font-extrabold text-[#000024] sm:text-2xl lg:order-2 lg:w-[229px] lg:text-[35.2px]"
@@ -101,10 +101,10 @@ import glassBg from "../assets/GlassBG.svg";
     {/* Team detail — join CTA and carousel */}
     <section
       id="team"
-      class="relative z-10 w-full scroll-mt-16 bg-[#000024] pt-10 pb-0 overflow-hidden sm:pt-12"
+      class="relative z-10 w-full scroll-mt-16 overflow-hidden bg-[#000024] pt-10 pb-0 sm:pt-12"
     >
       {/* Join CTA */}
-      <div class="w-full mb-1 px-4 sm:mb-2 sm:px-12 lg:pl-20 lg:pr-12">
+      <div class="mb-1 w-full px-4 sm:mb-2 sm:px-12 lg:pr-12 lg:pl-20">
         <Button
           as="a"
           href="https://docs.p3dual.com/guides/team-application/"
@@ -121,11 +121,17 @@ import glassBg from "../assets/GlassBG.svg";
   </main>
 </Layout>
 
-{/* Align carousel header padding with Join CTA on desktop without affecting cog positioning */}
+{
+  /* Align carousel header padding with Join CTA on desktop without affecting cog positioning */
+}
 <style>
   @media (min-width: 1024px) {
-    :global(#team .relative.z-10.mb-20.flex.w-full.items-center.justify-between),
-    :global(#team .relative.z-10.mb-12.flex.w-full.items-center.justify-between),
+    :global(
+      #team .relative.z-10.mb-20.flex.w-full.items-center.justify-between
+    ),
+    :global(
+      #team .relative.z-10.mb-12.flex.w-full.items-center.justify-between
+    ),
     :global(#team .relative.z-10.flex.w-full.items-center.justify-between) {
       padding-left: 5rem; /* matches lg:pl-20 */
       padding-right: 3rem; /* matches lg:pr-12 */

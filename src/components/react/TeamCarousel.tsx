@@ -1,5 +1,10 @@
 import { useState, useEffect, useRef } from "react";
-import { TEAMS, TEAM_SELECTED_EVENT, type Silhouette, type TeamData } from "../../lib/teams";
+import {
+  TEAMS,
+  TEAM_SELECTED_EVENT,
+  type Silhouette,
+  type TeamData,
+} from "../../lib/teams";
 import arrowSvg from "../../assets/Arrow-7.svg?raw";
 import cogSvg from "../../assets/Cog.svg?url";
 
@@ -69,18 +74,20 @@ function TeamSilhouettes({ team }: { team: TeamData }) {
 
   return (
     <div className="flex items-end justify-start">
-      {getSilhouetteAdjustments(team).map(({ sil, scaleMultiplier, translateX }) => (
-        <img
-          key={sil.alt}
-          src={silhouetteSrc(sil)}
-          alt={sil.alt}
-          style={{
-            height: `${sil.heightDesktop * scaleMultiplier}px`,
-            transform: `translateX(${translateX}px)`,
-          }}
-          className={`relative z-10 ${marginClass} w-auto object-contain last:mr-0`}
-        />
-      ))}
+      {getSilhouetteAdjustments(team).map(
+        ({ sil, scaleMultiplier, translateX }) => (
+          <img
+            key={sil.alt}
+            src={silhouetteSrc(sil)}
+            alt={sil.alt}
+            style={{
+              height: `${sil.heightDesktop * scaleMultiplier}px`,
+              transform: `translateX(${translateX}px)`,
+            }}
+            className={`relative z-10 ${marginClass} w-auto object-contain last:mr-0`}
+          />
+        ),
+      )}
     </div>
   );
 }
@@ -122,11 +129,11 @@ function ArchedTeamName({ name }: { name: string }) {
 function FlatTeamName({ name }: { name: string }) {
   return (
     <p
-      className="font-noto-sans whitespace-nowrap text-[clamp(2rem,10vw,3rem)] font-black uppercase tracking-[0.06em]"
-      style={{ 
-        WebkitTextStroke: '4px #79CEFF',
-        color: '#002C48',
-        paintOrder: 'stroke fill'
+      className="font-noto-sans text-[clamp(2rem,10vw,3rem)] font-black tracking-[0.06em] whitespace-nowrap uppercase"
+      style={{
+        WebkitTextStroke: "4px #79CEFF",
+        color: "#002C48",
+        paintOrder: "stroke fill",
       }}
     >
       {name}
@@ -134,7 +141,13 @@ function FlatTeamName({ name }: { name: string }) {
   );
 }
 
-function MobileDescription({ team, opacity }: { team: TeamData; opacity: number }) {
+function MobileDescription({
+  team,
+  opacity,
+}: {
+  team: TeamData;
+  opacity: number;
+}) {
   const { descCenter } = COG_ANCHORS.mobile;
 
   return (
@@ -149,10 +162,8 @@ function MobileDescription({ team, opacity }: { team: TeamData; opacity: number 
         opacity,
       }}
     >
-      <div className="font-serif flex h-full w-full items-center justify-center text-center text-black">
-        <p className="text-[1.2rem] leading-[1.25]">
-          {team.description}
-        </p>
+      <div className="flex h-full w-full items-center justify-center text-center font-serif text-black">
+        <p className="text-[1.2rem] leading-[1.25]">{team.description}</p>
       </div>
     </div>
   );
@@ -170,7 +181,11 @@ function SpinningTeamContent({
   direction: number;
 }) {
   const animationClass =
-    phase === "enter" ? "team-spin-in" : phase === "exit" ? "team-spin-out-fast" : "";
+    phase === "enter"
+      ? "team-spin-in"
+      : phase === "exit"
+        ? "team-spin-out-fast"
+        : "";
 
   const { mobile, desktop } = COG_ANCHORS;
 
@@ -181,7 +196,9 @@ function SpinningTeamContent({
         {
           "--spin-deg": `${spinDeg}deg`,
           "--spin-dir": direction,
-          ...(phase === "idle" ? { opacity: 1, transform: "rotate(0deg)" } : {}),
+          ...(phase === "idle"
+            ? { opacity: 1, transform: "rotate(0deg)" }
+            : {}),
         } as React.CSSProperties
       }
     >
@@ -224,7 +241,13 @@ function SpinningTeamContent({
   );
 }
 
-function DesktopDescription({ team, opacity }: { team: TeamData; opacity: number }) {
+function DesktopDescription({
+  team,
+  opacity,
+}: {
+  team: TeamData;
+  opacity: number;
+}) {
   const { descCenter } = COG_ANCHORS.desktop;
 
   return (
@@ -239,10 +262,8 @@ function DesktopDescription({ team, opacity }: { team: TeamData; opacity: number
         opacity,
       }}
     >
-      <div className="font-serif flex h-full w-full items-center justify-center text-center text-black">
-        <p className="text-xl leading-relaxed">
-          {team.description}
-        </p>
+      <div className="flex h-full w-full items-center justify-center text-center font-serif text-black">
+        <p className="text-xl leading-relaxed">{team.description}</p>
       </div>
     </div>
   );
@@ -265,7 +286,8 @@ export default function TeamCarousel() {
       const targetIndex = TEAMS.findIndex((t) => t.id === selectedTeamId);
       if (targetIndex !== -1) {
         setStep((prev) => {
-          const currentIndex = ((prev % TEAMS.length) + TEAMS.length) % TEAMS.length;
+          const currentIndex =
+            ((prev % TEAMS.length) + TEAMS.length) % TEAMS.length;
           let diff = targetIndex - currentIndex;
 
           if (diff > 3) diff -= TEAMS.length;
@@ -277,7 +299,8 @@ export default function TeamCarousel() {
     };
 
     window.addEventListener(TEAM_SELECTED_EVENT, handleTeamSelected);
-    return () => window.removeEventListener(TEAM_SELECTED_EVENT, handleTeamSelected);
+    return () =>
+      window.removeEventListener(TEAM_SELECTED_EVENT, handleTeamSelected);
   }, []);
 
   useEffect(() => {
@@ -303,7 +326,8 @@ export default function TeamCarousel() {
   }, [step]);
 
   const activeIndex = ((step % TEAMS.length) + TEAMS.length) % TEAMS.length;
-  const displayIndex = ((displayStep % TEAMS.length) + TEAMS.length) % TEAMS.length;
+  const displayIndex =
+    ((displayStep % TEAMS.length) + TEAMS.length) % TEAMS.length;
   const outgoingIndex =
     outgoingStep === null
       ? null
@@ -325,17 +349,24 @@ export default function TeamCarousel() {
     <div className="relative flex min-h-[820px] w-full flex-col items-center overflow-hidden pt-6 pb-12 sm:pt-20">
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         {/* Cog container */}
-        <div className="absolute h-[2100px] w-[2100px] -bottom-[1420px] left-1/2 -translate-x-1/2 lg:top-[152%] lg:right-0 lg:h-[2375px] lg:w-[2375px] lg:translate-x-[-26%] lg:-translate-y-1/2">
+        <div className="absolute -bottom-[1420px] left-1/2 h-[2100px] w-[2100px] -translate-x-1/2 lg:top-[152%] lg:right-0 lg:h-[2375px] lg:w-[2375px] lg:translate-x-[-26%] lg:-translate-y-1/2">
           {/* Mobile 17° tilt */}
           <div className="relative h-full w-full rotate-[17deg] lg:rotate-0">
             <div
               className="relative h-full w-full transition-transform duration-700 ease-in-out motion-reduce:transition-none"
               style={{ transform: `rotate(${rotation}deg)` }}
             >
-              <img src={cogSvg} alt="" className="absolute inset-0 z-0 h-full w-full object-contain" />
+              <img
+                src={cogSvg}
+                alt=""
+                className="absolute inset-0 z-0 h-full w-full object-contain"
+              />
             </div>
 
-            <div className="absolute inset-0" style={{ transformOrigin: "50% 50%" }}>
+            <div
+              className="absolute inset-0"
+              style={{ transformOrigin: "50% 50%" }}
+            >
               {isTransitioning && outgoingTeam && (
                 <SpinningTeamContent
                   team={outgoingTeam}
@@ -403,7 +434,7 @@ export default function TeamCarousel() {
       `}</style>
 
       {/* Paginator buttons container */}
-      <div className="relative z-10 mb-20 sm:mb-12 flex w-full max-w-[1500px] items-center justify-between px-6 pt-0 sm:pt-2 sm:px-12">
+      <div className="relative z-10 mb-20 flex w-full max-w-[1500px] items-center justify-between px-6 pt-0 sm:mb-12 sm:px-12 sm:pt-2">
         <button
           type="button"
           onClick={handlePrev}
@@ -411,10 +442,12 @@ export default function TeamCarousel() {
           className="group inline-flex cursor-pointer items-center gap-3 bg-transparent transition-all duration-300 hover:-translate-x-2"
         >
           <div
-            className="h-12 w-12 rotate-90 transition-transform duration-300 group-hover:scale-110 [&>svg]:h-full [&>svg]:w-full [&>svg_*]:!fill-secondary [&>svg_*]:!stroke-secondary"
+            className="[&>svg_*]:!fill-secondary [&>svg_*]:!stroke-secondary h-12 w-12 rotate-90 transition-transform duration-300 group-hover:scale-110 [&>svg]:h-full [&>svg]:w-full"
             dangerouslySetInnerHTML={{ __html: arrowSvg }}
           />
-          <span className="font-noto-sans text-lg font-bold text-secondary sm:text-2xl">{prevTeam.name}</span>
+          <span className="font-noto-sans text-secondary text-lg font-bold sm:text-2xl">
+            {prevTeam.name}
+          </span>
         </button>
 
         <button
@@ -423,9 +456,11 @@ export default function TeamCarousel() {
           aria-label={`Go to ${nextTeam.name}`}
           className="group inline-flex cursor-pointer items-center gap-3 bg-transparent transition-all duration-300 hover:translate-x-2"
         >
-          <span className="font-noto-sans text-lg font-bold text-secondary sm:text-2xl">{nextTeam.name}</span>
+          <span className="font-noto-sans text-secondary text-lg font-bold sm:text-2xl">
+            {nextTeam.name}
+          </span>
           <div
-            className="h-12 w-12 -rotate-90 transition-transform duration-300 group-hover:scale-110 [&>svg]:h-full [&>svg]:w-full [&>svg_*]:!fill-secondary [&>svg_*]:!stroke-secondary"
+            className="[&>svg_*]:!fill-secondary [&>svg_*]:!stroke-secondary h-12 w-12 -rotate-90 transition-transform duration-300 group-hover:scale-110 [&>svg]:h-full [&>svg]:w-full"
             dangerouslySetInnerHTML={{ __html: arrowSvg }}
           />
         </button>

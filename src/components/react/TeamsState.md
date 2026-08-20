@@ -51,7 +51,8 @@ useEffect(() => {
     const targetIndex = TEAMS.findIndex((t) => t.id === selectedTeamId);
     if (targetIndex !== -1) {
       setStep((prev) => {
-        const currentIndex = ((prev % TEAMS.length) + TEAMS.length) % TEAMS.length;
+        const currentIndex =
+          ((prev % TEAMS.length) + TEAMS.length) % TEAMS.length;
         let diff = targetIndex - currentIndex;
 
         if (diff > 3) diff -= TEAMS.length;
@@ -63,7 +64,8 @@ useEffect(() => {
   };
 
   window.addEventListener(TEAM_SELECTED_EVENT, handleTeamSelected);
-  return () => window.removeEventListener(TEAM_SELECTED_EVENT, handleTeamSelected);
+  return () =>
+    window.removeEventListener(TEAM_SELECTED_EVENT, handleTeamSelected);
 }, []);
 ```
 
@@ -86,7 +88,7 @@ team can animate out while the incoming team animates in.
 ### The state pieces
 
 - **`step`** — an ever-incrementing/decrementing integer representing the
-  logical position in the team list. It is *not* clamped to `0..6`; it can
+  logical position in the team list. It is _not_ clamped to `0..6`; it can
   go negative or past `TEAMS.length`. This is intentional — it lets the cog
   always spin in a consistent direction (e.g. always forward when you keep
   clicking "next") instead of snapping backward when wrapping from the last
@@ -99,7 +101,7 @@ team can animate out while the incoming team animates in.
   watching `step` (described below) is what actually drives all the
   animation state.
 
-- **`displayStep`** — the step value that's *actually rendered* right now.
+- **`displayStep`** — the step value that's _actually rendered_ right now.
   This only updates once the transition timer finishes — it's what keeps
   the outgoing team's content visible while it animates away, instead of
   swapping instantly the moment you click.
@@ -167,7 +169,7 @@ placement doesn't need to match 1:1 between breakpoints.
 - **`SPIN_DURATION_MS` and the CSS keyframe duration are linked via
   template interpolation, not independently hardcoded.** The constant is
   interpolated directly into the `<style>` block
-  (`` animation: teamSpinOutFast ${SPIN_DURATION_MS}ms ...``), so today
+  (` animation: teamSpinOutFast ${SPIN_DURATION_MS}ms ...`), so today
   they're always equal by construction. If you ever refactor the animation
   duration into a separately hardcoded CSS value instead of this template
   literal, you'd reintroduce the risk of the JS timer and the actual

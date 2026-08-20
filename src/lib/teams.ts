@@ -48,7 +48,8 @@ export interface TeamData {
 export const TEAM_SELECTED_EVENT = "teamSelected";
 
 // Temporary placeholder text used across all teams
-const PLACEHOLDER_DESC = "Want to see how Tatsumi Port Island is coming to life? Catch our latest behind-the-scenes progress, tutorials, and music drops across all our channels. Join the conversation on Discord, watch our major dev updates on YouTube, and tag us on Twitter/X or Instagram when you share the game. Every single share helps this passion project grow!";
+const PLACEHOLDER_DESC =
+  "Want to see how Tatsumi Port Island is coming to life? Catch our latest behind-the-scenes progress, tutorials, and music drops across all our channels. Join the conversation on Discord, watch our major dev updates on YouTube, and tag us on Twitter/X or Instagram when you share the game. Every single share helps this passion project grow!";
 
 export const TEAMS: TeamData[] = [
   {
@@ -56,12 +57,32 @@ export const TEAMS: TeamData[] = [
     name: "Game Dev",
     description: `[GAME DEV] ${PLACEHOLDER_DESC}`,
     silhouettes: [
-      { src: makotoGreen, alt: "Makoto Yuki", heightMobile: 215, heightDesktop: 255 },
-      { src: kotoneGreen, alt: "Kotone Shiomi", heightMobile: 215, heightDesktop: 255 },
+      {
+        src: makotoGreen,
+        alt: "Makoto Yuki",
+        heightMobile: 215,
+        heightDesktop: 255,
+      },
+      {
+        src: kotoneGreen,
+        alt: "Kotone Shiomi",
+        heightMobile: 215,
+        heightDesktop: 255,
+      },
     ],
     silhouettesBlue: [
-      { src: makotoBlue, alt: "Makoto Yuki", heightMobile: 215, heightDesktop: 255 },
-      { src: kotoneBlue, alt: "Kotone Shiomi", heightMobile: 215, heightDesktop: 255 },
+      {
+        src: makotoBlue,
+        alt: "Makoto Yuki",
+        heightMobile: 215,
+        heightDesktop: 255,
+      },
+      {
+        src: kotoneBlue,
+        alt: "Kotone Shiomi",
+        heightMobile: 215,
+        heightDesktop: 255,
+      },
     ],
   },
   {
@@ -80,10 +101,20 @@ export const TEAMS: TeamData[] = [
     name: "UX/UI",
     description: `[UX/UI] ${PLACEHOLDER_DESC}`,
     silhouettes: [
-      { src: yukariGreen, alt: "Yukari Takeba", heightMobile: 215, heightDesktop: 255 },
+      {
+        src: yukariGreen,
+        alt: "Yukari Takeba",
+        heightMobile: 215,
+        heightDesktop: 255,
+      },
     ],
     silhouettesBlue: [
-      { src: yukariBlue, alt: "Yukari Takeba", heightMobile: 215, heightDesktop: 255 },
+      {
+        src: yukariBlue,
+        alt: "Yukari Takeba",
+        heightMobile: 215,
+        heightDesktop: 255,
+      },
     ],
   },
   {
@@ -91,12 +122,27 @@ export const TEAMS: TeamData[] = [
     name: "3D",
     description: `[3D] ${PLACEHOLDER_DESC}`,
     silhouettes: [
-      { src: kenGreen, alt: "Ken Amada", heightMobile: 215, heightDesktop: 255 },
-      { src: koromaruGreen, alt: "Koromaru", heightMobile: 108, heightDesktop: 128 },
+      {
+        src: kenGreen,
+        alt: "Ken Amada",
+        heightMobile: 215,
+        heightDesktop: 255,
+      },
+      {
+        src: koromaruGreen,
+        alt: "Koromaru",
+        heightMobile: 108,
+        heightDesktop: 128,
+      },
     ],
     silhouettesBlue: [
       { src: kenBlue, alt: "Ken Amada", heightMobile: 215, heightDesktop: 255 },
-      { src: koromaruBlue, alt: "Koromaru", heightMobile: 108, heightDesktop: 128 },
+      {
+        src: koromaruBlue,
+        alt: "Koromaru",
+        heightMobile: 108,
+        heightDesktop: 128,
+      },
     ],
   },
   {
@@ -104,14 +150,44 @@ export const TEAMS: TeamData[] = [
     name: "Graphics",
     description: `[GRAPHICS] ${PLACEHOLDER_DESC}`,
     silhouettes: [
-      { src: akihikoGreen, alt: "Akihiko Sanada", heightMobile: 230, heightDesktop: 255 },
-      { src: mitsuruGreen, alt: "Mitsuru Kirijo", heightMobile: 230, heightDesktop: 255 },
-      { src: shinjiroGreen, alt: "Shinjiro Aragaki", heightMobile: 250, heightDesktop: 275 },
+      {
+        src: akihikoGreen,
+        alt: "Akihiko Sanada",
+        heightMobile: 230,
+        heightDesktop: 255,
+      },
+      {
+        src: mitsuruGreen,
+        alt: "Mitsuru Kirijo",
+        heightMobile: 230,
+        heightDesktop: 255,
+      },
+      {
+        src: shinjiroGreen,
+        alt: "Shinjiro Aragaki",
+        heightMobile: 250,
+        heightDesktop: 275,
+      },
     ],
     silhouettesBlue: [
-      { src: akihikoBlue, alt: "Akihiko Sanada", heightMobile: 230, heightDesktop: 255 },
-      { src: mitsuruBlue, alt: "Mitsuru Kirijo", heightMobile: 230, heightDesktop: 255 },
-      { src: shinjiroBlue, alt: "Shinjiro Aragaki", heightMobile: 250, heightDesktop: 275 },
+      {
+        src: akihikoBlue,
+        alt: "Akihiko Sanada",
+        heightMobile: 230,
+        heightDesktop: 255,
+      },
+      {
+        src: mitsuruBlue,
+        alt: "Mitsuru Kirijo",
+        heightMobile: 230,
+        heightDesktop: 255,
+      },
+      {
+        src: shinjiroBlue,
+        alt: "Shinjiro Aragaki",
+        heightMobile: 250,
+        heightDesktop: 275,
+      },
     ],
   },
   {
@@ -119,10 +195,20 @@ export const TEAMS: TeamData[] = [
     name: "Music",
     description: `[MUSIC] ${PLACEHOLDER_DESC}`,
     silhouettes: [
-      { src: junpeiGreen, alt: "Junpei Iori", heightMobile: 215, heightDesktop: 255 },
+      {
+        src: junpeiGreen,
+        alt: "Junpei Iori",
+        heightMobile: 215,
+        heightDesktop: 255,
+      },
     ],
     silhouettesBlue: [
-      { src: junpeiBlue, alt: "Junpei Iori", heightMobile: 215, heightDesktop: 255 },
+      {
+        src: junpeiBlue,
+        alt: "Junpei Iori",
+        heightMobile: 215,
+        heightDesktop: 255,
+      },
     ],
   },
   {
@@ -130,15 +216,24 @@ export const TEAMS: TeamData[] = [
     name: "Video",
     description: `[VIDEO] ${PLACEHOLDER_DESC}`,
     silhouettes: [
-      { src: fuukaGreen, alt: "Fuuka Yamagishi", heightMobile: 200, heightDesktop: 235 },
+      {
+        src: fuukaGreen,
+        alt: "Fuuka Yamagishi",
+        heightMobile: 200,
+        heightDesktop: 235,
+      },
     ],
     silhouettesBlue: [
-      { src: fuukaBlue, alt: "Fuuka Yamagishi", heightMobile: 200, heightDesktop: 235 },
+      {
+        src: fuukaBlue,
+        alt: "Fuuka Yamagishi",
+        heightMobile: 200,
+        heightDesktop: 235,
+      },
     ],
   },
 ];
 
 /** O(1) lookup by team id — used by TeamGrid layout helpers. */
-export const TEAMS_BY_ID: Readonly<Record<string, TeamData>> = Object.fromEntries(
-  TEAMS.map((team) => [team.id, team]),
-);
+export const TEAMS_BY_ID: Readonly<Record<string, TeamData>> =
+  Object.fromEntries(TEAMS.map((team) => [team.id, team]));
