@@ -118,7 +118,7 @@ function ArchedTeamName({ name }: { name: string }) {
 function FlatTeamName({ name }: { name: string }) {
   return (
     <p
-      className="whitespace-nowrap text-[clamp(2.25rem,11vw,3.25rem)] font-black uppercase tracking-[0.06em]"
+      className="whitespace-nowrap text-[clamp(2rem,10vw,3rem)] font-black uppercase tracking-[0.06em]"
       style={{ 
         fontFamily: '"Noto Sans JP", sans-serif',
         WebkitTextStroke: '4px #79CEFF',
@@ -150,7 +150,7 @@ function MobileDescription({ team, opacity }: { team: TeamData; opacity: number 
         className="flex h-full w-full items-center justify-center text-center text-black"
         style={{ fontFamily: '"MgOpenCosmeticaRegular", Georgia, serif' }}
       >
-        <p className="text-[1.35rem] leading-[1.25]">
+        <p className="text-[1.2rem] leading-[1.25]">
           {team.description}
         </p>
       </div>
@@ -328,7 +328,7 @@ export default function TeamCarousel() {
     <div className="relative flex min-h-[820px] w-full flex-col items-center overflow-hidden pt-6 pb-12 sm:pt-20">
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         {/* Cog container */}
-        <div className="absolute h-[2500px] w-[2500px] -bottom-[1725px] left-1/2 -translate-x-1/2 lg:top-[152%] lg:right-0 lg:h-[2375px] lg:w-[2375px] lg:translate-x-[-26%] lg:-translate-y-1/2">
+        <div className="absolute h-[2100px] w-[2100px] -bottom-[1420px] left-1/2 -translate-x-1/2 lg:top-[152%] lg:right-0 lg:h-[2375px] lg:w-[2375px] lg:translate-x-[-26%] lg:-translate-y-1/2">
           {/* Mobile 17° tilt */}
           <div className="relative h-full w-full rotate-[17deg] lg:rotate-0">
             <div
