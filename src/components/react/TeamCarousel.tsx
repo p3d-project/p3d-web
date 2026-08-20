@@ -19,7 +19,7 @@ function cogPct(value: number): string {
 const COG_ANCHORS = {
   mobile: {
     descCenter: { x: 1400, y: 700 },
-    titleCenter: { x: 1270, y: 275 },
+    titleCenter: { x: 1265, y: 290 },
   },
   desktop: {
     descCenter: { x: 1390, y: 730 },
@@ -33,10 +33,6 @@ const DESC_CIRCLE_PCT = (748 / COG_VIEWBOX) * 100;
 
 function silhouetteSrc(sil: Silhouette): string {
   return typeof sil.src === "string" ? sil.src : sil.src.src;
-}
-
-function teamDescription(description: string): string {
-  return description.replace(/^\[[^\]]+\]\s*/, "");
 }
 
 function getSilhouetteAdjustments(team: TeamData) {
@@ -94,18 +90,20 @@ function ArchedTeamName({ name }: { name: string }) {
       aria-hidden="true"
     >
       <defs>
-        {/* Expanded viewBox and adjusted path to prevent top cropping */}
         <path id={id} d="M 30 120 Q 360 10 690 120" fill="none" />
       </defs>
       <text
-        fill="transparent"
+        fill="#002C48"
         stroke="#79CEFF"
-        strokeWidth="3.5"
+        strokeWidth="4.5"
+        strokeLinejoin="round"
+        strokeLinecap="round"
         style={{
           fontFamily: '"Noto Sans JP", sans-serif',
           fontWeight: 900,
           fontSize: 78,
           letterSpacing: "0.06em",
+          paintOrder: "stroke fill",
         }}
       >
         <textPath href={`#${id}`} startOffset="50%" textAnchor="middle">
@@ -122,8 +120,9 @@ function FlatTeamName({ name }: { name: string }) {
       className="whitespace-nowrap text-[clamp(2.25rem,11vw,3.25rem)] font-black uppercase tracking-[0.06em]"
       style={{ 
         fontFamily: '"Noto Sans JP", sans-serif',
-        WebkitTextStroke: '2.5px #79CEFF',
-        color: 'transparent'
+        WebkitTextStroke: '4px #79CEFF',
+        color: '#002C48',
+        paintOrder: 'stroke fill'
       }}
     >
       {name}
@@ -140,18 +139,18 @@ function MobileDescription({ team, opacity }: { team: TeamData; opacity: number 
       style={{
         left: cogPct(descCenter.x),
         top: cogPct(descCenter.y),
-        width: `${DESC_CIRCLE_PCT}%`,
-        aspectRatio: "1 / 1",
+        width: `${DESC_CIRCLE_PCT * 0.78}%`,
+        aspectRatio: "1 / 1.35",
         transform: "translate(-50%, -50%) rotate(-17deg)",
         opacity,
       }}
     >
       <div
-        className="flex h-[90%] w-[90%] items-center justify-center text-center text-black"
-        style={{ fontFamily: '"MgOpenCosmeticaBold", sans-serif' }}
+        className="flex h-full w-full items-center justify-center text-center text-black"
+        style={{ fontFamily: '"MgOpenCosmeticaRegular", Georgia, serif' }}
       >
-        <p className="text-base leading-snug sm:text-lg">
-          {teamDescription(team.description)}
+        <p className="text-[1.35rem] leading-[1.25]">
+          {team.description}
         </p>
       </div>
     </div>
@@ -233,18 +232,18 @@ function DesktopDescription({ team, opacity }: { team: TeamData; opacity: number
       style={{
         left: cogPct(descCenter.x),
         top: cogPct(descCenter.y),
-        width: `${DESC_CIRCLE_PCT}%`,
-        aspectRatio: "1 / 1",
+        width: `${DESC_CIRCLE_PCT * 0.78}%`,
+        aspectRatio: "1 / 1.35",
         transform: "translate(-50%, -50%)",
         opacity,
       }}
     >
       <div
-        className="flex h-[86%] w-[82%] items-center justify-center text-center text-black"
-        style={{ fontFamily: '"MgOpenCosmeticaBold", sans-serif' }}
+        className="flex h-full w-full items-center justify-center text-center text-black"
+        style={{ fontFamily: '"MgOpenCosmeticaRegular", Georgia, serif' }}
       >
-        <p className="text-lg leading-relaxed xl:text-xl">
-          {teamDescription(team.description)}
+        <p className="text-xl leading-relaxed">
+          {team.description}
         </p>
       </div>
     </div>
@@ -325,10 +324,10 @@ export default function TeamCarousel() {
   const isTransitioning = outgoingStep !== null;
 
   return (
-    <div className="relative flex min-h-[750px] w-full flex-col items-center overflow-hidden py-12">
+    <div className="relative flex min-h-[820px] w-full flex-col items-center overflow-hidden pt-16 pb-12 sm:pt-20">
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         {/* Cog container */}
-        <div className="absolute h-[2500px] w-[2500px] -bottom-[1725px] left-1/2 -translate-x-1/2 lg:top-[157%] lg:right-0 lg:h-[2375px] lg:w-[2375px] lg:translate-x-[-26%] lg:-translate-y-1/2">
+        <div className="absolute h-[2500px] w-[2500px] -bottom-[1725px] left-1/2 -translate-x-1/2 lg:top-[152%] lg:right-0 lg:h-[2375px] lg:w-[2375px] lg:translate-x-[-26%] lg:-translate-y-1/2">
           {/* Mobile 17° tilt */}
           <div className="relative h-full w-full rotate-[17deg] lg:rotate-0">
             <div
@@ -363,9 +362,9 @@ export default function TeamCarousel() {
 
       <style>{`
         @font-face {
-          font-family: 'MgOpenCosmeticaBold';
-          src: url('../../assets/fonts/MgOpenCosmeticaBold.ttf') format('truetype');
-          font-weight: bold;
+          font-family: 'MgOpenCosmeticaRegular';
+          src: url('../../assets/fonts/MgOpenCosmeticaRegular.ttf') format('truetype');
+          font-weight: normal;
           font-style: normal;
           font-display: swap;
         }
@@ -413,7 +412,8 @@ export default function TeamCarousel() {
         }
       `}</style>
 
-      <div className="relative z-10 mb-12 flex w-full max-w-[1500px] items-center justify-between px-6 sm:px-12">
+      {/* Paginator buttons container */}
+      <div className="relative z-10 mb-12 flex w-full max-w-[1500px] items-center justify-between px-6 pt-6 sm:px-12 sm:pt-4">
         <button
           type="button"
           onClick={handlePrev}
