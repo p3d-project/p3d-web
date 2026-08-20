@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { TEAMS, TEAM_SELECTED_EVENT, type Silhouette, type TeamData } from "../../lib/teams";
 import arrowSvg from "../../assets/Arrow-7.svg?raw";
 import cogSvg from "../../assets/Cog.svg?url";
+import cosmoFontUrl from "../../assets/fonts/MgOpenCosmeticaRegular.ttf";
 
 const SPIN_DURATION_MS = 700;
 const COG_VIEWBOX = 3400;
@@ -63,6 +64,10 @@ function getSilhouetteAdjustments(team: TeamData) {
 }
 
 function TeamSilhouettes({ team }: { team: TeamData }) {
+  const isTrio = team.silhouettesBlue.length === 3;
+  const isMultiple = team.silhouettesBlue.length > 1;
+  const marginClass = isMultiple && !isTrio ? "-mr-24" : "-mr-16";
+
   return (
     <div className="flex items-end justify-start">
       {getSilhouetteAdjustments(team).map(({ sil, scaleMultiplier, translateX }) => (
@@ -74,7 +79,7 @@ function TeamSilhouettes({ team }: { team: TeamData }) {
             height: `${sil.heightDesktop * scaleMultiplier}px`,
             transform: `translateX(${translateX}px)`,
           }}
-          className="relative z-10 -mr-16 w-auto object-contain last:mr-0"
+          className={`relative z-10 ${marginClass} w-auto object-contain last:mr-0`}
         />
       ))}
     </div>
@@ -364,7 +369,7 @@ export default function TeamCarousel() {
       <style>{`
         @font-face {
           font-family: 'MgOpenCosmeticaRegular';
-          src: url('../../assets/fonts/MgOpenCosmeticaRegular.ttf') format('truetype');
+          src: url('${cosmoFontUrl}') format('truetype');
           font-weight: normal;
           font-style: normal;
           font-display: swap;
