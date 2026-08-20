@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { TEAMS, TEAM_SELECTED_EVENT, type Silhouette, type TeamData } from "../../lib/teams";
 import arrowSvg from "../../assets/Arrow-7.svg?raw";
 import cogSvg from "../../assets/Cog.svg?url";
-import cosmoFontUrl from "../../assets/fonts/MgOpenCosmeticaRegular.ttf";
 
 const SPIN_DURATION_MS = 700;
 const COG_VIEWBOX = 3400;
@@ -105,7 +104,7 @@ function ArchedTeamName({ name }: { name: string }) {
         strokeLinejoin="round"
         strokeLinecap="round"
         style={{
-          fontFamily: '"Noto Sans JP", sans-serif',
+          fontFamily: "var(--font-noto-sans)",
           fontWeight: 900,
           fontSize: 78,
           letterSpacing: "0.06em",
@@ -123,9 +122,8 @@ function ArchedTeamName({ name }: { name: string }) {
 function FlatTeamName({ name }: { name: string }) {
   return (
     <p
-      className="whitespace-nowrap text-[clamp(2rem,10vw,3rem)] font-black uppercase tracking-[0.06em]"
+      className="font-noto-sans whitespace-nowrap text-[clamp(2rem,10vw,3rem)] font-black uppercase tracking-[0.06em]"
       style={{ 
-        fontFamily: '"Noto Sans JP", sans-serif',
         WebkitTextStroke: '4px #79CEFF',
         color: '#002C48',
         paintOrder: 'stroke fill'
@@ -151,10 +149,7 @@ function MobileDescription({ team, opacity }: { team: TeamData; opacity: number 
         opacity,
       }}
     >
-      <div
-        className="flex h-full w-full items-center justify-center text-center text-black"
-        style={{ fontFamily: '"MgOpenCosmeticaRegular", Georgia, serif' }}
-      >
+      <div className="font-serif flex h-full w-full items-center justify-center text-center text-black">
         <p className="text-[1.2rem] leading-[1.25]">
           {team.description}
         </p>
@@ -244,10 +239,7 @@ function DesktopDescription({ team, opacity }: { team: TeamData; opacity: number
         opacity,
       }}
     >
-      <div
-        className="flex h-full w-full items-center justify-center text-center text-black"
-        style={{ fontFamily: '"MgOpenCosmeticaRegular", Georgia, serif' }}
-      >
+      <div className="font-serif flex h-full w-full items-center justify-center text-center text-black">
         <p className="text-xl leading-relaxed">
           {team.description}
         </p>
@@ -367,14 +359,6 @@ export default function TeamCarousel() {
       </div>
 
       <style>{`
-        @font-face {
-          font-family: 'MgOpenCosmeticaRegular';
-          src: url('${cosmoFontUrl}') format('truetype');
-          font-weight: normal;
-          font-style: normal;
-          font-display: swap;
-        }
-        
         @keyframes teamSpinOutFast {
           0% {
             opacity: 1;
