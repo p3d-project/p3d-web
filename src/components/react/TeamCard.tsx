@@ -1,7 +1,7 @@
 import { cn } from "../../lib/utils";
-import type { TeamData } from "../../lib/teams";
+import type { TeamData, Silhouette } from "../../lib/teams";
 
-/** Default heading styles when headingClassName is not passed. */
+/** Default heading styles when headingClassName is not passed[cite: 4]. */
 const DEFAULT_HEADING_CLASS: Record<"mobile" | "desktop", string> = {
   mobile: "text-base sm:text-lg font-black",
   desktop: "text-xl lg:text-2xl font-black",
@@ -10,15 +10,20 @@ const DEFAULT_HEADING_CLASS: Record<"mobile" | "desktop", string> = {
 interface TeamCardProps {
   team: TeamData;
   onSelect: (teamId: string) => void;
-  /** Optional wrapper classes (e.g. col-span on desktop). */
+  /** Optional wrapper classes (e.g. col-span on desktop)[cite: 4]. */
   className?: string;
-  /** Which silhouette heights to use — mobile or desktop. */
+  /** Which silhouette heights to use — mobile or desktop[cite: 4]. */
   breakpoint: "mobile" | "desktop";
-  /** Optional heading overrides; defaults per breakpoint otherwise. */
+  /** Optional heading overrides; defaults per breakpoint otherwise[cite: 4]. */
   headingClassName?: string;
 }
 
-/** Single team entry in the hero grid. Dispatches team.id to the parent on click. */
+/** Resolve silhouette src whether it's a string or ImageMetadata object[cite: 2]. */
+function silhouetteSrc(sil: Silhouette): string {
+  return typeof sil.src === "string" ? sil.src : sil.src.src;
+}
+
+/** Single team entry in the hero grid. Dispatches team.id to the parent on click[cite: 4]. */
 export default function TeamCard({
   team,
   onSelect,
@@ -51,7 +56,7 @@ export default function TeamCard({
           return (
             <img
               key={s.alt}
-              src={s.src}
+              src={silhouetteSrc(s)}
               alt={s.alt}
               style={{ height: `${height}px` }}
               className="w-auto max-w-none flex-shrink-0 object-contain object-bottom transition-transform duration-200 group-hover:scale-105"
