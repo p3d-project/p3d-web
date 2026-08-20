@@ -24,7 +24,7 @@ const COG_ANCHORS = {
   desktop: {
     descCenter: { x: 1390, y: 730 },
     titleCenter: { x: 1300, y: 300 },
-    silhouettes: { x: 520, y: 900 },
+    silhouettes: { x: 450, y: 900 },
   },
 } as const;
 
@@ -40,18 +40,19 @@ function getSilhouetteAdjustments(team: TeamData) {
 
   return team.silhouettesBlue.map((sil) => {
     const altLower = sil.alt.toLowerCase();
-    let scaleMultiplier = 1.3;
+    let scaleMultiplier = isTrio ? 1.3 : 1.55;
     let translateX = 0;
 
     if (isTrio) translateX -= 140;
+
     if (altLower.includes("fuuka")) {
-      scaleMultiplier = 1.42;
+      scaleMultiplier = isTrio ? 1.42 : 1.68;
       translateX -= 35;
     } else if (altLower.includes("aigis")) {
-      scaleMultiplier = 1.4;
+      scaleMultiplier = isTrio ? 1.4 : 1.65;
       translateX -= 30;
     } else if (altLower.includes("yukari")) {
-      scaleMultiplier = 1.4;
+      scaleMultiplier = isTrio ? 1.4 : 1.65;
       translateX -= 25;
     } else if (altLower.includes("ken") || altLower.includes("koromaru")) {
       translateX -= 25;
