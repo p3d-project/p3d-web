@@ -101,10 +101,10 @@ import glassBg from "../assets/GlassBG.svg";
     {/* Team detail — join CTA and carousel */}
     <section
       id="team"
-      class="relative z-10 w-full scroll-mt-16 bg-[#000024] pt-16 pb-0 overflow-hidden"
+      class="relative z-10 w-full scroll-mt-16 bg-[#000024] pt-10 pb-0 overflow-hidden sm:pt-12"
     >
       {/* Join CTA */}
-      <div class="w-full mb-16 px-4 sm:px-12 lg:pl-20 lg:pr-12">
+      <div class="w-full mb-1 px-4 sm:mb-2 sm:px-12 lg:pl-20 lg:pr-12">
         <Button
           as="a"
           href="https://docs.p3dual.com/guides/team-application/"
@@ -124,7 +124,9 @@ import glassBg from "../assets/GlassBG.svg";
 {/* Align carousel header padding with Join CTA on desktop without affecting cog positioning */}
 <style>
   @media (min-width: 1024px) {
-    :global(#team .relative.z-10.mb-12.flex.w-full.items-center.justify-between) {
+    :global(#team .relative.z-10.mb-20.flex.w-full.items-center.justify-between),
+    :global(#team .relative.z-10.mb-12.flex.w-full.items-center.justify-between),
+    :global(#team .relative.z-10.flex.w-full.items-center.justify-between) {
       padding-left: 5rem; /* matches lg:pl-20 */
       padding-right: 3rem; /* matches lg:pr-12 */
     }

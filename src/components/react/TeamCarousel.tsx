@@ -324,7 +324,7 @@ export default function TeamCarousel() {
   const isTransitioning = outgoingStep !== null;
 
   return (
-    <div className="relative flex min-h-[820px] w-full flex-col items-center overflow-hidden pt-16 pb-12 sm:pt-20">
+    <div className="relative flex min-h-[820px] w-full flex-col items-center overflow-hidden pt-6 pb-12 sm:pt-20">
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         {/* Cog container */}
         <div className="absolute h-[2500px] w-[2500px] -bottom-[1725px] left-1/2 -translate-x-1/2 lg:top-[152%] lg:right-0 lg:h-[2375px] lg:w-[2375px] lg:translate-x-[-26%] lg:-translate-y-1/2">
@@ -413,7 +413,7 @@ export default function TeamCarousel() {
       `}</style>
 
       {/* Paginator buttons container */}
-      <div className="relative z-10 mb-12 flex w-full max-w-[1500px] items-center justify-between px-6 pt-6 sm:px-12 sm:pt-4">
+      <div className="relative z-10 mb-20 sm:mb-12 flex w-full max-w-[1500px] items-center justify-between px-6 pt-0 sm:pt-2 sm:px-12">
         <button
           type="button"
           onClick={handlePrev}
