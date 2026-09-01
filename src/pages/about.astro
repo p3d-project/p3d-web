@@ -3,9 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import Button from "../components/react/Button.tsx";
 import TeamGrid from "../components/react/TeamGrid.tsx";
 import TeamCarousel from "../components/react/TeamCarousel.tsx";
-import arrowSvg from "../assets/Arrow-7.svg?raw";
+import ArrowIcon from "../components/react/ArrowIcon.tsx";
 import dotsPattern from "../assets/Dots.svg";
-import glassBg from "../assets/GlassBG.svg";
+import glassPng from "../assets/glass.png";
 ---
 
 <Layout>
@@ -15,7 +15,7 @@ import glassBg from "../assets/GlassBG.svg";
       id="index"
       class="relative min-h-screen w-full overflow-hidden bg-[#E6F0FA]"
     >
-      {/* Background — dot pattern and glass overlays */}
+      {/* Background — dot pattern and desktop glass overlay */}
       <div
         class="pointer-events-none absolute inset-0 overflow-hidden select-none"
       >
@@ -26,44 +26,53 @@ import glassBg from "../assets/GlassBG.svg";
         >
         </div>
 
-        {/* Glass overlay — desktop */}
-        <img
-          src={glassBg.src}
-          alt=""
+        {/* In-code Glass Oval — Desktop (anchored to right edge, halfway out of view behind team grid) */}
+        <div
+          class="absolute right-0 top-1/2 hidden h-[1140px] w-[611px] max-w-none translate-x-[36%] -translate-y-1/2 overflow-hidden rounded-[50%] bg-[#79CEFF] select-none lg:block"
           aria-hidden="true"
-          class="absolute top-1/2 right-0 hidden h-[1100px] w-auto max-w-none translate-x-[30%] -translate-y-1/2 object-contain lg:block"
-        />
+        >
+          <img
+            src={glassPng.src}
+            alt=""
+            aria-hidden="true"
+            class="absolute inset-0 h-full w-full object-cover opacity-15"
+          />
+        </div>
       </div>
 
       {/* Page grid — intro column and team grid column */}
       <div
-        class="relative z-10 grid min-h-screen w-full grid-cols-1 px-4 pt-16 sm:px-12 lg:grid-cols-12 lg:pr-6 lg:pl-16"
+        class="p3d-container relative z-10 grid min-h-screen w-full grid-cols-1 pt-16 lg:grid-cols-12"
       >
+
         {/* Intro column — copy and scroll cue */}
         <div
-          class="relative flex flex-col items-center justify-start pt-6 pr-0 pb-24 text-center sm:pt-10 lg:col-span-5 lg:items-start lg:pt-28 lg:pr-4 lg:pb-16 lg:text-left"
+          class="relative flex flex-col items-center justify-start pt-6 pr-0 pb-4 text-center sm:pt-10 sm:pb-6 lg:col-span-5 lg:items-start lg:pt-28 lg:pr-4 lg:pb-16 lg:text-left"
         >
-          {/* Glass overlay — mobile (rotated) */}
+          {
+            /* In-code Glass Oval — Mobile (horizontal oval covering intro and ending just below the arrow) */
+          }
           <div
-            class="pointer-events-none absolute -inset-x-12 -top-16 -z-10 block lg:hidden"
+            class="pointer-events-none absolute bottom-[-4px] left-1/2 -z-10 block h-[740px] w-[1100px] max-w-none -translate-x-1/2 overflow-hidden rounded-[50%] bg-[#79CEFF] select-none sm:h-[805px] sm:w-[1200px] lg:hidden"
+            aria-hidden="true"
           >
             <img
-              src={glassBg.src}
+              src={glassPng.src}
               alt=""
               aria-hidden="true"
-              class="absolute top-1/2 left-1/2 h-[1375px] min-h-[1275px] w-auto max-w-none -translate-x-1/2 -translate-y-[41.5%] rotate-90 object-contain"
+              class="absolute inset-0 h-full w-full object-cover opacity-15"
             />
           </div>
 
           <h1
             style="-webkit-text-stroke: 1.5px #001B3D;"
-            class="font-bmspace mb-3 text-4xl leading-tight tracking-[-0.02em] text-[#001B3D] sm:text-5xl lg:mb-6 lg:text-[55px]"
+            class="font-bmspace mb-3 text-[45px] leading-tight tracking-[-0.02em] text-[#001B3D] sm:text-5xl lg:mb-6 lg:text-[55px]"
           >
             About Us
           </h1>
 
           <p
-            class="font-noto-sans max-w-[440px] px-2 text-base leading-snug font-semibold text-[#001B3D] sm:px-0 sm:text-xl lg:text-[28.1px]"
+            class="font-noto-sans max-w-[440px] px-2 text-[19px] leading-snug font-semibold text-[#001B3D] sm:px-0 sm:text-xl lg:text-[28.1px]"
           >
             Our goal and what unites us around that goal are simple: love for
             Persona 3 and for the Nintendo DS. P3D is not simply us asking “what
@@ -78,14 +87,17 @@ import glassBg from "../assets/GlassBG.svg";
             class="group mt-3 inline-flex cursor-pointer flex-col items-center gap-1.5 border-0 bg-transparent p-0 sm:mt-5 sm:gap-2 lg:mt-12 lg:flex-row lg:gap-6"
           >
             <span
-              class="font-noto-sans order-1 text-xl leading-tight font-extrabold text-[#000024] sm:text-2xl lg:order-2 lg:w-[229px] lg:text-[35.2px]"
+              class="font-noto-sans order-1 text-[26px] leading-tight font-extrabold text-[#000024] sm:text-2xl lg:order-2 lg:w-[229px] lg:text-[35.2px]"
             >
               Explore the teams
             </span>
             <div
-              class="order-2 flex-shrink-0 transition-transform duration-300 ease-in-out group-hover:translate-y-2 lg:order-1 [&>svg]:h-[45px] [&>svg]:w-auto sm:[&>svg]:h-[70px] lg:[&>svg]:h-[167px]"
-              set:html={arrowSvg}
-            />
+              class="order-2 flex-shrink-0 text-[#000024] transition-transform duration-300 ease-in-out group-hover:translate-y-2 lg:order-1"
+            >
+              <ArrowIcon
+                className="h-[68px] w-auto sm:h-[70px] lg:h-[167px]"
+              />
+            </div>
           </button>
         </div>
 
@@ -104,7 +116,7 @@ import glassBg from "../assets/GlassBG.svg";
       class="relative z-10 w-full scroll-mt-16 overflow-hidden bg-[#000024] pt-10 pb-0 sm:pt-12"
     >
       {/* Join CTA */}
-      <div class="mb-1 w-full px-4 sm:mb-2 sm:px-12 lg:pr-12 lg:pl-20">
+      <div class="p3d-container mb-1 w-full sm:mb-2">
         <Button
           as="a"
           href="https://docs.p3dual.com/guides/team-application/"
@@ -121,21 +133,10 @@ import glassBg from "../assets/GlassBG.svg";
   </main>
 </Layout>
 
-{
-  /* Align carousel header padding with Join CTA on desktop without affecting cog positioning */
-}
 <style>
-  @media (min-width: 1024px) {
-    :global(
-      #team .relative.z-10.mb-20.flex.w-full.items-center.justify-between
-    ),
-    :global(
-      #team .relative.z-10.mb-12.flex.w-full.items-center.justify-between
-    ),
-    :global(#team .relative.z-10.flex.w-full.items-center.justify-between) {
-      padding-left: 5rem; /* matches lg:pl-20 */
-      padding-right: 3rem; /* matches lg:pr-12 */
-    }
+  /* Give the cog container an extra 5px worth of bottom spacing */
+  :global(#team .absolute.-bottom-\[1850px\]) {
+    bottom: calc(-1850px - 5px);
   }
 </style>
 

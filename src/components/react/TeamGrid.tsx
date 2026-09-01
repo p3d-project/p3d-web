@@ -20,23 +20,27 @@ export default function TeamGrid() {
   return (
     <div className="flex h-full w-full flex-col justify-center">
       {/* Mobile layout (< lg) — row structure matches the Figma mockup. */}
-      <div className="flex w-full flex-col gap-8 px-1 py-4 sm:gap-10 lg:hidden">
+      {/* Cards are scaled down to 75% visually to prevent silhouettes from touching. */}
+      <div className="flex w-full flex-col gap-4 px-1 py-4 sm:gap-10 lg:hidden">
         {/* Row 1: Game Dev, Web Dev, UX/UI */}
-        <div className="grid w-full grid-cols-3 items-end justify-items-center gap-1 sm:gap-3">
+        <div className="grid w-full grid-cols-3 items-stretch justify-items-center gap-2 sm:gap-3">
           <TeamCard
             team={team("game-dev")}
             onSelect={handleTeamClick}
             breakpoint="mobile"
+            className="origin-center scale-75 transition-transform sm:scale-100"
           />
           <TeamCard
             team={team("web-dev")}
             onSelect={handleTeamClick}
             breakpoint="mobile"
+            className="origin-center scale-75 transition-transform sm:scale-100"
           />
           <TeamCard
             team={team("ux-ui")}
             onSelect={handleTeamClick}
             breakpoint="mobile"
+            className="origin-center scale-75 transition-transform sm:scale-100"
           />
         </div>
 
@@ -45,25 +49,28 @@ export default function TeamGrid() {
           team={team("graphics")}
           onSelect={handleTeamClick}
           breakpoint="mobile"
-          className="w-full"
+          className="w-full origin-center scale-75 transition-transform sm:scale-100"
         />
 
         {/* Row 3: Music, 3D, Video */}
-        <div className="grid w-full grid-cols-3 items-end justify-items-center gap-1 sm:gap-3">
+        <div className="grid w-full grid-cols-3 items-stretch justify-items-center gap-2 sm:gap-3">
           <TeamCard
             team={team("music")}
             onSelect={handleTeamClick}
             breakpoint="mobile"
+            className="origin-center scale-75 transition-transform sm:scale-100"
           />
           <TeamCard
             team={team("3d")}
             onSelect={handleTeamClick}
             breakpoint="mobile"
+            className="origin-center scale-75 transition-transform sm:scale-100"
           />
           <TeamCard
             team={team("video")}
             onSelect={handleTeamClick}
             breakpoint="mobile"
+            className="origin-center scale-75 transition-transform sm:scale-100"
           />
         </div>
       </div>
@@ -71,7 +78,7 @@ export default function TeamGrid() {
       {/* Desktop layout (>= lg) — row structure matches the Figma mockup. */}
       <div className="hidden w-full flex-col justify-center gap-12 py-4 pr-2 pl-0 lg:flex lg:gap-16">
         {/* Top row: Game Dev, Web Dev, UX/UI, 3D */}
-        <div className="grid w-full grid-cols-4 items-end justify-items-center gap-4 lg:gap-8">
+        <div className="grid w-full grid-cols-4 items-stretch justify-items-center gap-4 lg:gap-8">
           <TeamCard
             team={team("game-dev")}
             onSelect={handleTeamClick}
@@ -95,7 +102,7 @@ export default function TeamGrid() {
         </div>
 
         {/* Bottom row: Graphics (span 2), Music, Video */}
-        <div className="grid w-full grid-cols-4 items-end justify-items-center gap-4 lg:gap-8">
+        <div className="grid w-full grid-cols-4 items-stretch justify-items-center gap-4 lg:gap-8">
           <TeamCard
             team={team("graphics")}
             onSelect={handleTeamClick}
