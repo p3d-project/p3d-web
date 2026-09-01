@@ -455,7 +455,7 @@ export default function TeamCarousel() {
       `}</style>
 
       {/* Navigation buttons */}
-      <div className="p3d-container relative z-10 my-2 flex w-full items-center justify-between md:my-1 lg:my-14">
+      <div className="p3d-container relative z-10 my-2 flex w-full items-center justify-between md:my-1 lg:mt-4 lg:mb-250">
         <button
           type="button"
           onClick={handlePrev}
@@ -505,8 +505,8 @@ export default function TeamCarousel() {
       </div>
 
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-        {/* Absolute Cog Positioning on Tablet: */}
-        <div className="absolute -bottom-[960px] left-1/2 mb-8 h-[1400px] w-[1400px] -translate-x-1/2 md:-bottom-[1700px] md:h-[2450px] md:w-[2450px] lg:top-[154%] lg:right-0 lg:h-[3450px] lg:w-[3450px] lg:translate-x-[-33%] lg:-translate-y-1/2">
+        {/* Absolute Cog Positioning: */}
+        <div className="absolute -bottom-[960px] left-1/2 mb-8 h-[1400px] w-[1400px] -translate-x-1/2 md:-bottom-[1700px] md:h-[2450px] md:w-[2450px] lg:top-[157%] lg:right-0 lg:h-[4150px] lg:w-[4150px] lg:translate-x-[-34%] lg:-translate-y-1/2">
           <div className="relative h-full w-full rotate-[17deg] lg:rotate-0">
             {/* Rotating Cog Wheel Background Only */}
             <div
