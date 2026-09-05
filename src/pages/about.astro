@@ -1,11 +1,148 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Button from "../components/react/Button.tsx";
+import TeamGrid from "../components/react/TeamGrid.tsx";
+import TeamCarousel from "../components/react/TeamCarousel.tsx";
+import ArrowIcon from "../components/react/ArrowIcon.tsx";
+import dotsPattern from "../assets/Dots.svg";
+import glassPng from "../assets/glass.png";
 ---
 
 <Layout>
-  <main class="pt-15">
-    <section id="index" class="container mx-auto">
-      <h1 class="text-center">Index</h1>
+  <main>
+    {/* Hero — intro copy and team selection grid */}
+    <section
+      id="index"
+      class="relative min-h-screen w-full overflow-hidden bg-[#E6F0FA]"
+    >
+      {/* Background — dot pattern and desktop glass overlay */}
+      <div
+        class="pointer-events-none absolute inset-0 overflow-hidden select-none"
+      >
+        {/* Dot pattern: full width on mobile, right half on desktop */}
+        <div
+          class="absolute inset-0 bg-repeat lg:left-[43%]"
+          style={`background-image: url('${dotsPattern.src}'); background-size: auto;`}
+        >
+        </div>
+
+        {
+          /* In-code Glass Oval — Desktop (anchored to right edge, halfway out of view behind team grid) */
+        }
+        <div
+          class="absolute top-1/2 right-0 hidden h-[1140px] w-[611px] max-w-none translate-x-[36%] -translate-y-1/2 overflow-hidden rounded-[50%] bg-[#79CEFF] select-none lg:block"
+          aria-hidden="true"
+        >
+          <img
+            src={glassPng.src}
+            alt=""
+            aria-hidden="true"
+            class="absolute inset-0 h-full w-full object-cover opacity-15"
+          />
+        </div>
+      </div>
+
+      {/* Page grid — intro column and team grid column */}
+      <div
+        class="p3d-container relative z-10 grid min-h-screen w-full grid-cols-1 pt-16 lg:grid-cols-12"
+      >
+        {/* Intro column — copy and scroll cue */}
+        <div
+          class="relative flex flex-col items-center justify-start pt-6 pr-0 pb-4 text-center sm:pt-10 sm:pb-6 lg:col-span-5 lg:items-start lg:pt-28 lg:pr-4 lg:pb-16 lg:text-left"
+        >
+          {
+            /* In-code Glass Oval — Mobile (horizontal oval covering intro and ending just below the arrow) */
+          }
+          <div
+            class="pointer-events-none absolute left-1/2 -z-10 block h-[860px] w-[1280px] max-w-none -translate-x-1/2 overflow-hidden rounded-[50%] bg-[#79CEFF] select-none sm:h-[940px] sm:w-[1500px] lg:hidden"
+            style="top: -450px;"
+            aria-hidden="true"
+          >
+            <img
+              src={glassPng.src}
+              alt=""
+              aria-hidden="true"
+              class="absolute inset-0 h-full w-full object-cover opacity-15"
+            />
+          </div>
+
+          <h1
+            style="-webkit-text-stroke: 1.5px #001B3D;"
+            class="font-bmspace mb-3 text-[45px] leading-tight tracking-[-0.02em] text-[#001B3D] sm:text-5xl lg:mb-6 lg:text-[55px]"
+          >
+            About Us
+          </h1>
+
+          <p
+            class="font-noto-sans max-w-[440px] px-2 text-[19px] leading-snug font-semibold text-[#001B3D] sm:px-0 sm:text-xl lg:text-[28.1px]"
+          >
+            Our goal and what unites us around that goal are simple: love for
+            Persona 3 and for the Nintendo DS. P3D is not simply us asking “what
+            if,” but forging a tailored experience from the ground-up. To
+            accomplish this, we divided ourselves into several teams.
+          </p>
+
+          {/* Scroll cue — links to the team detail section */}
+          <button
+            id="scroll-cue-btn"
+            type="button"
+            class="group mt-3 inline-flex cursor-pointer flex-col items-center gap-1.5 border-0 bg-transparent p-0 sm:mt-5 sm:gap-2 lg:mt-12 lg:flex-row lg:gap-6"
+          >
+            <span
+              class="font-noto-sans order-1 text-[26px] leading-tight font-extrabold text-[#000024] sm:text-2xl lg:order-2 lg:w-[229px] lg:text-[35.2px]"
+            >
+              Explore the teams
+            </span>
+            <div
+              class="order-2 flex-shrink-0 text-[#000024] transition-transform duration-300 ease-in-out group-hover:translate-y-2 lg:order-1"
+            >
+              <ArrowIcon className="h-[68px] w-auto sm:h-[70px] lg:h-[167px]" />
+            </div>
+          </button>
+        </div>
+
+        {/* Team grid column — hydrated React island */}
+        <div
+          class="relative flex h-full w-full items-center justify-center pt-10 pb-16 lg:col-span-7 lg:justify-end lg:py-0 lg:pl-12"
+        >
+          <TeamGrid client:load />
+        </div>
+      </div>
+    </section>
+
+    {/* Team detail — join CTA and carousel */}
+    <section
+      id="team"
+      class="relative z-10 w-full scroll-mt-16 overflow-hidden bg-[#000024] pt-10 pb-0 sm:pt-12"
+    >
+      {/* Join CTA */}
+      <div class="p3d-container mb-1 w-full sm:mb-2">
+        <Button
+          as="a"
+          href="https://docs.p3dual.com/guides/team-application/"
+          size="lg"
+          className="w-full justify-center py-5 text-4xl"
+        >
+          Join Now!
+        </Button>
+      </div>
+
+      {/* Team carousel — hydrated React island */}
+      <TeamCarousel client:load />
     </section>
   </main>
 </Layout>
+
+<style>
+  /* Give the cog container an extra 5px worth of bottom spacing */
+  :global(#team .absolute.-bottom-\[1850px\]) {
+    bottom: calc(-1850px - 5px);
+  }
+</style>
+
+{/* Scroll cue button click handler — scrolls to the team detail section */}
+<script>
+  document.getElementById("scroll-cue-btn")?.addEventListener("click", () => {
+    document.getElementById("team")?.scrollIntoView();
+  });
+</script>
