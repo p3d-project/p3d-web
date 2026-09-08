@@ -1,11 +1,147 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Button from "../components/react/Button.tsx";
+import dots from "../assets/Dots.svg";
+import glass from "../assets/glass.png";
+import makoto from "../assets/makoto-standing.png";
 ---
 
 <Layout>
-  <main class="pt-15">
-    <section id="index" class="container mx-auto">
-      <h1 class="text-center">Index</h1>
+  <main>
+    <section
+      id="index"
+      class="relative min-h-screen w-full overflow-hidden bg-[#E6F0FA]"
+    >
+      <div
+        class="pointer-events-none absolute inset-0 overflow-hidden select-none"
+      >
+        <div
+          class="absolute inset-0 bg-repeat lg:left-[50%]"
+          style={`background-image: url('${dots.src}'); background-size: auto;`}
+        >
+        </div>
+
+        <div
+          class="absolute top-1/2 right-0 h-[936px] w-[648px] max-w-none translate-x-[6%] -translate-y-1/2 overflow-hidden select-none lg:block"
+          aria-hidden="true"
+        >
+          <img
+            src={makoto.src}
+            alt=""
+            aria-hidden="false"
+          />
+        </div>
+      </div>
+
+      <div
+        class="p3d-container relative z-10 grid min-h-screen w-full grid-cols-1 pt-16 lg:grid-cols-12"
+      >
+        <div
+          class="relative flex flex-col items-center justify-start pt-6 pr-0 pb-4 text-center sm:pt-10 sm:pb-6 lg:col-span-5 lg:items-start lg:pt-28 lg:pr-4 lg:pb-16 lg:text-left"
+        >
+  
+          <div
+            class="pointer-events-none absolute left-1/2 -z-10 block h-[860px] w-[1280px] max-w-none -translate-x-1/2 overflow-hidden rounded-[50%] bg-[#79CEFF] select-none sm:h-[940px] sm:w-[1500px] lg:hidden"
+            style="top: -450px;"
+            aria-hidden="true"
+          >
+          </div>
+
+          <h1
+            style="-webkit-text-stroke: 1.5px #001B3D;"
+            class="font-bmspace mb-3 text-[45px] leading-tight tracking-[-0.05em] text-[#001B3D] sm:text-5xl lg:mb-6 lg:text-[55px]"
+          >
+            Downloads
+          </h1>
+
+          <p
+            class="font-noto-sans max-w-[440px] px-2 text-[19px] leading-snug font-semibold text-[#001B3D] sm:px-0 sm:text-xl lg:text-[28.1px]"
+          >
+            Next Minor Release (v1.2.0)
+          </p>
+          <p
+            class="font-MgOpenCosmeticaBold max-w-[400px] px-2 text-[19px] text-[#001B3D] sm:px-0 sm:text-xl lg:text-[20px]"
+          >
+            August 20, 2026
+          </p>
+          <br />
+          <br />
+          <p
+            class="font-noto-sans max-w-[440px] px-2 text-[19px] font-semibold text-[#001B3D] sm:px-0 sm:text-xl lg:text-[28.1px]"
+          >
+            Next Minor Release (v2.0.0)
+          </p>
+          <p
+            class="font-MgOpenCosmeticaBold max-w-[400px] px-2 text-[19px] text-[#001B3D] sm:px-0 sm:text-xl lg:text-[20px]"
+          >
+            September, 2026
+          </p>
+
+           <section
+      id="team"
+      class="relative w-full scroll-mt-16 overflow-hidden px-150 py-10 pt-20 pb-5 sm:pt-22"
+    >
+    <div class="w-full flex flex-col items-start justify-center gap-4 sm:gap-6 lg:gap-2">
+      <div class="mb-4 flex justify-left">
+        <Button
+          as="a"
+          href=""
+          size="lg"
+          className="w-[1103px] py-5 text-4xl"
+        >
+          Download v.1.1.0
+        </Button>
+      </div>
+
+      <div class="flex justify-center gap-6">
+        <Button
+          as="a"
+          href=""
+          size="lg"
+          className="w-[200px] py-4 text-2xl"
+        >
+          Mirror 1
+        </Button>
+        
+      <Button
+          as="a"
+          href=""
+          size="lg"
+          className="w-[200px] py-4 text-2xl"
+        >
+          Mirror 2
+        </Button>
+    </div>
+    </div>
+  </section>
+
+          <button
+            id="scroll-cue-btn"
+            type="button"
+            class="group mt-3 inline-flex cursor-pointer flex-col items-center gap-1.5 border-0 bg-transparent p-0 sm:mt-5 sm:gap-2 lg:mt-12 lg:gap-6"
+          >
+          <div class ="bg-[#79CEFF] pb-16">
+            <h2 class="font-noto-sans max-w-[440px] px-2 text-[19px] leading-snug font-semibold text-[#001B3D] sm:px-0 sm:text-xl lg:text-[28.1px]">
+              What's New?
+            </h2>
+              
+            <p class="font-noto-sans max-w-[440px] px-2 text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[28.1px]">
+              For specifics, check out our <a href="" class="text-[#0000FF] underline">documentation!</a>
+            </p>
+            <div
+              class="order-2 flex-shrink-0 text-[#000024] transition-transform duration-300 ease-in-out group-hover:translate-y-2 lg:order-1"
+            >
+            </div>
+            </div>
+          </button>
+        </div>
+
+        <div
+          class="relative flex h-full w-full items-center justify-center pt-10 pb-16 lg:col-span-7 lg:justify-end lg:py-0 lg:pl-12"
+        >
+        </div>
+      </div>
     </section>
+
   </main>
 </Layout>
