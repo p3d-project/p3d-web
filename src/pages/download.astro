@@ -5,43 +5,42 @@ import dots from "../assets/Dots.svg";
 import glass from "../assets/glass.png";
 import makoto from "../assets/makoto-standing.png";
 ---
-
 <Layout>
   <main>
-    <section
-      id="index"
-      class="relative min-h-screen w-full overflow-hidden bg-[#E6F0FA]"
-    >
+    <section id="index" class="relative min-h-screen w-full">
       <div
-        class="pointer-events-none absolute inset-0 overflow-hidden select-none"
+        class="pointer-events-none absolute inset-0 select-none"
       >
+      <div class="pointer-events-none absolute inset-x-0 top-0 h-[calc(100%+300px)] bg-[#E6F0FA]"
+      aria-hidden="true"> </div>
         <div
-          class="absolute inset-0 bg-repeat lg:left-[50%]"
+          class="absolute inset-0 translate-y-12 bg-repeat h-[120%] lg:left-[40%]"
           style={`background-image: url('${dots.src}'); background-size: auto;`}
         >
         </div>
 
         <div
-          class="absolute top-1/2 right-0 h-[936px] w-[648px] max-w-none translate-x-[6%] -translate-y-1/2 overflow-hidden select-none lg:block"
+          class="absolute top-[64%] right-[2.1%] h-[1100px] w-[631px] max-w-none translate-x-[6%] -translate-y-1/2 select-none lg:block"
           aria-hidden="true"
         >
           <img
             src={makoto.src}
             alt=""
             aria-hidden="false"
+            class="h-full w-full object-contain"
           />
         </div>
       </div>
 
       <div
-        class="p3d-container relative z-10 grid min-h-screen w-full grid-cols-1 pt-16 lg:grid-cols-12"
+        class="p3d-container relative z-10 grid w-full grid-cols-1 pt-16 lg:grid-cols-12"
       >
         <div
           class="relative flex flex-col items-center justify-start pt-6 pr-0 pb-4 text-center sm:pt-10 sm:pb-6 lg:col-span-25 lg:items-start lg:pt-28 lg:pr-4 lg:pb-16 lg:text-left"
         >
   
           <div
-            class="pointer-events-none absolute left-1/2 -z-10 block h-[860px] w-[1280px] max-w-none -translate-x-1/2 overflow-hidden rounded-[50%] bg-[#79CEFF] select-none sm:h-[940px] sm:w-[1500px] lg:hidden"
+            class="pointer-events-none absolute left-1/2 -z-10 block h-[860px] w-[1280px] max-w-none -translate-x-1/2 rounded-[50%] bg-[#79CEFF] select-none sm:h-[940px] sm:w-[1500px] lg:hidden"
             style="top: -450px;"
             aria-hidden="true"
           >
@@ -75,21 +74,102 @@ import makoto from "../assets/makoto-standing.png";
             class="font-MgOpenCosmeticaBold max-w-[400px] px-2 text-[19px] text-[#001B3D] sm:px-0 sm:text-xl lg:text-[20px]"
           >
             September, 2026
-          </p>
-
+        </p>
            <section
       id="team"
-      class="relative w-full scroll-mt-16 overflow-hidden px-150 py-10 pt-20 pb-5 sm:pt-22"
+      class="relative w-full scroll-mt-16 px-150 py-10 pt-10 pb-5 sm:pt-22"
     >
     <div class="w-full flex flex-col items-start justify-center gap-4 sm:gap-6 lg:gap-2">
-      <div class="mb-4 flex justify-left">
+      <div class="mb-4 flex justify-left -translate-x-12 translate-y-6">
         <Button
           as="a"
           href=""
           size="lg"
-          className="w-[1103px] py-5 text-4xl"
+          className="w-[820px] py-5 text-4xl"
         >
-          Download v.1.1.0
+          Download v1.1.0
+        </Button>
+      </div>
+
+      <div class="flex justify-center gap-6 -translate-x-12 translate-y-6">
+        <Button
+          as="a"
+          href=""
+          size="lg"
+          className="w-[400px] py-4 text-2xl"
+        >
+          Mirror 1
+        </Button>
+        
+      <Button
+          as="a"
+          href=""
+          size="lg"
+          className="w-[400px] py-4 text-2xl"
+        >
+          Mirror 2
+        </Button>
+        </div>
+        </div>
+    </section>
+  </div>
+</div>
+  </section>
+          <section class ="relative z-20 mb-4 w-full bg-[#79CEFF] pb-16 translate-y-43">
+            <h2 class="font-noto-sans max-w-[440px] mb-4 px-2 pt-8 text-[19px] font-semibold text-[#001B3D] sm:px-0 sm:text-xl lg:text-[28.1px]">
+              What's New?
+            </h2>
+              
+            <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
+              For specifics, check out our <a href="" class="text-[#0000FF] underline">documentation!</a>
+            </p>
+            <ul class="list-disc font-MgOpenCosmeticaBold text-[19px] px-2 text-[#001B3D] sm:text-xl lg:text-[20px]">
+              <li>Replaced AI systems</li>
+              <li>Retooled and rebuilt Aegis-Engine</li>
+              <li>Added vertex lighting workflow support</li>
+              <li>Migrated from devkitpro NDS to BlocksDS</li>
+              <li>Replaced graphics rendering system</li>
+              <li>Revamped controls</li>
+              <li>Revamped UI for all menus</li>
+              <li>Custom text engine</li>
+              <li>Controllable Camera</li>
+              <li>Optimized VRAM usage</li>
+              <li>New dialogue busts with multiple facial expressions</li>
+              <li>A World Map</li>
+              <li>Custom music tracks</li>
+              <li>Custom 3D models for props, enviroment, and characters</li>
+            </ul>
+          </section>
+           <section class ="relative z-20 mb-4 pb-16 bg-[#E6F0FA] translate-y-16">
+          <h2 class="font-noto-sans max-w-[440px] mb-4 px-2 pt-8 text-[19px] font-semibold text-[#001B3D] sm:px-0 sm:text-xl lg:text-[28.1px]">
+            Legacy versions
+          </h2>
+          <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
+            V1.0.1
+          </p>
+          <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
+            PLACEHOLDER
+            PLACEHOLDER
+            PLACEHOLDER
+          </p>
+          <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
+            PLACEHOLDER
+            PLACEHOLDER
+            PLACEHOLDER
+          </p>
+          <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
+            PLACEHOLDER
+            PLACEHOLDER
+            PLACEHOLDER
+          </p>
+          <div class="mb-4 flex justify-left">
+        <Button
+          as="a"
+          href=""
+          size="lg"
+          className="w-[500px] py-5 text-4xl"
+        >
+          Download v1.1.0
         </Button>
       </div>
 
@@ -112,23 +192,6 @@ import makoto from "../assets/makoto-standing.png";
           Mirror 2
         </Button>
         </div>
-        </div>
-        </div>
-  </section>
-          <section class ="w-full bg-[#79CEFF] pb-16">
-            <h2 class="font-noto-sans max-w-[440px] px-2 text-[19px] leading-snug font-semibold text-[#001B3D] sm:px-0 sm:text-xl lg:text-[28.1px]">
-              What's New?
-            </h2>
-              
-            <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[28.1px]">
-              For specifics, check out our <a href="" class="text-[#0000FF] underline">documentation!</a>
-            </p>
-            <ul class="list-disc font-MgOpenCosmeticaBold text-[19px] px-2 text-[#001B3D] sm:text-xl lg:text-[20px]">
-              <li>Replaced AI systems</li>
-            </ul>
-          </section>
-          </div>
-          </div>
-          </section>
-          </main>
-          </Layout>
+        </section>
+    </main>
+</Layout>
