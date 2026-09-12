@@ -1,11 +1,104 @@
 ---
+import Button from "../components/react/Button";
 import Layout from "../layouts/Layout.astro";
+
+import HeroDS from "../assets/hero-ds.svg";
 ---
 
 <Layout>
   <main class="pt-15">
-    <section id="index" class="container mx-auto">
-      <h1 class="text-center">Index</h1>
+    <section id="hero" class="relative">
+      <!-- TODO: missing the dots background -->
+      <HeroDS class="absolute top-0 right-0 h-full w-auto text-[#79CEFF]" />
+
+      <div class="p3d-container relative flex flex-col gap-4 py-10">
+        <div class="flex flex-col gap-10">
+          <h1 class="font-bmspace text-2xl">
+            Introducing Persona 3 <span class="text-secondary">Dual</span>
+          </h1>
+          <p class="leading-5">
+            Persona 3 Dual is a ground-up, open-source demake that reimagines
+            the beloved RPG for classic dual-screen hardware. Step back into
+            2009, and master the Dark Hour, climb Tartarus, and live your high
+            school life all over again.
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <Button className="">Download Now!</Button>
+          <p class="text-center text-xs uppercase">
+            This project is not for profit and not affiliated with SEGA, ATLUS,
+            or Nintendo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="water-bg">
+      <section
+        id="showcase"
+        class="p3d-container flex flex-col gap-4 py-10 text-white"
+      >
+        <div class="flex flex-col gap-2">
+          <h2 class="font-noto-sans text-center font-extrabold">
+            A fan favourite story, now on dual screens
+          </h2>
+          <p class="text-center">
+            Take your favourite members of SEES with you wherever you go.
+            Whether you're hanging out at Paulownia Mall or strategizing your
+            next big fight in the control centre, the split-screen layout makes
+            managing your team, checking the calendar, and organizing your
+            Personas easier and more charming than ever.
+          </p>
+        </div>
+      </section>
+
+      <section
+        id="milestone-video"
+        class="p3d-container flex flex-col gap-4 pt-10 text-white"
+      >
+        <div class="flex flex-col gap-2">
+          <h2 class="font-noto-sans text-center text-xl font-extrabold">
+            Milestone #1: Game Concept
+          </h2>
+          <p class="text-center">Check out our latest release!</p>
+        </div>
+      </section>
+    </div>
+
+    <section
+      id="social-media"
+      class="water-bg p3d-container flex flex-col gap-4 py-20 text-white"
+    >
+      <div class="flex flex-col gap-2">
+        <h2 class="font-noto-sans text-center text-xl font-extrabold">
+          Keep Updated
+        </h2>
+        <p class="text-center">
+          Follow the project on our social media. Make sure to share!
+        </p>
+      </div>
+    </section>
+
+    <section id="download-cta"></section>
+
+    <section id="join-the-team">
+      <h2>Join the Team!</h2>
+      <p>Help contribute to making this project a reality!</p>
+    </section>
+
+    <section id="progress">
+      <h2>See the Progress</h2>
+      <p>Check out our Roadmap & Current Tasks</p>
     </section>
   </main>
 </Layout>
+
+<style>
+  @import "tailwindcss";
+
+  .water-bg {
+    background-image: url("@assets/water-bg.webp");
+    background-size: cover;
+  }
+</style>

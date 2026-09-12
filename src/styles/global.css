@@ -75,7 +75,7 @@
 }
 
 @utility p3d-container {
-  @apply container mx-auto px-2;
+  @apply container mx-auto px-5;
 
   @variant md {
     @apply px-8;
