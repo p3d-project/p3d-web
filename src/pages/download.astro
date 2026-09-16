@@ -20,7 +20,7 @@ import makoto from "../assets/makoto-standing.png";
         </div>
 
         <div
-          class="absolute top-[64%] right-[2.1%] h-[1100px] w-[631px] max-w-none translate-x-[6%] -translate-y-1/2 select-none lg:block"
+          class="absolute top-[64%] right-[2.1%] h-[1100px] w-[550px] max-w-none translate-x-[6%] -translate-y-1/2 select-none lg:block"
           aria-hidden="true"
         >
           <img
@@ -80,23 +80,23 @@ import makoto from "../assets/makoto-standing.png";
       class="relative w-full scroll-mt-16 px-150 py-10 pt-10 pb-5 sm:pt-22"
     >
     <div class="w-full flex flex-col items-start justify-center gap-4 sm:gap-6 lg:gap-2">
-      <div class="mb-4 flex justify-left -translate-x-12 translate-y-6">
+      <div class="relative mb-4 flex justify-left right-[200px] translate-y-6">
         <Button
           as="a"
           href=""
           size="lg"
-          className="w-[820px] py-5 text-4xl"
+          className="w-[820px] py-5 text-4xl justify-center"
         >
           Download v1.1.0
         </Button>
       </div>
 
-      <div class="flex justify-center gap-6 -translate-x-12 translate-y-6">
+      <div class="relative flex justify-center gap-6 right-[200px] translate-y-6">
         <Button
           as="a"
           href=""
           size="lg"
-          className="w-[400px] py-4 text-2xl"
+          className="w-[400px] py-4 text-2xl justify-center"
         >
           Mirror 1
         </Button>
@@ -105,7 +105,7 @@ import makoto from "../assets/makoto-standing.png";
           as="a"
           href=""
           size="lg"
-          className="w-[400px] py-4 text-2xl"
+          className="w-[400px] py-4 text-2xl justify-center"
         >
           Mirror 2
         </Button>
@@ -116,6 +116,7 @@ import makoto from "../assets/makoto-standing.png";
 </div>
   </section>
           <section class ="relative z-20 mb-4 w-full bg-[#79CEFF] pb-16 translate-y-43">
+            <div class="translate-x-20">
             <h2 class="font-noto-sans max-w-[440px] mb-4 px-2 pt-8 text-[19px] font-semibold text-[#001B3D] sm:px-0 sm:text-xl lg:text-[28.1px]">
               What's New?
             </h2>
@@ -139,8 +140,10 @@ import makoto from "../assets/makoto-standing.png";
               <li>Custom music tracks</li>
               <li>Custom 3D models for props, enviroment, and characters</li>
             </ul>
+          </div>
           </section>
            <section class ="relative z-20 mb-4 pb-16 bg-[#E6F0FA] translate-y-16">
+            <div class="translate-x-20">
           <h2 class="font-noto-sans max-w-[440px] mb-4 px-2 pt-8 text-[19px] font-semibold text-[#001B3D] sm:px-0 sm:text-xl lg:text-[28.1px]">
             Legacy versions
           </h2>
@@ -162,35 +165,39 @@ import makoto from "../assets/makoto-standing.png";
             PLACEHOLDER
             PLACEHOLDER
           </p>
-          <div class="mb-4 flex justify-left">
+        
+        <div class="mb-4 flex justify-left">
         <Button
           as="a"
           href=""
-          size="lg"
-          className="w-[500px] py-5 text-4xl"
+          size="md"
+          className="w-[410px] py-5 text-4xl justify-center"
         >
           Download v1.1.0
         </Button>
       </div>
 
-      <div class="flex justify-center gap-6">
+      <div class=" relative flex justify-center gap-6 right-[550px] translate-y-0.5">
         <Button
           as="a"
           href=""
           size="lg"
-          className="w-[200px] py-4 text-2xl"
+          className="w-[190px] py-4 text-2xl justify-center"
         >
           Mirror 1
         </Button>
-        
+      
+      <div class="flex justify-center gap-6">
       <Button
           as="a"
           href=""
           size="lg"
-          className="w-[200px] py-4 text-2xl"
+          className="w-[190px] py-4 text-2xl justify-center"
         >
           Mirror 2
         </Button>
+        </div>
+        </div>
         </div>
         </section>
     </main>
