@@ -82,24 +82,28 @@ function TeamSilhouettes({ team }: { team: TeamData }) {
   const isTrio = team.silhouettesBlue.length === 3;
   const isMultiple = team.silhouettesBlue.length > 1;
   const isPair = isMultiple && !isTrio;
-  const marginClass = isPair ? "-mr-48" : isMultiple ? "-mr-40" : "-mr-16";
+
+  const marginVw = isPair ? -10 : isMultiple ? -8.333 : -3.333;
+  const adjustments = getSilhouetteAdjustments(team);
 
   return (
     <div className="flex items-end justify-start">
-      {getSilhouetteAdjustments(team).map(
-        ({ sil, scaleMultiplier, translateX }) => (
+      {adjustments.map(({ sil, scaleMultiplier, translateX }, index) => {
+        const isLast = index === adjustments.length - 1;
+        return (
           <img
             key={sil.alt}
             src={silhouetteSrc(sil)}
             alt={sil.alt}
             style={{
-              height: `${sil.heightDesktop * scaleMultiplier}px`,
-              transform: `translateX(${translateX}px)`,
+              height: `${((sil.heightDesktop * scaleMultiplier) / 19.2).toFixed(3)}vw`,
+              transform: `translateX(${(translateX / 19.2).toFixed(3)}vw)`,
+              marginRight: isLast ? 0 : `${marginVw}vw`,
             }}
-            className={`relative z-10 ${marginClass} w-auto object-contain last:mr-0`}
+            className="relative z-10 w-auto object-contain"
           />
-        ),
-      )}
+        );
+      })}
     </div>
   );
 }
@@ -110,7 +114,7 @@ function ArchedTeamName({ name }: { name: string }) {
   return (
     <svg
       viewBox="0 -45 800 190"
-      className="h-[105px] w-[min(70vw,600px)] lg:h-[160px] lg:w-[780px]"
+      className="h-[105px] w-[min(70vw,600px)] 2xl:h-[8.33vw] 2xl:w-[40.625vw]"
       aria-hidden="true"
     >
       <defs>
@@ -236,7 +240,7 @@ function MobileDescription({
 
   return (
     <div
-      className="pointer-events-auto absolute z-[2] flex items-center justify-center lg:hidden"
+      className="pointer-events-auto absolute z-[2] flex items-center justify-center 2xl:hidden"
       style={{
         left: cogPct(descCenter.x),
         top: cogPct(descCenter.y),
@@ -249,7 +253,7 @@ function MobileDescription({
         className="flex h-full w-full items-center justify-center text-center font-serif text-black"
         style={style}
       >
-        <p className="text-[0.95rem] leading-[1.2] md:text-[1.15rem]">
+        <p className="text-[clamp(0px,3.78vw,18.4px)] leading-[1.2] md:text-[2.4vw]">
           {team.description}
         </p>
       </div>
@@ -271,7 +275,7 @@ function DesktopDescription({
 
   return (
     <div
-      className="pointer-events-auto absolute z-[2] hidden items-center justify-center lg:flex"
+      className="pointer-events-auto absolute z-[2] hidden items-center justify-center 2xl:flex"
       style={{
         left: cogPct(descCenter.x),
         top: cogPct(descCenter.y),
@@ -284,7 +288,7 @@ function DesktopDescription({
         className="flex h-full w-full items-center justify-center text-center font-serif text-black"
         style={style}
       >
-        <p className="text-2xl leading-relaxed">{team.description}</p>
+        <p className="text-[1.5vw] leading-relaxed">{team.description}</p>
       </div>
     </div>
   );
@@ -306,7 +310,7 @@ function StaticTeamContent({
     <div className="pointer-events-none absolute inset-0 z-[1]" style={style}>
       {/* Desktop — arched title */}
       <div
-        className="pointer-events-none absolute hidden lg:block"
+        className="pointer-events-none absolute hidden 2xl:block"
         style={{
           left: cogPct(desktop.titleCenter.x),
           top: cogPct(desktop.titleCenter.y),
@@ -318,7 +322,7 @@ function StaticTeamContent({
 
       {/* Desktop silhouettes — left of the cog */}
       <div
-        className="pointer-events-none absolute hidden lg:block"
+        className="pointer-events-none absolute hidden 2xl:block"
         style={{
           left: cogPct(desktop.silhouettes.x),
           top: cogPct(desktop.silhouettes.y),
@@ -440,7 +444,7 @@ export default function TeamCarousel() {
     typeof cogSvgUrl === "string" ? cogSvgUrl : (cogSvgUrl as any).src;
 
   return (
-    <div className="relative mt-8 flex min-h-[620px] w-full flex-col items-center overflow-hidden pt-6 pb-8 md:mt-4 md:min-h-[750px] md:pt-2 lg:mt-12 lg:min-h-[1150px] lg:pt-12 lg:pb-48">
+    <div className="relative mt-[7.96vw] flex min-h-[154.23vw] w-full flex-col items-center overflow-hidden pt-[5.97vw] pb-[7.96vw] md:mt-[2.08vw] md:min-h-[97.66vw] md:pt-[1.04vw] md:pb-[4.17vw] 2xl:mt-[2.5vw] 2xl:min-h-[59.9vw] 2xl:pt-[2.5vw] 2xl:pb-[10vw]">
       <style>{`
         @keyframes teamTextFade {
           from {
@@ -455,21 +459,21 @@ export default function TeamCarousel() {
       `}</style>
 
       {/* Navigation buttons */}
-      <div className="p3d-container relative z-10 my-2 flex w-full items-center justify-between md:my-1 lg:mt-4 lg:mb-250">
+      <div className="p3d-container relative z-10 my-[1.99vw] flex w-full items-center justify-between md:my-[0.52vw] 2xl:mt-[0.83vw] 2xl:mb-[52.08vw]">
         <button
           type="button"
           onClick={handlePrev}
           disabled={isAnimating}
           aria-label={`Go to ${prevTeam.name}`}
-          className="group inline-flex cursor-pointer items-center gap-2 bg-transparent transition-all duration-300 hover:-translate-x-2 disabled:cursor-not-allowed disabled:opacity-40 sm:gap-3"
+          className="group inline-flex cursor-pointer items-center gap-[1.99vw] bg-transparent transition-all duration-300 hover:-translate-x-2 disabled:cursor-not-allowed disabled:opacity-40 sm:gap-[1.56vw] 2xl:gap-[0.625vw]"
         >
-          <div className="text-secondary h-8 w-8 rotate-90 transition-transform duration-300 group-hover:scale-115 sm:h-12 sm:w-12">
+          <div className="text-secondary h-[7.96vw] w-[7.96vw] rotate-90 transition-transform duration-300 group-hover:scale-115 sm:h-[6.25vw] sm:w-[6.25vw] 2xl:h-[2.5vw] 2xl:w-[2.5vw]">
             <ArrowIcon className="h-full w-full" />
           </div>
           <span
             key={prevTeam.name}
             style={{ animation: "teamTextFade 0.4s ease-in-out" }}
-            className="font-noto-sans text-secondary inline-block text-base font-bold sm:text-2xl"
+            className="font-noto-sans text-secondary inline-block text-[3.98vw] font-bold sm:text-[3.13vw] 2xl:text-[1.25vw]"
           >
             {prevTeam.name}
           </span>
@@ -480,23 +484,23 @@ export default function TeamCarousel() {
           onClick={handleNext}
           disabled={isAnimating}
           aria-label={`Go to ${nextTeam.name}`}
-          className="group inline-flex cursor-pointer items-center gap-2 bg-transparent transition-all duration-300 hover:translate-x-2 disabled:cursor-not-allowed disabled:opacity-40 sm:gap-3"
+          className="group inline-flex cursor-pointer items-center gap-[1.99vw] bg-transparent transition-all duration-300 hover:translate-x-2 disabled:cursor-not-allowed disabled:opacity-40 sm:gap-[1.56vw] 2xl:gap-[0.625vw]"
         >
           <span
             key={nextTeam.name}
             style={{ animation: "teamTextFade 0.4s ease-in-out" }}
-            className="font-noto-sans text-secondary inline-block text-base font-bold sm:text-2xl"
+            className="font-noto-sans text-secondary inline-block text-[3.98vw] font-bold sm:text-[3.13vw] 2xl:text-[1.25vw]"
           >
             {nextTeam.name}
           </span>
-          <div className="text-secondary h-8 w-8 -rotate-90 transition-transform duration-300 group-hover:scale-115 sm:h-12 sm:w-12">
+          <div className="text-secondary h-[7.96vw] w-[7.96vw] -rotate-90 transition-transform duration-300 group-hover:scale-115 sm:h-[6.25vw] sm:w-[6.25vw] 2xl:h-[2.5vw] 2xl:w-[2.5vw]">
             <ArrowIcon className="h-full w-full" />
           </div>
         </button>
       </div>
 
       {/* Dedicated Tablet / Mobile Title Container with clean separation and clearance */}
-      <div className="pointer-events-none relative z-10 mt-4 mb-2 flex w-full justify-center md:mt-5 md:mb-4 lg:hidden">
+      <div className="pointer-events-none relative z-10 mt-[3.98vw] mb-[1.99vw] flex w-full justify-center md:mt-[2.6vw] md:mb-[2.08vw] 2xl:hidden">
         <div
           style={getTransformAndOpacity(animPhase, direction, "mobileTitle")}
         >
@@ -506,8 +510,8 @@ export default function TeamCarousel() {
 
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         {/* Absolute Cog Positioning: */}
-        <div className="absolute -bottom-[960px] left-1/2 mb-8 h-[1400px] w-[1400px] -translate-x-1/2 md:-bottom-[1700px] md:h-[2450px] md:w-[2450px] lg:top-[157%] lg:right-0 lg:h-[4150px] lg:w-[4150px] lg:translate-x-[-34%] lg:-translate-y-1/2">
-          <div className="relative h-full w-full rotate-[17deg] lg:rotate-0">
+        <div className="absolute -bottom-[238.81vw] left-1/2 mb-[7.96vw] h-[348.26vw] w-[348.26vw] -translate-x-1/2 md:-bottom-[221.35vw] md:mb-[4.17vw] md:h-[319.01vw] md:w-[319.01vw] 2xl:top-[calc(157%+1px)] 2xl:right-0 2xl:mb-[1.67vw] 2xl:h-[216.15vw] 2xl:w-[216.15vw] 2xl:translate-x-[-34%] 2xl:-translate-y-1/2">
+          <div className="relative h-full w-full rotate-[17deg] 2xl:rotate-0">
             {/* Rotating Cog Wheel Background Only */}
             <div
               className="relative h-full w-full transition-transform duration-700 ease-in-out motion-reduce:transition-none"
