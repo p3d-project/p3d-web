@@ -145,7 +145,7 @@ function ArchedTeamName({ name }: { name: string }) {
 function FlatTeamName({ name }: { name: string }) {
   return (
     <p
-      className="font-noto-sans text-[clamp(2.55rem,11vw,4rem)] font-black tracking-[0.07em] whitespace-nowrap uppercase"
+      className="font-noto-sans text-[clamp(2.6125rem,calc(11vw+1px),4.0625rem)] font-black tracking-[0.07em] whitespace-nowrap uppercase"
       style={{
         WebkitTextStroke: "5px #79CEFF",
         color: "#002C48",
@@ -253,9 +253,10 @@ function MobileDescription({
         className="flex h-full w-full items-center justify-center text-center font-serif text-black"
         style={style}
       >
-        <p className="text-[clamp(0px,3.78vw,18.4px)] leading-[1.2] md:text-[2.4vw]">
-          {team.description}
-        </p>
+        <div
+          className="text-[clamp(0px,calc(3.78vw-6px),12.4px)] leading-[1.2] md:text-[calc(2.4vw-6px)] [&_ol]:my-1 [&_ol]:list-inside [&_ol]:list-decimal [&_ol]:pl-0 [&_p]:my-1 [&_ul]:my-1 [&_ul]:list-inside [&_ul]:list-disc [&_ul]:pl-0"
+          dangerouslySetInnerHTML={{ __html: team.description }}
+        />
       </div>
     </div>
   );
@@ -288,7 +289,10 @@ function DesktopDescription({
         className="flex h-full w-full items-center justify-center text-center font-serif text-black"
         style={style}
       >
-        <p className="text-[1.5vw] leading-relaxed">{team.description}</p>
+        <div
+          className="text-[calc(1.5vw-3.5px)] leading-relaxed [&_ol]:my-2 [&_ol]:list-inside [&_ol]:list-decimal [&_ol]:pl-0 [&_p]:my-2 [&_ul]:my-2 [&_ul]:list-inside [&_ul]:list-disc [&_ul]:pl-0"
+          dangerouslySetInnerHTML={{ __html: team.description }}
+        />
       </div>
     </div>
   );
@@ -500,7 +504,7 @@ export default function TeamCarousel() {
       </div>
 
       {/* Dedicated Tablet / Mobile Title Container with clean separation and clearance */}
-      <div className="pointer-events-none relative z-10 mt-[3.98vw] mb-[1.99vw] flex w-full justify-center md:mt-[2.6vw] md:mb-[2.08vw] 2xl:hidden">
+      <div className="pointer-events-none relative z-10 mt-[2.6vw] mb-[2.08vw] flex w-full justify-center 2xl:hidden">
         <div
           style={getTransformAndOpacity(animPhase, direction, "mobileTitle")}
         >
@@ -510,7 +514,7 @@ export default function TeamCarousel() {
 
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         {/* Absolute Cog Positioning: */}
-        <div className="absolute -bottom-[238.81vw] left-1/2 mb-[7.96vw] h-[348.26vw] w-[348.26vw] -translate-x-1/2 md:-bottom-[221.35vw] md:mb-[4.17vw] md:h-[319.01vw] md:w-[319.01vw] 2xl:top-[calc(157%+1px)] 2xl:right-0 2xl:mb-[1.67vw] 2xl:h-[216.15vw] 2xl:w-[216.15vw] 2xl:translate-x-[-34%] 2xl:-translate-y-1/2">
+        <div className="absolute -bottom-[221.35vw] left-1/2 mb-[4.17vw] h-[319.01vw] w-[319.01vw] -translate-x-1/2 2xl:top-[calc(157%+1px)] 2xl:right-0 2xl:mb-[1.67vw] 2xl:h-[216.15vw] 2xl:w-[216.15vw] 2xl:translate-x-[-34%] 2xl:-translate-y-1/2">
           <div className="relative h-full w-full rotate-[17deg] 2xl:rotate-0">
             {/* Rotating Cog Wheel Background Only */}
             <div
