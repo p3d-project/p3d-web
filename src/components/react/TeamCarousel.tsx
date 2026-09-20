@@ -254,7 +254,7 @@ function MobileDescription({
         style={style}
       >
         <div
-          className="text-[clamp(0px,calc(3.78vw-6px),12.4px)] leading-[1.2] md:text-[calc(2.4vw-6px)] [&_ol]:my-1 [&_ol]:list-inside [&_ol]:list-decimal [&_ol]:pl-0 [&_p]:my-1 [&_ul]:my-1 [&_ul]:list-inside [&_ul]:list-disc [&_ul]:pl-0"
+          className="text-[clamp(8px,2.2vw,14px)] leading-[1.2] md:text-[clamp(9px,1.6vw,16px)] [&_ol]:my-1 [&_ol]:list-inside [&_ol]:list-decimal [&_ol]:pl-0 [&_p]:my-1 [&_ul]:my-1 [&_ul]:list-inside [&_ul]:list-disc [&_ul]:pl-0"
           dangerouslySetInnerHTML={{ __html: team.description }}
         />
       </div>
@@ -290,7 +290,7 @@ function DesktopDescription({
         style={style}
       >
         <div
-          className="text-[calc(1.5vw-3.5px)] leading-relaxed [&_ol]:my-2 [&_ol]:list-inside [&_ol]:list-decimal [&_ol]:pl-0 [&_p]:my-2 [&_ul]:my-2 [&_ul]:list-inside [&_ul]:list-disc [&_ul]:pl-0"
+          className="text-[clamp(0px,calc(1.5vw-3.5px),24px)] leading-[1.2] [&_ol]:my-2 [&_ol]:list-inside [&_ol]:list-decimal [&_ol]:pl-0 [&_p]:my-2 [&_ul]:my-2 [&_ul]:list-inside [&_ul]:list-disc [&_ul]:pl-0"
           dangerouslySetInnerHTML={{ __html: team.description }}
         />
       </div>
