@@ -4,10 +4,14 @@ import Button from "../components/react/Button.tsx";
 import dots from "../assets/Dots.svg";
 import glass from "../assets/glass.png";
 import makoto from "../assets/makoto-standing.png";
+import rect5 from "../assets/Rectangle_5.png";
+import rect6 from "../assets/Rectangle_6.png";
+import rect7 from "../assets/Rectangle_7.png";
+import marked from "../assets/glass_marked.png";
 ---
 <Layout>
-  <main>
-    <section id="index" class="relative min-h-screen w-full">
+  <main class = "overflow-x-hidden">
+    <section class="relative min-h-screen w-full">
       <div
         class="pointer-events-none absolute inset-0 select-none"
       >
@@ -20,7 +24,7 @@ import makoto from "../assets/makoto-standing.png";
         </div>
 
         <div
-          class="absolute top-[64%] right-[2.1%] h-[1100px] w-[550px] max-w-none translate-x-[6%] -translate-y-1/2 select-none lg:block"
+          class="absolute top-[58%] right-[2.1%] h-[1100px] w-[550px] max-w-none translate-x-[6%] -translate-y-1/2 select-none lg:block"
           aria-hidden="true"
         >
           <img
@@ -75,9 +79,7 @@ import makoto from "../assets/makoto-standing.png";
           >
             September, 2026
         </p>
-           <section
-      id="team"
-      class="relative w-full scroll-mt-16 px-150 py-10 pt-10 pb-5 sm:pt-22"
+           <section class="relative w-full scroll-mt-16 px-150 py-10 pt-10 pb-5 sm:pt-22"
     >
     <div class="w-full flex flex-col items-start justify-center gap-4 sm:gap-6 lg:gap-2">
       <div class="relative mb-4 flex justify-left right-[200px] translate-y-6">
@@ -96,7 +98,7 @@ import makoto from "../assets/makoto-standing.png";
           as="a"
           href=""
           size="lg"
-          className="w-[400px] py-4 text-2xl justify-center"
+          className="w-[400px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
         >
           Mirror 1
         </Button>
@@ -105,7 +107,7 @@ import makoto from "../assets/makoto-standing.png";
           as="a"
           href=""
           size="lg"
-          className="w-[400px] py-4 text-2xl justify-center"
+          className="w-[400px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
         >
           Mirror 2
         </Button>
@@ -115,7 +117,7 @@ import makoto from "../assets/makoto-standing.png";
   </div>
 </div>
   </section>
-          <section class ="relative z-20 mb-4 w-full bg-[#79CEFF] pb-16 translate-y-43">
+          <section class ="relative z-20 mb-4 w-full bg-[#79CEFF] pb-35 mt-19">
             <div class="translate-x-20">
             <h2 class="font-noto-sans max-w-[440px] mb-4 px-2 pt-8 text-[19px] font-semibold text-[#001B3D] sm:px-0 sm:text-xl lg:text-[28.1px]">
               What's New?
@@ -124,7 +126,7 @@ import makoto from "../assets/makoto-standing.png";
             <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
               For specifics, check out our <a href="" class="text-[#0000FF] underline">documentation!</a>
             </p>
-            <ul class="list-disc font-MgOpenCosmeticaBold text-[19px] px-2 text-[#001B3D] sm:text-xl lg:text-[20px]">
+            <ul class="list-disc mt-3 font-MgOpenCosmeticaBold text-[19px] px-5 text-[#001B3D] sm:text-xl lg:text-[20px]">
               <li>Replaced AI systems</li>
               <li>Retooled and rebuilt Aegis-Engine</li>
               <li>Added vertex lighting workflow support</li>
@@ -141,16 +143,46 @@ import makoto from "../assets/makoto-standing.png";
               <li>Custom 3D models for props, enviroment, and characters</li>
             </ul>
           </div>
+          <div class = "absolute right-[20%] top-[10%] w-[450px]">
+            <img
+              src={glass.src}
+              alt=""
+              class="relative z-0 h-auto w-full object-contain"
+              />
+
+              <img
+              src={rect7.src}
+              alt=""
+              class="absolute left-[7%] top-[15%] z-10 w-[200px]"
+              />
+            
+            <img
+             src={rect5.src}
+              alt=""
+              class="absolute right-[5%] top-[15%] z-10 w-[200px]"
+              />
+
+            <img
+             src={rect6.src}
+              alt=""
+              class="absolute left-1/2 top-[58%] z-10 w-[200px] -translate-x-1/2"
+              />
+          </div>
           </section>
-           <section class ="relative z-20 mb-4 pb-16 bg-[#E6F0FA] translate-y-16">
-            <div class="translate-x-20">
+           <section class ="relative z-20 bg-[#E6F0FA] -mt-16 pb-35">
+            <div class="translate-x-20 z-10">
           <h2 class="font-noto-sans max-w-[440px] mb-4 px-2 pt-8 text-[19px] font-semibold text-[#001B3D] sm:px-0 sm:text-xl lg:text-[28.1px]">
             Legacy versions
           </h2>
-          <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
+          <div class= "flex items-center gap-65">
+          <p class="underline font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
             V1.0.1
           </p>
-          <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
+          <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[16px]">
+            June 28th, 2026
+          </p>
+        </div>
+          <p class="font-noto-sans text-[19px] mt-6 font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
             PLACEHOLDER
             PLACEHOLDER
             PLACEHOLDER
@@ -165,24 +197,33 @@ import makoto from "../assets/makoto-standing.png";
             PLACEHOLDER
             PLACEHOLDER
           </p>
-        
-        <div class="mb-4 flex justify-left">
+        </div>
+        <div class="relative">
+          <div class="absolute left-[13%] bottom-[1%] z-0 w-[190px]">
+            <img
+              src={marked.src}
+              alt=""
+              class="relative z-0 h-auto w-full object-contain"
+              />
+            </div>
+            <div class="relative z-10">
+        <div class="translate-x-20 mb-8 flex pb-1 right-[550px]">
         <Button
           as="a"
           href=""
           size="md"
-          className="w-[410px] py-5 text-4xl justify-center"
+          className="w-[410px] py-5 text-4xl mt-6 justify-center"
         >
-          Download v1.1.0
+          Download
         </Button>
       </div>
 
-      <div class=" relative flex justify-center gap-6 right-[550px] translate-y-0.5">
+      <div class="relative flex -mt-6 justify-center gap-6 right-[555px] translate-x-20 translate-y-0.5">
         <Button
           as="a"
           href=""
           size="lg"
-          className="w-[190px] py-4 text-2xl justify-center"
+          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
         >
           Mirror 1
         </Button>
@@ -192,13 +233,176 @@ import makoto from "../assets/makoto-standing.png";
           as="a"
           href=""
           size="lg"
-          className="w-[190px] py-4 text-2xl justify-center"
+          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
         >
           Mirror 2
         </Button>
         </div>
+      <div class = "absolute right-[20%] top-[2%] w-[450px]">
+            <img
+              src={rect6.src}
+              alt=""
+              class="absolute left-[100%] top-[15%] -mt-60 z-10 w-[400px] drop-shadow-[8px_8px_0_#3BAA45]"
+              />
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class ="relative z-20 mb-4 pb-16 mt-16 bg-[#E6F0FA]">
+            <div class="translate-x-20 z-10">
+          <div class= "flex items-center gap-65">
+          <p class="underline font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
+            V1.0.0
+          </p>
+          <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[16px]">
+            June 28th, 2026
+          </p>
         </div>
+          <p class="font-noto-sans text-[19px] mt-6 font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
+            PLACEHOLDER
+            PLACEHOLDER
+            PLACEHOLDER
+          </p>
+          <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
+            PLACEHOLDER
+            PLACEHOLDER
+            PLACEHOLDER
+          </p>
+          <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
+            PLACEHOLDER
+            PLACEHOLDER
+            PLACEHOLDER
+          </p>
         </div>
+        <div class="relative">
+          <div class="absolute left-[13%] bottom-[1%] z-0 w-[190px]">
+            <img
+              src={marked.src}
+              alt=""
+              class="relative z-0 h-auto w-full object-contain"
+              />
+            </div>
+            <div class="relative z-10">
+        <div class="translate-x-20 mb-8 flex pb-1 right-[550px]">
+        <Button
+          as="a"
+          href=""
+          size="md"
+          className="w-[410px] py-5 text-4xl mt-6 justify-center"
+        >
+          Download
+        </Button>
+      </div>
+
+      <div class="relative flex -mt-6 justify-center gap-6 right-[555px] translate-x-20 translate-y-0.5">
+        <Button
+          as="a"
+          href=""
+          size="lg"
+          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
+        >
+          Mirror 1
+        </Button>
+      
+      <div class="flex justify-center gap-6">
+      <Button
+          as="a"
+          href=""
+          size="lg"
+          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
+        >
+          Mirror 2
+        </Button>
+        </div>
+      <div class = "absolute right-[20%] top-[2%] w-[450px]">
+            <img
+              src={rect6.src}
+              alt=""
+              class="absolute left-[100%] top-[15%] -mt-60 z-10 w-[400px] drop-shadow-[8px_8px_0_#3BAA45]"
+              />
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+<div class ="relative z-20 pb-2 mt-16 bg-[#E6F0FA]">
+            <div class="translate-x-20 z-10">
+          <div class= "flex items-center gap-65">
+          <p class="underline font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
+            Beta
+          </p>
+          <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[16px]">
+            June 28th, 2026
+          </p>
+        </div>
+          <p class="font-noto-sans text-[19px] mt-6 font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
+            PLACEHOLDER
+            PLACEHOLDER
+            PLACEHOLDER
+          </p>
+          <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
+            PLACEHOLDER
+            PLACEHOLDER
+            PLACEHOLDER
+          </p>
+          <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
+            PLACEHOLDER
+            PLACEHOLDER
+            PLACEHOLDER
+          </p>
+        </div>
+        <div class="relative">
+          <div class="absolute left-[13%] bottom-[1%] z-0 w-[190px]">
+            <img
+              src={marked.src}
+              alt=""
+              class="relative z-0 h-auto w-full object-contain"
+              />
+            </div>
+            <div class="relative z-10">
+        <div class="translate-x-20 mb-8 flex pb-1 right-[550px]">
+        <Button
+          as="a"
+          href=""
+          size="md"
+          className="w-[410px] py-5 text-4xl mt-6 justify-center"
+        >
+          Download
+        </Button>
+      </div>
+
+      <div class="relative flex -mt-6 justify-center gap-6 right-[555px] translate-x-20 translate-y-0.5">
+        <Button
+          as="a"
+          href=""
+          size="lg"
+          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
+        >
+          Mirror 1
+        </Button>
+      
+      <div class="flex justify-center gap-6">
+      <Button
+          as="a"
+          href=""
+          size="lg"
+          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
+        >
+          Mirror 2
+        </Button>
+        </div>
+      <div class = "absolute right-[20%] top-[2%] w-[450px]">
+            <img
+              src={rect6.src}
+              alt=""
+              class="absolute left-[100%] top-[15%] -mt-60 z-10 w-[400px] drop-shadow-[8px_8px_0_#3BAA45]"
+              />
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
         </section>
+        
     </main>
 </Layout>
