@@ -23,7 +23,6 @@ function cogPct(value: number): string {
 const COG_ANCHORS = {
   mobile: {
     descCenter: { x: 1400, y: 700 },
-    titleCenter: { x: 1265, y: 270 },
   },
   desktop: {
     descCenter: { x: 1390, y: 730 },
@@ -114,7 +113,7 @@ function ArchedTeamName({ name }: { name: string }) {
   return (
     <svg
       viewBox="0 -45 800 190"
-      className="h-[105px] w-[min(70vw,600px)] 2xl:h-[8.33vw] 2xl:w-[40.625vw]"
+      className="h-[105px] w-[min(70vw,600px)] md:h-[8.33vw] md:w-[40.625vw]"
       aria-hidden="true"
     >
       <defs>
@@ -145,7 +144,7 @@ function ArchedTeamName({ name }: { name: string }) {
 function FlatTeamName({ name }: { name: string }) {
   return (
     <p
-      className="font-noto-sans text-[clamp(2.6125rem,calc(11vw+1px),4.0625rem)] font-black tracking-[0.07em] whitespace-nowrap uppercase"
+      className="font-noto-sans text-[4.0625rem] font-black tracking-[0.07em] whitespace-nowrap uppercase"
       style={{
         WebkitTextStroke: "5px #79CEFF",
         color: "#002C48",
@@ -237,10 +236,11 @@ function MobileDescription({
 }) {
   const { descCenter } = COG_ANCHORS.mobile;
   const style = getTransformAndOpacity(animPhase, direction, "desc");
+  const descriptionFontSize = "clamp(8px, 1.8vw, 11px)";
 
   return (
     <div
-      className="pointer-events-auto absolute z-[2] flex items-center justify-center 2xl:hidden"
+      className="pointer-events-auto absolute z-[2] flex items-center justify-center md:hidden"
       style={{
         left: cogPct(descCenter.x),
         top: cogPct(descCenter.y),
@@ -255,6 +255,7 @@ function MobileDescription({
       >
         <div
           className="text-[clamp(8px,2.2vw,14px)] leading-[1.2] md:text-[clamp(9px,1.6vw,16px)] [&_ol]:my-1 [&_ol]:list-inside [&_ol]:list-decimal [&_ol]:pl-0 [&_p]:my-1 [&_ul]:my-1 [&_ul]:list-inside [&_ul]:list-disc [&_ul]:pl-0"
+          style={{ fontSize: descriptionFontSize }}
           dangerouslySetInnerHTML={{ __html: team.description }}
         />
       </div>
@@ -276,7 +277,7 @@ function DesktopDescription({
 
   return (
     <div
-      className="pointer-events-auto absolute z-[2] hidden items-center justify-center 2xl:flex"
+      className="pointer-events-auto absolute z-[2] hidden items-center justify-center md:flex"
       style={{
         left: cogPct(descCenter.x),
         top: cogPct(descCenter.y),
@@ -314,7 +315,7 @@ function StaticTeamContent({
     <div className="pointer-events-none absolute inset-0 z-[1]" style={style}>
       {/* Desktop — arched title */}
       <div
-        className="pointer-events-none absolute hidden 2xl:block"
+        className="pointer-events-none absolute hidden md:block"
         style={{
           left: cogPct(desktop.titleCenter.x),
           top: cogPct(desktop.titleCenter.y),
@@ -326,7 +327,7 @@ function StaticTeamContent({
 
       {/* Desktop silhouettes — left of the cog */}
       <div
-        className="pointer-events-none absolute hidden 2xl:block"
+        className="pointer-events-none absolute hidden md:block"
         style={{
           left: cogPct(desktop.silhouettes.x),
           top: cogPct(desktop.silhouettes.y),
@@ -448,7 +449,7 @@ export default function TeamCarousel() {
     typeof cogSvgUrl === "string" ? cogSvgUrl : (cogSvgUrl as any).src;
 
   return (
-    <div className="relative mt-[7.96vw] flex min-h-[154.23vw] w-full flex-col items-center overflow-hidden pt-[5.97vw] pb-[7.96vw] md:mt-[2.08vw] md:min-h-[97.66vw] md:pt-[1.04vw] md:pb-[4.17vw] 2xl:mt-[2.5vw] 2xl:min-h-[59.9vw] 2xl:pt-[2.5vw] 2xl:pb-[10vw]">
+    <div className="relative mt-[7.96vw] flex min-h-[154.23vw] w-full flex-col items-center overflow-hidden pt-[5.97vw] pb-[7.96vw] md:mt-[2.5vw] md:min-h-[59.9vw] md:pt-[2.5vw] md:pb-[10vw]">
       <style>{`
         @keyframes teamTextFade {
           from {
@@ -463,21 +464,21 @@ export default function TeamCarousel() {
       `}</style>
 
       {/* Navigation buttons */}
-      <div className="p3d-container relative z-10 my-[1.99vw] flex w-full items-center justify-between md:my-[0.52vw] 2xl:mt-[0.83vw] 2xl:mb-[52.08vw]">
+      <div className="p3d-container relative z-10 my-[1.99vw] flex w-full items-center justify-between md:mt-[0.83vw] md:mb-[52.08vw]">
         <button
           type="button"
           onClick={handlePrev}
           disabled={isAnimating}
           aria-label={`Go to ${prevTeam.name}`}
-          className="group inline-flex cursor-pointer items-center gap-[1.99vw] bg-transparent transition-all duration-300 hover:-translate-x-2 disabled:cursor-not-allowed disabled:opacity-40 sm:gap-[1.56vw] 2xl:gap-[0.625vw]"
+          className="group inline-flex cursor-pointer items-center gap-[1.99vw] bg-transparent transition-all duration-300 hover:-translate-x-2 disabled:cursor-not-allowed disabled:opacity-40 sm:gap-[1.56vw] md:gap-[0.625vw]"
         >
-          <div className="text-secondary h-[7.96vw] w-[7.96vw] rotate-90 transition-transform duration-300 group-hover:scale-115 sm:h-[6.25vw] sm:w-[6.25vw] 2xl:h-[2.5vw] 2xl:w-[2.5vw]">
+          <div className="text-secondary h-[7.96vw] w-[7.96vw] rotate-90 transition-transform duration-300 group-hover:scale-115 sm:h-[6.25vw] sm:w-[6.25vw] md:h-[2.5vw] md:w-[2.5vw]">
             <ArrowIcon className="h-full w-full" />
           </div>
           <span
             key={prevTeam.name}
             style={{ animation: "teamTextFade 0.4s ease-in-out" }}
-            className="font-noto-sans text-secondary inline-block text-[3.98vw] font-bold sm:text-[3.13vw] 2xl:text-[1.25vw]"
+            className="font-noto-sans text-secondary inline-block text-[3.98vw] font-bold sm:text-[3.13vw] md:text-[1.25vw]"
           >
             {prevTeam.name}
           </span>
@@ -488,23 +489,23 @@ export default function TeamCarousel() {
           onClick={handleNext}
           disabled={isAnimating}
           aria-label={`Go to ${nextTeam.name}`}
-          className="group inline-flex cursor-pointer items-center gap-[1.99vw] bg-transparent transition-all duration-300 hover:translate-x-2 disabled:cursor-not-allowed disabled:opacity-40 sm:gap-[1.56vw] 2xl:gap-[0.625vw]"
+          className="group inline-flex cursor-pointer items-center gap-[1.99vw] bg-transparent transition-all duration-300 hover:translate-x-2 disabled:cursor-not-allowed disabled:opacity-40 sm:gap-[1.56vw] md:gap-[0.625vw]"
         >
           <span
             key={nextTeam.name}
             style={{ animation: "teamTextFade 0.4s ease-in-out" }}
-            className="font-noto-sans text-secondary inline-block text-[3.98vw] font-bold sm:text-[3.13vw] 2xl:text-[1.25vw]"
+            className="font-noto-sans text-secondary inline-block text-[3.98vw] font-bold sm:text-[3.13vw] md:text-[1.25vw]"
           >
             {nextTeam.name}
           </span>
-          <div className="text-secondary h-[7.96vw] w-[7.96vw] -rotate-90 transition-transform duration-300 group-hover:scale-115 sm:h-[6.25vw] sm:w-[6.25vw] 2xl:h-[2.5vw] 2xl:w-[2.5vw]">
+          <div className="text-secondary h-[7.96vw] w-[7.96vw] -rotate-90 transition-transform duration-300 group-hover:scale-115 sm:h-[6.25vw] sm:w-[6.25vw] md:h-[2.5vw] md:w-[2.5vw]">
             <ArrowIcon className="h-full w-full" />
           </div>
         </button>
       </div>
 
       {/* Dedicated Tablet / Mobile Title Container with clean separation and clearance */}
-      <div className="pointer-events-none relative z-10 mt-[2.6vw] mb-[2.08vw] flex w-full justify-center 2xl:hidden">
+      <div className="pointer-events-none relative z-10 mt-[2.6vw] mb-[2.08vw] flex w-full justify-center md:hidden">
         <div
           style={getTransformAndOpacity(animPhase, direction, "mobileTitle")}
         >
@@ -514,8 +515,8 @@ export default function TeamCarousel() {
 
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         {/* Absolute Cog Positioning: */}
-        <div className="absolute -bottom-[221.35vw] left-1/2 mb-[4.17vw] h-[319.01vw] w-[319.01vw] -translate-x-1/2 2xl:top-[calc(157%+1px)] 2xl:right-0 2xl:mb-[1.67vw] 2xl:h-[216.15vw] 2xl:w-[216.15vw] 2xl:translate-x-[-34%] 2xl:-translate-y-1/2">
-          <div className="relative h-full w-full rotate-[17deg] 2xl:rotate-0">
+        <div className="absolute -bottom-[221.35vw] left-1/2 mb-[4.17vw] h-[319.01vw] w-[319.01vw] -translate-x-1/2 md:top-[calc(157%+1px)] md:right-0 md:mb-[1.67vw] md:h-[216.15vw] md:w-[216.15vw] md:translate-x-[-34%] md:-translate-y-1/2">
+          <div className="relative h-full w-full rotate-[17deg] md:rotate-0">
             {/* Rotating Cog Wheel Background Only */}
             <div
               className="relative h-full w-full transition-transform duration-700 ease-in-out motion-reduce:transition-none"
