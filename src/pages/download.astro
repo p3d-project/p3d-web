@@ -8,6 +8,7 @@ import rect5 from "../assets/Rectangle_5.png";
 import rect6 from "../assets/Rectangle_6.png";
 import rect7 from "../assets/Rectangle_7.png";
 import marked from "../assets/glass_marked.png";
+import Carousel from "../components/react/Carousel.tsx";
 ---
 <Layout>
   <main class = "overflow-x-hidden">
@@ -18,13 +19,13 @@ import marked from "../assets/glass_marked.png";
       <div class="pointer-events-none absolute inset-x-0 top-0 h-[calc(100%+300px)] bg-[#E6F0FA]"
       aria-hidden="true"> </div>
         <div
-          class="absolute inset-0 translate-y-12 bg-repeat h-[120%] lg:left-[40%]"
-          style={`background-image: url('${dots.src}'); background-size: auto;`}
+          class="absolute inset-0 translate-y-[50%] lg:translate-y-12 bg-repeat h-[120%] lg:left-[40%]"
+          style={`background-image: url('${dots.src}'); background-size:cover; lg:background-size: auto;`}
         >
         </div>
 
         <div
-          class="absolute top-[58%] right-[2.1%] h-[1100px] w-[550px] max-w-none translate-x-[6%] -translate-y-1/2 select-none lg:block"
+          class="absolute top-[58%] left-[15%] h-[600px] w-[600px] -translate-x-6 lg:top-[58%] lg:right-[2.1%] lg:h-[1100px] lg:w-[550px] lg:left-auto max-w-none lg:translate-x-[6%] -translate-y-1/2 select-none lg:block"
           aria-hidden="true"
         >
           <img
@@ -40,60 +41,60 @@ import marked from "../assets/glass_marked.png";
         class="p3d-container relative z-10 grid w-full grid-cols-1 pt-16 lg:grid-cols-12"
       >
         <div
-          class="relative flex flex-col items-center justify-start pt-6 pr-0 pb-4 text-center sm:pt-10 sm:pb-6 lg:col-span-25 lg:items-start lg:pt-28 lg:pr-4 lg:pb-16 lg:text-left"
+          class="relative flex flex-col items-center justify-start translate-x-4 pt-6 pr-0 pb-4 text-center sm:pt-10 sm:pb-6 lg:col-span-25 lg:items-start lg:pt-28 lg:pr-4 lg:pb-16 lg:text-left"
         >
   
-          <div
+          <!-- <div
             class="pointer-events-none absolute left-1/2 -z-10 block h-[860px] w-[1280px] max-w-none -translate-x-1/2 rounded-[50%] bg-[#79CEFF] select-none sm:h-[940px] sm:w-[1500px] lg:hidden"
             style="top: -450px;"
             aria-hidden="true"
           >
-          </div>
+          </div> -->
 
           <h1
             style="-webkit-text-stroke: 1.5px #001B3D;"
-            class="font-bmspace mb-3 text-[45px] leading-tight tracking-[-0.05em] text-[#001B3D] sm:text-5xl lg:mb-6 lg:text-[55px]"
+            class="font-bmspace mb-3 text-[25px] leading-tight translate-y-15 -translate-x-28 tracking-[-0.02] sm:text-5xl lg:leading-tight lg:tracking-[-0.05em] text-[#001B3D] lg:translate-y-1 lg:translate-x-3 lg:mb-6 lg:text-[55px]"
           >
             Downloads
           </h1>
 
           <p
-            class="font-noto-sans max-w-[440px] px-2 text-[19px] leading-snug font-semibold text-[#001B3D] sm:px-0 sm:text-xl lg:text-[28.1px]"
+            class="font-noto-sans max-w-[440px] px-2 text-[14px] translate-y-15 -translate-x-28 leading-snug font-semibold text-[#001B3D] sm:px-0 sm:text-xl lg:translate-y-3 lg:translate-x-3 lg:text-[28.1px]"
           >
             Next Minor Release (v1.2.0)
           </p>
           <p
-            class="font-MgOpenCosmeticaBold max-w-[400px] px-2 text-[19px] text-[#001B3D] sm:px-0 sm:text-xl lg:text-[20px]"
+            class="font-MgOpenCosmeticaBold max-w-[400px] px-2 text-[14px] translate-y-15 -translate-x-28 text-[#001B3D] sm:px-0 sm:text-xl lg:translate-y-3 lg:translate-x-3 lg:text-[20px]"
           >
             August 20, 2026
           </p>
           <br />
           <br />
           <p
-            class="font-noto-sans max-w-[440px] px-2 text-[19px] font-semibold text-[#001B3D] sm:px-0 sm:text-xl lg:text-[28.1px]"
+            class="font-noto-sans max-w-[440px] px-2 text-[14px] translate-y-8 -translate-x-28 font-semibold text-[#001B3D] sm:px-0 sm:text-xl lg:translate-y-3 lg:translate-x-3 lg:text-[28.1px]"
           >
             Next Minor Release (v2.0.0)
           </p>
           <p
-            class="font-MgOpenCosmeticaBold max-w-[400px] px-2 text-[19px] text-[#001B3D] sm:px-0 sm:text-xl lg:text-[20px]"
+            class="font-MgOpenCosmeticaBold max-w-[400px] px-2 text-[14px] translate-y-8 -translate-x-28  text-[#001B3D] sm:px-0 sm:text-xl lg:translate-y-3 lg:translate-x-3 lg:text-[20px]"
           >
             September, 2026
         </p>
-           <section class="relative w-full scroll-mt-16 px-150 py-10 pt-10 pb-5 sm:pt-22"
+           <section class="relative w-full scroll-mt-16 px-4 pb-5 py-10 pt-10 lg:px-150 lg:py-10 lg:pt-10 lg:pb-5 sm:pt-22"
     >
-    <div class="w-full flex flex-col items-start justify-center gap-4 sm:gap-6 lg:gap-2">
-      <div class="relative mb-4 flex justify-left right-[200px] translate-y-6">
+    <div class="w-full flex flex-col items-start justify-center gap-4 lg:gap-2">
+      <div class="relative mb-4 flex justify-left translate-y-35 lg:right-[200px] lg:translate-y-6">
         <Button
           as="a"
-          href=""
+          href="https://github.com/p3d-project/persona-3-dual/releases/tag/v1.1.0" target="_blank"
           size="lg"
-          className="w-[820px] py-5 text-4xl justify-center"
+          className="w-[310px] sm:py-5 text-2xl lg:w-[820px] lg:py-5 lg:text-4xl justify-center"
         >
           Download v1.1.0
         </Button>
       </div>
 
-      <div class="relative flex justify-center gap-6 right-[200px] translate-y-6">
+      <!-- <div class="relative flex justify-center gap-6 right-[200px] translate-y-6">
         <Button
           as="a"
           href=""
@@ -111,20 +112,20 @@ import marked from "../assets/glass_marked.png";
         >
           Mirror 2
         </Button>
-        </div>
+        </div> -->
         </div>
     </section>
   </div>
 </div>
   </section>
-          <section class ="relative z-20 mb-4 w-full bg-[#79CEFF] pb-35 mt-19">
-            <div class="translate-x-20">
+          <section class ="relative z-20 mb-4 w-full bg-[#79CEFF] pb-25 lg:pb-35 lg:mt-19">
+            <div class="translate-x-8 lg:translate-x-20">
             <h2 class="font-noto-sans max-w-[440px] mb-4 px-2 pt-8 text-[19px] font-semibold text-[#001B3D] sm:px-0 sm:text-xl lg:text-[28.1px]">
               What's New?
             </h2>
               
             <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
-              For specifics, check out our <a href="" class="text-[#0000FF] underline">documentation!</a>
+              For specifics, check out our <a href="https://docs.p3dual.com/" target="_blank" class="text-[#0000FF] underline">documentation!</a>
             </p>
             <ul class="list-disc mt-3 font-MgOpenCosmeticaBold text-[19px] px-5 text-[#001B3D] sm:text-xl lg:text-[20px]">
               <li>Replaced AI systems</li>
@@ -143,17 +144,18 @@ import marked from "../assets/glass_marked.png";
               <li>Custom 3D models for props, enviroment, and characters</li>
             </ul>
           </div>
-          <div class = "absolute right-[20%] top-[10%] w-[450px]">
+          <div class = "absolute right-[5%] translate-y-5 -translate-x-10 w-[350px] lg:right-[20%] lg:top-[10%] lg:w-[450px] lg:block">
             <img
               src={glass.src}
               alt=""
-              class="relative z-0 h-auto w-full object-contain"
+              class="relative lg:translate-x-18 lg:translate-y-5 z-0 h-auto w-full object-contain"
               />
-
+          </div>
+          <div class = "absolute right-[5%] translate-y-25 lg:right-[20%] lg:top-[10%] lg:w-[450px] hidden lg:block">
               <img
               src={rect7.src}
               alt=""
-              class="absolute left-[7%] top-[15%] z-10 w-[200px]"
+              class="absolute left-[7%] top-[5%] z-10 w-[200px]"
               />
             
             <img
@@ -165,61 +167,64 @@ import marked from "../assets/glass_marked.png";
             <img
              src={rect6.src}
               alt=""
-              class="absolute left-1/2 top-[58%] z-10 w-[200px] -translate-x-1/2"
+              class="absolute left-1/2 top-[58%] z-10 w-[200px] -translate-x-1/2 translate-y-[95%]"
               />
           </div>
-          </section>
+           <div class="w-[250px] translate-x-25 mt-15 lg:hidden">
+              <Carousel client:load />
+              </div>
+              </section>
            <section class ="relative z-20 bg-[#E6F0FA] -mt-16 pb-35">
-            <div class="translate-x-20 z-10">
+            <div class="translate-x-8 lg:translate-x-20 z-10">
           <h2 class="font-noto-sans max-w-[440px] mb-4 px-2 pt-8 text-[19px] font-semibold text-[#001B3D] sm:px-0 sm:text-xl lg:text-[28.1px]">
             Legacy versions
           </h2>
-          <div class= "flex items-center gap-65">
+          <div class= "flex items-center gap-10 sm:gap-12 lg:gap-65">
           <p class="underline font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
-            V1.0.1
+            v1.0.0
           </p>
-          <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[16px]">
+          <p class="font-noto-sans text-[14px] translate-x-45 font-semibold text-[#001B3D] sm:text-xl lg:translate-x-3 lg:text-[16px]">
             June 28th, 2026
           </p>
         </div>
-          <p class="font-noto-sans text-[19px] mt-6 font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
+          <p class="font-noto-sans text-[18px] mt-6 font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
             PLACEHOLDER
             PLACEHOLDER
             PLACEHOLDER
           </p>
-          <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
+          <p class="font-noto-sans text-[18px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
             PLACEHOLDER
             PLACEHOLDER
             PLACEHOLDER
           </p>
-          <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
+          <p class="font-noto-sans text-[18px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
             PLACEHOLDER
             PLACEHOLDER
             PLACEHOLDER
           </p>
         </div>
         <div class="relative">
-          <div class="absolute left-[13%] bottom-[1%] z-0 w-[190px]">
+          <!-- <div class="absolute left-[13%] bottom-[1%] z-0 w-[190px]">
             <img
               src={marked.src}
               alt=""
               class="relative z-0 h-auto w-full object-contain"
               />
-            </div>
+            </div> -->
             <div class="relative z-10">
-        <div class="translate-x-20 mb-8 flex pb-1 right-[550px]">
+        <div class="relative mb-4 flex justify-left mt-35 lg: lg:translate-x-[220px] lg:mb-8 lg:flex lg:pb-1 lg:right-[550px]">
         <Button
           as="a"
-          href=""
+          href="https://github.com/p3d-project/persona-3-dual/releases/tag/0.6" target="_blank"
           size="md"
-          className="w-[410px] py-5 text-4xl mt-6 justify-center"
+          className="w-[310px] translate-x-22 translate-y-15 py-3 text-3xl mt-6 justify-center lg:-translate-y-35 lg:translate-x-105 lg:mt-6 lg:w-[410px] lg:py-5 lg:text-4xl"
         >
           Download
         </Button>
       </div>
 
       <div class="relative flex -mt-6 justify-center gap-6 right-[555px] translate-x-20 translate-y-0.5">
-        <Button
+        <!-- <Button
           as="a"
           href=""
           size="lg"
@@ -237,65 +242,65 @@ import marked from "../assets/glass_marked.png";
         >
           Mirror 2
         </Button>
-        </div>
-      <div class = "absolute right-[20%] top-[2%] w-[450px]">
+        </div> -->
+      <div class = "mt-6 lg:absolute lg:right-[20%] lg:top-[2%] lg:w-[450px]">
             <img
               src={rect6.src}
               alt=""
-              class="absolute left-[100%] top-[15%] -mt-60 z-10 w-[400px] drop-shadow-[8px_8px_0_#3BAA45]"
+              class="w-[250px] -translate-y-[225px] translate-x-[465px] lg:-translate-y-[180px] lg:-translate-x-[5px] lg:absolute lg:left-[100%] lg:top-[15%] lg:-mt-60 z-10 lg:w-[400px] drop-shadow-[8px_8px_0_#3BAA45]"
               />
       </div>
     </div>
   </div>
   </div>
-  <div class ="relative z-20 mb-4 pb-16 mt-16 bg-[#E6F0FA]">
+  <div class ="relative z-20 mb-4 pb-2 mt-25 bg-[#E6F0FA]">
             <div class="translate-x-20 z-10">
-          <div class= "flex items-center gap-65">
-          <p class="underline font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
-            V1.0.0
+          <div class= "flex items-center gap-10 sm:gap-12 lg:gap-65">
+          <p class="underline -translate-x-[50px] font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px]">
+            v0.6.0
           </p>
-          <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[16px]">
+          <p class="font-noto-sans text-[14px] translate-x-35 font-semibold text-[#001B3D] sm:text-xl lg:translate-x-3 lg:text-[16px]">
             June 28th, 2026
           </p>
         </div>
-          <p class="font-noto-sans text-[19px] mt-6 font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
+          <p class="font-noto-sans -translate-x-[50px] text-[18px] mt-6 font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px]">
             PLACEHOLDER
             PLACEHOLDER
             PLACEHOLDER
           </p>
-          <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
+          <p class="font-noto-sans -translate-x-[50px] text-[18px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px]">
             PLACEHOLDER
             PLACEHOLDER
             PLACEHOLDER
           </p>
-          <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
+          <p class="font-noto-sans -translate-x-[50px] text-[18px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px]">
             PLACEHOLDER
             PLACEHOLDER
             PLACEHOLDER
           </p>
         </div>
         <div class="relative">
-          <div class="absolute left-[13%] bottom-[1%] z-0 w-[190px]">
+          <!-- <div class="absolute left-[13%] bottom-[1%] z-0 w-[190px]">
             <img
               src={marked.src}
               alt=""
               class="relative z-0 h-auto w-full object-contain"
               />
-            </div>
+            </div> -->
             <div class="relative z-10">
-        <div class="translate-x-20 mb-8 flex pb-1 right-[550px]">
+        <div class="relative mb-4 flex justify-left mt-35 lg: lg:translate-x-[220px] lg:mb-8 lg:flex lg:pb-1 lg:right-[550px]">
         <Button
           as="a"
-          href=""
+          href="https://github.com/p3d-project/persona-3-dual/releases/tag/0.6" target="_blank"
           size="md"
-          className="w-[410px] py-5 text-4xl mt-6 justify-center"
+          className="w-[310px] translate-x-22 translate-y-15 py-3 text-3xl mt-6 justify-center lg:-translate-y-35 lg:translate-x-105 lg:mt-6 lg:w-[410px] lg:py-5 lg:text-4xl"
         >
           Download
         </Button>
       </div>
 
       <div class="relative flex -mt-6 justify-center gap-6 right-[555px] translate-x-20 translate-y-0.5">
-        <Button
+        <!-- <Button
           as="a"
           href=""
           size="lg"
@@ -313,66 +318,373 @@ import marked from "../assets/glass_marked.png";
         >
           Mirror 2
         </Button>
-        </div>
-      <div class = "absolute right-[20%] top-[2%] w-[450px]">
+        </div> -->
+      <div class = "mt-6 lg:absolute lg:right-[20%] lg:top-[2%] lg:w-[450px]">
             <img
               src={rect6.src}
               alt=""
-              class="absolute left-[100%] top-[15%] -mt-60 z-10 w-[400px] drop-shadow-[8px_8px_0_#3BAA45]"
+              class="w-[250px] -translate-y-[225px] translate-x-[465px] lg:-translate-y-[180px] lg:-translate-x-[5px] lg:absolute lg:left-[100%] lg:top-[15%] lg:-mt-60 z-10 lg:w-[400px] drop-shadow-[8px_8px_0_#3BAA45]"
               />
       </div>
     </div>
   </div>
+  </div>
+<div class ="relative z-20 mb-4 pb-2 mt-25 bg-[#E6F0FA]">
+            <div class="translate-x-20 z-10">
+          <div class= "flex items-center gap-10 sm:gap-12 lg:gap-65">
+          <p class="underline -translate-x-[50px] font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px]">
+            v0.5.0
+          </p>
+          <p class="font-noto-sans text-[14px] translate-x-35 font-semibold text-[#001B3D] sm:text-xl lg:translate-x-3 lg:text-[16px]">
+            June 28th, 2026
+          </p>
+        </div>
+          <p class="font-noto-sans -translate-x-[50px] text-[18px] mt-6 font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px]">
+            PLACEHOLDER
+            PLACEHOLDER
+            PLACEHOLDER
+          </p>
+          <p class="font-noto-sans -translate-x-[50px] text-[18px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px]">
+            PLACEHOLDER
+            PLACEHOLDER
+            PLACEHOLDER
+          </p>
+          <p class="font-noto-sans -translate-x-[50px] text-[18px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px]">
+            PLACEHOLDER
+            PLACEHOLDER
+            PLACEHOLDER
+          </p>
+        </div>
+        <div class="relative">
+          <!-- <div class="absolute left-[13%] bottom-[1%] z-0 w-[190px]">
+            <img
+              src={marked.src}
+              alt=""
+              class="relative z-0 h-auto w-full object-contain"
+              />
+            </div> -->
+            <div class="relative z-10">
+        <div class="relative mb-4 flex justify-left mt-35 lg: lg:translate-x-[220px] lg:mb-8 lg:flex lg:pb-1 lg:right-[550px]">
+        <Button
+          as="a"
+          href="https://github.com/p3d-project/persona-3-dual/releases/tag/0.5" target="_blank"
+          size="md"
+          className="w-[310px] translate-x-22 translate-y-15 py-3 text-3xl mt-6 justify-center lg:-translate-y-35 lg:translate-x-105 lg:mt-6 lg:w-[410px] lg:py-5 lg:text-4xl"
+        >
+          Download
+        </Button>
+      </div>
+
+      <div class="relative flex -mt-6 justify-center gap-6 right-[555px] translate-x-20 translate-y-0.5">
+        <!-- <Button
+          as="a"
+          href=""
+          size="lg"
+          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
+        >
+          Mirror 1
+        </Button>
+      
+      <div class="flex justify-center gap-6">
+      <Button
+          as="a"
+          href=""
+          size="lg"
+          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
+        >
+          Mirror 2
+        </Button>
+        </div> -->
+      <div class = "mt-6 lg:absolute lg:right-[20%] lg:top-[2%] lg:w-[450px]">
+            <img
+              src={rect6.src}
+              alt=""
+              class="w-[250px] -translate-y-[225px] translate-x-[465px] lg:-translate-y-[180px] lg:-translate-x-[5px] lg:absolute lg:left-[100%] lg:top-[15%] lg:-mt-60 z-10 lg:w-[400px] drop-shadow-[8px_8px_0_#3BAA45]"
+              />
+      </div>
+    </div>
   </div>
 </div>
-<div class ="relative z-20 pb-2 mt-16 bg-[#E6F0FA]">
+</div>
+<div class ="relative z-20 mb-4 pb-2 mt-25 bg-[#E6F0FA]">
             <div class="translate-x-20 z-10">
-          <div class= "flex items-center gap-65">
-          <p class="underline font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
+          <div class= "flex items-center gap-10 sm:gap-12 lg:gap-65">
+          <p class="underline -translate-x-[50px] font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px]">
+            v0.4.0
+          </p>
+          <p class="font-noto-sans text-[14px] translate-x-35 font-semibold text-[#001B3D] sm:text-xl lg:translate-x-3 lg:text-[16px]">
+            June 28th, 2026
+          </p>
+        </div>
+          <p class="font-noto-sans -translate-x-[50px] text-[18px] mt-6 font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px]">
+            PLACEHOLDER
+            PLACEHOLDER
+            PLACEHOLDER
+          </p>
+          <p class="font-noto-sans -translate-x-[50px] text-[18px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px]">
+            PLACEHOLDER
+            PLACEHOLDER
+            PLACEHOLDER
+          </p>
+          <p class="font-noto-sans -translate-x-[50px] text-[18px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px]">
+            PLACEHOLDER
+            PLACEHOLDER
+            PLACEHOLDER
+          </p>
+        </div>
+        <div class="relative">
+          <!-- <div class="absolute left-[13%] bottom-[1%] z-0 w-[190px]">
+            <img
+              src={marked.src}
+              alt=""
+              class="relative z-0 h-auto w-full object-contain"
+              />
+            </div> -->
+            <div class="relative z-10">
+        <div class="relative mb-4 flex justify-left mt-35 lg: lg:translate-x-[220px] lg:mb-8 lg:flex lg:pb-1 lg:right-[550px]">
+        <Button
+          as="a"
+          href="https://github.com/p3d-project/persona-3-dual/releases/tag/0.4" target="_blank"
+          size="md"
+          className="w-[310px] translate-x-22 translate-y-15 py-3 text-3xl mt-6 justify-center lg:-translate-y-35 lg:translate-x-105 lg:mt-6 lg:w-[410px] lg:py-5 lg:text-4xl"
+        >
+          Download
+        </Button>
+      </div>
+
+      <div class="relative flex -mt-6 justify-center gap-6 right-[555px] translate-x-20 translate-y-0.5">
+        <!-- <Button
+          as="a"
+          href=""
+          size="lg"
+          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
+        >
+          Mirror 1
+        </Button>
+      
+      <div class="flex justify-center gap-6">
+      <Button
+          as="a"
+          href=""
+          size="lg"
+          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
+        >
+          Mirror 2
+        </Button>
+        </div> -->
+      <div class = "mt-6 lg:absolute lg:right-[20%] lg:top-[2%] lg:w-[450px]">
+            <img
+              src={rect6.src}
+              alt=""
+              class="w-[250px] -translate-y-[225px] translate-x-[465px] lg:-translate-y-[180px] lg:-translate-x-[5px] lg:absolute lg:left-[100%] lg:top-[15%] lg:-mt-60 z-10 lg:w-[400px] drop-shadow-[8px_8px_0_#3BAA45]"
+              />
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class ="relative z-20 mb-4 pb-2 mt-25 bg-[#E6F0FA]">
+            <div class="translate-x-20 z-10">
+          <div class= "flex items-center gap-10 sm:gap-12 lg:gap-65">
+          <p class="underline -translate-x-[50px] font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px]">
+            v0.3.0
+          </p>
+          <p class="font-noto-sans text-[14px] translate-x-35 font-semibold text-[#001B3D] sm:text-xl lg:translate-x-3 lg:text-[16px]">
+            June 28th, 2026
+          </p>
+        </div>
+          <p class="font-noto-sans -translate-x-[50px] text-[18px] mt-6 font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px]">
+            PLACEHOLDER
+            PLACEHOLDER
+            PLACEHOLDER
+          </p>
+          <p class="font-noto-sans -translate-x-[50px] text-[18px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px]">
+            PLACEHOLDER
+            PLACEHOLDER
+            PLACEHOLDER
+          </p>
+          <p class="font-noto-sans -translate-x-[50px] text-[18px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px]">
+            PLACEHOLDER
+            PLACEHOLDER
+            PLACEHOLDER
+          </p>
+        </div>
+        <div class="relative">
+          <!-- <div class="absolute left-[13%] bottom-[1%] z-0 w-[190px]">
+            <img
+              src={marked.src}
+              alt=""
+              class="relative z-0 h-auto w-full object-contain"
+              />
+            </div> -->
+            <div class="relative z-10">
+        <div class="relative mb-4 flex justify-left mt-35 lg: lg:translate-x-[220px] lg:mb-8 lg:flex lg:pb-1 lg:right-[550px]">
+        <Button
+          as="a"
+          href="https://github.com/p3d-project/persona-3-dual/releases/tag/0.3" target="_blank"
+          size="md"
+          className="w-[310px] translate-x-22 translate-y-15 py-3 text-3xl mt-6 justify-center lg:-translate-y-35 lg:translate-x-105 lg:mt-6 lg:w-[410px] lg:py-5 lg:text-4xl"
+        >
+          Download
+        </Button>
+      </div>
+
+      <div class="relative flex -mt-6 justify-center gap-6 right-[555px] translate-x-20 translate-y-0.5">
+        <!-- <Button
+          as="a"
+          href=""
+          size="lg"
+          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
+        >
+          Mirror 1
+        </Button>
+      
+      <div class="flex justify-center gap-6">
+      <Button
+          as="a"
+          href=""
+          size="lg"
+          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
+        >
+          Mirror 2
+        </Button>
+        </div> -->
+      <div class = "mt-6 lg:absolute lg:right-[20%] lg:top-[2%] lg:w-[450px]">
+            <img
+              src={rect6.src}
+              alt=""
+              class="w-[250px] -translate-y-[225px] translate-x-[465px] lg:-translate-y-[180px] lg:-translate-x-[5px] lg:absolute lg:left-[100%] lg:top-[15%] lg:-mt-60 z-10 lg:w-[400px] drop-shadow-[8px_8px_0_#3BAA45]"
+              />
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class ="relative z-20 mb-4 pb-2 mt-25 bg-[#E6F0FA]">
+            <div class="translate-x-20 z-10">
+          <div class= "flex items-center gap-10 sm:gap-12 lg:gap-65">
+          <p class="underline -translate-x-[50px] font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px]">
+            v0.2.0
+          </p>
+          <p class="font-noto-sans text-[14px] translate-x-35 font-semibold text-[#001B3D] sm:text-xl lg:translate-x-3 lg:text-[16px]">
+            June 28th, 2026
+          </p>
+        </div>
+          <p class="font-noto-sans -translate-x-[50px] text-[18px] mt-6 font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px]">
+            PLACEHOLDER
+            PLACEHOLDER
+            PLACEHOLDER
+          </p>
+          <p class="font-noto-sans -translate-x-[50px] text-[18px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px]">
+            PLACEHOLDER
+            PLACEHOLDER
+            PLACEHOLDER
+          </p>
+          <p class="font-noto-sans -translate-x-[50px] text-[18px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px]">
+            PLACEHOLDER
+            PLACEHOLDER
+            PLACEHOLDER
+          </p>
+        </div>
+        <div class="relative">
+          <!-- <div class="absolute left-[13%] bottom-[1%] z-0 w-[190px]">
+            <img
+              src={marked.src}
+              alt=""
+              class="relative z-0 h-auto w-full object-contain"
+              />
+            </div> -->
+            <div class="relative z-10">
+        <div class="relative mb-4 flex justify-left mt-35 lg: lg:translate-x-[220px] lg:mb-8 lg:flex lg:pb-1 lg:right-[550px]">
+        <Button
+          as="a"
+          href="https://github.com/p3d-project/persona-3-dual/releases/tag/0.2" target="_blank"
+          size="md"
+          className="w-[310px] translate-x-22 translate-y-15 py-3 text-3xl mt-6 justify-center lg:-translate-y-35 lg:translate-x-105 lg:mt-6 lg:w-[410px] lg:py-5 lg:text-4xl"
+        >
+          Download
+        </Button>
+      </div>
+
+      <div class="relative flex -mt-6 justify-center gap-6 right-[555px] translate-x-20 translate-y-0.5">
+        <!-- <Button
+          as="a"
+          href=""
+          size="lg"
+          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
+        >
+          Mirror 1
+        </Button>
+      
+      <div class="flex justify-center gap-6">
+      <Button
+          as="a"
+          href=""
+          size="lg"
+          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
+        >
+          Mirror 2
+        </Button>
+        </div> -->
+      <div class = "mt-6 lg:absolute lg:right-[20%] lg:top-[2%] lg:w-[450px]">
+           <img
+              src={rect6.src}
+              alt=""
+              class="w-[250px] -translate-y-[225px] translate-x-[465px] lg:-translate-y-[180px] lg:-translate-x-[5px] lg:absolute lg:left-[100%] lg:top-[15%] lg:-mt-60 z-10 lg:w-[400px] drop-shadow-[8px_8px_0_#3BAA45]"
+              />
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class ="relative z-20 mb-4 pb-2 mt-25 bg-[#E6F0FA]">
+            <div class="translate-x-20 z-10">
+          <div class= "flex items-center gap-10 sm:gap-12 lg:gap-65">
+          <p class="underline -translate-x-[50px] font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px]">
             Beta
           </p>
-          <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[16px]">
+          <p class="font-noto-sans text-[14px] translate-x-35 font-semibold text-[#001B3D] sm:text-xl lg:translate-x-3 lg:text-[16px]">
             June 28th, 2026
           </p>
         </div>
-          <p class="font-noto-sans text-[19px] mt-6 font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
+          <p class="font-noto-sans -translate-x-[50px] text-[18px] mt-6 font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px]">
             PLACEHOLDER
             PLACEHOLDER
             PLACEHOLDER
           </p>
-          <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
+          <p class="font-noto-sans -translate-x-[50px] text-[18px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px]">
             PLACEHOLDER
             PLACEHOLDER
             PLACEHOLDER
           </p>
-          <p class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]">
+          <p class="font-noto-sans -translate-x-[50px] text-[18px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px]">
             PLACEHOLDER
             PLACEHOLDER
             PLACEHOLDER
           </p>
         </div>
         <div class="relative">
-          <div class="absolute left-[13%] bottom-[1%] z-0 w-[190px]">
+          <!-- <div class="absolute left-[13%] bottom-[1%] z-0 w-[190px]">
             <img
               src={marked.src}
               alt=""
               class="relative z-0 h-auto w-full object-contain"
               />
-            </div>
+            </div> -->
             <div class="relative z-10">
-        <div class="translate-x-20 mb-8 flex pb-1 right-[550px]">
+        <div class="relative mb-4 flex justify-left mt-35 lg: lg:translate-x-[220px] lg:mb-8 lg:flex lg:pb-1 lg:right-[550px]">
         <Button
           as="a"
-          href=""
+          href="https://github.com/p3d-project/persona-3-dual/releases/tag/Beta" target="_blank"
           size="md"
-          className="w-[410px] py-5 text-4xl mt-6 justify-center"
+          className="w-[310px] translate-x-22 translate-y-15 py-3 text-3xl mt-6 justify-center lg:-translate-y-35 lg:translate-x-105 lg:mt-6 lg:w-[410px] lg:py-5 lg:text-4xl"
         >
           Download
         </Button>
       </div>
 
       <div class="relative flex -mt-6 justify-center gap-6 right-[555px] translate-x-20 translate-y-0.5">
-        <Button
+        <!-- <Button
           as="a"
           href=""
           size="lg"
@@ -390,19 +702,19 @@ import marked from "../assets/glass_marked.png";
         >
           Mirror 2
         </Button>
-        </div>
-      <div class = "absolute right-[20%] top-[2%] w-[450px]">
+        </div> -->
+      <div class = "mt-6 lg:absolute lg:right-[20%] lg:top-[2%] lg:w-[450px]">
             <img
               src={rect6.src}
               alt=""
-              class="absolute left-[100%] top-[15%] -mt-60 z-10 w-[400px] drop-shadow-[8px_8px_0_#3BAA45]"
+              class="w-[250px] -translate-y-[225px] translate-x-[465px] lg:-translate-y-[180px] lg:-translate-x-[5px] lg:absolute lg:left-[100%] lg:top-[15%] lg:-mt-60 z-10 lg:w-[400px] drop-shadow-[8px_8px_0_#3BAA45]"
               />
       </div>
     </div>
   </div>
-  </div>
 </div>
-        </section>
-        
+</div>
+</div>
+ </section> 
     </main>
 </Layout>
