@@ -1,17 +1,17 @@
 import type { ImageMetadata } from "astro";
 
 /** Character silhouette assets (Green for top team cards, Blue for bottom carousel). */
-import aigisGreen from "../assets/aigis 2.svg?url";
-import akihikoGreen from "../assets/akihikosanada 2.svg?url";
-import fuukaGreen from "../assets/fuukayamagishi 2.svg?url";
-import junpeiGreen from "../assets/junpeiiori 2.svg?url";
-import kenGreen from "../assets/kenamada 2.svg?url";
-import koromaruGreen from "../assets/koromaru 2.svg?url";
-import kotoneGreen from "../assets/kotoneshiomi 3.svg?url";
-import makotoGreen from "../assets/makotoyuki 3.svg?url";
-import mitsuruGreen from "../assets/mitsurukirijo 2.svg?url";
-import shinjiroGreen from "../assets/shinjiroaragaki 2.svg?url";
-import yukariGreen from "../assets/yukaritakeba 2.svg?url";
+import aigisGreen from "../assets/silhouette_aigis_green.svg?url";
+import akihikoGreen from "../assets/silhouette_akihiko_green.svg?url";
+import fuukaGreen from "../assets/silhouette_fuuka_green.svg?url";
+import junpeiGreen from "../assets/silhouette_junpei_green.svg?url";
+import kenGreen from "../assets/silhouette_ken_green.svg?url";
+import koromaruGreen from "../assets/silhouette_koromaru_green.svg?url";
+import kotoneGreen from "../assets/silhouette_kotone_green.svg?url";
+import makotoGreen from "../assets/silhouette_makoto_green.svg?url";
+import mitsuruGreen from "../assets/silhouette_mitsuru_green.svg?url";
+import shinjiroGreen from "../assets/silhouette_shinjiro_green.svg?url";
+import yukariGreen from "../assets/silhouette_yukari_green.svg?url";
 
 import makotoBlue from "../assets/silhouette_makoto_blue.png";
 import kotoneBlue from "../assets/silhouette_kotone_blue.png";

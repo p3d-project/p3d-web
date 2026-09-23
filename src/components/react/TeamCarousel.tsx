@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   TEAMS,
   TEAM_SELECTED_EVENT,
@@ -22,7 +22,7 @@ function cogPct(value: number): string {
  */
 const COG_ANCHORS = {
   mobile: {
-    descCenter: { x: 1400, y: 700 },
+    descCenter: { x: 1398.6, y: 711.7 },
   },
   desktop: {
     descCenter: { x: 1390, y: 730 },
@@ -236,7 +236,55 @@ function MobileDescription({
 }) {
   const { descCenter } = COG_ANCHORS.mobile;
   const style = getTransformAndOpacity(animPhase, direction, "desc");
-  const descriptionFontSize = "clamp(8px, 1.8vw, 11px)";
+  const descriptionLength = team.description
+    .replace(/<[^>]*>/g, "")
+    .replace(/\s+/g, " ")
+    .trim().length;
+  const lengthScale = Math.max(
+    0.55,
+    Math.min(1, Math.sqrt(240 / Math.max(descriptionLength, 1))),
+  );
+  const descriptionRef = useRef<HTMLDivElement>(null);
+  const [fittedFontSize, setFittedFontSize] = useState<number | null>(null);
+
+  useEffect(() => {
+    const descriptionElement = descriptionRef.current;
+    const container = descriptionElement?.parentElement;
+    if (!descriptionElement || !container) return;
+
+    const fitDescription = () => {
+      if (!container.clientWidth || !container.clientHeight) return;
+
+      let nextFontSize = Math.min(
+        16,
+        Math.max(
+          6,
+          container.clientWidth * 0.05 * lengthScale,
+        ),
+      );
+
+      descriptionElement.style.fontSize = `${nextFontSize}px`;
+      while (
+        nextFontSize > 6 &&
+        (descriptionElement.scrollWidth > container.clientWidth ||
+          descriptionElement.scrollHeight > container.clientHeight)
+      ) {
+        nextFontSize -= 0.25;
+        descriptionElement.style.fontSize = `${nextFontSize}px`;
+      }
+
+      setFittedFontSize(nextFontSize);
+    };
+
+    fitDescription();
+    const observer = new ResizeObserver(fitDescription);
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, [descriptionLength]);
+
+  const descriptionFontSize = fittedFontSize
+    ? `${fittedFontSize}px`
+    : "clamp(6px, 5cqw, 16px)";
 
   return (
     <div
@@ -244,9 +292,11 @@ function MobileDescription({
       style={{
         left: cogPct(descCenter.x),
         top: cogPct(descCenter.y),
-        width: `${DESC_CIRCLE_PCT * 0.78}%`,
-        aspectRatio: "1 / 1.35",
+        width: `${DESC_CIRCLE_PCT * 0.88}%`,
+        aspectRatio: "1 / 1.7",
         transform: "translate(-50%, -50%) rotate(-17deg)",
+        borderRadius: "50%",
+        overflow: "hidden",
       }}
     >
       <div
@@ -254,8 +304,9 @@ function MobileDescription({
         style={style}
       >
         <div
-          className="text-[clamp(8px,2.2vw,14px)] leading-[1.2] md:text-[clamp(9px,1.6vw,16px)] [&_ol]:my-1 [&_ol]:list-inside [&_ol]:list-decimal [&_ol]:pl-0 [&_p]:my-1 [&_ul]:my-1 [&_ul]:list-inside [&_ul]:list-disc [&_ul]:pl-0"
+          className="max-w-full leading-[1.2] break-words [&_ol]:my-1 [&_ol]:list-inside [&_ol]:list-decimal [&_ol]:pl-0 [&_p]:my-1 [&_ul]:my-1 [&_ul]:list-inside [&_ul]:list-disc [&_ul]:pl-0"
           style={{ fontSize: descriptionFontSize }}
+          ref={descriptionRef}
           dangerouslySetInnerHTML={{ __html: team.description }}
         />
       </div>
