@@ -1,8 +1,16 @@
 ---
+import { Image } from "astro:assets";
+
 import Button from "../components/react/Button";
 import Layout from "../layouts/Layout.astro";
 
 import HeroDS from "../assets/hero-ds.svg";
+import tiktokCard from "../assets/card_tiktok.webp";
+import xCard from "../assets/card_x.webp";
+import redditCard from "../assets/card_reddit.webp";
+import instagramCard from "../assets/card_instagram.webp";
+
+import DownloadNowText from "../assets/download_now.svg";
 ---
 
 <Layout>
@@ -25,8 +33,8 @@ import HeroDS from "../assets/hero-ds.svg";
         </div>
 
         <div class="flex flex-col gap-2">
-          <Button className="">Download Now!</Button>
-          <p class="text-center text-xs uppercase">
+          <Button>Download Now!</Button>
+          <p class="text-center text-[10px] uppercase">
             This project is not for profit and not affiliated with SEGA, ATLUS,
             or Nintendo.
           </p>
@@ -68,23 +76,109 @@ import HeroDS from "../assets/hero-ds.svg";
 
     <section
       id="social-media"
-      class="water-bg p3d-container flex flex-col gap-4 py-20 text-white"
+      class="water-bg flex flex-col gap-4 py-20 text-white"
     >
-      <div class="flex flex-col gap-2">
+      <div class="p3d-container flex flex-col gap-2">
         <h2 class="font-noto-sans text-center text-xl font-extrabold">
           Keep Updated
         </h2>
         <p class="text-center">
           Follow the project on our social media. Make sure to share!
         </p>
+
+        <!-- TODO: add floating animation on each card -->
+        <!-- TODO: fill with real social links -->
+        <div class="flex items-center justify-center">
+          <div
+            class="@container grow-0 shrink relative aspect-385/400 w-full max-w-125 py-10"
+          >
+            <!-- <a
+            href="https://example.com"
+            class="absolute left-0 w-fit translate-y-15 -rotate-8"
+          >
+            <Image
+              src={tiktokCard}
+              alt="Tiktok social media card"
+              class="h-37.5 w-auto"
+            />
+          </a> -->
+
+            <a
+              href="https://example.com"
+              class="absolute left-0 w-fit translate-y-[15cqi] -rotate-8"
+            >
+              <Image
+                src={tiktokCard}
+                alt="Tiktok social media card"
+                class="h-auto w-[28cqi]"
+              />
+            </a>
+
+            <a
+              href="https://example.com"
+              class="absolute left-[50%] w-fit translate-x-[-50%]"
+            >
+              <Image
+                src={xCard}
+                alt="X social media card"
+                class="h-auto w-[28cqi]"
+              />
+            </a>
+
+            <a
+              href="https://example.com"
+              class="absolute right-0 w-fit translate-y-[15cqi] rotate-8"
+            >
+              <Image
+                src={redditCard}
+                alt="Reddit social media card"
+                class="h-auto w-[28cqi]"
+              />
+            </a>
+
+            <a
+              href="https://example.com"
+              class="absolute left-[50%] w-fit translate-x-[-50%] translate-y-[53cqi] -rotate-8"
+            >
+              <Image
+                src={instagramCard}
+                alt="Instagram social media card"
+                class="h-auto w-[28cqi]"
+              />
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="download-cta"></section>
+    <section id="download-cta" class="relative overflow-hidden py-10">
+      <div>
+        {
+          Array.from(Array(6), () => (
+            <div class="download-now-text">
+              {Array.from(Array(10), () => (
+                <DownloadNowText />
+              ))}
+            </div>
+          ))
+        }
+      </div>
 
-    <section id="join-the-team">
-      <h2>Join the Team!</h2>
-      <p>Help contribute to making this project a reality!</p>
+      <p class="text-center text-xs uppercase">
+        This project is not for profit and not affiliated with SEGA, ATLUS, or
+        Nintendo.
+      </p>
+    </section>
+
+    <section id="join-the-team" class="py-20">
+      <div class="p3d-container flex flex-col gap-2">
+        <h2 class="font-noto-sans text-center text-2xl font-extrabold">
+          Join the Team!
+        </h2>
+        <p class="text-center">
+          Help contribute to making this project a reality!
+        </p>
+      </div>
     </section>
 
     <section id="progress">
@@ -100,5 +194,43 @@ import HeroDS from "../assets/hero-ds.svg";
   .water-bg {
     background-image: url("@assets/water-bg.webp");
     background-size: cover;
+  }
+
+  .download-now-text {
+    display: inline-flex;
+    gap: 20px;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    &:nth-child(odd) {
+      animation-name: download-now-scroll;
+    }
+    &:nth-child(even) {
+      animation-name: download-now-scroll-inverse;
+    }
+
+    > svg {
+      height: calc(50px * var(--scale));
+      width: auto;
+    }
+  }
+
+  @keyframes download-now-scroll {
+    from {
+      transform: translate3d(-50%, 0, 0);
+    }
+    to {
+      transform: translate3d(calc(-10% - 50%), 0, 0);
+    }
+  }
+
+  @keyframes download-now-scroll-inverse {
+    from {
+      transform: translate3d(calc(-10% - 50%), 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
   }
 </style>

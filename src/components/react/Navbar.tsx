@@ -93,7 +93,7 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
 
             {/* Desktop Nav */}
             <nav className="hidden grow self-stretch md:block">
-              <ul className="flex size-full items-stretch justify-stretch text-2xl">
+              <ul className="flex size-full items-stretch justify-stretch text-xl lg:text-2xl">
                 {NAV_LINKS.map((v, i) => (
                   <DesktopNavItem
                     key={`${i} ${v.name}`}
