@@ -313,8 +313,8 @@ function MobileDescription({
       if (!container.clientWidth || !container.clientHeight) return;
 
       let nextFontSize = Math.min(
-        16,
-        Math.max(6, container.clientWidth * 0.05 * lengthScale),
+        18,
+        Math.max(7, container.clientWidth * 0.055 * lengthScale),
       );
 
       descriptionElement.style.fontSize = `${nextFontSize}px`;
@@ -343,7 +343,7 @@ function MobileDescription({
 
   const descriptionFontSize = fittedFontSize
     ? `${fittedFontSize}px`
-    : "clamp(6px, 5cqw, 16px)";
+    : "clamp(7px, 6cqw, 18px)";
 
   const safeDescription = sanitizeDescription(team.description);
 
@@ -404,7 +404,7 @@ function DesktopDescription({
         style={style}
       >
         <div
-          className="text-[clamp(0px,calc(1.5vw-3.5px),24px)] leading-[1.2] [&_ol]:my-2 [&_ol]:list-inside [&_ol]:list-decimal [&_ol]:pl-0 [&_p]:my-2 [&_ul]:my-2 [&_ul]:list-inside [&_ul]:list-disc [&_ul]:pl-0"
+          className="text-[clamp(0px,calc(2.2vw+2px),34px)] leading-[1.2] [&_ol]:my-2 [&_ol]:list-inside [&_ol]:list-decimal [&_ol]:pl-0 [&_p]:my-2 [&_ul]:my-2 [&_ul]:list-inside [&_ul]:list-disc [&_ul]:pl-0"
           dangerouslySetInnerHTML={{ __html: safeDescription }}
         />
       </div>

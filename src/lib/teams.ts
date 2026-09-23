@@ -51,7 +51,7 @@ export const TEAMS: TeamData[] = [
   {
     id: "game-dev",
     name: "Game Dev",
-    description: `<p>Responsible for designing, architecting and programming various game &amp; game-related codebases.</p><p><em>persona-3-dual</em> is the actual game itself, developed in C++. The game itself is built with our in-house <em>aegis-engine</em>. At the moment, we use <em>BlocksDS</em> as our SDK. To interact with DS hardware, we use the <em>libnds</em> library.</p><p><em>aegis-engine</em> is a lightweight, strictly-bounded C++17 Entity-Component (EC) and Data-Oriented Design (DOD) hybrid game framework.</p><p><em>p3d-amicitia</em> (a fork of <em>Amicitia</em>) is an editor for file formats used in Atlus' Persona games, modified by member(s) of the P3D team in hopes of an easier workflow</p>`,
+    description: `<p>Responsible for designing, architecting and programming various game &amp; game-related codebases.</p>`,
     silhouettes: [
       {
         src: makotoGreen,
@@ -84,7 +84,7 @@ export const TEAMS: TeamData[] = [
   {
     id: "web-dev",
     name: "Web Dev",
-    description: `<p>Responsible for implementing and maintaining the various websites that the project hosts.</p><p><em>p3d-web</em> is designed to act as the primary gateway for the project, serving as the main distribution point for project updates. It is built on the <em>Astro</em> framework with <em>React</em> components and <em>Tailwind CSS</em> to leverage fast static-site generation and responsive, utility-driven design.</p><p><em>p3d-docs</em> is the official documentation website. It serves as the main distribution point for all project docs, including team setup &amp; codebase references. Engineered for high performance and long-term maintainability, it is built on the <em>Astro</em> framework with <em>React</em> components and <em>Tailwind CSS</em> to leverage fast static-site generation and responsive, utility-driven design.</p><p><em>elizabeth-bot</em> is a bespoke Discord onboarding and application management bot built for the P3D Project that streamlines the applicant workflow.</p>`,
+    description: `<p>Responsible for implementing and maintaining the various websites &amp; web-based tools that the project hosts.</p>`,
     silhouettes: [
       { src: aigisGreen, alt: "Aigis", heightMobile: 215, heightDesktop: 255 },
     ],
@@ -95,7 +95,7 @@ export const TEAMS: TeamData[] = [
   {
     id: "ux-ui",
     name: "UX/UI",
-    description: `<p>Responsible for designing and producing the game's interface assets, including menus, HUD elements, icons, dialogue boxes, and overall interface layout and flow, while keeping everything visually consistent, usable, and within the technical limits of the Nintendo DS.</p><p>In practice, that covers things like:</p><ul><li>Main menu, pause menu, other menus and settings screens</li><li>HUD elements (health, status effects, maybe text fonts, etc.)</li><li>Dialogue text boxes</li><li>Battle &amp; icons</li><li>Other on-screen interface element that needs a consistent, readable style</li><li>Website design</li></ul>`,
+    description: `<p>Responsible for creating the project’s visual designs including art standards, in-game interfaces (menus, etc.), website design, and overall layout and user flow.</p>`,
     silhouettes: [
       {
         src: yukariGreen,
@@ -116,7 +116,7 @@ export const TEAMS: TeamData[] = [
   {
     id: "3d",
     name: "3D",
-    description: `<p>A combo of modders/rippers of Persona games + 3D modellers, responsible for creating the 3D assets (environments, character models, etc.) used in the game.</p><p><em>p3d-amicitia</em> (a fork of <em>Amicitia</em>) is an editor for file formats used in Atlus' Persona games, modified by member(s) of the P3D team in hopes of an easier workflow</p>`,
+    description: `<p>Responsible for creating the 3D assets &amp; animations (environments, character models, etc.) used in the game.</p>`,
     silhouettes: [
       {
         src: kenGreen,
@@ -144,7 +144,7 @@ export const TEAMS: TeamData[] = [
   {
     id: "graphics",
     name: "Graphics",
-    description: `<p>Responsible for the graphics of the project. That doesn't mean it's only going to be making sprites for the game. It also means, for example, doing assets for the website, for a video, for a milestone etc.</p><p>Some examples of what we do can be, but are not limited to:</p><ol><li>Creating sprites for the game: Creating sprites can vary a lot, from making portraits for characters, making backgrounds, making textures, etc...</li><li>Making website assets</li><li>Making 3D model texture assets</li></ol>`,
+    description: `<p>Responsible for the graphics of the project, including pixel art, texturing, graphic design, &amp; website assets.</p>`,
     silhouettes: [
       {
         src: akihikoGreen,
@@ -189,7 +189,7 @@ export const TEAMS: TeamData[] = [
   {
     id: "music",
     name: "Music",
-    description: `<p>Responsible for creating, modifying, and optimizing music and SFX for the project, based on the ones found in Persona 3 FES, to both leave our mark on the history of Persona 3, and to avoid copyright issues with the original developers (that being Atlus co. and SEGA).</p>`,
+    description: `<p>Responsible for producing original songs and sound effects for the project, inspired by existing Persona 3 audio design.</p>`,
     silhouettes: [
       {
         src: junpeiGreen,
@@ -210,7 +210,7 @@ export const TEAMS: TeamData[] = [
   {
     id: "video",
     name: "Video",
-    description: `<p>The video team is responsible for creating various videos needed for the project (promo videos, tutorials, etc.) and is also responsible for video conversion/compression (for in-game videos)</p>`,
+    description: `<p>Responsible for producing &amp; mastering videos used across the project (promo videos, tutorials, in-game video optimization, etc.)</p>`,
     silhouettes: [
       {
         src: fuukaGreen,
