@@ -306,8 +306,10 @@ function MobileDescription({
     const descriptionElement = descriptionRef.current;
     const container = descriptionElement?.parentElement;
     if (!descriptionElement || !container) return;
+    let disposed = false;
 
     const fitDescription = () => {
+      if (disposed) return;
       if (!container.clientWidth || !container.clientHeight) return;
 
       let nextFontSize = Math.min(
@@ -331,7 +333,12 @@ function MobileDescription({
     fitDescription();
     const observer = new ResizeObserver(fitDescription);
     observer.observe(container);
-    return () => observer.disconnect();
+    const fontsReady = document.fonts?.ready.then(fitDescription);
+    return () => {
+      disposed = true;
+      observer.disconnect();
+      void fontsReady;
+    };
   }, [descriptionLength]);
 
   const descriptionFontSize = fittedFontSize
@@ -358,7 +365,7 @@ function MobileDescription({
         style={style}
       >
         <div
-          className="max-w-full leading-[1.2] break-words [&_ol]:my-1 [&_ol]:list-inside [&_ol]:list-decimal [&_ol]:pl-0 [&_p]:my-1 [&_ul]:my-1 [&_ul]:list-inside [&_ul]:list-disc [&_ul]:pl-0"
+          className="max-h-full min-w-0 max-w-full leading-[1.2] break-words [&_ol]:my-1 [&_ol]:list-inside [&_ol]:list-decimal [&_ol]:pl-0 [&_p]:my-1 [&_ul]:my-1 [&_ul]:list-inside [&_ul]:list-disc [&_ul]:pl-0"
           style={{ fontSize: descriptionFontSize }}
           ref={descriptionRef}
           dangerouslySetInnerHTML={{ __html: safeDescription }}
