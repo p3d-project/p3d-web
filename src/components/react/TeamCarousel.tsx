@@ -365,7 +365,7 @@ function MobileDescription({
         style={style}
       >
         <div
-          className="max-h-full min-w-0 max-w-full leading-[1.2] break-words [&_ol]:my-1 [&_ol]:list-inside [&_ol]:list-decimal [&_ol]:pl-0 [&_p]:my-1 [&_ul]:my-1 [&_ul]:list-inside [&_ul]:list-disc [&_ul]:pl-0"
+          className="max-h-full max-w-full min-w-0 leading-[1.2] break-words [&_ol]:my-1 [&_ol]:list-inside [&_ol]:list-decimal [&_ol]:pl-0 [&_p]:my-1 [&_ul]:my-1 [&_ul]:list-inside [&_ul]:list-disc [&_ul]:pl-0"
           style={{ fontSize: descriptionFontSize }}
           ref={descriptionRef}
           dangerouslySetInnerHTML={{ __html: safeDescription }}
