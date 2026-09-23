@@ -43,7 +43,7 @@ export default function TeamCard({
     >
       <h3
         className={cn(
-          "font-noto-sans mb-2 w-full break-words whitespace-normal px-1 text-center text-[#000024] transition-transform duration-200 group-hover:scale-105",
+          "font-noto-sans mb-2 w-full px-1 text-center break-words whitespace-normal text-[#000024] transition-transform duration-200 group-hover:scale-105",
           headingClassName ?? DEFAULT_HEADING_CLASS[breakpoint],
         )}
       >

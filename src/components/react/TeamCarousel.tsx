@@ -38,6 +38,64 @@ function silhouetteSrc(sil: Silhouette): string {
   return typeof sil.src === "string" ? sil.src : sil.src.src;
 }
 
+function plainTextFromHtml(value: string): string {
+  if (typeof window === "undefined" || typeof DOMParser === "undefined") {
+    return value;
+  }
+
+  const doc = new DOMParser().parseFromString(value, "text/html");
+  return (doc.body.textContent ?? "").replace(/\s+/g, " ").trim();
+}
+
+function sanitizeDescription(value: string): string {
+  if (typeof window === "undefined" || typeof DOMParser === "undefined") {
+    return value;
+  }
+
+  const doc = new DOMParser().parseFromString(value, "text/html");
+  const allowedTags = new Set([
+    "P",
+    "EM",
+    "STRONG",
+    "UL",
+    "OL",
+    "LI",
+    "BR",
+    "A",
+    "SPAN",
+    "B",
+    "I",
+  ]);
+  const allowedAttrs = new Set(["href", "target", "rel", "class"]);
+
+  doc.body.querySelectorAll("*").forEach((element) => {
+    const tagName = element.tagName.toUpperCase();
+
+    if (!allowedTags.has(tagName)) {
+      element.remove();
+      return;
+    }
+
+    Array.from(element.attributes).forEach((attribute) => {
+      const attrName = attribute.name.toLowerCase();
+
+      if (attrName.startsWith("on") || !allowedAttrs.has(attrName)) {
+        element.removeAttribute(attribute.name);
+        return;
+      }
+
+      if (attrName === "href") {
+        const href = attribute.value.trim();
+        if (href && !href.startsWith("#") && !/^https?:\/\//i.test(href)) {
+          element.removeAttribute("href");
+        }
+      }
+    });
+  });
+
+  return doc.body.innerHTML;
+}
+
 function getSilhouetteAdjustments(team: TeamData) {
   const isTrio = team.silhouettesBlue.length === 3;
   const isPair = team.silhouettesBlue.length > 1 && !isTrio;
@@ -236,10 +294,7 @@ function MobileDescription({
 }) {
   const { descCenter } = COG_ANCHORS.mobile;
   const style = getTransformAndOpacity(animPhase, direction, "desc");
-  const descriptionLength = team.description
-    .replace(/<[^>]*>/g, "")
-    .replace(/\s+/g, " ")
-    .trim().length;
+  const descriptionLength = plainTextFromHtml(team.description).length;
   const lengthScale = Math.max(
     0.55,
     Math.min(1, Math.sqrt(240 / Math.max(descriptionLength, 1))),
@@ -257,10 +312,7 @@ function MobileDescription({
 
       let nextFontSize = Math.min(
         16,
-        Math.max(
-          6,
-          container.clientWidth * 0.05 * lengthScale,
-        ),
+        Math.max(6, container.clientWidth * 0.05 * lengthScale),
       );
 
       descriptionElement.style.fontSize = `${nextFontSize}px`;
@@ -286,6 +338,8 @@ function MobileDescription({
     ? `${fittedFontSize}px`
     : "clamp(6px, 5cqw, 16px)";
 
+  const safeDescription = sanitizeDescription(team.description);
+
   return (
     <div
       className="pointer-events-auto absolute z-[2] flex items-center justify-center md:hidden"
@@ -307,7 +361,7 @@ function MobileDescription({
           className="max-w-full leading-[1.2] break-words [&_ol]:my-1 [&_ol]:list-inside [&_ol]:list-decimal [&_ol]:pl-0 [&_p]:my-1 [&_ul]:my-1 [&_ul]:list-inside [&_ul]:list-disc [&_ul]:pl-0"
           style={{ fontSize: descriptionFontSize }}
           ref={descriptionRef}
-          dangerouslySetInnerHTML={{ __html: team.description }}
+          dangerouslySetInnerHTML={{ __html: safeDescription }}
         />
       </div>
     </div>
@@ -325,6 +379,7 @@ function DesktopDescription({
 }) {
   const { descCenter } = COG_ANCHORS.desktop;
   const style = getTransformAndOpacity(animPhase, direction, "desc");
+  const safeDescription = sanitizeDescription(team.description);
 
   return (
     <div
@@ -343,7 +398,7 @@ function DesktopDescription({
       >
         <div
           className="text-[clamp(0px,calc(1.5vw-3.5px),24px)] leading-[1.2] [&_ol]:my-2 [&_ol]:list-inside [&_ol]:list-decimal [&_ol]:pl-0 [&_p]:my-2 [&_ul]:my-2 [&_ul]:list-inside [&_ul]:list-disc [&_ul]:pl-0"
-          dangerouslySetInnerHTML={{ __html: team.description }}
+          dangerouslySetInnerHTML={{ __html: safeDescription }}
         />
       </div>
     </div>
