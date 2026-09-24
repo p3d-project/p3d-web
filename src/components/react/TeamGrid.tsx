@@ -83,21 +83,25 @@ export default function TeamGrid() {
             team={team("game-dev")}
             onSelect={handleTeamClick}
             breakpoint="desktop"
+            scaleWithViewport
           />
           <TeamCard
             team={team("web-dev")}
             onSelect={handleTeamClick}
             breakpoint="desktop"
+            scaleWithViewport
           />
           <TeamCard
             team={team("ux-ui")}
             onSelect={handleTeamClick}
             breakpoint="desktop"
+            scaleWithViewport
           />
           <TeamCard
             team={team("3d")}
             onSelect={handleTeamClick}
             breakpoint="desktop"
+            scaleWithViewport
           />
         </div>
 
@@ -107,18 +111,21 @@ export default function TeamGrid() {
             team={team("graphics")}
             onSelect={handleTeamClick}
             breakpoint="desktop"
+            scaleWithViewport
             className="col-span-2"
           />
           <TeamCard
             team={team("music")}
             onSelect={handleTeamClick}
             breakpoint="desktop"
+            scaleWithViewport
             className="col-span-1"
           />
           <TeamCard
             team={team("video")}
             onSelect={handleTeamClick}
             breakpoint="desktop"
+            scaleWithViewport
             className="col-span-1"
           />
         </div>

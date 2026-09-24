@@ -4,7 +4,7 @@ import type { TeamData, Silhouette } from "../../lib/teams";
 /** Default heading styles when headingClassName is not passed. */
 const DEFAULT_HEADING_CLASS: Record<"mobile" | "desktop", string> = {
   mobile: "text-base sm:text-lg font-black",
-  desktop: "text-xl lg:text-2xl font-black",
+  desktop: "text-xl lg:text-[1.25vw] font-black",
 };
 
 interface TeamCardProps {
@@ -14,6 +14,8 @@ interface TeamCardProps {
   className?: string;
   /** Which silhouette heights to use — mobile or desktop. */
   breakpoint: "mobile" | "desktop";
+  /** Scale desktop silhouettes with the viewport when enabled by the grid. */
+  scaleWithViewport?: boolean;
   /** Optional heading overrides; defaults per breakpoint otherwise. */
   headingClassName?: string;
 }
@@ -29,6 +31,7 @@ export default function TeamCard({
   onSelect,
   className = "",
   breakpoint,
+  scaleWithViewport = false,
   headingClassName,
 }: TeamCardProps) {
   return (
@@ -53,12 +56,19 @@ export default function TeamCard({
         {team.silhouettes.map((s) => {
           const height =
             breakpoint === "mobile" ? s.heightMobile : s.heightDesktop;
+          const isResponsiveDesktop =
+            breakpoint === "desktop" && scaleWithViewport;
+          const responsiveHeight = `${((height * 1.08) / 19.2).toFixed(3)}vw`;
           return (
             <img
               key={s.alt}
               src={silhouetteSrc(s)}
               alt={s.alt}
-              style={{ maxHeight: `${height}px` }}
+              style={
+                isResponsiveDesktop
+                  ? { height: responsiveHeight, maxHeight: "none" }
+                  : { maxHeight: `${height}px` }
+              }
               className="h-auto w-auto max-w-full object-contain object-bottom transition-transform duration-200 group-hover:scale-105"
             />
           );

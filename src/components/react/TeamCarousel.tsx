@@ -76,6 +76,10 @@ function sanitizeDescription(value: string): string {
       return;
     }
 
+    if (tagName === "A") {
+      element.classList.add("hyperlink");
+    }
+
     Array.from(element.attributes).forEach((attribute) => {
       const attrName = attribute.name.toLowerCase();
 
@@ -404,7 +408,7 @@ function DesktopDescription({
         style={style}
       >
         <div
-          className="text-[clamp(0px,calc(2.2vw+2px),34px)] leading-[1.2] [&_ol]:my-2 [&_ol]:list-inside [&_ol]:list-decimal [&_ol]:pl-0 [&_p]:my-2 [&_ul]:my-2 [&_ul]:list-inside [&_ul]:list-disc [&_ul]:pl-0"
+          className="text-[2.344vw] leading-[1.2] [&_ol]:my-2 [&_ol]:list-inside [&_ol]:list-decimal [&_ol]:pl-0 [&_p]:my-2 [&_ul]:my-2 [&_ul]:list-inside [&_ul]:list-disc [&_ul]:pl-0"
           dangerouslySetInnerHTML={{ __html: safeDescription }}
         />
       </div>
