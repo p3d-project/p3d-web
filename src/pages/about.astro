@@ -4,7 +4,6 @@ import Button from "../components/react/Button.tsx";
 import TeamGrid from "../components/react/TeamGrid.tsx";
 import TeamCarousel from "../components/react/TeamCarousel.tsx";
 import ArrowIcon from "../components/react/ArrowIcon.tsx";
-import dotsPattern from "../assets/Dots.svg";
 import glassPng from "../assets/glass.png";
 ---
 
@@ -21,10 +20,9 @@ import glassPng from "../assets/glass.png";
       >
         {/* Dot pattern: full width on mobile, right half on desktop */}
         <div
-          class="about-desktop-dots absolute inset-0 bg-repeat lg:left-[43%]"
-          style={`background-image: url('${dotsPattern.src}');`}
-        >
-        </div>
+          class="dot-bg absolute inset-0 lg:left-[43%]"
+          aria-hidden="true"
+        ></div>
 
         {
           /* In-code Glass Oval — Desktop (anchored to right edge, halfway out of view behind team grid) */
@@ -143,10 +141,24 @@ import glassPng from "../assets/glass.png";
     }
   }
 
-  /* Scale the desktop dot tile to the 1365px-wide reference viewport. */
-  @media (min-width: 1024px) {
-    .about-desktop-dots {
-      background-size: 69.304vw auto;
+  .dot-bg {
+    background-image: radial-gradient(
+      circle 31.0365px at 33px 33px,
+      #CCECFF 0 31.0365px,
+      transparent 31.0365px
+    );
+    background-size: 75px 75px;
+    background-repeat: repeat;
+  }
+
+  @media (min-width: 768px) {
+    .dot-bg {
+      background-image: radial-gradient(
+        circle 38.09025px at 40.5px 40.5px,
+        #CCECFF 0 38.09025px,
+        transparent 38.09025px
+      );
+      background-size: 90px 90px;
     }
   }
 
