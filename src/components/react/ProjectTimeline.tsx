@@ -45,7 +45,7 @@ function TimelineItem({
 
 export default function ProjectTimeline() {
   return (
-    <div className="flex flex-col gap-1 border-4 border-white bg-black/50 px-5 py-10">
+    <div className="mx-auto flex max-w-162.5 flex-col gap-1 border-4 border-white bg-black/50 px-5 py-10">
       <div className="flex items-center justify-center">
         <div className="size-5 bg-white"></div>
       </div>
