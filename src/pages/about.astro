@@ -1,11 +1,177 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Button from "../components/react/Button.tsx";
+import TeamGrid from "../components/react/TeamGrid.tsx";
+import TeamCarousel from "../components/react/TeamCarousel.tsx";
+import ArrowIcon from "../components/react/ArrowIcon.tsx";
+import glassPng from "../assets/glass.png";
 ---
 
 <Layout>
-  <main class="pt-15">
-    <section id="index" class="container mx-auto">
-      <h1 class="text-center">Index</h1>
+  <main>
+    {/* Hero — intro copy and team selection grid */}
+    <section
+      id="index"
+      class="relative min-h-screen w-full overflow-hidden bg-[#E6F0FA]"
+    >
+      {/* Background — dot pattern and desktop glass overlay */}
+      <div
+        class="pointer-events-none absolute inset-0 overflow-hidden select-none"
+      >
+        {/* Dot pattern: full width on mobile, right half on desktop */}
+        <div class="dot-bg absolute inset-0 lg:left-[43%]" aria-hidden="true">
+        </div>
+
+        {
+          /* In-code Glass Oval — Desktop (anchored to right edge, halfway out of view behind team grid) */
+        }
+        <div
+          class="absolute top-1/2 right-0 hidden h-[83.516vw] w-[44.762vw] max-w-none translate-x-[25%] -translate-y-1/2 overflow-hidden rounded-[50%] bg-[#79CEFF] select-none lg:block"
+          aria-hidden="true"
+        >
+          <img
+            src={glassPng.src}
+            alt=""
+            aria-hidden="true"
+            class="absolute inset-0 h-full w-full object-cover opacity-15"
+          />
+        </div>
+      </div>
+
+      {/* Page grid — intro column and team grid column */}
+      <div
+        class="about-hero-grid p3d-container relative z-10 grid min-h-screen w-full grid-cols-1 pt-16 lg:grid-cols-12"
+      >
+        {/* Intro column — copy and scroll cue */}
+        <div
+          class="relative isolate flex flex-col items-center justify-start self-start pt-6 pr-0 pb-4 text-center sm:pt-10 sm:pb-6 lg:col-span-5 lg:items-start lg:justify-center lg:self-stretch lg:pt-0 lg:pr-4 lg:pb-0 lg:text-left"
+        >
+          {
+            /* In-code Glass Oval — Mobile (horizontal oval covering intro and ending just below the arrow) */
+          }
+          <div
+            class="about-mobile-glass pointer-events-none absolute left-1/2 z-0 block max-w-none -translate-x-1/2 overflow-hidden rounded-[50%] bg-[#79CEFF] select-none lg:hidden"
+            aria-hidden="true"
+          >
+            <img
+              src={glassPng.src}
+              alt=""
+              aria-hidden="true"
+              class="absolute inset-0 h-full w-full object-cover opacity-15"
+            />
+          </div>
+
+          <div class="relative z-10 flex flex-col items-center lg:items-start">
+            <h1
+              style="-webkit-text-stroke: 1.5px #001B3D;"
+              class="font-bmspace relative z-10 mb-3 text-[45px] leading-tight tracking-[-0.02em] text-[#001B3D] sm:text-5xl lg:mb-[1.758vw] lg:text-[4.029vw]"
+            >
+              About Us
+            </h1>
+
+            <p
+              class="font-noto-sans relative z-10 max-w-[440px] px-2 text-[19px] leading-snug font-semibold text-[#001B3D] sm:px-0 sm:text-xl lg:max-w-[32.234vw] lg:px-0 lg:text-[2.059vw]"
+            >
+              What unites us is simple: love for a lost game that never was. P3D
+              isn’t simply us asking “what if”, but forging a tailored
+              experience from the ground-up.
+            </p>
+
+            {/* Scroll cue — links to the team detail section */}
+            <button
+              id="scroll-cue-btn"
+              type="button"
+              class="group relative z-10 mt-3 inline-flex cursor-pointer flex-col items-center gap-1.5 border-0 bg-transparent p-0 sm:mt-5 sm:gap-2 lg:mt-[3.516vw] lg:flex-row lg:gap-[0.073vw]"
+            >
+              <span
+                class="font-noto-sans order-1 text-[6.47vw] leading-tight font-extrabold text-[#000024] sm:text-[3.13vw] lg:order-2 lg:w-[11.93vw] lg:text-[1.83vw]"
+              >
+                Explore teams
+              </span>
+              <div
+                class="order-2 flex-shrink-0 text-[#000024] transition-transform duration-300 ease-in-out group-hover:translate-y-2 lg:order-1"
+              >
+                <ArrowIcon
+                  className="h-[16.92vw] w-auto sm:h-[9.11vw] lg:h-[8.7vw]"
+                />
+              </div>
+            </button>
+          </div>
+        </div>
+
+        {/* Team grid column — hydrated React island */}
+        <div
+          class="relative flex h-full w-full items-center justify-center pt-10 pb-16 lg:col-span-7 lg:justify-end lg:py-0 lg:pl-12"
+        >
+          <TeamGrid client:load />
+        </div>
+      </div>
+    </section>
+
+    {/* Team detail — join CTA and carousel */}
+    <section
+      id="team"
+      class="relative z-10 w-full scroll-mt-16 overflow-hidden bg-[#000024] pt-10 pb-0 sm:pt-12"
+    >
+      {/* Join CTA */}
+      <div class="p3d-container mb-1 w-full sm:mb-2">
+        <Button
+          as="a"
+          href="https://docs.p3dual.com/guides/team-application/"
+          size="lg"
+          className="w-full justify-center py-5 text-4xl lg:py-[1.465vw] lg:text-[2.637vw]"
+        >
+          Join Now!
+        </Button>
+      </div>
+
+      {/* Team carousel — hydrated React island */}
+      <TeamCarousel client:load />
     </section>
   </main>
 </Layout>
+
+<style>
+  /* Keep the 100% desktop container reference, then scale it with zoomed-out viewports. */
+  @media (min-width: 1536px) {
+    .about-hero-grid {
+      max-width: 80vw;
+    }
+  }
+
+  .dot-bg {
+    background-image: radial-gradient(
+      circle 31.0365px at 33px 33px,
+      #ccecff 0 31.0365px,
+      transparent 31.0365px
+    );
+    background-size: 75px 75px;
+    background-repeat: repeat;
+  }
+
+  @media (min-width: 768px) {
+    .dot-bg {
+      background-image: radial-gradient(
+        circle 38.09025px at 40.5px 40.5px,
+        #ccecff 0 38.09025px,
+        transparent 38.09025px
+      );
+      background-size: 90px 90px;
+    }
+  }
+
+  /* Scale the mobile glass to the 402px-wide reference without CSS unit division. */
+  .about-mobile-glass {
+    width: 318.408vw;
+    height: 213.93vw;
+    top: auto;
+    bottom: 0;
+  }
+</style>
+
+{/* Scroll cue button click handler — scrolls to the team detail section */}
+<script>
+  document.getElementById("scroll-cue-btn")?.addEventListener("click", () => {
+    document.getElementById("team")?.scrollIntoView();
+  });
+</script>
