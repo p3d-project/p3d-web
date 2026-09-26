@@ -12,7 +12,7 @@ export type ButtonProps<T extends React.ElementType> = ButtonCustomProps & {
 } & Omit<ComponentPropsWithoutRef<T>, "as" | keyof ButtonCustomProps>;
 
 const buttonBaseStyle = cn(
-  "inline-flex font-bmspace items-center transition-[color,background-color,box-shadow] duration-200 cursor-pointer bg-secondary text-white",
+  "inline-flex font-bmspace items-center transition-[color,background-color,box-shadow] duration-200 cursor-pointer bg-secondary text-white justify-center",
 );
 const buttonSizeMap: Record<ButtonSize, string> = {
   sm: cn("text-lg px-4 py-1.5"),

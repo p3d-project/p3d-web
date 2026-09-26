@@ -83,17 +83,17 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
     <>
       <header
         id="navbar"
-        className="fixed top-0 right-0 left-0 z-50 min-h-15 text-white"
+        className="fixed top-0 right-0 left-0 z-50 text-white"
       >
         <div className="bg-primary relative z-10">
           <div className="p3d-container flex grow-0 items-center justify-between gap-12">
             <a href="/" className="">
-              <img src={logo} className="h-15 w-auto py-2" />
+              <img src={logo} className="h-12 w-auto py-2 xl:h-15" />
             </a>
 
             {/* Desktop Nav */}
             <nav className="hidden grow self-stretch md:block">
-              <ul className="flex size-full items-stretch justify-stretch text-2xl">
+              <ul className="flex size-full items-stretch justify-stretch text-lg lg:text-xl xl:text-2xl">
                 {NAV_LINKS.map((v, i) => (
                   <DesktopNavItem
                     key={`${i} ${v.name}`}

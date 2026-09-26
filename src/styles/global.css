@@ -54,6 +54,8 @@
   --color-primary: #002c48;
   --color-secondary: #00ca69;
   --color-secondary-dark: #004528;
+
+  --breakpoint-2xl: initial;
 }
 
 @layer base {
@@ -75,11 +77,15 @@
 }
 
 @utility p3d-container {
-  @apply container mx-auto px-2;
+  @apply container mx-auto px-5;
 
   @variant md {
     @apply px-8;
   }
+}
+
+@utility p3d-navbar-pad {
+  @apply pt-12 xl:pt-15;
 }
 
 html {
