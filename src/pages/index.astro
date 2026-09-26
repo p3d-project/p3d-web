@@ -21,7 +21,6 @@ import BigChevron from "../assets/big_chevron.svg";
 <Layout>
   <main class="p3d-navbar-pad">
     <section id="hero" class="relative">
-      <!-- TODO: missing the dots background -->
       <div class="dot-bg absolute top-0 right-0 -z-1 h-full w-full md:w-[60%]">
       </div>
 
@@ -52,14 +51,13 @@ import BigChevron from "../assets/big_chevron.svg";
         </div>
 
         <div class="flex flex-col gap-2 md:w-75 lg:w-100">
-<Button
-  as="a"
-  href="/download"
-  className="md:text-xl lg:p-6! lg:text-2xl"
->
-  Download Now!
-</Button>
+          <Button
+            as="a"
+            href="/download"
+            className="md:text-xl lg:p-6! lg:text-2xl"
           >
+            Download Now!
+          </Button>
           <p class="text-center text-[10px] uppercase">
             This project is not for profit and not affiliated with SEGA, ATLUS,
             or Nintendo.
@@ -159,7 +157,6 @@ import BigChevron from "../assets/big_chevron.svg";
           </div>
 
           <!-- TODO: add floating animation on each card -->
-          <!-- TODO: fill with real social links -->
 
           <div
             class="@container relative mx-auto my-10 aspect-385/365 w-full max-w-125 shrink-0 md:max-w-none md:flex-0 md:grow md:basis-1/2"
@@ -273,11 +270,11 @@ import BigChevron from "../assets/big_chevron.svg";
       </a>
     </section>
 
-<img
-  src={makotoCutIn}
-  alt=""
-  class="aspect-1440/443 h-auto w-full translate-y-[15%]"
->
+    <img
+      src={makotoCutIn}
+      alt=""
+      class="aspect-1440/443 h-auto w-full translate-y-[15%]"
+    />
 
     <section
       id="progress"
@@ -347,7 +344,7 @@ import BigChevron from "../assets/big_chevron.svg";
   .download-now-text {
     display: inline-flex;
     gap: 20px;
-    animation-duration: 7s;
+    animation-duration: 15s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 
