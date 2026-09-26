@@ -52,8 +52,13 @@ import BigChevron from "../assets/big_chevron.svg";
         </div>
 
         <div class="flex flex-col gap-2 md:w-75 lg:w-100">
-          <Button className="md:text-xl lg:p-6! lg:text-2xl"
-            >Download Now!</Button
+<Button
+  as="a"
+  href="/download"
+  className="md:text-xl lg:p-6! lg:text-2xl"
+>
+  Download Now!
+</Button>
           >
           <p class="text-center text-[10px] uppercase">
             This project is not for profit and not affiliated with SEGA, ATLUS,
@@ -91,6 +96,7 @@ import BigChevron from "../assets/big_chevron.svg";
           >
             <img
               src={showcase1Image}
+              alt="Persona 3 Dual gameplay screenshot"
               class="border-primary absolute right-0 h-auto w-[60cqi] border-6"
             />
 
@@ -267,10 +273,11 @@ import BigChevron from "../assets/big_chevron.svg";
       </a>
     </section>
 
-    <img
-      src={makotoCutIn}
-      class="aspect-1440/443 h-auto w-full translate-y-[15%]"
-    />
+<img
+  src={makotoCutIn}
+  alt=""
+  class="aspect-1440/443 h-auto w-full translate-y-[15%]"
+>
 
     <section
       id="progress"

@@ -85,7 +85,7 @@
 }
 
 @utility p3d-navbar-pad {
-  @apply pt-12 xl:pt-15;
+  @apply pt-15;
 }
 
 html {
