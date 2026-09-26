@@ -47,7 +47,7 @@ export default function ProjectTimeline() {
   return (
     <div className="mx-auto flex max-w-162.5 flex-col gap-1 border-4 border-white bg-black/50 px-5 py-10">
       <div className="flex items-center justify-center">
-        <div className="size-5 bg-white"></div>
+        <div className="size-5 rounded-[50%] bg-white" />
       </div>
 
       <TimelineItem
@@ -62,7 +62,7 @@ export default function ProjectTimeline() {
       />
 
       <div className="flex items-center justify-center">
-        <div className="size-5 bg-white"></div>
+        <div className="size-5 rounded-[50%] bg-white" />
       </div>
 
       <TimelineItem
@@ -79,33 +79,33 @@ export default function ProjectTimeline() {
       />
 
       <div className="flex items-center justify-center">
-        <div className="size-5 bg-white"></div>
+        <div className="size-5 rounded-[50%] bg-white" />
       </div>
 
       <TimelineItem
-        heading={<>2026/04/27</>}
+        heading={<>2026/06/28</>}
         description={
           <>
-            Milestone Beta is completed. Renamed the project to Persona 3 Dual,
-            & publicly revealed the game, marking the transition from a private
-            past time to an open-source project.
+            Milestone #1 is released. Shown off as a tech demo with optimized 3D
+            environments, video playback, and a battle system. All on original
+            hardware.
           </>
         }
         image={timeline3Image}
       />
 
       <div className="flex items-center justify-center">
-        <div className="size-5 bg-white"></div>
+        <div className="size-5 rounded-[50%] bg-white" />
       </div>
 
       <TimelineItem
         reverse
-        heading={<>2026/04/27</>}
+        heading={<>2026/XX/XX</>}
         description={
           <>
-            Milestone Beta is completed. Renamed the project to Persona 3 Dual,
-            & publicly revealed the game, marking the transition from a private
-            past time to an open-source project.
+            Milestone #2 is released. Focused on game polish, it replaces early
+            prototype systems and borrowed graphics with an all-new game engine
+            and custom assets, all created in-house.
           </>
         }
         image={timelineFutureImage}

@@ -11,6 +11,7 @@ import tiktokCard from "../assets/card_tiktok.webp?url";
 import xCard from "../assets/card_x.webp?url";
 import redditCard from "../assets/card_reddit.webp?url";
 import instagramCard from "../assets/card_instagram.webp?url";
+import makotoCutIn from "../assets/makoto_cutin.webp?url";
 
 import DownloadNowText from "../assets/download_now.svg";
 ---
@@ -105,14 +106,24 @@ import DownloadNowText from "../assets/download_now.svg";
 
         <section
           id="milestone-video"
-          class="p3d-container flex flex-col gap-4 pt-10 text-white"
+          class="flex flex-col gap-4 pt-10 text-white"
         >
-          <div class="flex flex-col gap-2">
-            <h2 class="font-noto-sans text-center text-xl font-extrabold">
+          <div class="p3d-container flex flex-col gap-2 lg:gap-4">
+            <h2
+              class="font-noto-sans text-center text-xl font-extrabold md:text-2xl lg:text-3xl"
+            >
               Milestone #1: Game Concept
             </h2>
-            <p class="text-center">Check out our latest release!</p>
+            <p class="text-center leading-5 md:text-lg md:leading-6 lg:text-xl">
+              Check out our latest release!
+            </p>
           </div>
+
+          <iframe
+            class="mx-auto aspect-video h-auto w-full max-w-150 lg:max-w-200"
+            src="https://www.youtube.com/embed/xxbBLb_VpGo?autoplay=1&mute=1&cc_load_policy=0"
+          >
+          </iframe>
         </section>
       </div>
 
@@ -146,8 +157,8 @@ import DownloadNowText from "../assets/download_now.svg";
             class="@container relative mx-auto my-10 aspect-385/365 w-full max-w-125 shrink-0 md:max-w-none md:flex-0 md:grow md:basis-1/2"
           >
             <a
-              href="https://example.com"
-              class="absolute left-0 w-fit translate-y-[15cqi] -rotate-8"
+              href="https://www.tiktok.com/@thep3dproject"
+              class="absolute left-0 w-fit translate-y-[15cqi] -rotate-8 transition-transform hover:scale-105 hover:rotate-0"
             >
               <img
                 src={tiktokCard}
@@ -157,8 +168,8 @@ import DownloadNowText from "../assets/download_now.svg";
             </a>
 
             <a
-              href="https://example.com"
-              class="absolute left-[50%] w-fit translate-x-[-50%]"
+              href="https://x.com/thep3dproject"
+              class="absolute left-[50%] w-fit translate-x-[-50%] transition-transform hover:scale-105 hover:rotate-0"
             >
               <img
                 src={xCard}
@@ -168,8 +179,8 @@ import DownloadNowText from "../assets/download_now.svg";
             </a>
 
             <a
-              href="https://example.com"
-              class="absolute right-0 w-fit translate-y-[15cqi] rotate-8"
+              href="https://www.reddit.com/user/p3d-project/"
+              class="absolute right-0 w-fit translate-y-[15cqi] rotate-8 transition-transform hover:scale-105 hover:rotate-0"
             >
               <img
                 src={redditCard}
@@ -179,8 +190,8 @@ import DownloadNowText from "../assets/download_now.svg";
             </a>
 
             <a
-              href="https://example.com"
-              class="absolute left-[50%] w-fit translate-x-[-50%] translate-y-[53cqi] -rotate-8"
+              href="https://www.instagram.com/thep3dproject/"
+              class="absolute left-[50%] w-fit translate-x-[-50%] translate-y-[53cqi] -rotate-8 transition-transform hover:scale-105 hover:rotate-0"
             >
               <img
                 src={instagramCard}
@@ -213,19 +224,23 @@ import DownloadNowText from "../assets/download_now.svg";
     </section>
 
     <section id="join-the-team" class="py-20">
-      <div class="p3d-container flex flex-col gap-2">
-        <h2 class="font-noto-sans text-center text-2xl font-extrabold">
+      <div class="p3d-container flex flex-col gap-2 lg:gap-4">
+        <h2
+          class="font-noto-sans text-center text-xl font-extrabold md:text-2xl lg:text-3xl"
+        >
           Join the Team!
         </h2>
-        <p class="text-center">
+        <p class="text-center leading-5 md:text-lg md:leading-6 lg:text-xl">
           Help contribute to making this project a reality!
         </p>
       </div>
     </section>
 
+    <img src={makotoCutIn} class="aspect-1440/443 w-full h-auto translate-y-[15%]" />
+
     <section
       id="progress"
-      class="clock-bg flex flex-col gap-10 py-20 text-white"
+      class="clock-bg flex flex-col gap-10 py-20 text-white lg:py-30"
     >
       <div class="p3d-container flex flex-col gap-2 lg:gap-4">
         <h2
