@@ -1,11 +1,381 @@
 ---
+import Button from "../components/react/Button";
 import Layout from "../layouts/Layout.astro";
+import HeroDS from "../components/HeroDS.astro";
+import ProjectTimeline from "../components/react/ProjectTimeline";
+import Icon from "../components/react/Icon";
+
+import showcase1Image from "../assets/showcase_1.webp?url";
+import showcase2Image from "../assets/showcase_2.webp?url";
+import showcase3Image from "../assets/showcase_3.webp?url";
+import tiktokCard from "../assets/card_tiktok.webp?url";
+import xCard from "../assets/card_x.webp?url";
+import redditCard from "../assets/card_reddit.webp?url";
+import instagramCard from "../assets/card_instagram.webp?url";
+import makotoCutIn from "../assets/makoto_cutin.webp?url";
+
+import DownloadNowText from "../assets/download_now.svg";
+import BigChevron from "../assets/big_chevron.svg";
 ---
 
 <Layout>
-  <main class="pt-15">
-    <section id="index" class="container mx-auto">
-      <h1 class="text-center">Index</h1>
+  <main class="p3d-navbar-pad">
+    <section id="hero" class="relative">
+      <div class="dot-bg absolute top-0 right-0 -z-1 h-full w-full md:w-[60%]">
+      </div>
+
+      <div
+        class="absolute top-0 right-0 h-full w-auto lg:static lg:flex lg:h-auto lg:w-full lg:justify-end"
+      >
+        <HeroDS
+          class="md:text-primary h-full w-auto text-[#79CEFF] lg:h-auto lg:w-[50%]"
+        />
+      </div>
+
+      <div
+        class="p3d-container relative flex flex-col gap-4 py-10 md:gap-10 md:py-15 lg:absolute lg:top-0 lg:bottom-0 lg:left-[50%] lg:translate-x-[-50%] lg:justify-center lg:gap-20 lg:py-0"
+      >
+        <div class="flex flex-col gap-10">
+          <h1 class="font-bmspace text-2xl md:text-3xl lg:text-[3cqi]">
+            Introducing Persona 3 <span class="text-secondary">Dual</span>
+          </h1>
+
+          <p
+            class="leading-5 md:w-75 md:text-xl md:leading-6 lg:w-100 lg:text-2xl lg:leading-7"
+          >
+            Persona 3 Dual is a ground-up, open-source demake that reimagines
+            the beloved RPG for classic dual-screen hardware. Step back into
+            2009, and master the Dark Hour, climb Tartarus, and live your high
+            school life all over again.
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-2 md:w-75 lg:w-100">
+          <Button
+            as="a"
+            href="/download"
+            className="md:text-xl lg:p-6! lg:text-2xl"
+          >
+            Download Now!
+          </Button>
+          <p class="text-center text-[10px] uppercase">
+            This project is not for profit and not affiliated with SEGA, ATLUS,
+            or Nintendo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="md:water-bg">
+      <div class="max-md:water-bg">
+        <section
+          id="showcase"
+          class="p3d-container flex flex-col gap-4 py-10 text-white md:flex-row md:items-center md:gap-15 md:py-20"
+        >
+          <div class="flex flex-col gap-2 md:basis-1/2 lg:gap-4">
+            <h2
+              class="font-noto-sans text-center text-xl font-extrabold md:text-left md:text-2xl lg:text-3xl"
+            >
+              A fan favourite story, now on dual screens
+            </h2>
+            <p
+              class="text-center leading-5 md:text-left md:text-lg md:leading-6 lg:text-xl"
+            >
+              Take your favourite members of SEES with you wherever you go.
+              Whether you're hanging out at Paulownia Mall or strategizing your
+              next big fight in the control centre, the split-screen layout
+              makes managing your team, checking the calendar, and organizing
+              your Personas easier and more charming than ever.
+            </p>
+          </div>
+
+          <div
+            class="@container relative mx-auto my-10 aspect-385/288 w-full max-w-125 shrink-0 md:max-w-none md:flex-0 md:grow md:basis-1/2"
+          >
+            <img
+              src={showcase1Image}
+              alt="Persona 3 Dual gameplay screenshot"
+              class="border-primary absolute right-0 h-auto w-[60cqi] border-6"
+            />
+
+            <img
+              src={showcase2Image}
+              class="border-primary absolute left-0 h-auto w-[60cqi] translate-y-[25cqi] border-6"
+            />
+
+            <img
+              src={showcase3Image}
+              class="border-primary absolute right-0 h-auto w-[50cqi] translate-x-[-3cqi] translate-y-[40cqi] border-6"
+            />
+          </div>
+        </section>
+
+        <section
+          id="milestone-video"
+          class="flex flex-col gap-4 pt-10 text-white"
+        >
+          <div class="p3d-container flex flex-col gap-2 lg:gap-4">
+            <h2
+              class="font-noto-sans text-center text-xl font-extrabold md:text-2xl lg:text-3xl"
+            >
+              Milestone #1: Game Concept
+            </h2>
+            <p class="text-center leading-5 md:text-lg md:leading-6 lg:text-xl">
+              Check out our latest release!
+            </p>
+          </div>
+
+          <iframe
+            class="mx-auto aspect-video h-auto w-full max-w-150 lg:max-w-200"
+            src="https://www.youtube.com/embed/xxbBLb_VpGo?autoplay=1&mute=1&cc_load_policy=0"
+          >
+          </iframe>
+        </section>
+      </div>
+
+      <section
+        id="social-media"
+        class="max-md:water-bg py-10 text-white md:py-20"
+      >
+        <div
+          class="p3d-container flex flex-col gap-4 text-white md:flex-row-reverse md:items-center md:gap-15"
+        >
+          <div class="flex flex-col gap-2 md:basis-1/2 lg:gap-4">
+            <h2
+              class="font-noto-sans text-center text-xl font-extrabold md:text-left md:text-2xl lg:text-3xl"
+            >
+              Keep Updated
+            </h2>
+            <p
+              class="text-center leading-5 md:text-left md:text-lg md:leading-6 lg:text-xl"
+            >
+              Want to see how Tatsumi Port Island is coming to life? Catch our
+              latest progress, tutorials, and music drops across all our
+              channels. Want to have an inside look at development? Join the
+              conversation on Discord to watch our major development updates!
+            </p>
+          </div>
+
+          <!-- TODO: add floating animation on each card -->
+
+          <div
+            class="@container relative mx-auto my-10 aspect-385/365 w-full max-w-125 shrink-0 md:max-w-none md:flex-0 md:grow md:basis-1/2"
+          >
+            <a
+              href="https://www.tiktok.com/@thep3dproject"
+              class="absolute left-0 w-fit translate-y-[15cqi] -rotate-8 transition-transform hover:scale-105 hover:rotate-0"
+            >
+              <img
+                src={tiktokCard}
+                alt="Tiktok social media card"
+                class="h-auto w-[28cqi]"
+              />
+            </a>
+
+            <a
+              href="https://x.com/thep3dproject"
+              class="absolute left-[50%] w-fit translate-x-[-50%] transition-transform hover:scale-105 hover:rotate-0"
+            >
+              <img
+                src={xCard}
+                alt="X social media card"
+                class="h-auto w-[28cqi]"
+              />
+            </a>
+
+            <a
+              href="https://www.reddit.com/user/p3d-project/"
+              class="absolute right-0 w-fit translate-y-[15cqi] rotate-8 transition-transform hover:scale-105 hover:rotate-0"
+            >
+              <img
+                src={redditCard}
+                alt="Reddit social media card"
+                class="h-auto w-[28cqi]"
+              />
+            </a>
+
+            <a
+              href="https://www.instagram.com/thep3dproject/"
+              class="absolute left-[50%] w-fit translate-x-[-50%] translate-y-[53cqi] -rotate-8 transition-transform hover:scale-105 hover:rotate-0"
+            >
+              <img
+                src={instagramCard}
+                alt="Instagram social media card"
+                class="h-auto w-[28cqi]"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section id="download-cta" class="relative overflow-hidden py-10">
+      <a href="/download" class="block">
+        {
+          Array.from(Array(6), () => (
+            <div class="download-now-text">
+              {Array.from(Array(10), () => (
+                <DownloadNowText />
+              ))}
+            </div>
+          ))
+        }
+      </a>
+
+      <p class="text-center text-xs uppercase">
+        This project is not for profit and not affiliated with SEGA, ATLUS, or
+        Nintendo.
+      </p>
+    </section>
+
+    <section id="join-the-team" class="flex flex-col gap-8 py-20">
+      <div class="p3d-container flex flex-col gap-2 lg:gap-4">
+        <h2
+          class="font-noto-sans text-center text-xl font-extrabold md:text-2xl lg:text-3xl"
+        >
+          Join the Team!
+        </h2>
+        <p class="text-center leading-5 md:text-lg md:leading-6 lg:text-xl">
+          Help contribute to making this project a reality!
+        </p>
+      </div>
+
+      <a
+        href="https://discord.gg/CQnkc5gS6a"
+        class="bg-secondary relative mx-auto block w-full max-w-5xl overflow-hidden py-4 text-white"
+      >
+        <Icon
+          icon="discord"
+          className="absolute top-[50%] left-[4%] size-12 translate-y-[-50%] md:size-15"
+        />
+        <div
+          class="@container absolute top-0 right-0 aspect-130/100 h-full w-auto"
+        >
+          <BigChevron class="absolute h-full w-auto scale-130" />
+          <BigChevron
+            class="absolute h-full w-auto translate-x-[4cqb] scale-130 md:translate-x-[5cqb]"
+          />
+          <BigChevron
+            class="absolute h-full w-auto translate-x-[8cqb] scale-130 md:translate-x-[10cqb]"
+          />
+        </div>
+        <span
+          class="font-bmspace relative left-[45%] inline-block translate-x-[-50%] translate-y-1 text-[40px] md:text-[50px] lg:hidden"
+          >Discord</span
+        >
+        <span
+          class="font-bmspace relative left-[45%] hidden translate-x-[-50%] translate-y-1 text-[50px] lg:inline-block"
+          >Join the Discord</span
+        >
+      </a>
+    </section>
+
+    <img
+      src={makotoCutIn}
+      alt=""
+      class="aspect-1440/443 h-auto w-full translate-y-[15%]"
+    />
+
+    <section
+      id="progress"
+      class="clock-bg flex flex-col gap-10 py-20 text-white lg:py-30"
+    >
+      <div class="p3d-container flex flex-col gap-2 lg:gap-4">
+        <h2
+          class="font-noto-sans text-center text-xl font-extrabold md:text-2xl lg:text-3xl"
+        >
+          See the Progress
+        </h2>
+        <p class="text-center leading-5 md:text-lg md:leading-6 lg:text-xl">
+          Check out our Roadmap & Current Tasks
+        </p>
+      </div>
+
+      <div
+        class="p3d-container mx-auto flex max-w-162.5 gap-8 *:w-0 *:grow *:basis-0"
+      >
+        <Button
+          as="a"
+          href="https://docs.google.com/document/d/1VUxY2xVGtKzGWCES0VeZ_-vMpKSifB5vTW2ZkXJMPJM/edit?usp=sharing"
+          >Roadmap</Button
+        >
+        <Button
+          as="a"
+          href="https://github.com/orgs/p3d-project/projects/1/views/1"
+          >Project Board</Button
+        >
+      </div>
+
+      <ProjectTimeline />
     </section>
   </main>
 </Layout>
+
+<style>
+  @import "../styles/global.css";
+
+  .dot-bg {
+    background-image: url("@assets/dot_pattern.svg");
+    background-size: 50px;
+
+    @variant md {
+      background-size: 60px;
+    }
+
+    @variant xl {
+      background-size: unset;
+    }
+  }
+
+  @utility water-bg {
+    background-image: url("@assets/water_bg.webp");
+    background-size: cover;
+  }
+
+  .clock-bg {
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: multiply;
+    background-image: url("@assets/clocks_broken.webp");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat repeat;
+  }
+
+  .download-now-text {
+    display: inline-flex;
+    gap: 20px;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    &:nth-child(odd) {
+      animation-name: download-now-scroll;
+    }
+    &:nth-child(even) {
+      animation-name: download-now-scroll-inverse;
+    }
+
+    > svg {
+      height: calc(50px * var(--scale));
+      width: auto;
+    }
+  }
+
+  @keyframes download-now-scroll {
+    from {
+      transform: translate3d(-50%, 0, 0);
+    }
+    to {
+      transform: translate3d(calc(-10% - 50%), 0, 0);
+    }
+  }
+
+  @keyframes download-now-scroll-inverse {
+    from {
+      transform: translate3d(calc(-10% - 50%), 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+</style>
