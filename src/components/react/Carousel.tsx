@@ -30,17 +30,33 @@ function Carousel() {
         className="h-full w-full object-cover"
       />
       <button
+        type="button"
+        aria-label="Previous image"
         onClick={handlePrev}
         className="absolute top-1/2 left-4 -translate-y-1/2 transform rounded-full bg-gray-800 p-2 text-white"
       >
         &#10094;
       </button>
       <button
+        type="button"
+        aria-label="Next image"
         onClick={handleNext}
         className="absolute top-1/2 right-4 -translate-y-1/2 transform rounded-full bg-gray-800 p-2 text-white"
       >
         &#10095;
       </button>
+      <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
+      {images.map((_, index) => (
+        <button
+          key={index}
+          type="button"
+          aria-label={`Go to image ${index + 1}`}
+          onClick={() => setCurrentIndex(index)}
+          className={`h-3 w-3 rounded-full transition ${currentIndex === index ? "bg-green-600" : "bg-white/70 hover:bg-white"
+          }`}
+        />
+      ))}
+    </div>
     </div>
   );
 }

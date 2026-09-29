@@ -3,1300 +3,769 @@ import Layout from "../layouts/Layout.astro";
 import Button from "../components/react/Button.tsx";
 import dots from "../assets/Dots.svg";
 import glass from "../assets/glass.png";
-import makoto from "../assets/makoto-standing.png";
+import makoto from "../assets/makoto_standing1.png";
+import marked from "../assets/glass_marked.png";
 import rect5 from "../assets/Rectangle_5.png";
 import rect6 from "../assets/Rectangle_6.png";
 import rect7 from "../assets/Rectangle_7.png";
-import marked from "../assets/glass_marked.png";
 import Carousel from "../components/react/Carousel.tsx";
 ---
 
 <Layout>
   <main class="overflow-x-hidden">
-    <section class="hero-section relative min-h-screen w-full">
+
+    <section class="hero-section relative min-h-screen w-full overflow-hidden">
+
       <div class="pointer-events-none absolute inset-0 select-none">
-        <div
-          class="pointer-events-none absolute inset-x-0 top-0 h-[calc(100%+300px)] bg-[#E6F0FA]"
-          aria-hidden="true"
-        >
-        </div>
-        <div
-          class="hero-dots absolute inset-0 h-[120%] translate-y-[50%] bg-repeat lg:left-[40%] lg:translate-y-12"
-          style={`background-image: url('${dots.src}'); `}
-        >
-        </div>
 
         <div
-          class="hero-makoto absolute max-w-none select-none top-[58%] -left-[10px] h-[600px] w-[600px] -translate-x-6 -translate-y-1/2 lg:top-[58%] lg:right-[2.1%] lg:left-[50%] lg:block lg:h-[1100px] lg:w-[1100px] lg:translate-x-[6%]"
+          class="absolute inset-x-0 top-0 h-[calc(100%+300px)] bg-[#E6F0FA]"
           aria-hidden="true"
-        >
-          <img
-            src={makoto.src}
-            alt=""
-            aria-hidden="false"
-            class="h-full w-full lg:h-[1100px] lg:w-[1100px] object-contain"
-          />
-        </div>
-      </div>
+        ></div>
 
-      <div
-        class="p3d-container relative z-10 grid w-full grid-cols-1 pt-16 lg:grid-cols-12"
-      >
-        <div
-          class="hero-copy relative flex translate-x-4 flex-col items-center justify-start pt-6 pr-0 pb-4 text-center sm:pt-10 sm:pb-6 lg:col-span-25 lg:items-start lg:pt-28 lg:pr-4 lg:pb-16 lg:text-left"
-        >
-          <!-- <div
-            class="pointer-events-none absolute left-1/2 -z-10 block h-[860px] w-[1280px] max-w-none -translate-x-1/2 rounded-[50%] bg-[#79CEFF] select-none sm:h-[940px] sm:w-[1500px] lg:hidden"
-            style="top: -450px;"
-            aria-hidden="true"
-          >
-          </div> -->
+       <div class=" hero-dots absolute top-[55%] left-[10%]
+        h-[120%] w-[58%] bg-[length:130%_auto] bg-repeat
+
+        sm:left-[50%]
+        sm:w-[58%]
+        sm:top-[55%]
+        sm:bg-[length:130%_auto]
+
+        md:left-[10%]
+        md:top-[55%]
+        md:w-[50%]
+        md:bg-[length:130%_auto]
+    
+        lg:left-[42%]
+        lg:top-[4%]
+        lg:h-[158%]
+        lg:w-[58%]
+        lg:bg-[length:auto_auto]
+
+        xl:left-[42%]
+        xl:top-[6%]
+        xl:w-[58%]
+        xl:bg-[length:auto_auto]"
+        style={`background-image: url('${dots.src}');`}
+        aria-hidden="true"></div>
+
+    <div class="hero-makoto absolute z-0 select-none top-[59%]
+    right-[-2%] w-[clamp(300px,82vw,460px)] -translate-y-1/2
+    sm:top-[57%]
+    sm:right-[-1%]
+    sm:w-[clamp(360px,78vw,540px)]
+
+    md:top-[56%]
+    md:right-[-3%]
+    md:w-[clamp(560px,78vw,760px)]
+
+    lg:top-[55%]
+    lg:right-[-5%]
+    lg:w-[clamp(520px,56vw,780px)]
+
+    xl:top-[56%]
+    xl:right-[-4%]
+    xl:w-[clamp(600px,52vw,900px)]"
+  aria-hidden="true">
+  <img
+    src={makoto.src}
+    alt=""
+    class="block h-auto w-full object-contain"/>
+  </div>
+</div>
+
+      <div class="p3d-container relative z-10 mx-auto grid min-h-screen w-full
+          max-w-7xl grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] px-4
+          pt-12
+
+          sm:px-6
+          sm:pt-16
+
+          md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]
+          md:px-8
+
+          lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]
+          lg:px-10
+
+          xl:grid-cols-2
+          xl:items-start">
+
+        <div class="hero-copy flex w-full max-w-[480px] flex-col
+            items-start justify-start pt-8 text-left
+
+            sm:pt-12
+            md:pt-20
+            lg:pt-24
+            xl:max-w-[600px]
+            xl:pt-28">
 
           <h1
             style="-webkit-text-stroke: 1.5px #001B3D;"
-            class="font-bmspace mb-3 -translate-x-28 translate-y-5 md:-translate-x-28 md:translate-y-15 text-[20px] leading-tight tracking-[-0.02] text-[#001B3D] sm:text-5xl lg:mb-6 lg:-translate-x-[50px] lg:translate-y-1 lg:text-[55px] lg:leading-tight lg:tracking-[-0.05em]"
-          >
+            class="font-bmspace mb-3 translate-y-5 text-[clamp(24px,5vw,55px)] leading-tight
+              tracking-[-0.02em] text-[#001B3D]
+
+              xl:translate-y-1">
             Downloads
           </h1>
 
-          <p
-            class="font-noto-sans max-w-[440px] -translate-x-28 translate-y-5 px-2 text-[12px] leading-snug font-semibold text-[#001B3D] sm:px-0 sm:text-xl lg:-translate-x-[50px] lg:translate-y-3 lg:text-[28.1px]"
-          >
+          <p class="font-noto-sans max-w-[440px] translate-y-5 text-[clamp(14px,2.5vw,28px)]
+              leading-snug font-semibold text-[#001B3D]
+
+              xl:translate-y-3">
             Next Minor Release (v1.2.0)
           </p>
+
+
           <p
-            class="font-MgOpenCosmeticaBold max-w-[400px] -translate-x-37 translate-y-5 px-2 text-[12px] text-[#001B3D] sm:px-0 sm:text-xl lg:-translate-x-[50px] lg:translate-y-3 lg:text-[20px]"
-          >
+            class="font-MgOpenCosmeticaBold max-w-[400px] translate-y-5
+              text-[clamp(13px,1.8vw,20px)] text-[#001B3D]
+
+              xl:translate-y-3">
             August 20, 2026
           </p>
-          <br />
-          <br />
-          <p
-            class="font-noto-sans max-w-[440px] -translate-x-28 -translate-y-[20px] px-2 text-[12px] font-semibold text-[#001B3D] sm:px-0 sm:text-xl lg:-translate-x-[50px] lg:translate-y-3 lg:text-[28.1px]"
-          >
+
+
+          <div class="h-10 sm:h-12"></div>
+
+          <p class="font-noto-sans max-w-[440px] -translate-y-2 text-[clamp(14px,2.5vw,28px)]
+              leading-snug font-semibold text-[#001B3D]
+
+              xl:translate-y-3">
             Next Major Release (v2.0.0)
           </p>
-          <p
-            class="font-MgOpenCosmeticaBold max-w-[400px] -translate-x-37 -translate-y-[20px] px-2 text-[12px] text-[#001B3D] sm:px-0 sm:text-xl lg:-translate-x-[50px] lg:translate-y-3 lg:text-[20px]"
-          >
+
+
+          <p class="font-MgOpenCosmeticaBold max-w-[400px] -translate-y-2
+          text-[clamp(13px,1.8vw,20px)] text-[#001B3D]
+
+          xl:translate-y-3">
             September, 2026
           </p>
-          <section
-            class="relative w-full scroll-mt-16 px-4 py-10 pt-10 pb-5 sm:pt-22 lg:px-150 lg:py-10 lg:pt-10 lg:pb-5"
-          >
-            <div
-              class="flex w-full flex-col items-start justify-center gap-4 lg:gap-2"
-            >
-              <div
-                class="justify-left relative mb-4 flex translate-y-55 lg:right-[300px] lg:translate-y-36"
-              >
-                <Button
-                  as="a"
-                  href="https://github.com/p3d-project/persona-3-dual/releases/tag/v1.1.0"
-                  target="_blank"
-                  size="lg"
-                  className="w-[310px] justify-center text-2xl sm:py-5 lg:w-[1190px] lg:py-10 lg:text-4xl"
-                >
-                  Download v1.1.0
-                </Button>
-              </div>
 
-              <!-- <div class="relative flex justify-center gap-6 right-[200px] translate-y-6">
-        <Button
-          as="a"
-          href=""
-          size="lg"
-          className="w-[400px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
-        >
-          Mirror 1
-        </Button>
-        
-      <Button
-          as="a"
-          href=""
-          size="lg"
-          className="w-[400px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
-        >
-          Mirror 2
-        </Button>
-        </div> -->
-            </div>
-          </section>
+          <div class="mt-20 flex w-full justify-start
+
+              sm:mt-24
+
+              md:mt-28">
+            <Button
+              as="a"
+              href="https://github.com/p3d-project/persona-3-dual/releases/tag/v1.1.0"
+              target="_blank"
+              size="lg"
+              className="w-[min(260px,45vw)] justify-center text-xl
+
+                sm:w-[min(280px,42vw)]
+                sm:py-5
+                sm:text-2xl
+
+                md:w-[min(310px,40vw)]
+                md:text-3xl
+
+                lg:w-[min(410px,38vw)]
+                lg:py-7
+                lg:text-4xl
+
+                xl:w-[min(700px,42vw)]
+                xl:py-8">
+              Download v1.1.0
+            </Button>
+          </div>
+
         </div>
+
       </div>
     </section>
-    <section
-      class="whats-new-section relative z-20 mb-4 w-full bg-[#79CEFF] pb-55 lg:mt-19 lg:pb-35"
-    >
-      <div class="translate-x-8 lg:translate-x-20">
-        <h2
-          class="font-noto-sans mb-4 max-w-[440px] px-2 pt-8 text-[19px] font-semibold text-[#001B3D] sm:px-0 sm:text-xl lg:text-[28.1px]"
-        >
-          What's New?
-        </h2>
 
-        <p
-          class="font-noto-sans text-[19px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px]"
-        >
-          For specifics, check out our <a
-            href="https://docs.p3dual.com/"
-            target="_blank"
-            class="text-[#12A858] underline">documentation!</a
-          >
-        </p>
-        <ul
-          class="font-MgOpenCosmeticaBold mt-3 list-disc px-5 text-[19px] text-[#001B3D] sm:text-xl lg:text-[20px]"
-        >
-          <li>Replaced AI systems</li>
-          <li>Retooled and rebuilt Aegis-Engine</li>
-          <li>Added vertex lighting workflow support</li>
-          <li>Migrated from devkitpro NDS to BlocksDS</li>
-          <li>Replaced graphics rendering system</li>
-          <li>Revamped controls</li>
-          <li>Revamped UI for all menus</li>
-          <li>Custom text engine</li>
-          <li>Controllable Camera</li>
-          <li>Optimized VRAM usage</li>
-          <li>New dialogue busts with multiple facial expressions</li>
-          <li>A World Map</li>
-          <li>Custom music tracks</li>
-          <li>Custom 3D models for props, environment, and characters</li>
-        </ul>
-      </div>
-      <div
-        class="whats-new-glass absolute -right-[5%] w-[350px] -translate-x-10 translate-y-5 lg:top-[15%] lg:right-[15%] lg:block lg:w-[750px] lg:-translate-y-15 lg:-translate-x-25"
-      >
-        <img
-          src={glass.src}
-          alt=""
-          class="relative z-0 object-contain lg:-translate-x-1 lg:-translate-y-[1px]"
-        />
-      </div>
-      <div
-        class="whats-new-images absolute right-[5%] hidden translate-y-25 lg:top-[1%] lg:right-[15%] lg:block lg:w-[450px]"
-      >
-        <img
-          src={rect7.src}
-          alt=""
-          class="absolute top-[15%] -left-[88%] z-10 w-[300px]"
-        />
 
-        <img
-          src={rect5.src}
-          alt=""
-          class="absolute top-[15%] right-[5%] -left-[22%] z-10 w-[300px]"
-        />
+    <section class="whats-new-section relative z-20
+    mb-4 -mt-4 w-full bg-[#79CEFF] pb-32
+    
+    sm:pb-40
 
-        <img
-          src={rect6.src}
-          alt=""
-          class="absolute top-[58%] left-1/2 z-10 w-[300px] -translate-x-[450px] translate-y-[98%]"
-        />
-      </div>
-      <div class="whats-new-carousel lg:hidden">
-        <Carousel client:load />
-      </div>
+    md:-mt-8
+    md:pb-52
+
+    lg:-mt-20
+    lg:pb-35
+
+    xl:-mt-28">
+
+      <div class="mx-auto w-full max-w-7xl px-6
+          lg:px-10">
+
+        <div class="max-w-2xl">
+
+          <h2 class="font-noto-sans mb-4 pt-8
+          text-[clamp(19px,2.5vw,28px)] font-semibold text-[#001B3D]">
+            What's New?
+          </h2>
+
+
+          <p class="font-noto-sans text-[clamp(16px,2vw,20px)] font-semibold
+          text-[#001B3D]">
+            For specifics, check out our
+            <a
+              href="https://docs.p3dual.com/"
+              target="_blank"
+              class="text-[#12A858] underline"
+            >
+              documentation!
+            </a>
+          </p>
+
+
+          <ul class="font-MgOpenCosmeticaBold mt-3 list-disc
+          pl-5 text-[clamp(16px,2vw,20px)] text-[#001B3D]">
+            <li>Replaced AI systems</li>
+            <li>Retooled and rebuilt Aegis-Engine</li>
+            <li>Added vertex lighting workflow support</li>
+            <li>Migrated from devkitpro NDS to BlocksDS</li>
+            <li>Replaced graphics rendering system</li>
+            <li>Revamped controls</li>
+            <li>Revamped UI for all menus</li>
+            <li>Custom text engine</li>
+            <li>Controllable Camera</li>
+            <li>Optimized VRAM usage</li>
+            <li>New dialogue busts with multiple facial expressions</li>
+            <li>A World Map</li>
+            <li>Custom music tracks</li>
+            <li>Custom 3D models for props, environment, and characters</li>
+          </ul>
+
+        </div>
+
+        <div class="whats-new-art pointer-events-none absolute
+        right-[3%] top-[6%] hidden w-[clamp(350px,38vw,750px)]
+        lg:block">
+
+          <img
+            src={glass.src}
+            alt=""
+            class="relative z-0 w-full object-contain"
+          />
+
+          <img
+            src={rect7.src}
+            alt=""
+            class="absolute left-[8%] top-[15%] z-10
+            w-[clamp(165px,15vw,285px)]"/>
+
+          <img
+            src={rect5.src}
+            alt=""
+            class="absolute right-[14%] top-[15%]
+            z-10 w-[clamp(165px,15vw,285px)]"/>
+
+          <img
+            src={rect6.src}
+            alt=""
+            class="absolute left-1/2 top-[58%] z-10
+            w-[clamp(165px,15vw,285px)] -translate-x-1/2 -translate-y-[12%]"/>
+
+        </div>
+
+
+<div class="whats-new-carousel mt-10 flex
+            w-full justify-center
+            lg:hidden">
+  
+  <div class="relative w-[min(360px,92vw)]">
+
+    <img
+      src={glass.src}
+      alt=""
+      class="relative z-0 block h-auto
+        w-full object-contain"/>
+
+    <div class="absolute left-1/2 top-1/2
+        z-10 w-[min(250px,68vw)] -translate-x-1/2
+        -translate-y-1/2">
+      <Carousel client:load />
+    </div>
+
+  </div>
+</div>
+</div>
     </section>
-    <section class="legacy-section relative z-20 -mt-16 bg-[#E6F0FA] pb-35">
-      <div class="z-10 translate-x-8 lg:translate-x-20">
-        <h2
-          class="font-noto-sans mb-4 max-w-[440px] px-2 pt-8 text-[19px] font-semibold text-[#001B3D] sm:px-0 sm:text-xl lg:text-[28.1px]"
-        >
+
+    <section class="legacy-section relative z-20
+                    -mt-16 bg-[#E6F0FA] pb-32
+                    sm:pb-40">
+
+      <div class="mx-auto w-full max-w-7xl px-6 lg:px-10">
+
+        <h2 class="font-noto-sans mb-4 pt-8
+            text-[clamp(19px,2.5vw,28px)] font-semibold text-[#001B3D]">
           Legacy versions
         </h2>
-        <div class="flex items-center gap-10 sm:gap-12 lg:gap-65">
-          <p
-            class="font-noto-sans text-[19px] font-semibold text-[#001B3D] underline sm:text-xl lg:text-[20px]"
-          >
-            v1.0.0
-          </p>
-          <p
-            class="font-noto-sans translate-x-15 text-[14px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-3 lg:text-[16px]"
-          >
-            June 28th, 2026
-          </p>
-        </div>
-        <p
-          class="font-noto-sans mt-6 w-69 max-w-2xl whitespace-normal text-[18px] font-semibold text-[#001B3D] sm:text-xl lg:text-[20px] lg:mt-6 lg:max-w-xl"
-        >
-          Milestone 1 marks the first major release of Persona 3 Dual. It introduces initial 3D exploration across multiple key locations, basic character interactions, a functional battle system demo, and core UI and settings features.
 
-        </p>
-      </div>
-      <div class="relative">
-        <!-- <div class="absolute left-[13%] bottom-[1%] z-0 w-[190px]">
+        <article class="legacy-release grid gap-8
+                        border-b border-[#001B3D]/10
+                        py-12
+
+                      md:grid-cols-[minmax(0,1fr)_minmax(280px,400px)]
+                      md:grid-rows-[auto_auto]
+                      md:items-center
+
+                      lg:gap-16">
+
+          <div class="md:col-start-1 md:row-start-1">
+
+            <div class="flex flex-wrap items-center gap-30 md:gap-30 lg:gap-46 xl:gap-86">
+
+              <p class="font-noto-sans text-[clamp(19px,2vw,20px)] font-semibold
+                  text-[#001B3D] underline">
+                v1.0.0
+              </p>
+
+              <p class="font-noto-sans text-[clamp(14px,1.5vw,16px)] font-semibold
+                        text-[#001B3D]">
+                June 28th, 2026
+              </p>
+
+            </div>
+
+            <p class="font-noto-sans mt-6 max-w-[680px] text-[clamp(16px,1.8vw,20px)]
+                leading-relaxed font-semibold text-[#001B3D]">
+              Milestone 1 marks the first major release of Persona 3 Dual.
+              It introduces initial 3D exploration across multiple key
+              locations, basic character interactions, a functional battle
+              system demo, and core UI and settings features.
+            </p>
+
+          </div>
+
+
+          <div class="flex justify-center
+
+              md:col-start-2
+              md:row-start-1
+              md:row-span-2
+              md:justify-end">
             <img
-              src={marked.src}
+              src={rect6.src}
               alt=""
-              class="relative z-0 h-auto w-full object-contain"
-              />
-            </div> -->
-        <div class="relative z-10">
-          <div
-            class="justify-left lg:relative mt-35 mb-4 flex translate-x-[15px] lg:right-[550px] lg:mb-8 lg:flex lg:translate-x-[210px] lg:pb-1"
+              class="w-[clamp(220px,28vw,400px)]max-w-full drop-shadow-[8px_8px_0_#3BAA45]"/>
+          </div>
+
+          <div class="mt-2 flex justify-start
+
+              md:col-start-1
+              md:row-start-2
+              md:mt-0
+            "
           >
             <Button
               as="a"
               href="https://github.com/p3d-project/persona-3-dual/releases/tag/v1.0.0"
               target="_blank"
               size="md"
-              className="mt-6 w-[310px] translate-x-5 translate-y-15 justify-center py-3 text-3xl lg:mt-6 lg:w-[410px] lg:translate-x-105 lg:-translate-y-35 lg:py-5 lg:text-4xl"
-            >
+              className="w-[min(310px,85vw)] justify-center py-3 text-2xl
+                sm:text-3xl
+                lg:w-[410px]">
               Download
             </Button>
           </div>
 
-          <div
-            class="relative right-[555px] -mt-6 flex translate-x-20 translate-y-0.5 justify-center gap-6"
-          >
-            <!-- <Button
-          as="a"
-          href=""
-          size="lg"
-          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
-        >
-          Mirror 1
-        </Button>
-      
-      <div class="flex justify-center gap-6">
-      <Button
-          as="a"
-          href=""
-          size="lg"
-          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
-        >
-          Mirror 2
-        </Button>
-        </div> -->
-            <div
-              class="mt-6 lg:absolute lg:top-[2%] lg:right-[20%] lg:w-[450px]"
-            >
-              <img
-                src={rect6.src}
-                alt=""
-                class="z-10 w-[250px] translate-x-[465px] -translate-y-[225px] drop-shadow-[8px_8px_0_#3BAA45] lg:absolute lg:top-[15%] lg:left-[100%] lg:-mt-60 lg:w-[400px] lg:-translate-x-[5px] lg:-translate-y-[180px]"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="relative z-20 -mt-25 mb-4 bg-[#E6F0FA] pb-2 lg:-mt-5">
-        <div class="z-10 translate-x-20">
-          <div class="flex items-center gap-10 sm:gap-12 lg:gap-65">
-            <p
-              class="font-noto-sans -translate-x-[50px] text-[19px] font-semibold text-[#001B3D] underline sm:text-xl lg:translate-x-[5px] lg:text-[20px]"
-            >
-              v0.6.0
-            </p>
-            <p
-              class="font-noto-sans translate-x-1 text-[14px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-3 lg:text-[16px]"
-            >
-              June 26th, 2026
-            </p>
-          </div>
-          <p
-            class="font-noto-sans mt-6 w-69 max-w-2xl -translate-x-[50px] text-[18px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px] lg:max-w-xl"
-          >
-            A pre-release for v1.0.0 focused on testing for Milestone 1. Standardizes character dialogue formatting, updates model assets, and fixes critical turn-handling and save file bugs across platforms.
-          </p>
-        </div>
-        <div class="relative">
-          <!-- <div class="absolute left-[13%] bottom-[1%] z-0 w-[190px]">
-            <img
-              src={marked.src}
-              alt=""
-              class="relative z-0 h-auto w-full object-contain"
-              />
-            </div> -->
-          <div class="relative z-10">
-            <div
-              class="justify-left lg:relative mt-35 mb-4 flex translate-x-[15px] lg:right-[550px] lg:mb-8 lg:flex lg:translate-x-[215px] lg:pb-1"
-            >
-              <Button
-                as="a"
-                href="https://github.com/p3d-project/persona-3-dual/releases/tag/0.6"
-                target="_blank"
-                size="md"
-                className="mt-6 w-[310px] translate-x-5 translate-y-15 justify-center py-3 text-3xl lg:mt-6 lg:w-[410px] lg:translate-x-105 lg:-translate-y-35 lg:py-5 lg:text-4xl"
-              >
-                Download
-              </Button>
+        </article>
+
+
+        <article class="legacy-release grid gap-8 py-12
+
+            md:grid-cols-[minmax(0,1fr)_minmax(280px,400px)]
+            md:grid-rows-[auto_auto]
+            md:items-center
+
+            lg:gap-16">
+
+          <div class="md:col-start-1 md:row-start-1">
+
+            <div class="flex flex-wrap items-center gap-30 md:gap-30 lg:gap-46 xl:gap-86">
+
+              <p class="font-noto-sans text-[clamp(19px,2vw,20px)] font-semibold
+                        text-[#001B3D] underline">
+                v0.6.0
+              </p>
+
+              <p class="font-noto-sans text-[clamp(14px,1.5vw,16px)] font-semibold text-[#001B3D]">
+                June 26th, 2026
+              </p>
+
             </div>
 
-            <div
-              class="relative right-[555px] -mt-6 flex translate-x-20 translate-y-0.5 justify-center gap-6"
-            >
-              <!-- <Button
-          as="a"
-          href=""
-          size="lg"
-          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
-        >
-          Mirror 1
-        </Button>
-      
-      <div class="flex justify-center gap-6">
-      <Button
-          as="a"
-          href=""
-          size="lg"
-          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
-        >
-          Mirror 2
-        </Button>
-        </div> -->
-              <div
-                class="mt-6 lg:absolute lg:top-[2%] lg:right-[20%] lg:w-[450px]"
-              >
-                <img
-                  src={rect6.src}
-                  alt=""
-                  class="z-10 w-[250px] translate-x-[465px] -translate-y-[225px] drop-shadow-[8px_8px_0_#3BAA45] lg:absolute lg:top-[15%] lg:left-[100%] lg:-mt-60 lg:w-[400px] lg:-translate-x-[5px] lg:-translate-y-[180px]"
-                />
-              </div>
-            </div>
+            <p class=" font-noto-sans mt-6 max-w-[680px]
+            text-[clamp(16px,1.8vw,20px)] leading-relaxed
+            font-semibold text-[#001B3D] ">
+              A pre-release for v1.0.0 focused on testing for Milestone 1.
+              Standardizes character dialogue formatting, updates model
+              assets, and fixes critical turn-handling and save file bugs
+              across platforms.
+            </p>
+
           </div>
-        </div>
-        <div class="relative z-20 -mt-25 mb-4 bg-[#E6F0FA] pb-2 lg:-mt-5">
-          <div class="z-10 translate-x-20">
-            <div class="flex items-center gap-10 sm:gap-12 lg:gap-65">
-              <p
-                class="font-noto-sans -translate-x-[50px] text-[19px] font-semibold text-[#001B3D] underline sm:text-xl lg:translate-x-[5px] lg:text-[20px]"
+
+
+          <div class="flex justify-center
+
+              md:col-start-2
+              md:row-start-1
+              md:row-span-2
+              md:justify-end">
+            <img
+              src={rect6.src}
+              alt=""
+              class="w-[clamp(220px,28vw,400px)] max-w-full drop-shadow-[8px_8px_0_#3BAA45]"/>
+          </div>
+
+
+          <div class="mt-2 flex justify-start
+
+              md:col-start-1
+              md:row-start-2
+              md:mt-0">
+            <Button
+              as="a"
+              href="https://github.com/p3d-project/persona-3-dual/releases/tag/0.6"
+              target="_blank"
+              size="md"
+              className="w-[min(310px,85vw)] justify-center py-3 text-2xl
+                sm:text-3xl
+                lg:w-[410px]">
+              Download
+            </Button>
+          </div>
+
+        </article>
+
+
+        <article class="legacy-release grid gap-8 py-12
+
+            md:grid-cols-[minmax(0,1fr)_minmax(280px,400px)]
+            md:grid-rows-[auto_auto]
+            md:items-center
+
+            lg:gap-16">
+
+          <div class="md:col-start-1 md:row-start-1">
+
+            <div class="flex flex-wrap items-center gap-30 md:gap-30 lg:gap-46 xl:gap-86">
+
+              <p class="font-noto-sans text-[clamp(19px,2vw,20px)] font-semibold text-[#001B3D] underline"
               >
                 v0.5.0
               </p>
-              <p
-                class="font-noto-sans translate-x-1 text-[14px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-3 lg:text-[16px]"
+
+              <p class="font-noto-sans text-[clamp(14px,1.5vw,16px)] font-semibold text-[#001B3D]"
               >
                 June 22th, 2026
               </p>
-            </div>
-            <p
-              class="font-noto-sans mt-6  w-69 max-w-2xl -translate-x-[50px] text-[18px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px] lg:max-w-xl"
-            >
-              A test release targeting video playback and rendering fixes. Resolves z-fighting visual glitches in 3D environments, improves cutscene aspect ratios, and resolves title screen input bugs.
-            </p>
-          </div>
-          <div class="relative">
-            <!-- <div class="absolute left-[13%] bottom-[1%] z-0 w-[190px]">
-            <img
-              src={marked.src}
-              alt=""
-              class="relative z-0 h-auto w-full object-contain"
-              />
-            </div> -->
-            <div class="relative z-10">
-              <div
-                class="justify-left lg: relative mt-35 mb-4 flex lg:right-[550px] lg:mb-8 lg:flex lg:translate-x-[215px] lg:pb-1"
-              >
-                <Button
-                  as="a"
-                  href="https://github.com/p3d-project/persona-3-dual/releases/tag/0.5"
-                  target="_blank"
-                  size="md"
-                  className="mt-6 w-[310px] translate-x-8 translate-y-15 justify-center py-3 text-3xl lg:mt-6 lg:w-[410px] lg:translate-x-105 lg:-translate-y-35 lg:py-5 lg:text-4xl"
-                >
-                  Download
-                </Button>
-              </div>
 
-              <div
-                class="relative right-[555px] -mt-6 flex translate-x-20 translate-y-0.5 justify-center gap-6"
-              >
-                <!-- <Button
-          as="a"
-          href=""
-          size="lg"
-          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
-        >
-          Mirror 1
-        </Button>
-      
-      <div class="flex justify-center gap-6">
-      <Button
-          as="a"
-          href=""
-          size="lg"
-          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
-        >
-          Mirror 2
-        </Button>
-        </div> -->
-                <div
-                  class="mt-6 lg:absolute lg:top-[2%] lg:right-[20%] lg:w-[450px]"
-                >
-                  <img
-                    src={rect6.src}
-                    alt=""
-                    class="z-10 w-[250px] translate-x-[465px] -translate-y-[225px] drop-shadow-[8px_8px_0_#3BAA45] lg:absolute lg:top-[15%] lg:left-[100%] lg:-mt-60 lg:w-[400px] lg:-translate-x-[5px] lg:-translate-y-[180px]"
-                  />
-                </div>
-              </div>
             </div>
+
+            <p class="font-noto-sans mt-6 max-w-[680px] text-[clamp(16px,1.8vw,20px)]
+                leading-relaxed font-semibold text-[#001B3D]">
+              A test release targeting video playback and rendering fixes.
+              Resolves z-fighting visual glitches in 3D environments,
+              improves cutscene aspect ratios, and resolves title screen
+              input bugs.
+            </p>
+
           </div>
-        </div>
-        <div class="relative z-20 -mt-25 mb-4 bg-[#E6F0FA] pb-2 lg:-mt-5">
-          <div class="z-10 translate-x-20">
-            <div class="flex items-center gap-10 sm:gap-12 lg:gap-65">
-              <p
-                class="font-noto-sans -translate-x-[50px] text-[19px] font-semibold text-[#001B3D] underline sm:text-xl lg:translate-x-[5px] lg:text-[20px]"
+
+
+          <div class="flex justify-center
+
+              md:col-start-2
+              md:row-start-1
+              md:row-span-2
+              md:justify-end">
+            <img
+              src={rect6.src}
+              alt=""
+              class="w-[clamp(220px,28vw,400px)] max-w-full drop-shadow-[8px_8px_0_#3BAA45]"/>
+          </div>
+
+
+          <div class="mt-2 flex justify-start
+
+              md:col-start-1
+              md:row-start-2
+              md:mt-0">
+            <Button
+              as="a"
+              href="https://github.com/p3d-project/persona-3-dual/releases/tag/0.5"
+              target="_blank"
+              size="md"
+              className="w-[min(310px,85vw)] justify-center py-3 text-2xl
+                sm:text-3xl
+                lg:w-[410px]">
+              Download
+            </Button>
+          </div>
+
+        </article>
+
+        <article class="legacy-release grid gap-8 py-12
+
+            md:grid-cols-[minmax(0,1fr)_minmax(280px,400px)]
+            md:grid-rows-[auto_auto]
+            md:items-center
+
+            lg:gap-16">
+
+          <div class="md:col-start-1 md:row-start-1">
+
+            <div class="flex flex-wrap items-center gap-30 md:gap-30 lg:gap-46 xl:gap-86">
+
+              <p class="font-noto-sans text-[clamp(19px,2vw,20px)] font-semibold text-[#001B3D] underline"
               >
                 v0.4.0
               </p>
-              <p
-                class="font-noto-sans translate-x-1 text-[14px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-3 lg:text-[16px]"
+
+              <p class="font-noto-sans text-[clamp(14px,1.5vw,16px)] font-semibold text-[#001B3D]"
               >
                 June 20th, 2026
               </p>
-            </div>
-            <p
-              class="font-noto-sans mt-6 w-69 max-w-2xl -translate-x-[50px] text-[18px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px] lg:max-w-xl"
-            >
-              Early preview release for testing core gameplay features. Integrates preliminary 3D environment exploration, basic character dialogue interactions, and debug tools.
-            </p>
-          </div>
-          <div class="relative">
-            <!-- <div class="absolute left-[13%] bottom-[1%] z-0 w-[190px]">
-            <img
-              src={marked.src}
-              alt=""
-              class="relative z-0 h-auto w-full object-contain"
-              />
-            </div> -->
-            <div class="relative z-10">
-              <div
-                class="justify-left lg: relative mt-35 mb-4 flex lg:right-[550px] lg:mb-8 lg:flex lg:translate-x-[215px] lg:pb-1"
-              >
-                <Button
-                  as="a"
-                  href="https://github.com/p3d-project/persona-3-dual/releases/tag/0.4"
-                  target="_blank"
-                  size="md"
-                  className="mt-6 w-[310px] translate-x-8 translate-y-15 justify-center py-3 text-3xl lg:mt-6 lg:w-[410px] lg:translate-x-105 lg:-translate-y-35 lg:py-5 lg:text-4xl"
-                >
-                  Download
-                </Button>
-              </div>
 
-              <div
-                class="relative right-[555px] -mt-6 flex translate-x-20 translate-y-0.5 justify-center gap-6"
-              >
-                <!-- <Button
-          as="a"
-          href=""
-          size="lg"
-          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
-        >
-          Mirror 1
-        </Button>
-      
-      <div class="flex justify-center gap-6">
-      <Button
-          as="a"
-          href=""
-          size="lg"
-          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
-        >
-          Mirror 2
-        </Button>
-        </div> -->
-                <div
-                  class="mt-6 lg:absolute lg:top-[2%] lg:right-[20%] lg:w-[450px]"
-                >
-                  <img
-                    src={rect6.src}
-                    alt=""
-                    class="z-10 w-[250px] translate-x-[465px] -translate-y-[225px] drop-shadow-[8px_8px_0_#3BAA45] lg:absolute lg:top-[15%] lg:left-[100%] lg:-mt-60 lg:w-[400px] lg:-translate-x-[5px] lg:-translate-y-[180px]"
-                  />
-                </div>
-              </div>
             </div>
+
+            <p class="font-noto-sans mt-6 max-w-[680px] text-[clamp(16px,1.8vw,20px)] 
+            leading-relaxed font-semibold text-[#001B3D]">
+              Early preview release for testing core gameplay features.
+              Integrates preliminary 3D environment exploration, basic
+              character dialogue interactions, and debug tools.
+            </p>
+
           </div>
-        </div>
-        <div class="relative z-20 -mt-25 mb-4 bg-[#E6F0FA] pb-2 lg:-mt-3">
-          <div class="z-10 translate-x-20">
-            <div class="flex items-center gap-10 sm:gap-12 lg:gap-65">
-              <p
-                class="font-noto-sans -translate-x-[50px] text-[19px] font-semibold text-[#001B3D] underline sm:text-xl lg:translate-x-[5px] lg:text-[20px]"
+
+
+          <div class="flex justify-center
+
+              md:col-start-2
+              md:row-start-1
+              md:row-span-2
+              md:justify-end">
+            <img
+              src={rect6.src}
+              alt=""
+              class=" w-[clamp(220px,28vw,400px)] max-w-full drop-shadow-[8px_8px_0_#3BAA45]"/>
+          </div>
+
+
+          <div class="mt-2 flex justify-start
+
+              md:col-start-1
+              md:row-start-2
+              md:mt-0">
+            <Button
+              as="a"
+              href="https://github.com/p3d-project/persona-3-dual/releases/tag/0.4"
+              target="_blank"
+              size="md"
+              className="w-[min(310px,85vw)] justify-center py-3 text-2xl
+                sm:text-3xl
+                lg:w-[410px]">
+              Download
+            </Button>
+          </div>
+
+        </article>
+
+        <article class="legacy-release grid gap-8 py-12
+
+            md:grid-cols-[minmax(0,1fr)_minmax(280px,400px)]
+            md:grid-rows-[auto_auto]
+            md:items-center
+
+            lg:gap-16">
+
+          <div class="md:col-start-1 md:row-start-1">
+
+            <div class="flex flex-wrap items-center gap-30 md:gap-30 lg:gap-46 xl:gap-86">
+
+              <p class="font-noto-sans text-[clamp(19px,2vw,20px)] font-semibold text-[#001B3D] underline"
               >
                 v0.3.0
               </p>
-              <p
-                class="font-noto-sans translate-x-1 text-[14px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-3 lg:text-[16px]"
+
+              <p class="font-noto-sans text-[clamp(14px,1.5vw,16px)] font-semibold text-[#001B3D]"
               >
                 May 29th, 2026
               </p>
+
             </div>
-            <p
-              class="font-noto-sans mt-6 w-69 max-w-2xl -translate-x-[50px] text-[18px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px] lg:max-w-xl"
-            >
-              Early preview release, introducing early 3D camera controls, movement, and initial battle system prototypes.
+
+            <p class="font-noto-sans mt-6 max-w-[680px] text-[clamp(16px,1.8vw,20px)] 
+              leading-relaxed font-semibold text-[#001B3D]">
+              Early preview release, introducing early 3D camera controls,
+              movement, and initial battle system prototypes.
             </p>
           </div>
-          <div class="relative">
-            <!-- <div class="absolute left-[13%] bottom-[1%] z-0 w-[190px]">
-            <img
-              src={marked.src}
-              alt=""
-              class="relative z-0 h-auto w-full object-contain"
-              />
-            </div> -->
-            <div class="relative z-10">
-              <div
-                class="justify-left lg: relative mt-35 mb-4 flex lg:right-[550px] lg:mb-8 lg:flex lg:translate-x-[215px] lg:pb-1"
-              >
-                <Button
-                  as="a"
-                  href="https://github.com/p3d-project/persona-3-dual/releases/tag/0.3"
-                  target="_blank"
-                  size="md"
-                  className="mt-6 w-[310px] translate-x-8 translate-y-15 justify-center py-3 text-3xl lg:mt-6 lg:w-[410px] lg:translate-x-105 lg:-translate-y-35 lg:py-5 lg:text-4xl"
-                >
-                  Download
-                </Button>
-              </div>
 
-              <div
-                class="relative right-[555px] -mt-6 flex translate-x-20 translate-y-0.5 justify-center gap-6"
-              >
-                <!-- <Button
-          as="a"
-          href=""
-          size="lg"
-          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
-        >
-          Mirror 1
-        </Button>
-      
-      <div class="flex justify-center gap-6">
-      <Button
-          as="a"
-          href=""
-          size="lg"
-          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
-        >
-          Mirror 2
-        </Button>
-        </div> -->
-                <div
-                  class="mt-6 lg:absolute lg:top-[2%] lg:right-[20%] lg:w-[450px]"
-                >
-                  <img
-                    src={rect6.src}
-                    alt=""
-                    class="z-10 w-[250px] translate-x-[465px] -translate-y-[225px] drop-shadow-[8px_8px_0_#3BAA45] lg:absolute lg:top-[15%] lg:left-[100%] lg:-mt-60 lg:w-[400px] lg:-translate-x-[5px] lg:-translate-y-[180px]"
-                  />
-                </div>
-              </div>
-            </div>
+          <div class="flex justify-center
+
+              md:col-start-2
+              md:row-start-1
+              md:row-span-2
+              md:justify-end">
+            <img
+              src={rect6.src}
+              alt=""
+              class="w-[clamp(220px,28vw,400px)] max-w-full drop-shadow-[8px_8px_0_#3BAA45]"/>
           </div>
-        </div>
-        <div class="relative z-20 -mt-25 mb-4 bg-[#E6F0FA] pb-2 lg:-mt-15">
-          <div class="z-10 translate-x-20">
-            <div class="flex items-center gap-10 sm:gap-12 lg:gap-65">
-              <p
-                class="font-noto-sans -translate-x-[50px] text-[19px] font-semibold text-[#001B3D] underline sm:text-xl lg:translate-x-[5px] lg:text-[20px]"
+
+
+          <div class="mt-2 flex justify-start
+
+              md:col-start-1
+              md:row-start-2
+              md:mt-0">
+            <Button
+              as="a"
+              href="https://github.com/p3d-project/persona-3-dual/releases/tag/0.3"
+              target="_blank"
+              size="md"
+              className="w-[min(310px,85vw)] justify-center py-3 text-2xl
+                sm:text-3xl
+                lg:w-[410px]">
+              Download
+            </Button>
+          </div>
+        </article>
+
+        <article class="legacy-release grid gap-8 py-12
+
+            md:grid-cols-[minmax(0,1fr)_minmax(280px,400px)]
+            md:grid-rows-[auto_auto]
+            md:items-center
+
+            lg:gap-16">
+
+          <div class="md:col-start-1 md:row-start-1">
+
+            <div class="flex flex-wrap items-center gap-30 md:gap-30 lg:gap-46 xl:gap-86">
+
+              <p class="font-noto-sans text-[clamp(19px,2vw,20px)] font-semibold text-[#001B3D] underline"
               >
                 v0.2.0
               </p>
-              <p
-                class="font-noto-sans translate-x-1 text-[14px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-3 lg:text-[16px]"
+
+              <p class="font-noto-sans text-[clamp(14px,1.5vw,16px)] font-semibold text-[#001B3D]"
               >
                 April 27th, 2026
               </p>
+
             </div>
-            <p
-              class="font-noto-sans mt-6 w-69 max-w-2xl -translate-x-[50px] text-[18px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px] lg:max-w-xl"
-            >
-              Technical update focusing on media pipelines and performance optimizations. Adds introductory video support, transitions audio to uncompressed format, and implements automated asset processing pipelines.
+
+            <p class="font-noto-sans mt-6 max-w-[680px]
+                text-[clamp(16px,1.8vw,20px)] leading-relaxed font-semibold
+                text-[#001B3D]">
+              Technical update focusing on media pipelines and performance
+              optimizations. Adds introductory video support, transitions
+              audio to uncompressed format, and implements automated asset
+              processing pipelines.
             </p>
           </div>
-          <div class="relative">
-            <!-- <div class="absolute left-[13%] bottom-[1%] z-0 w-[190px]">
-            <img
-              src={marked.src}
-              alt=""
-              class="relative z-0 h-auto w-full object-contain"
-              />
-            </div> -->
-            <div class="relative z-10">
-              <div
-                class="justify-left lg: relative mt-35 mb-4 flex lg:right-[550px] lg:mb-8 lg:flex lg:translate-x-[215px] lg:pb-1"
-              >
-                <Button
-                  as="a"
-                  href="https://github.com/p3d-project/persona-3-dual/releases/tag/0.2"
-                  target="_blank"
-                  size="md"
-                  className="mt-6 w-[310px] translate-x-8 translate-y-15 justify-center py-3 text-3xl lg:mt-6 lg:w-[410px] lg:translate-x-105 lg:-translate-y-35 lg:py-5 lg:text-4xl"
-                >
-                  Download
-                </Button>
-              </div>
 
-              <div
-                class="relative right-[555px] -mt-6 flex translate-x-20 translate-y-0.5 justify-center gap-6"
-              >
-                <!-- <Button
-          as="a"
-          href=""
-          size="lg"
-          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
-        >
-          Mirror 1
-        </Button>
-      
-      <div class="flex justify-center gap-6">
-      <Button
-          as="a"
-          href=""
-          size="lg"
-          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
-        >
-          Mirror 2
-        </Button>
-        </div> -->
-                <div
-                  class="mt-6 lg:absolute lg:top-[2%] lg:right-[20%] lg:w-[450px]"
-                >
-                  <img
-                    src={rect6.src}
-                    alt=""
-                    class="z-10 w-[250px] translate-x-[465px] -translate-y-[225px] drop-shadow-[8px_8px_0_#3BAA45] lg:absolute lg:top-[15%] lg:left-[100%] lg:-mt-60 lg:w-[400px] lg:-translate-x-[5px] lg:-translate-y-[180px]"
-                  />
-                </div>
-              </div>
-            </div>
+          <div class="flex justify-center
+
+              md:col-start-2
+              md:row-start-1
+              md:row-span-2
+              md:justify-end">
+            <img
+              src={rect6.src}
+              alt=""
+              class="w-[clamp(220px,28vw,400px)] max-w-full drop-shadow-[8px_8px_0_#3BAA45]"/>
           </div>
-        </div>
-        <div class="relative z-20 -mt-25 -mb-40 bg-[#E6F0FA] pb-2 lg:-mb-10 lg:-mt-5">
-          <div class="z-10 translate-x-20">
-            <div class="flex items-center gap-10 sm:gap-12 lg:gap-65">
-              <p
-                class="font-noto-sans -translate-x-[50px] text-[19px] font-semibold text-[#001B3D] underline sm:text-xl lg:translate-x-[5px] lg:text-[20px]"
+
+
+          <div class="mt-2 flex justify-start
+
+              md:col-start-1
+              md:row-start-2
+              md:mt-0">
+            <Button
+              as="a"
+              href="https://github.com/p3d-project/persona-3-dual/releases/tag/0.2"
+              target="_blank"
+              size="md"
+              className="w-[min(310px,85vw)] justify-center py-3 text-2xl
+                sm:text-3xl
+                lg:w-[410px]">
+              Download
+            </Button>
+          </div>
+        </article>
+
+        <article class="legacy-release grid gap-8 py-12
+
+            md:grid-cols-[minmax(0,1fr)_minmax(280px,400px)]
+            md:grid-rows-[auto_auto]
+            md:items-center
+
+            lg:gap-16">
+
+          <div class="md:col-start-1 md:row-start-1">
+
+            <div class="flex flex-wrap items-center gap-30 md:gap-30 lg:gap-46 xl:gap-86">
+
+              <p class="font-noto-sans text-[clamp(19px,2vw,20px)] font-semibold text-[#001B3D] underline"
               >
                 Beta
               </p>
-              <p
-                class="font-noto-sans translate-x-6 text-[14px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-3 lg:text-[16px]"
+
+              <p class="font-noto-sans text-[clamp(14px,1.5vw,16px)] font-semibold text-[#001B3D]"
               >
                 April 18th, 2026
               </p>
+
             </div>
-            <p
-              class="font-noto-sans mt-6 w-69 max-w-2xl -translate-x-[50px] text-[18px] font-semibold text-[#001B3D] sm:text-xl lg:translate-x-[5px] lg:text-[20px] lg:max-w-xl"
+
+            <p class="font-noto-sans mt-6 max-w-[680px] text-[clamp(16px,1.8vw,20px)]
+              leading-relaxed font-semibold text-[#001B3D]"
             >
-              Initial public beta release of the project. Establishes core project architecture and rebrands the project from 'Persona 3 DS' to 'Persona 3 Dual'.
+              Initial public beta release of the project. Establishes core
+              project architecture and rebrands the project from 'Persona 3 DS'
+              to 'Persona 3 Dual'.
             </p>
           </div>
-          <div class="relative">
-            <!-- <div class="absolute left-[13%] bottom-[1%] z-0 w-[190px]">
-            <img
-              src={marked.src}
-              alt=""
-              class="relative z-0 h-auto w-full object-contain"
-              />
-            </div> -->
-            <div class="relative z-10">
-              <div
-                class="justify-left lg: relative mt-35 mb-4 flex lg:right-[550px] lg:mb-8 lg:flex lg:translate-x-[215px] lg:pb-1"
-              >
-                <Button
-                  as="a"
-                  href="https://github.com/p3d-project/persona-3-dual/releases/tag/Beta"
-                  target="_blank"
-                  size="md"
-                  className="mt-6 w-[310px] translate-x-8 translate-y-15 justify-center py-3 text-3xl lg:mt-6 lg:w-[410px] lg:translate-x-105 lg:-translate-y-35 lg:py-5 lg:text-4xl"
-                >
-                  Download
-                </Button>
-              </div>
 
-              <div
-                class="relative right-[555px] -mt-6 flex translate-x-20 translate-y-0.5 justify-center gap-6"
-              >
-                <!-- <Button
-          as="a"
-          href=""
-          size="lg"
-          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
-        >
-          Mirror 1
-        </Button>
-      
-      <div class="flex justify-center gap-6">
-      <Button
-          as="a"
-          href=""
-          size="lg"
-          className="w-[190px] py-4 text-2xl justify-center text-[#001B3D] bg-[#12A858]"
-        >
-          Mirror 2
-        </Button>
-        </div> -->
-                <div
-                  class="mt-6 lg:absolute lg:top-[2%] lg:right-[20%] lg:w-[450px]"
-                >
-                  <img
-                    src={rect6.src}
-                    alt=""
-                    class="z-10 w-[250px] translate-x-[465px] -translate-y-[225px] drop-shadow-[8px_8px_0_#3BAA45] lg:absolute lg:top-[15%] lg:left-[100%] lg:-mt-60 lg:w-[400px] lg:-translate-x-[5px] lg:-translate-y-[180px]"
-                  />
-                </div>
-              </div>
-            </div>
+
+          <div class="flex justify-center
+
+              md:col-start-2
+              md:row-start-1
+              md:row-span-2
+              md:justify-end">
+            <img
+              src={rect6.src}
+              alt=""
+              class="w-[clamp(220px,28vw,400px)] max-w-full drop-shadow-[8px_8px_0_#3BAA45]"/>
           </div>
-        </div>
+
+
+          <div class="mt-2 flex justify-start
+
+              md:col-start-1
+              md:row-start-2
+              md:mt-0">
+            <Button
+              as="a"
+              href="https://github.com/p3d-project/persona-3-dual/releases/tag/Beta"
+              target="_blank"
+              size="md"
+              className="w-[min(310px,85vw)] justify-center py-3 text-2xl
+                sm:text-3xl
+                lg:w-[410px]">
+              Download
+            </Button>
+          </div>
+
+        </article>
+
       </div>
     </section>
+
   </main>
 </Layout>
-<style>
-  /* Mobile */
-  @media (max-width: 767px) {
-
-    /* dots */
-       .hero-dots {
-      background-size: 650px !important;
-    }
-
-    /* Makoto */
-    .hero-makoto {
-      width: min(155vw, 600px) !important;
-      height: min(155vw, 600px) !important;
-
-      right: -19% !important;
-      top: 50% !important;
-    }
-
-    /* The downloads text */
-    .hero-copy h1 {
-      font-size: clamp(30px, 8.5vw, 40px) !important;
-      transform: translateY(18px) !important;
-    }
-
-    .hero-copy > p.font-noto-sans {
-      font-size: clamp(16px, 4.6vw, 20px) !important;
-      transform: translateY(12px) !important;
-    }
-
-    .hero-copy > p.font-MgOpenCosmeticaBold {
-      font-size: clamp(14px, 3.9vw, 18px) !important;
-      transform: translateY(12px) !important;
-    }
-
-
-    /* Move the whole download copy down a little */
-
-    .hero-copy {
-      padding-top: 45px !important;
-    }
-
-
-    /* What's New */
-
-  @media (max-width: 389px) {
-  .whats-new-section {
-    margin-top: -45px !important;
-  }
-}
-   @media (min-width: 390px) and (max-width: 767px) {
-  .whats-new-section {
-    margin-top: -75px !important;
-  }
-}
-
-    /* carousel */
-
-    .whats-new-carousel {
-      width: min(235px, 63vw) !important;
-      max-width: 235px !important;
-      margin-top: 20px !important;
-      position: relative !important;
-      z-index: 10 !important;
-    }
-
-    /* Glass png*/
-    .whats-new-glass {
-      display: block !important;
-      z-index: 1 !important;
-      bottom: 45px !important;
-      width: min(350px, 90vw) !important;
-    }
-
-
-    /* Other moibile devices */
-
-    .legacy-section .relative.z-10 > .justify-left {
-      transform: translateX(25px) !important;
-    }
-  }
-
-  /* Tablets and other medium devices */
-
-  @media (min-width: 768px) and (max-width: 899px) {
-
-    /* dots */
-
-    .hero-dots {
-      background-size: 700px !important;
-    }
-
-
-    /* Makoto */
-    .hero-makoto {
-      top: 50% !important;
-      right: -17% !important;
-      left: auto !important;
-
-      width: min(95vw, 850px) !important;
-      height: min(95vw, 850px) !important;
-
-      transform: translateY(-50%) !important;
-    }
-
-    .hero-makoto img {
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: contain !important;
-    }
-
-
-    /* hero text */
-
-    .p3d-container {
-      display: flex !important;
-      align-items: center !important;
-      min-height: 100vh !important;
-      padding-top: 0 !important;
-    }
-
-    .hero-copy {
-      width: 53% !important;
-      max-width: 430px !important;
-
-      padding: 0 !important;
-
-      transform: none !important;
-
-      align-items: center !important;
-      justify-content: center !important;
-
-      text-align: center !important;
-    }
-
-    .hero-copy h1 {
-      transform: none !important;
-      font-size: clamp(35px, 5vw, 48px) !important;
-    }
-
-    .hero-copy > p {
-      transform: none !important;
-      max-width: 390px !important;
-    }
-
-    .hero-copy > p.font-noto-sans {
-      font-size: clamp(19px, 2.8vw, 25px) !important;
-    }
-
-    .hero-copy > p.font-MgOpenCosmeticaBold {
-      font-size: clamp(15px, 2.1vw, 19px) !important;
-    }
-
-
-    /* hero download button */
-
-    .hero-copy section {
-      width: 100% !important;
-      padding: 15px 0 0 !important;
-    }
-
-    .hero-copy section .justify-left {
-      transform: translateX(50px) !important;
-    }
-
-    .hero-copy section .justify-left a {
-      width: min(350px, 43vw) !important;
-      font-size: clamp(20px, 2.6vw, 27px) !important;
-    }
-
-
-    /* what's new */
-
-    .whats-new-section {
-      margin-top: -90px !important;
-      padding-bottom: 300px !important;
-    }
-
-
-    /* carousel */
-
-    .whats-new-carousel {
-      width: min(270px, 42vw) !important;
-      max-width: 270px !important;
-      margin: 25px auto 0 !important;
-
-      position: relative !important;
-      z-index: 10 !important;
-    }
-
-
-    /* glass png */
-    .whats-new-glass {
-      display: block !important;
-
-      right: 50% !important;
-      bottom: 55px !important;
-
-      width: min(500px, 60vw) !important;
-
-      transform: translateX(50%) !important;
-
-      z-index: 1 !important;
-    }
-
-
-    /* legacy section - make closer to the mobile layout */
-
-    .legacy-section {
-      overflow: visible !important;
-    }
-
-    .legacy-section > div {
-      position: relative !important;
-    }
-
-    .legacy-section .z-10 {
-      transform: none !important;
-    }
-
-    .legacy-section > div > .z-10 {
-      width: 82vw !important;
-      max-width: 620px !important;
-
-      margin-left: auto !important;
-      margin-right: auto !important;
-    }
-
-    .legacy-section .z-10 > .flex {
-      width: 100% !important;
-      max-width: 560px !important;
-
-      gap: 45px !important;
-    }
-
-    .legacy-section .z-10 > p {
-      width: 100% !important;
-      max-width: 560px !important;
-
-      transform: none !important;
-    }
-
-
-    /* legacy buttons */
-
-    .legacy-section .relative.z-10 > .justify-left {
-      margin-top: 0 !important;
-      margin-bottom: 0 !important;
-
-      transform: translateX(30px) !important;
-    }
-
-
-    /* legacy images */
-    
-    .legacy-section .relative.z-10 > .right-\[555px\] {
-      position: relative !important;
-
-      top: auto !important;
-      right: auto !important;
-      left: auto !important;
-
-      width: 100% !important;
-
-      margin: 0 !important;
-      padding: 0 !important;
-
-      transform: none !important;
-      translate: none !important;
-    }
-
-    .legacy-section .relative.z-10 > .right-\[555px\] > div {
-      display: flex !important;
-
-      width: 100% !important;
-
-      justify-content: flex-end !important;
-
-      margin: 0 !important;
-
-      transform: none !important;
-    }
-
-    .legacy-section .relative.z-10 img[src*="Rectangle_6"] {
-      position: relative !important;
-
-      top: auto !important;
-      left: auto !important;
-
-      width: min(260px, 35vw) !important;
-
-      margin-right: 10px !important;
-
-      transform: translateY(-10px) !important;
-    }
-
-
-        /* remove large negative space overlaps */
-
-    .legacy-section > div > .relative.z-20 {
-      margin-top: 0 !important;
-      margin-bottom: 20px !important;
-    }
-
-    .legacy-section > div > .relative.z-20:last-child {
-      margin-bottom: 0 !important;
-    }
-
-    .legacy-section {
-      padding-bottom: 30px !important;
-    }
-
-    .legacy-section + * {
-      margin-top: 0 !important;
-    }
-  }
-
-
-
-    /* Larger tablets */
-
-  @media (min-width: 900px) and (max-width: 1279px) {
-
-    /* dots */
-
-    .hero-dots {
-      background-size: 760px !important;
-    }
-
-
-    /* makoto */
-
-    .hero-makoto {
-      top: 50% !important;
-      right: -5% !important;
-      left: auto !important;
-
-      width: min(82vw, 900px) !important;
-      height: min(82vw, 900px) !important;
-
-      transform: translateY(-50%) !important;
-    }
-
-
-    /* hero text */
-
-    .p3d-container {
-      display: flex !important;
-      align-items: center !important;
-
-      min-height: 100vh !important;
-
-      padding-top: 0 !important;
-    }
-
-    .hero-copy {
-      width: 52% !important;
-      max-width: 590px !important;
-
-      padding: 0 !important;
-
-      transform: none !important;
-
-      align-items: center !important;
-      justify-content: center !important;
-
-      text-align: center !important;
-    }
-
-    .hero-copy h1 {
-      transform: none !important;
-      font-size: clamp(42px, 4.5vw, 55px) !important;
-    }
-
-    .hero-copy > p {
-      transform: none !important;
-      max-width: 500px !important;
-    }
-
-
-    /* hero download button */
-
-    .hero-copy section {
-      width: 100% !important;
-      padding: 15px 0 0 !important;
-    }
-
-    .hero-copy section .justify-left {
-      transform: translateX(75px) !important;
-    }
-
-    .hero-copy section .justify-left a {
-      width: min(430px, 40vw) !important;
-    }
-
-
-    /* what's new */
-
-    .whats-new-section {
-      margin-top: -85px !important;
-      padding-bottom: 330px !important;
-    }
-
-    .whats-new-glass {
-      display: block !important;
-
-      top: 18% !important;
-      right: 5% !important;
-
-      width: min(570px, 48vw) !important;
-
-      transform: none !important;
-
-      z-index: 1 !important;
-    }
-
-    .whats-new-images {
-      display: block !important;
-
-      top: 4% !important;
-      right: 4% !important;
-
-      width: min(350px, 30vw) !important;
-
-      transform: none !important;
-
-      z-index: 5 !important;
-    }
-
-    .whats-new-images img {
-      width: min(230px, 20vw) !important;
-    }
-
-    .whats-new-images img[src*="Rectangle_7"] {
-      left: -65% !important;
-    }
-
-    .whats-new-images img[src*="Rectangle_5"] {
-      right: 0 !important;
-      left: auto !important;
-    }
-
-    .whats-new-images img[src*="Rectangle_6"] {
-      left: 10% !important;
-      transform: translateY(70%) !important;
-    }
-
-
-    /* carousel */
-
-    .whats-new-carousel {
-      width: min(280px, 30vw) !important;
-      max-width: 280px !important;
-    }
-
-
-    /* legacy section */
-    
-    .legacy-section {
-      overflow: visible !important;
-    }
-
-    .legacy-section > div > .z-10 {
-      width: 78vw !important;
-      max-width: 800px !important;
-
-      margin-left: 7vw !important;
-      margin-right: 0 !important;
-
-      transform: none !important;
-    }
-
-    .legacy-section .z-10 > .flex {
-      width: 100% !important;
-      max-width: 680px !important;
-
-      gap: 65px !important;
-    }
-
-    .legacy-section .z-10 > p {
-      width: 100% !important;
-      max-width: 680px !important;
-
-      transform: none !important;
-    }
-
-
-    /* legacy download buttons */
-
-    .legacy-section .relative.z-10 > .justify-left {
-      margin-top: 0 !important;
-      margin-bottom: 0 !important;
-
-      transform: translateX(65px) !important;
-    }
-
-    .legacy-section .relative.z-10 > .justify-left > a {
-      transform: translateY(0) !important;
-    }
-
-
-    /* legacy images */
-
-    .legacy-section .relative.z-10 > .right-\[555px\] {
-      position: absolute !important;
-
-      top: -40px !important;
-      right: 2vw !important;
-
-      left: auto !important;
-
-      width: auto !important;
-
-      margin: 0 !important;
-      padding: 0 !important;
-
-      transform: none !important;
-      translate: none !important;
-    }
-
-    .legacy-section .relative.z-10 > .right-\[555px\] > div {
-      width: auto !important;
-      margin: 0 !important;
-
-      transform: none !important;
-    }
-
-    .legacy-section .relative.z-10 img[src*="Rectangle_6"] {
-      position: relative !important;
-
-      top: auto !important;
-      left: auto !important;
-
-      width: clamp(250px, 25vw, 330px) !important;
-
-      margin: 0 !important;
-
-      transform: translateY(-10px) !important;
-    }
-
-
-    /* footer gap */
-
-    .legacy-section {
-      margin-bottom: 0 !important;
-      padding-bottom: 20px !important;
-    }
-  }
-
-</style>
