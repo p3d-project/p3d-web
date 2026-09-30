@@ -14,63 +14,67 @@ import Carousel from "../components/react/Carousel.tsx";
 <Layout>
   <main class="overflow-x-hidden">
 
-    <section class="hero-section relative min-h-screen w-full overflow-hidden">
+    <section class="hero-section relative h-[600px] w-full overflow-hidden
+                    min-[500px]:h-[707px]
+                    md:h-[745px]
+                    lg:h-[766px]
+                    xl:h-[826px]">
 
       <div class="pointer-events-none absolute inset-0 select-none">
 
         <div
-          class="absolute inset-x-0 top-0 h-[calc(100%+300px)] bg-[#E6F0FA]"
+          class="absolute inset-0 bg-[#E6F0FA]"
           aria-hidden="true"
         ></div>
 
-       <div class=" hero-dots absolute top-[55%] left-[10%]
-        h-[120%] w-[58%] bg-[length:130%_auto] bg-repeat
+       <div class="hero-dots absolute inset-0 top-[55%] left-[1%]
+        h-[120%] w-[158%] bg-[length:100%_auto] bg-repeat
+        md:top-[50%]
+        md:left-[1%]
+        md:h-[100%]
+        md:w-[90%]
 
-        sm:left-[50%]
-        sm:w-[58%]
-        sm:top-[55%]
-        sm:bg-[length:130%_auto]
-
-        md:left-[10%]
-        md:top-[55%]
-        md:w-[50%]
-        md:bg-[length:130%_auto]
-    
-        lg:left-[42%]
         lg:top-[4%]
+        lg:left-[52%]
         lg:h-[158%]
         lg:w-[58%]
-        lg:bg-[length:auto_auto]
+        lg:bg-[length:100%_auto]
 
-        xl:left-[42%]
         xl:top-[6%]
+        xl:left-[50%]
+        xl:h-[158%]
         xl:w-[58%]
-        xl:bg-[length:auto_auto]"
+        "
         style={`background-image: url('${dots.src}');`}
         aria-hidden="true"></div>
 
-    <div class="hero-makoto absolute z-0 select-none top-[59%]
-    right-[-2%] w-[clamp(300px,82vw,460px)] -translate-y-1/2
-    sm:top-[57%]
-    sm:right-[-1%]
-    sm:w-[clamp(360px,78vw,540px)]
+    <div class="hero-makoto absolute z-0 select-none top-1/2
+    right-[-2%] -translate-y-1/2 translate-x-17 w-auto h-[600px]
+    
+    min-[500px]:top-[54%]
+    min-[500px]:right-[-17%]
+    min-[500px]:h-[650px]
+    min-[500px]:w-[clamp(470px,90vw,820px)]
 
-    md:top-[56%]
-    md:right-[-3%]
-    md:w-[clamp(560px,78vw,760px)]
+    md:top-[53%]
+    md:h-[700px]
+    md:right-[-10%]
+    md:w-[600px]
 
-    lg:top-[55%]
+    lg:top-[53%]
+    lg:h-[720px]
     lg:right-[-5%]
-    lg:w-[clamp(520px,56vw,780px)]
+    lg:w-[600px]
 
-    xl:top-[56%]
-    xl:right-[-4%]
-    xl:w-[clamp(600px,52vw,900px)]"
+    xl:top-[44%]
+    xl:h-[760px]
+    xl:right-[-8%]
+    xl:w-[679px]"
   aria-hidden="true">
   <img
     src={makoto.src}
     alt=""
-    class="block h-auto w-full object-contain"/>
+    class="block h-full w-auto object-contain"/>
   </div>
 </div>
 
@@ -90,7 +94,7 @@ import Carousel from "../components/react/Carousel.tsx";
           xl:grid-cols-2
           xl:items-start">
 
-        <div class="hero-copy flex w-full max-w-[480px] flex-col
+        <div class="hero-copy relative z-20 flex w-full max-w-[480px] flex-col
             items-start justify-start pt-8 text-left
 
             sm:pt-12
@@ -142,31 +146,25 @@ import Carousel from "../components/react/Carousel.tsx";
             September, 2026
           </p>
 
-          <div class="mt-20 flex w-full justify-start
-
-              sm:mt-24
-
-              md:mt-28">
+          <div class="relative mb-4 flex w-full scroll-mt justify-center
+              translate-y-45 translate-x-15">
             <Button
               as="a"
               href="https://github.com/p3d-project/persona-3-dual/releases/tag/v1.1.0"
               target="_blank"
               size="lg"
-              className="w-[min(260px,45vw)] justify-center text-xl
-
-                sm:w-[min(280px,42vw)]
-                sm:py-5
-                sm:text-2xl
-
-                md:w-[min(310px,40vw)]
-                md:text-3xl
-
-                lg:w-[min(410px,38vw)]
-                lg:py-7
-                lg:text-4xl
-
-                xl:w-[min(700px,42vw)]
-                xl:py-8">
+              className="w-[310px] justify-center text-2xl
+              sm:py-5
+              md:w-[360px]
+              md:text-3xl
+              lg:w-[1190px]
+              lg:translate-x-95
+              lg:-translate-y-20
+              lg:py-5
+              lg:text-4xl
+              xl:translate-x-100
+              xl:-translate-y-25
+              xl:py-6">
               Download v1.1.0
             </Button>
           </div>
@@ -182,13 +180,13 @@ import Carousel from "../components/react/Carousel.tsx";
     
     sm:pb-40
 
-    md:-mt-8
+    md:-mt-12
     md:pb-52
 
-    lg:-mt-20
+    lg:-mt-24
     lg:pb-35
 
-    xl:-mt-28">
+    xl:-mt-32">
 
       <div class="mx-auto w-full max-w-7xl px-6
           lg:px-10">
@@ -203,8 +201,7 @@ import Carousel from "../components/react/Carousel.tsx";
 
           <p class="font-noto-sans text-[clamp(16px,2vw,20px)] font-semibold
           text-[#001B3D]">
-            For specifics, check out our
-            <a
+            For specifics, check out our <a
               href="https://docs.p3dual.com/"
               target="_blank"
               class="text-[#12A858] underline"
@@ -345,7 +342,7 @@ import Carousel from "../components/react/Carousel.tsx";
             <img
               src={rect6.src}
               alt=""
-              class="w-[clamp(220px,28vw,400px)]max-w-full drop-shadow-[8px_8px_0_#3BAA45]"/>
+              class="w-[clamp(220px,28vw,400px)] max-w-full drop-shadow-[8px_8px_0_#3BAA45]"/>
           </div>
 
           <div class="mt-2 flex justify-start
