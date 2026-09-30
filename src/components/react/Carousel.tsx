@@ -23,7 +23,7 @@ function Carousel() {
   };
 
   return (
-    <div className="relative h-full w-full">
+    <div className="relative h-full w-full object-cover">
       <img
         src={images[currentIndex]}
         alt={`Slide ${currentIndex + 1}`}
@@ -33,7 +33,7 @@ function Carousel() {
         type="button"
         aria-label="Previous image"
         onClick={handlePrev}
-        className="absolute top-1/2 left-4 -translate-y-1/2 transform rounded-full bg-gray-800 p-2 text-white"
+        className="absolute top-1/2 left-[-20px] flex h-8 w-8 -translate-y-2 -translate-x-1/2 items-center justify-center rounded-full bg-[#12A858] text-xl text-white transition hover:scale-105"
       >
         &#10094;
       </button>
@@ -41,7 +41,7 @@ function Carousel() {
         type="button"
         aria-label="Next image"
         onClick={handleNext}
-        className="absolute top-1/2 right-4 -translate-y-1/2 transform rounded-full bg-gray-800 p-2 text-white"
+        className="absolute top-1/2 right-[-20px] flex h-8 w-8 -translate-y-2 translate-x-1/2 items-center justify-center rounded-full bg-[#12A858] text-xl text-white transition hover:scale-105"
       >
         &#10095;
       </button>
