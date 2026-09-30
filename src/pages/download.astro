@@ -95,20 +95,23 @@ import Carousel from "../components/react/Carousel.tsx";
           xl:items-start">
 
         <div class="hero-copy relative z-20 flex w-full max-w-[480px] flex-col
-            items-start justify-start pt-8 text-left
+              items-start justify-start pt-35 text-left
 
-            sm:pt-12
-            md:pt-20
+            min-[500px]:pt-28
+            xs:pt-38
+            md:pt-8
             lg:pt-24
             xl:max-w-[600px]
             xl:pt-28">
 
           <h1
             style="-webkit-text-stroke: 1.5px #001B3D;"
-            class="font-bmspace mb-3 translate-y-5 text-[clamp(24px,5vw,55px)] leading-tight
+            class="font-bmspace mb-3 translate-y-5 text-[clamp(19px,5vw,55px)] leading-tight
               tracking-[-0.02em] text-[#001B3D]
 
-              xl:translate-y-1">
+              xl:translate-y-1
+              sm:text-[clamp(19px,5vw,55px)]
+              ">
             Downloads
           </h1>
 
@@ -145,34 +148,35 @@ import Carousel from "../components/react/Carousel.tsx";
             September, 2026
           </p>
 
-          <div class="relative mb-4 flex w-full scroll-mt justify-center
-              translate-y-45 translate-x-15">
+          <div class="relative mb-4 flex w-full shrink-0 scroll-mt justify-center
+              translate-y-15 translate-x-15">
             <Button
               as="a"
               href="https://github.com/p3d-project/persona-3-dual/releases/tag/v1.1.0"
               target="_blank"
               size="lg"
-              className="w-[510px] justify-center text-2xl
-              sm:py-5
+              className="w-[calc(100vw,32px)] shrink-0 justify-center text-2xl
+              sm:py-1
               sm:text-2xl
               md:py-5
               md:w-[660px]
               md:text-2xl
+              md:translate-y-35
               md:translate-x-15
-              lg:w-[1190px]
-              lg:translate-x-95
-              lg:-translate-y-20
+              md:w-[460px]
+              lg:w-[660px]
+              lg:translate-x-40
+              lg:translate-y-12
               lg:py-5
               lg:text-3xl
-              xl:translate-x-100
-              xl:-translate-y-25
+              xl:translate-x-90
+              xl:translate-y-5
+              xl:w-[790px]
               xl:py-6">
               Download v1.1.0
             </Button>
           </div>
-
         </div>
-
       </div>
     </section>
 
@@ -310,7 +314,7 @@ import Carousel from "../components/react/Carousel.tsx";
 
           <div class="md:col-start-1 md:row-start-1">
 
-            <div class="flex flex-wrap items-center gap-30 md:gap-30 lg:gap-46 xl:gap-86">
+            <div class="flex flex-wrap items-center gap-40 md:gap-30 lg:gap-65 xl:gap-86">
 
               <p class="font-noto-sans text-[clamp(19px,2vw,20px)] font-semibold
                   text-[#001B3D] underline">
@@ -344,7 +348,7 @@ import Carousel from "../components/react/Carousel.tsx";
             <img
               src={rect6.src}
               alt=""
-              class="w-[clamp(220px,28vw,400px)] max-w-full drop-shadow-[8px_8px_0_#3BAA45]"/>
+              class="w-[clamp(310px,28vw,400px)] max-w-full drop-shadow-[8px_8px_0_#3BAA45]"/>
           </div>
 
           <div class="mt-2 flex justify-center
@@ -414,7 +418,7 @@ import Carousel from "../components/react/Carousel.tsx";
             <img
               src={rect6.src}
               alt=""
-              class="w-[clamp(220px,28vw,400px)] max-w-full drop-shadow-[8px_8px_0_#3BAA45]"/>
+              class="w-[clamp(310px,28vw,400px)] max-w-full drop-shadow-[8px_8px_0_#3BAA45]"/>
           </div>
 
 
@@ -483,7 +487,7 @@ import Carousel from "../components/react/Carousel.tsx";
             <img
               src={rect6.src}
               alt=""
-              class="w-[clamp(220px,28vw,400px)] max-w-full drop-shadow-[8px_8px_0_#3BAA45]"/>
+              class="w-[clamp(310px,28vw,400px)] max-w-full drop-shadow-[8px_8px_0_#3BAA45]"/>
           </div>
 
 
@@ -550,7 +554,7 @@ import Carousel from "../components/react/Carousel.tsx";
             <img
               src={rect6.src}
               alt=""
-              class=" w-[clamp(220px,28vw,400px)] max-w-full drop-shadow-[8px_8px_0_#3BAA45]"/>
+              class="w-[clamp(310px,28vw,400px)] max-w-full drop-shadow-[8px_8px_0_#3BAA45]"/>
           </div>
 
 
@@ -614,7 +618,7 @@ import Carousel from "../components/react/Carousel.tsx";
             <img
               src={rect6.src}
               alt=""
-              class="w-[clamp(220px,28vw,400px)] max-w-full drop-shadow-[8px_8px_0_#3BAA45]"/>
+              class="w-[clamp(310px,28vw,400px)] max-w-full drop-shadow-[8px_8px_0_#3BAA45]"/>
           </div>
 
 
@@ -680,7 +684,7 @@ import Carousel from "../components/react/Carousel.tsx";
             <img
               src={rect6.src}
               alt=""
-              class="w-[clamp(220px,28vw,400px)] max-w-full drop-shadow-[8px_8px_0_#3BAA45]"/>
+              class="w-[clamp(310px,28vw,400px)] max-w-full drop-shadow-[8px_8px_0_#3BAA45]"/>
           </div>
 
 
@@ -746,7 +750,7 @@ import Carousel from "../components/react/Carousel.tsx";
             <img
               src={rect6.src}
               alt=""
-              class="w-[clamp(220px,28vw,400px)] max-w-full drop-shadow-[8px_8px_0_#3BAA45]"/>
+              class="w-[clamp(310px,28vw,400px)] max-w-full drop-shadow-[8px_8px_0_#3BAA45]"/>
           </div>
 
 
