@@ -48,7 +48,7 @@ import Carousel from "../components/react/Carousel.tsx";
         style={`background-image: url('${dots.src}');`}
         aria-hidden="true"></div>
 
-    <div class="hero-makoto absolute z-0 select-none top-1/2
+    <div class="hero-makoto absolute z-0 select-none top-[calc(50%+15px)]
     right-[-2%] -translate-y-1/2 translate-x-17 w-auto h-[600px]
     
     min-[500px]:top-[54%]
@@ -149,29 +149,31 @@ import Carousel from "../components/react/Carousel.tsx";
           </p>
 
           <div class="relative mb-4 flex w-full shrink-0 scroll-mt justify-center
-              translate-y-15 translate-x-15">
+              translate-y-15 translate-x-[calc(23.75vw-8px)]">
             <Button
               as="a"
               href="https://github.com/p3d-project/persona-3-dual/releases/tag/v1.1.0"
               target="_blank"
               size="lg"
-              className="w-[calc(100vw,32px)] shrink-0 justify-center text-2xl
+              className="mx-auto w-[calc(100vw-40px)] shrink-0 justify-center text-2xl
               sm:py-1
               sm:text-2xl
+
               md:py-5
-              md:w-[660px]
+              md:w-[clamp(560px,72vw,660px)]
               md:text-2xl
-              md:translate-y-35
-              md:translate-x-15
-              md:w-[460px]
-              lg:w-[660px]
-              lg:translate-x-40
-              lg:translate-y-12
+              md:translate-y-[clamp(100px,18vw,140px)]
+              md:mx-auto
+
+              lg:w-[clamp(660px,64vw,790px)]
+              lg:mx-auto
+              lg:translate-y-[clamp(48px,4.7vw,65px)]
               lg:py-5
               lg:text-3xl
-              xl:translate-x-90
-              xl:translate-y-5
-              xl:w-[790px]
+
+              xl:mx-auto
+              xl:translate-y-[clamp(20px,2.5vw,40px)]
+              xl:w-[clamp(790px,45vw,900px)]
               xl:py-6">
               Download v1.1.0
             </Button>
@@ -314,7 +316,7 @@ import Carousel from "../components/react/Carousel.tsx";
 
           <div class="md:col-start-1 md:row-start-1">
 
-            <div class="flex flex-wrap items-center gap-40 md:gap-30 lg:gap-65 xl:gap-86">
+            <div class="flex flex-wrap items-center gap-[clamp(128px,31vw,164px)] md:gap-30 lg:gap-65 xl:gap-86">
 
               <p class="font-noto-sans text-[clamp(19px,2vw,20px)] font-semibold
                   text-[#001B3D] underline">
