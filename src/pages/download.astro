@@ -13,168 +13,80 @@ import Carousel from "../components/react/Carousel.tsx";
 
 <Layout>
   <main class="overflow-x-hidden">
-
-    <section class="hero-section relative h-[600px] w-full overflow-hidden
-                    min-[500px]:h-[707px]
-                    md:h-[745px]
-                    lg:h-[766px]
-                    xl:h-[826px]">
-
+    <section
+      class="hero-section relative h-[600px] w-full overflow-hidden min-[500px]:h-[707px] md:h-[745px] lg:h-[766px] xl:h-[826px]"
+    >
       <div class="pointer-events-none absolute inset-0 select-none">
+        <div class="absolute inset-0 bg-[#E6F0FA]" aria-hidden="true"></div>
 
         <div
-          class="absolute inset-0 bg-[#E6F0FA]"
+          class="hero-dots absolute inset-0 top-[55%] left-[1%] h-[120%] w-[158%] bg-[length:100%_auto] bg-repeat md:top-[50%] md:left-[1%] md:h-[100%] md:w-[100%] lg:top-[4%] lg:left-[52%] lg:h-[158%] lg:w-[58%] lg:bg-[length:100%_auto] xl:top-[6%] xl:left-[50%] xl:h-[158%] xl:w-[58%]"
+          style={`background-image: url('${dots.src}');`}
           aria-hidden="true"
-        ></div>
+        >
+        </div>
 
-       <div class="hero-dots absolute inset-0 top-[55%] left-[1%]
-        h-[120%] w-[158%] bg-[length:100%_auto] bg-repeat
-        md:top-[50%]
-        md:left-[1%]
-        md:h-[100%]
-        md:w-[100%]
+        <div
+          class="hero-makoto absolute top-[calc(50%+15px)] right-[-2%] z-0 h-[600px] w-auto translate-x-17 -translate-y-1/2 select-none min-[500px]:top-[54%] min-[500px]:right-[-17%] min-[500px]:h-[650px] min-[500px]:w-[clamp(470px,90vw,820px)] md:top-[53%] md:right-[-10%] md:h-[700px] md:w-[600px] lg:top-[53%] lg:right-[-5%] lg:h-[720px] lg:w-[600px] xl:top-[44%] xl:right-[-8%] xl:h-[760px] xl:w-[679px]"
+          aria-hidden="true"
+        >
+          <img
+            src={makoto.src}
+            alt=""
+            class="block h-full w-auto object-contain"
+          />
+        </div>
+      </div>
 
-        lg:top-[4%]
-        lg:left-[52%]
-        lg:h-[158%]
-        lg:w-[58%]
-        lg:bg-[length:100%_auto]
-
-        xl:top-[6%]
-        xl:left-[50%]
-        xl:h-[158%]
-        xl:w-[58%]
-        "
-        style={`background-image: url('${dots.src}');`}
-        aria-hidden="true"></div>
-
-    <div class="hero-makoto absolute z-0 select-none top-[calc(50%+15px)]
-    right-[-2%] -translate-y-1/2 translate-x-17 w-auto h-[600px]
-    
-    min-[500px]:top-[54%]
-    min-[500px]:right-[-17%]
-    min-[500px]:h-[650px]
-    min-[500px]:w-[clamp(470px,90vw,820px)]
-
-    md:top-[53%]
-    md:h-[700px]
-    md:right-[-10%]
-    md:w-[600px]
-
-    lg:top-[53%]
-    lg:h-[720px]
-    lg:right-[-5%]
-    lg:w-[600px]
-
-    xl:top-[44%]
-    xl:h-[760px]
-    xl:right-[-8%]
-    xl:w-[679px]"
-  aria-hidden="true">
-  <img
-    src={makoto.src}
-    alt=""
-    class="block h-full w-auto object-contain"/>
-  </div>
-</div>
-
-      <div class="p3d-container relative z-10 mx-auto grid min-h-screen w-full
-          max-w-7xl grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] px-4
-          pt-12
-
-          sm:px-6
-          sm:pt-16
-
-          md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]
-          md:px-8
-
-          lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]
-          lg:px-10
-
-          xl:grid-cols-2
-          xl:items-start">
-
-        <div class="hero-copy relative z-20 flex w-full max-w-[480px] flex-col
-              items-start justify-start pt-35 text-left
-
-            min-[500px]:pt-28
-            xs:pt-38
-            md:pt-8
-            lg:pt-24
-            xl:max-w-[600px]
-            xl:pt-28">
-
+      <div
+        class="p3d-container relative z-10 mx-auto grid min-h-screen w-full max-w-7xl grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] px-4 pt-12 sm:px-6 sm:pt-16 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] md:px-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:px-10 xl:grid-cols-2 xl:items-start"
+      >
+        <div
+          class="hero-copy xs:pt-38 relative z-20 flex w-full max-w-[480px] flex-col items-start justify-start pt-35 text-left min-[500px]:pt-28 md:pt-8 lg:pt-24 xl:max-w-[600px] xl:pt-28"
+        >
           <h1
             style="-webkit-text-stroke: 1.5px #001B3D;"
-            class="font-bmspace mb-3 translate-y-5 text-[clamp(19px,5vw,55px)] leading-tight
-              tracking-[-0.02em] text-[#001B3D]
-
-              xl:translate-y-1
-              sm:text-[clamp(19px,5vw,55px)]
-              ">
+            class="font-bmspace mb-3 translate-y-5 text-[clamp(19px,5vw,55px)] leading-tight tracking-[-0.02em] text-[#001B3D] sm:text-[clamp(19px,5vw,55px)] xl:translate-y-1"
+          >
             Downloads
           </h1>
 
-          <p class="font-noto-sans max-w-[440px] translate-y-5 text-[clamp(14px,2.5vw,28px)]
-              leading-snug font-semibold text-[#001B3D]
-
-              xl:translate-y-3">
+          <p
+            class="font-noto-sans max-w-[440px] translate-y-5 text-[clamp(14px,2.5vw,28px)] leading-snug font-semibold text-[#001B3D] xl:translate-y-3"
+          >
             Next Minor Release (v1.2.0)
           </p>
 
-
           <p
-            class="font-MgOpenCosmeticaBold max-w-[400px] translate-y-5
-              text-[clamp(13px,1.8vw,20px)] text-[#001B3D]
-              xl:translate-y-3">
+            class="font-MgOpenCosmeticaBold max-w-[400px] translate-y-5 text-[clamp(13px,1.8vw,20px)] text-[#001B3D] xl:translate-y-3"
+          >
             August 20, 2026
           </p>
 
-
           <div class="h-10 sm:h-12"></div>
 
-          <p class="font-noto-sans max-w-[440px] -translate-y-2 text-[clamp(14px,2.5vw,28px)]
-              leading-snug font-semibold text-[#001B3D]
-
-              xl:translate-y-3">
+          <p
+            class="font-noto-sans max-w-[440px] -translate-y-2 text-[clamp(14px,2.5vw,28px)] leading-snug font-semibold text-[#001B3D] xl:translate-y-3"
+          >
             Next Major Release (v2.0.0)
           </p>
 
-
-          <p class="font-MgOpenCosmeticaBold max-w-[400px] -translate-y-2
-          text-[clamp(13px,1.8vw,20px)] text-[#001B3D]
-
-          xl:translate-y-3">
+          <p
+            class="font-MgOpenCosmeticaBold max-w-[400px] -translate-y-2 text-[clamp(13px,1.8vw,20px)] text-[#001B3D] xl:translate-y-3"
+          >
             September, 2026
           </p>
 
-          <div class="relative mb-4 flex w-full shrink-0 scroll-mt justify-center
-              translate-y-15 translate-x-[calc(23.75vw-8px)]">
+          <div
+            class="scroll-mt relative mb-4 flex w-full shrink-0 translate-x-[calc(23.75vw-8px)] translate-y-15 justify-center"
+          >
             <Button
               as="a"
               href="https://github.com/p3d-project/persona-3-dual/releases/tag/v1.1.0"
               target="_blank"
               size="lg"
-              className="mx-auto w-[calc(100vw-40px)] shrink-0 justify-center text-2xl
-              sm:py-1
-              sm:text-2xl
-
-              md:py-5
-              md:w-[clamp(560px,72vw,660px)]
-              md:text-2xl
-              md:translate-y-[clamp(100px,18vw,140px)]
-              md:mx-auto
-
-              lg:w-[clamp(660px,64vw,790px)]
-              lg:mx-auto
-              lg:translate-y-[clamp(48px,4.7vw,65px)]
-              lg:py-5
-              lg:text-3xl
-
-              xl:mx-auto
-              xl:translate-y-[clamp(20px,2.5vw,40px)]
-              xl:w-[clamp(790px,45vw,900px)]
-              xl:py-6">
+              className="mx-auto w-[calc(100vw-40px)] shrink-0 justify-center text-2xl sm:py-1 sm:text-2xl md:mx-auto md:w-[clamp(560px,72vw,660px)] md:translate-y-[clamp(100px,18vw,140px)] md:py-5 md:text-2xl lg:mx-auto lg:w-[clamp(660px,64vw,790px)] lg:translate-y-[clamp(48px,4.7vw,65px)] lg:py-5 lg:text-3xl xl:mx-auto xl:w-[clamp(790px,45vw,900px)] xl:translate-y-[clamp(20px,2.5vw,40px)] xl:py-6"
+            >
               Download v1.1.0
             </Button>
           </div>
@@ -182,33 +94,20 @@ import Carousel from "../components/react/Carousel.tsx";
       </div>
     </section>
 
-
-    <section class="whats-new-section relative z-20
-    mb-4 -mt-4 w-full bg-[#79CEFF] pb-32
-    
-    sm:pb-40
-
-    md:-mt-12
-    md:pb-52
-
-    lg:-mt-24
-    lg:pb-35
-
-    xl:-mt-32">
-
-      <div class="mx-auto w-full max-w-7xl px-6
-          lg:px-10">
-
+    <section
+      class="whats-new-section relative z-20 -mt-4 mb-4 w-full bg-[#79CEFF] pb-32 sm:pb-40 md:-mt-12 md:pb-52 lg:-mt-24 lg:pb-35 xl:-mt-32"
+    >
+      <div class="mx-auto w-full max-w-7xl px-6 lg:px-10">
         <div class="max-w-2xl">
-
-          <h2 class="font-noto-sans mb-4 pt-8
-          text-[clamp(19px,2.5vw,28px)] font-semibold text-[#001B3D]">
+          <h2
+            class="font-noto-sans mb-4 pt-8 text-[clamp(19px,2.5vw,28px)] font-semibold text-[#001B3D]"
+          >
             What's New?
           </h2>
 
-
-          <p class="font-noto-sans text-[clamp(16px,2vw,20px)] font-semibold
-          text-[#001B3D]">
+          <p
+            class="font-noto-sans text-[clamp(16px,2vw,20px)] font-semibold text-[#001B3D]"
+          >
             For specifics, check out our <a
               href="https://docs.p3dual.com/"
               target="_blank"
@@ -218,9 +117,9 @@ import Carousel from "../components/react/Carousel.tsx";
             </a>
           </p>
 
-
-          <ul class="font-MgOpenCosmeticaBold mt-3 list-disc
-          pl-5 text-[clamp(16px,2vw,20px)] text-[#001B3D]">
+          <ul
+            class="font-MgOpenCosmeticaBold mt-3 list-disc pl-5 text-[clamp(16px,2vw,20px)] text-[#001B3D]"
+          >
             <li>Replaced AI systems</li>
             <li>Retooled and rebuilt Aegis-Engine</li>
             <li>Added vertex lighting workflow support</li>
@@ -236,13 +135,11 @@ import Carousel from "../components/react/Carousel.tsx";
             <li>Custom music tracks</li>
             <li>Custom 3D models for props, environment, and characters</li>
           </ul>
-
         </div>
 
-        <div class="whats-new-art pointer-events-none absolute
-        right-[3%] top-[6%] hidden w-[clamp(350px,38vw,750px)]
-        lg:block">
-
+        <div
+          class="whats-new-art pointer-events-none absolute top-[6%] right-[3%] hidden w-[clamp(350px,38vw,750px)] lg:block"
+        >
           <img
             src={glass.src}
             alt=""
@@ -252,495 +149,386 @@ import Carousel from "../components/react/Carousel.tsx";
           <img
             src={rect7.src}
             alt=""
-            class="absolute left-[8%] top-[15%] z-10
-            w-[clamp(165px,15vw,285px)]"/>
+            class="absolute top-[15%] left-[8%] z-10 w-[clamp(165px,15vw,285px)]"
+          />
 
           <img
             src={rect5.src}
             alt=""
-            class="absolute right-[14%] top-[15%]
-            z-10 w-[clamp(165px,15vw,285px)]"/>
+            class="absolute top-[15%] right-[14%] z-10 w-[clamp(165px,15vw,285px)]"
+          />
 
           <img
             src={rect6.src}
             alt=""
-            class="absolute left-1/2 top-[58%] z-10
-            w-[clamp(165px,15vw,285px)] -translate-x-1/2 -translate-y-[12%]"/>
-
+            class="absolute top-[58%] left-1/2 z-10 w-[clamp(165px,15vw,285px)] -translate-x-1/2 -translate-y-[12%]"
+          />
         </div>
 
+        <div
+          class="whats-new-carousel mt-10 flex w-full justify-center lg:hidden"
+        >
+          <div class="relative w-[min(360px,92vw)]">
+            <img
+              src={glass.src}
+              alt=""
+              class="relative z-0 block h-auto w-full object-contain"
+            />
 
-<div class="whats-new-carousel mt-10 flex
-            w-full justify-center
-            lg:hidden">
-  
-  <div class="relative w-[min(360px,92vw)]">
-
-    <img
-      src={glass.src}
-      alt=""
-      class="relative z-0 block h-auto
-        w-full object-contain"/>
-
-    <div class="absolute left-1/2 top-1/2
-        z-10 w-[min(250px,68vw)] -translate-x-1/2
-        -translate-y-1/2">
-      <Carousel client:load />
-    </div>
-
-  </div>
-</div>
-</div>
+            <div
+              class="absolute top-1/2 left-1/2 z-10 w-[min(250px,68vw)] -translate-x-1/2 -translate-y-1/2"
+            >
+              <Carousel client:load />
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="legacy-section relative z-20
-                    -mt-16 bg-[#E6F0FA] pb-32
-                    sm:pb-40">
-
+    <section
+      class="legacy-section relative z-20 -mt-16 bg-[#E6F0FA] pb-32 sm:pb-40"
+    >
       <div class="mx-auto w-full max-w-7xl px-6 lg:px-10">
-
-        <h2 class="font-noto-sans mb-4 pt-8
-            text-[clamp(19px,2.5vw,28px)] font-semibold text-[#001B3D]">
+        <h2
+          class="font-noto-sans mb-4 pt-8 text-[clamp(19px,2.5vw,28px)] font-semibold text-[#001B3D]"
+        >
           Legacy versions
         </h2>
 
-        <article class="legacy-release grid gap-8
-                        border-b border-[#001B3D]/10
-                        py-12
-
-                      md:grid-cols-[minmax(0,1fr)_minmax(280px,400px)]
-                      md:grid-rows-[auto_auto]
-                      md:items-center
-
-                      lg:gap-16">
-
+        <article
+          class="legacy-release grid gap-8 border-b border-[#001B3D]/10 py-12 md:grid-cols-[minmax(0,1fr)_minmax(280px,400px)] md:grid-rows-[auto_auto] md:items-center lg:gap-16"
+        >
           <div class="md:col-start-1 md:row-start-1">
-
             <div class="flex w-full items-center justify-between">
-
-              <p class="font-noto-sans text-[clamp(19px,2vw,20px)] font-semibold
-                  text-[#001B3D] underline">
+              <p
+                class="font-noto-sans text-[clamp(19px,2vw,20px)] font-semibold text-[#001B3D] underline"
+              >
                 v1.0.0
               </p>
 
-              <p class="font-noto-sans text-[clamp(14px,1.5vw,16px)] font-semibold
-                        text-[#001B3D]">
+              <p
+                class="font-noto-sans text-[clamp(14px,1.5vw,16px)] font-semibold text-[#001B3D]"
+              >
                 June 28th, 2026
               </p>
-
             </div>
 
-            <p class="font-noto-sans mt-6 max-w-[680px] text-[clamp(16px,1.8vw,20px)]
-                leading-relaxed font-semibold text-[#001B3D]">
-              Milestone 1 marks the first major release of Persona 3 Dual.
-              It introduces initial 3D exploration across multiple key
-              locations, basic character interactions, a functional battle
-              system demo, and core UI and settings features.
+            <p
+              class="font-noto-sans mt-6 max-w-[680px] text-[clamp(16px,1.8vw,20px)] leading-relaxed font-semibold text-[#001B3D]"
+            >
+              Milestone 1 marks the first major release of Persona 3 Dual. It
+              introduces initial 3D exploration across multiple key locations,
+              basic character interactions, a functional battle system demo, and
+              core UI and settings features.
             </p>
-
           </div>
 
-
-          <div class="flex justify-center
-
-              md:col-start-2
-              md:row-start-1
-              md:row-span-2
-              md:justify-start">
+          <div
+            class="flex justify-center md:col-start-2 md:row-span-2 md:row-start-1 md:justify-start"
+          >
             <img
               src={rect6.src}
               alt=""
-              class="mx-auto w-full max-w-[410pc] drop-shadow-[8px_8px_0_#3BAA45]"/>
+              class="mx-auto w-full max-w-[410pc] drop-shadow-[8px_8px_0_#3BAA45]"
+            />
           </div>
 
-          <div class="mt-2 flex justify-center
-
-              md:col-start-1
-              md:row-start-2
-              md:justify-start
-              md:mt-0
-            "
+          <div
+            class="mt-2 flex justify-center md:col-start-1 md:row-start-2 md:mt-0 md:justify-start"
           >
             <Button
               as="a"
               href="https://github.com/p3d-project/persona-3-dual/releases/tag/v1.0.0"
               target="_blank"
               size="md"
-              className="mx-auto w-full max-w-[410px] justify-center py-3 text-2xl
-                sm:text-3xl
-                lg:w-[410px]
-                lg:py-5">
+              className="mx-auto w-full max-w-[410px] justify-center py-3 text-2xl sm:text-3xl lg:w-[410px] lg:py-5"
+            >
               Download
             </Button>
           </div>
-
         </article>
 
-
-        <article class="legacy-release grid gap-8 py-12
-
-            md:grid-cols-[minmax(0,1fr)_minmax(280px,400px)]
-            md:grid-rows-[auto_auto]
-            md:items-center
-
-            lg:gap-16">
-
+        <article
+          class="legacy-release grid gap-8 py-12 md:grid-cols-[minmax(0,1fr)_minmax(280px,400px)] md:grid-rows-[auto_auto] md:items-center lg:gap-16"
+        >
           <div class="md:col-start-1 md:row-start-1">
-
             <div class="flex w-full items-center justify-between">
-
-              <p class="font-noto-sans text-[clamp(19px,2vw,20px)] font-semibold
-                        text-[#001B3D] underline">
+              <p
+                class="font-noto-sans text-[clamp(19px,2vw,20px)] font-semibold text-[#001B3D] underline"
+              >
                 v0.6.0
               </p>
 
-              <p class="font-noto-sans text-[clamp(14px,1.5vw,16px)] font-semibold text-[#001B3D]">
+              <p
+                class="font-noto-sans text-[clamp(14px,1.5vw,16px)] font-semibold text-[#001B3D]"
+              >
                 June 26th, 2026
               </p>
-
             </div>
 
-            <p class=" font-noto-sans mt-6 max-w-[680px]
-            text-[clamp(16px,1.8vw,20px)] leading-relaxed
-            font-semibold text-[#001B3D] ">
+            <p
+              class="font-noto-sans mt-6 max-w-[680px] text-[clamp(16px,1.8vw,20px)] leading-relaxed font-semibold text-[#001B3D]"
+            >
               A pre-release for v1.0.0 focused on testing for Milestone 1.
-              Standardizes character dialogue formatting, updates model
-              assets, and fixes critical turn-handling and save file bugs
-              across platforms.
+              Standardizes character dialogue formatting, updates model assets,
+              and fixes critical turn-handling and save file bugs across
+              platforms.
             </p>
-
           </div>
 
-
-          <div class="flex justify-center
-
-              md:col-start-2
-              md:row-start-1
-              md:row-span-2
-              md:justify-start">
+          <div
+            class="flex justify-center md:col-start-2 md:row-span-2 md:row-start-1 md:justify-start"
+          >
             <img
               src={rect6.src}
               alt=""
-              class="mx-auto w-full max-w-[410pc] drop-shadow-[8px_8px_0_#3BAA45]"/>
+              class="mx-auto w-full max-w-[410pc] drop-shadow-[8px_8px_0_#3BAA45]"
+            />
           </div>
 
-
-          <div class="mt-2 flex justify-center
-
-              md:col-start-1
-              md:row-start-2
-              md:justify-start
-              md:mt-0">
+          <div
+            class="mt-2 flex justify-center md:col-start-1 md:row-start-2 md:mt-0 md:justify-start"
+          >
             <Button
               as="a"
               href="https://github.com/p3d-project/persona-3-dual/releases/tag/0.6"
               target="_blank"
               size="md"
-              className="mx-auto w-full max-w-[410px] justify-center py-3 text-2xl
-                sm:text-3xl
-                lg:w-[410px]
-                lg:py-5">
+              className="mx-auto w-full max-w-[410px] justify-center py-3 text-2xl sm:text-3xl lg:w-[410px] lg:py-5"
+            >
               Download
             </Button>
           </div>
-
         </article>
 
-
-        <article class="legacy-release grid gap-8 py-12
-
-            md:grid-cols-[minmax(0,1fr)_minmax(280px,400px)]
-            md:grid-rows-[auto_auto]
-            md:items-center
-
-            lg:gap-16">
-
+        <article
+          class="legacy-release grid gap-8 py-12 md:grid-cols-[minmax(0,1fr)_minmax(280px,400px)] md:grid-rows-[auto_auto] md:items-center lg:gap-16"
+        >
           <div class="md:col-start-1 md:row-start-1">
-
             <div class="flex w-full items-center justify-between">
-
-              <p class="font-noto-sans text-[clamp(19px,2vw,20px)] font-semibold text-[#001B3D] underline"
+              <p
+                class="font-noto-sans text-[clamp(19px,2vw,20px)] font-semibold text-[#001B3D] underline"
               >
                 v0.5.0
               </p>
 
-              <p class="font-noto-sans text-[clamp(14px,1.5vw,16px)] font-semibold text-[#001B3D]"
+              <p
+                class="font-noto-sans text-[clamp(14px,1.5vw,16px)] font-semibold text-[#001B3D]"
               >
                 June 22th, 2026
               </p>
-
             </div>
 
-            <p class="font-noto-sans mt-6 max-w-[680px] text-[clamp(16px,1.8vw,20px)]
-                leading-relaxed font-semibold text-[#001B3D]">
+            <p
+              class="font-noto-sans mt-6 max-w-[680px] text-[clamp(16px,1.8vw,20px)] leading-relaxed font-semibold text-[#001B3D]"
+            >
               A test release targeting video playback and rendering fixes.
-              Resolves z-fighting visual glitches in 3D environments,
-              improves cutscene aspect ratios, and resolves title screen
-              input bugs.
+              Resolves z-fighting visual glitches in 3D environments, improves
+              cutscene aspect ratios, and resolves title screen input bugs.
             </p>
-
           </div>
 
-
-          <div class="flex justify-center
-
-              md:col-start-2
-              md:row-start-1
-              md:row-span-2
-              md:justify-start">
+          <div
+            class="flex justify-center md:col-start-2 md:row-span-2 md:row-start-1 md:justify-start"
+          >
             <img
               src={rect6.src}
               alt=""
-              class="mx-auto w-full max-w-[410pc] drop-shadow-[8px_8px_0_#3BAA45]"/>
+              class="mx-auto w-full max-w-[410pc] drop-shadow-[8px_8px_0_#3BAA45]"
+            />
           </div>
 
-
-          <div class="mt-2 flex justify-center
-
-              md:col-start-1
-              md:row-start-2
-              md:justify-start
-              md:mt-0">
+          <div
+            class="mt-2 flex justify-center md:col-start-1 md:row-start-2 md:mt-0 md:justify-start"
+          >
             <Button
               as="a"
               href="https://github.com/p3d-project/persona-3-dual/releases/tag/0.5"
               target="_blank"
               size="md"
-              className="mx-auto w-full max-w-[410px] justify-center py-3 text-2xl
-                sm:text-3xl
-                lg:w-[410px]
-                lg:py-5">
+              className="mx-auto w-full max-w-[410px] justify-center py-3 text-2xl sm:text-3xl lg:w-[410px] lg:py-5"
+            >
               Download
             </Button>
           </div>
-
         </article>
 
-        <article class="legacy-release grid gap-8 py-12
-
-            md:grid-cols-[minmax(0,1fr)_minmax(280px,400px)]
-            md:grid-rows-[auto_auto]
-            md:items-center
-
-            lg:gap-16">
-
+        <article
+          class="legacy-release grid gap-8 py-12 md:grid-cols-[minmax(0,1fr)_minmax(280px,400px)] md:grid-rows-[auto_auto] md:items-center lg:gap-16"
+        >
           <div class="md:col-start-1 md:row-start-1">
-
             <div class="flex w-full items-center justify-between">
-
-              <p class="font-noto-sans text-[clamp(19px,2vw,20px)] font-semibold text-[#001B3D] underline"
+              <p
+                class="font-noto-sans text-[clamp(19px,2vw,20px)] font-semibold text-[#001B3D] underline"
               >
                 v0.4.0
               </p>
 
-              <p class="font-noto-sans text-[clamp(14px,1.5vw,16px)] font-semibold text-[#001B3D]"
+              <p
+                class="font-noto-sans text-[clamp(14px,1.5vw,16px)] font-semibold text-[#001B3D]"
               >
                 June 20th, 2026
               </p>
-
             </div>
 
-            <p class="font-noto-sans mt-6 max-w-[680px] text-[clamp(16px,1.8vw,20px)] 
-            leading-relaxed font-semibold text-[#001B3D]">
+            <p
+              class="font-noto-sans mt-6 max-w-[680px] text-[clamp(16px,1.8vw,20px)] leading-relaxed font-semibold text-[#001B3D]"
+            >
               Early preview release for testing core gameplay features.
-              Integrates preliminary 3D environment exploration, basic
-              character dialogue interactions, and debug tools.
+              Integrates preliminary 3D environment exploration, basic character
+              dialogue interactions, and debug tools.
             </p>
-
           </div>
 
-
-          <div class="flex justify-center
-
-              md:col-start-2
-              md:row-start-1
-              md:row-span-2
-              md:justify-start">
+          <div
+            class="flex justify-center md:col-start-2 md:row-span-2 md:row-start-1 md:justify-start"
+          >
             <img
               src={rect6.src}
               alt=""
-              class="mx-auto w-full max-w-[410pc] drop-shadow-[8px_8px_0_#3BAA45]"/>
+              class="mx-auto w-full max-w-[410pc] drop-shadow-[8px_8px_0_#3BAA45]"
+            />
           </div>
 
-
-          <div class="mt-2 flex justify-center
-
-              md:col-start-1
-              md:row-start-2
-              md:justify-start
-              md:mt-0">
+          <div
+            class="mt-2 flex justify-center md:col-start-1 md:row-start-2 md:mt-0 md:justify-start"
+          >
             <Button
               as="a"
               href="https://github.com/p3d-project/persona-3-dual/releases/tag/0.4"
               target="_blank"
               size="md"
-              className="mx-auto w-full max-w-[410px] justify-center py-3 text-2xl
-                sm:text-3xl
-                lg:w-[410px]
-                lg:py-5">
+              className="mx-auto w-full max-w-[410px] justify-center py-3 text-2xl sm:text-3xl lg:w-[410px] lg:py-5"
+            >
               Download
             </Button>
           </div>
-
         </article>
 
-        <article class="legacy-release grid gap-8 py-12
-
-            md:grid-cols-[minmax(0,1fr)_minmax(280px,400px)]
-            md:grid-rows-[auto_auto]
-            md:items-center
-
-            lg:gap-16">
-
+        <article
+          class="legacy-release grid gap-8 py-12 md:grid-cols-[minmax(0,1fr)_minmax(280px,400px)] md:grid-rows-[auto_auto] md:items-center lg:gap-16"
+        >
           <div class="md:col-start-1 md:row-start-1">
-
             <div class="flex w-full items-center justify-between">
-
-              <p class="font-noto-sans text-[clamp(19px,2vw,20px)] font-semibold text-[#001B3D] underline"
+              <p
+                class="font-noto-sans text-[clamp(19px,2vw,20px)] font-semibold text-[#001B3D] underline"
               >
                 v0.3.0
               </p>
 
-              <p class="font-noto-sans text-[clamp(14px,1.5vw,16px)] font-semibold text-[#001B3D]"
+              <p
+                class="font-noto-sans text-[clamp(14px,1.5vw,16px)] font-semibold text-[#001B3D]"
               >
                 May 29th, 2026
               </p>
-
             </div>
 
-            <p class="font-noto-sans mt-6 max-w-[680px] text-[clamp(16px,1.8vw,20px)] 
-              leading-relaxed font-semibold text-[#001B3D]">
+            <p
+              class="font-noto-sans mt-6 max-w-[680px] text-[clamp(16px,1.8vw,20px)] leading-relaxed font-semibold text-[#001B3D]"
+            >
               Early preview release, introducing early 3D camera controls,
               movement, and initial battle system prototypes.
             </p>
           </div>
 
-          <div class="flex justify-center
-
-              md:col-start-2
-              md:row-start-1
-              md:row-span-2
-              md:justify-start">
+          <div
+            class="flex justify-center md:col-start-2 md:row-span-2 md:row-start-1 md:justify-start"
+          >
             <img
               src={rect6.src}
               alt=""
-              class="mx-auto w-full max-w-[410pc] drop-shadow-[8px_8px_0_#3BAA45]"/>
+              class="mx-auto w-full max-w-[410pc] drop-shadow-[8px_8px_0_#3BAA45]"
+            />
           </div>
 
-
-          <div class="mt-2 flex justify-center
-
-              md:col-start-1
-              md:row-start-2
-              md:justify-start
-              md:mt-0">
+          <div
+            class="mt-2 flex justify-center md:col-start-1 md:row-start-2 md:mt-0 md:justify-start"
+          >
             <Button
               as="a"
               href="https://github.com/p3d-project/persona-3-dual/releases/tag/0.3"
               target="_blank"
               size="md"
-              className="mx-auto w-full max-w-[410px] justify-center py-3 text-2xl
-                sm:text-3xl
-                lg:w-[410px]
-                lg:py-5">
+              className="mx-auto w-full max-w-[410px] justify-center py-3 text-2xl sm:text-3xl lg:w-[410px] lg:py-5"
+            >
               Download
             </Button>
           </div>
         </article>
 
-        <article class="legacy-release grid gap-8 py-12
-
-            md:grid-cols-[minmax(0,1fr)_minmax(280px,400px)]
-            md:grid-rows-[auto_auto]
-            md:items-center
-
-            lg:gap-16">
-
+        <article
+          class="legacy-release grid gap-8 py-12 md:grid-cols-[minmax(0,1fr)_minmax(280px,400px)] md:grid-rows-[auto_auto] md:items-center lg:gap-16"
+        >
           <div class="md:col-start-1 md:row-start-1">
-
             <div class="flex w-full items-center justify-between">
-
-              <p class="font-noto-sans text-[clamp(19px,2vw,20px)] font-semibold text-[#001B3D] underline"
+              <p
+                class="font-noto-sans text-[clamp(19px,2vw,20px)] font-semibold text-[#001B3D] underline"
               >
                 v0.2.0
               </p>
 
-              <p class="font-noto-sans text-[clamp(14px,1.5vw,16px)] font-semibold text-[#001B3D]"
+              <p
+                class="font-noto-sans text-[clamp(14px,1.5vw,16px)] font-semibold text-[#001B3D]"
               >
                 April 27th, 2026
               </p>
-
             </div>
 
-            <p class="font-noto-sans mt-6 max-w-[680px]
-                text-[clamp(16px,1.8vw,20px)] leading-relaxed font-semibold
-                text-[#001B3D]">
+            <p
+              class="font-noto-sans mt-6 max-w-[680px] text-[clamp(16px,1.8vw,20px)] leading-relaxed font-semibold text-[#001B3D]"
+            >
               Technical update focusing on media pipelines and performance
-              optimizations. Adds introductory video support, transitions
-              audio to uncompressed format, and implements automated asset
-              processing pipelines.
+              optimizations. Adds introductory video support, transitions audio
+              to uncompressed format, and implements automated asset processing
+              pipelines.
             </p>
           </div>
 
-          <div class="flex justify-center
-
-              md:col-start-2
-              md:row-start-1
-              md:row-span-2
-              md:justify-start">
+          <div
+            class="flex justify-center md:col-start-2 md:row-span-2 md:row-start-1 md:justify-start"
+          >
             <img
               src={rect6.src}
               alt=""
-              class="mx-auto w-full max-w-[410pc] drop-shadow-[8px_8px_0_#3BAA45]"/>
+              class="mx-auto w-full max-w-[410pc] drop-shadow-[8px_8px_0_#3BAA45]"
+            />
           </div>
 
-
-          <div class="mt-2 flex justify-center
-
-              md:col-start-1
-              md:row-start-2
-              md:justify-start
-              md:mt-0">
+          <div
+            class="mt-2 flex justify-center md:col-start-1 md:row-start-2 md:mt-0 md:justify-start"
+          >
             <Button
               as="a"
               href="https://github.com/p3d-project/persona-3-dual/releases/tag/0.2"
               target="_blank"
               size="md"
-              className="mx-auto w-full max-w-[410px] justify-center py-3 text-2xl
-                sm:text-3xl
-                lg:w-[410px]
-                lg:py-5">
+              className="mx-auto w-full max-w-[410px] justify-center py-3 text-2xl sm:text-3xl lg:w-[410px] lg:py-5"
+            >
               Download
             </Button>
           </div>
         </article>
 
-        <article class="legacy-release grid gap-8 py-12
-
-            md:grid-cols-[minmax(0,1fr)_minmax(280px,400px)]
-            md:grid-rows-[auto_auto]
-            md:items-center
-
-            lg:gap-16">
-
+        <article
+          class="legacy-release grid gap-8 py-12 md:grid-cols-[minmax(0,1fr)_minmax(280px,400px)] md:grid-rows-[auto_auto] md:items-center lg:gap-16"
+        >
           <div class="md:col-start-1 md:row-start-1">
-
             <div class="flex w-full items-center justify-between">
-
-              <p class="font-noto-sans text-[clamp(19px,2vw,20px)] font-semibold text-[#001B3D] underline"
+              <p
+                class="font-noto-sans text-[clamp(19px,2vw,20px)] font-semibold text-[#001B3D] underline"
               >
                 Beta
               </p>
 
-              <p class="font-noto-sans text-[clamp(14px,1.5vw,16px)] font-semibold text-[#001B3D]"
+              <p
+                class="font-noto-sans text-[clamp(14px,1.5vw,16px)] font-semibold text-[#001B3D]"
               >
                 April 18th, 2026
               </p>
-
             </div>
 
-            <p class="font-noto-sans mt-6 max-w-[680px] text-[clamp(16px,1.8vw,20px)]
-              leading-relaxed font-semibold text-[#001B3D]"
+            <p
+              class="font-noto-sans mt-6 max-w-[680px] text-[clamp(16px,1.8vw,20px)] leading-relaxed font-semibold text-[#001B3D]"
             >
               Initial public beta release of the project. Establishes core
               project architecture and rebrands the project from 'Persona 3 DS'
@@ -748,43 +536,31 @@ import Carousel from "../components/react/Carousel.tsx";
             </p>
           </div>
 
-
-          <div class="flex justify-center
-
-              md:col-start-2
-              md:row-start-1
-              md:row-span-2
-              md:justify-start">
+          <div
+            class="flex justify-center md:col-start-2 md:row-span-2 md:row-start-1 md:justify-start"
+          >
             <img
               src={rect6.src}
               alt=""
-              class="mx-auto w-full max-w-[410pc] drop-shadow-[8px_8px_0_#3BAA45]"/>
+              class="mx-auto w-full max-w-[410pc] drop-shadow-[8px_8px_0_#3BAA45]"
+            />
           </div>
 
-
-          <div class="mt-2 flex justify-center
-
-              md:col-start-1
-              md:row-start-2
-              md:justify-start
-              md:mt-0">
+          <div
+            class="mt-2 flex justify-center md:col-start-1 md:row-start-2 md:mt-0 md:justify-start"
+          >
             <Button
               as="a"
               href="https://github.com/p3d-project/persona-3-dual/releases/tag/Beta"
               target="_blank"
               size="md"
-              className="mx-auto w-full max-w-[410px] justify-center py-3 text-2xl
-                sm:text-3xl
-                lg:w-[410px]
-                lg:py-5">
+              className="mx-auto w-full max-w-[410px] justify-center py-3 text-2xl sm:text-3xl lg:w-[410px] lg:py-5"
+            >
               Download
             </Button>
           </div>
-
         </article>
-
       </div>
     </section>
-
   </main>
 </Layout>
