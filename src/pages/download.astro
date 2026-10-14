@@ -120,75 +120,102 @@ import Carousel from "../components/react/Carousel.tsx";
           <ul
             class="font-MgOpenCosmeticaBold mt-3 list-disc pl-5 text-[clamp(16px,2vw,20px)] text-[#001B3D]"
           >
-            <li> fix: iwatodai street pause hud bug </li>
-            <li> Fixed Red Debug Text Spilling into Pause Menu and Dialog Screen </li>
-            <li> Refactor model magic check </li>
-            <li> Removed templates </li>
-            <li> Refactored globals.h controllers/components into singleton pattern </li>
-            <li> fix: cutscene crash </li>
-            <li> Add devcontainer support and Docker-based debugging </li>
-            <li> Create MenuBackgroundScreen class </li>
-            <li> fix: changed version from 0.6 to 1.0.0 </li>
-            <li> Build: Added Flag to skip SD Card Generation </li>
-            <li> Added compressed music files </li>
-            <li> Implement Game Engine HLD into header file </li>
-            <li> Allow to skip elizabeth scroll animation on main title </li>
-            <li> Updated docs & moved into home directory </li>
-            <li> Create EnvironmentView class </li>
-            <li> Dockerfile add pre-commit install, comply with linting </li>
-            <li> Fix: Added environment generation back into makefile  </li>
-            <li> Added fog, character outline support </li>
-            <li> Create Custom Text Engine </li>
-            <li> Document battle related code </li>
-            <li> Reduced Audio Stuttering during scene loading </li>
-            <li> Added correct music looping point for iwatodai_dorm.pcm in IwatodaiDormView.cpp </li>
-            <li> Fix links in README.md for installation and roadmap </li>
-            <li> redid animation fixes </li>
-            <li> Added art standard colors to custom palette and created TextColor enum </li>
-            <li> Added Appear Function for Text </li>
-            <li> Create CameraController </li>
-            <li> Replaced console in menus with the text controller </li>
-            <li> create enemy profiles / fix 2nd battle not finding participants bug </li>
-            <li> Fix Music Cutout or Game Reset on Camera Mode Switch </li>
-            <li> Added rudimentary color switching to TextController.</li>
-            <li> Reset menu hierarchy state on exit </li>
-            <li> Deploy Doxygen via GitHub Action </li>
-            <li> Added Text Styling </li>
-            <li> Add Doyxgen site styling </li>
-            <li> Update Dialogue Converter for new Text Engine </li>
-            <li> Added enviroments to Makefile clean target </li>
-            <li> Migrate BaseMenu to MenuBackgroundScreen </li>
-            <li> Clean up BaseView's references </li>
-            <li> Port to BlocksDS SDK </li>
-            <li> Replaced BattleController with BattleSystem </li>
-            <li> Replaced CameraController with CameraSystem + MathManager </li>
-            <li> Replaced CharacterController with MovementComponent </li>
-            <li> Replaced DialogueController with DialogueComponent </li>
-            <li> Replaced SaveController with SaveSystem + IOManager </li>
-            <li> Replaced GraphicsController, SpriteController with GraphicsComponent </li>
-            <li> Added updated icon </li>
-            <li> Replaced TextController with TextManager, TextSystem, & TextComponent </li>
-            <li> Fix new textures being visible on old environment when switching  </li>
-            <li> Activate / end camera and movement im menus </li>
-            <li> Replaced UIController with UISystem, & created RenderManager </li>
-            <li> Delete CONTRIBUTING.md </li>
-            <li> Refactored BaseMenu to work with UISystem </li>
-            <li> Add customizable close behavior to UIMenu classes </li>
-            <li> Dialogue fix </li>
-            <li> Updated version number in settings to v1.1.0 </li>
-            <li> Update README attributions </li>
-            <li> Deleted tools/website folder </li>
-            <li> Set correct camera configs for all Views </li>
-            <li> TextComponent: Stop text animation bleeding on screen. </li>
-            <li> Removed femc </li>
-            <li> Rename .h headers to .hpp for C++ convention </li>
-            <li> Migrate SignContractView to TextSystem </li>
-            <li> Updated skyBackground, skyBackgroundSub to use 16 colour palette </li>
-            <li> Updated font to more legible font, correct font sizes </li>
-            <li> Reduce uisystem available slots </li>
-            <li> Separate global structs/enums from structs/enums.hpp </li>
-            <li> Fix memory leak </li>
-            <li> EnvironmentView: Set glClearPolyID to 0 to remove outline border.</li>
+            <li>fix: iwatodai street pause hud bug</li>
+            <li>
+              Fixed Red Debug Text Spilling into Pause Menu and Dialog Screen
+            </li>
+            <li>Refactor model magic check</li>
+            <li>Removed templates</li>
+            <li>
+              Refactored globals.h controllers/components into singleton pattern
+            </li>
+            <li>fix: cutscene crash</li>
+            <li>Add devcontainer support and Docker-based debugging</li>
+            <li>Create MenuBackgroundScreen class</li>
+            <li>fix: changed version from 0.6 to 1.0.0</li>
+            <li>Build: Added Flag to skip SD Card Generation</li>
+            <li>Added compressed music files</li>
+            <li>Implement Game Engine HLD into header file</li>
+            <li>Allow to skip elizabeth scroll animation on main title</li>
+            <li>Updated docs & moved into home directory</li>
+            <li>Create EnvironmentView class</li>
+            <li>Dockerfile add pre-commit install, comply with linting</li>
+            <li>Fix: Added environment generation back into makefile</li>
+            <li>Added fog, character outline support</li>
+            <li>Create Custom Text Engine</li>
+            <li>Document battle related code</li>
+            <li>Reduced Audio Stuttering during scene loading</li>
+            <li>
+              Added correct music looping point for iwatodai_dorm.pcm in
+              IwatodaiDormView.cpp
+            </li>
+            <li>Fix links in README.md for installation and roadmap</li>
+            <li>redid animation fixes</li>
+            <li>
+              Added art standard colors to custom palette and created TextColor
+              enum
+            </li>
+            <li>Added Appear Function for Text</li>
+            <li>Create CameraController</li>
+            <li>Replaced console in menus with the text controller</li>
+            <li>
+              create enemy profiles / fix 2nd battle not finding participants
+              bug
+            </li>
+            <li>Fix Music Cutout or Game Reset on Camera Mode Switch</li>
+            <li>Added rudimentary color switching to TextController.</li>
+            <li>Reset menu hierarchy state on exit</li>
+            <li>Deploy Doxygen via GitHub Action</li>
+            <li>Added Text Styling</li>
+            <li>Add Doyxgen site styling</li>
+            <li>Update Dialogue Converter for new Text Engine</li>
+            <li>Added enviroments to Makefile clean target</li>
+            <li>Migrate BaseMenu to MenuBackgroundScreen</li>
+            <li>Clean up BaseView's references</li>
+            <li>Port to BlocksDS SDK</li>
+            <li>Replaced BattleController with BattleSystem</li>
+            <li>Replaced CameraController with CameraSystem + MathManager</li>
+            <li>Replaced CharacterController with MovementComponent</li>
+            <li>Replaced DialogueController with DialogueComponent</li>
+            <li>Replaced SaveController with SaveSystem + IOManager</li>
+            <li>
+              Replaced GraphicsController, SpriteController with
+              GraphicsComponent
+            </li>
+            <li>Added updated icon</li>
+            <li>
+              Replaced TextController with TextManager, TextSystem, &
+              TextComponent
+            </li>
+            <li>
+              Fix new textures being visible on old environment when switching
+            </li>
+            <li>Activate / end camera and movement im menus</li>
+            <li>
+              Replaced UIController with UISystem, & created RenderManager
+            </li>
+            <li>Delete CONTRIBUTING.md</li>
+            <li>Refactored BaseMenu to work with UISystem</li>
+            <li>Add customizable close behavior to UIMenu classes</li>
+            <li>Dialogue fix</li>
+            <li>Updated version number in settings to v1.1.0</li>
+            <li>Update README attributions</li>
+            <li>Deleted tools/website folder</li>
+            <li>Set correct camera configs for all Views</li>
+            <li>TextComponent: Stop text animation bleeding on screen.</li>
+            <li>Removed femc</li>
+            <li>Rename .h headers to .hpp for C++ convention</li>
+            <li>Migrate SignContractView to TextSystem</li>
+            <li>
+              Updated skyBackground, skyBackgroundSub to use 16 colour palette
+            </li>
+            <li>Updated font to more legible font, correct font sizes</li>
+            <li>Reduce uisystem available slots</li>
+            <li>Separate global structs/enums from structs/enums.hpp</li>
+            <li>Fix memory leak</li>
+            <li>
+              EnvironmentView: Set glClearPolyID to 0 to remove outline border.
+            </li>
           </ul>
         </div>
 
