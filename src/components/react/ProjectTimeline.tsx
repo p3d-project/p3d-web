@@ -112,12 +112,12 @@ export default function ProjectTimeline() {
         image={timeline4Image}
       />
 
-    <TimelineItem
+      <TimelineItem
         heading={<>2027/07/??</>}
         description={
           <>
-            Milestone #3 is released. Focused on the initial intro sequence, real
-            gameplay elements of the original game start to come to life.
+            Milestone #3 is released. Focused on the initial intro sequence,
+            real gameplay elements of the original game start to come to life.
           </>
         }
         image={timelineFutureImage}
