@@ -60,7 +60,7 @@ import Carousel from "../components/react/Carousel.tsx";
           <p
             class="font-MgOpenCosmeticaBold max-w-[400px] translate-y-5 text-[clamp(13px,1.8vw,20px)] text-[#001B3D] xl:translate-y-3"
           >
-            January, 2027
+            December 11th, 2026
           </p>
 
           <div class="h-10 sm:h-12"></div>
@@ -68,13 +68,13 @@ import Carousel from "../components/react/Carousel.tsx";
           <p
             class="font-noto-sans max-w-[440px] -translate-y-2 text-[clamp(14px,2.5vw,28px)] leading-snug font-semibold text-[#001B3D] xl:translate-y-3"
           >
-            Next Major Release (v2.0.0)
+            Next Major Release (v3.0.0)
           </p>
 
           <p
             class="font-MgOpenCosmeticaBold max-w-[400px] -translate-y-2 text-[clamp(13px,1.8vw,20px)] text-[#001B3D] xl:translate-y-3"
           >
-            November, 2026
+            July, 2027
           </p>
 
           <div
@@ -82,12 +82,12 @@ import Carousel from "../components/react/Carousel.tsx";
           >
             <Button
               as="a"
-              href="https://github.com/p3d-project/persona-3-dual/releases/tag/v1.1.0"
+              href="https://github.com/p3d-project/persona-3-dual/releases/tag/v2.0.0"
               target="_blank"
               size="lg"
               className="mx-auto w-[calc(100vw-40px)] shrink-0 justify-center text-2xl sm:py-1 sm:text-2xl md:mx-auto md:w-[clamp(560px,72vw,660px)] md:translate-y-[clamp(100px,18vw,140px)] md:py-5 md:text-2xl lg:mx-auto lg:w-[clamp(660px,64vw,790px)] lg:translate-y-[clamp(48px,4.7vw,65px)] lg:py-5 lg:text-3xl xl:mx-auto xl:w-[clamp(790px,45vw,900px)] xl:translate-y-[clamp(20px,2.5vw,40px)] xl:py-6"
             >
-              Download v1.1.0
+              Download v2.0.0
             </Button>
           </div>
         </div>
@@ -109,7 +109,7 @@ import Carousel from "../components/react/Carousel.tsx";
             class="font-noto-sans text-[clamp(16px,2vw,20px)] font-semibold text-[#001B3D]"
           >
             For specifics, check out our <a
-              href="https://github.com/p3d-project/persona-3-dual/releases/tag/v1.1.0"
+              href="https://github.com/p3d-project/persona-3-dual/releases/tag/v2.0.0"
               target="_blank"
               class="text-[#12A858] underline"
             >
@@ -120,101 +120,732 @@ import Carousel from "../components/react/Carousel.tsx";
           <ul
             class="font-MgOpenCosmeticaBold mt-3 list-disc pl-5 text-[clamp(16px,2vw,20px)] text-[#001B3D]"
           >
-            <li>fix: iwatodai street pause hud bug</li>
             <li>
-              Fixed Red Debug Text Spilling into Pause Menu and Dialog Screen
+              fix: iwatodai street pause hud bug (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/285"
+                >#285</a
+              >)
             </li>
-            <li>Refactor model magic check</li>
-            <li>Removed templates</li>
+            <li>
+              Fixed Red Debug Text Spilling into Pause Menu and Dialog Screen (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/284"
+                >#284</a
+              >)
+            </li>
+            <li>
+              Refactor model magic check (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/280"
+                >#280</a
+              >)
+            </li>
+            <li>
+              Remove templates (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/299"
+                >#299</a
+              >)
+            </li>
             <li>
               Refactored globals.h controllers/components into singleton pattern
+              (<a href="https://github.com/p3d-project/persona-3-dual/pull/300"
+                >#300</a
+              >)
             </li>
-            <li>fix: cutscene crash</li>
-            <li>Add devcontainer support and Docker-based debugging</li>
-            <li>Create MenuBackgroundScreen class</li>
-            <li>fix: changed version from 0.6 to 1.0.0</li>
-            <li>Build: Added Flag to skip SD Card Generation</li>
-            <li>Added compressed music files</li>
-            <li>Implement Game Engine HLD into header file</li>
-            <li>Allow to skip elizabeth scroll animation on main title</li>
-            <li>Updated docs & moved into home directory</li>
-            <li>Create EnvironmentView class</li>
-            <li>Dockerfile add pre-commit install, comply with linting</li>
-            <li>Fix: Added environment generation back into makefile</li>
-            <li>Added fog, character outline support</li>
-            <li>Create Custom Text Engine</li>
-            <li>Document battle related code</li>
-            <li>Reduced Audio Stuttering during scene loading</li>
+            <li>
+              refix: cutscene crash (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/309"
+                >#309</a
+              >)
+            </li>
+            <li>
+              Add devcontainer support and Docker-based debugging (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/301"
+                >#301</a
+              >)
+            </li>
+            <li>
+              Create MenuBackgroundScreen class (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/316"
+                >#316</a
+              >)
+            </li>
+            <li>
+              fix: changed version from 0.6 to 1.0.0 (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/319"
+                >#319</a
+              >)
+            </li>
+            <li>
+              Build: Added Flag to skip SD Card Generation (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/330"
+                >#330</a
+              >)
+            </li>
+            <li>
+              Added compressed music files (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/333"
+                >#333</a
+              >)
+            </li>
+            <li>
+              Implement Game Engine HLD into header file (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/337"
+                >#337</a
+              >)
+            </li>
+            <li>
+              Allow to skip elizabeth scroll animation on main title (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/289"
+                >#289</a
+              >)
+            </li>
+            <li>
+              Updated docs &amp; moved into home directory (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/355"
+                >#355</a
+              >)
+            </li>
+            <li>
+              Create EnvironmentView class (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/313"
+                >#313</a
+              >)
+            </li>
+            <li>
+              Dockerfile add pre-commit install, comply with linting (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/359"
+                >#359</a
+              >)
+            </li>
+            <li>
+              Fix: Added environment generation back into makefile (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/361"
+                >#361</a
+              >)
+            </li>
+            <li>
+              Added fog, character outline support (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/360"
+                >#360</a
+              >)
+            </li>
+            <li>
+              Create Custom Text Engine (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/354"
+                >#354</a
+              >)
+            </li>
+            <li>
+              Document battle related code (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/363"
+                >#363</a
+              >)
+            </li>
+            <li>
+              Reduced Audio Stuttering during scene loading (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/367"
+                >#367</a
+              >)
+            </li>
             <li>
               Added correct music looping point for iwatodai_dorm.pcm in
-              IwatodaiDormView.cpp
+              IwatodaiDormView.cpp (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/369"
+                >#369</a
+              >)
             </li>
-            <li>Fix links in README.md for installation and roadmap</li>
-            <li>redid animation fixes</li>
+            <li>
+              Fix links in README.md for installation and roadmap (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/370"
+                >#370</a
+              >)
+            </li>
+            <li>
+              redid animation fixes (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/372"
+                >#372</a
+              >)
+            </li>
             <li>
               Added art standard colors to custom palette and created TextColor
-              enum
+              enum (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/376"
+                >#376</a
+              >)
             </li>
-            <li>Added Appear Function for Text</li>
-            <li>Create CameraController</li>
-            <li>Replaced console in menus with the text controller</li>
+            <li>
+              Added Appear Function for Text (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/380"
+                >#380</a
+              >)
+            </li>
+            <li>
+              Create CameraController (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/342"
+                >#342</a
+              >)
+            </li>
+            <li>
+              Replaced console in menus with the text controller (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/389"
+                >#389</a
+              >)
+            </li>
             <li>
               create enemy profiles / fix 2nd battle not finding participants
-              bug
+              bug (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/388"
+                >#388</a
+              >)
             </li>
-            <li>Fix Music Cutout or Game Reset on Camera Mode Switch</li>
-            <li>Added rudimentary color switching to TextController.</li>
-            <li>Reset menu hierarchy state on exit</li>
-            <li>Deploy Doxygen via GitHub Action</li>
-            <li>Added Text Styling</li>
-            <li>Add Doyxgen site styling</li>
-            <li>Update Dialogue Converter for new Text Engine</li>
-            <li>Added enviroments to Makefile clean target</li>
-            <li>Migrate BaseMenu to MenuBackgroundScreen</li>
-            <li>Clean up BaseView's references</li>
-            <li>Port to BlocksDS SDK</li>
-            <li>Replaced BattleController with BattleSystem</li>
-            <li>Replaced CameraController with CameraSystem + MathManager</li>
-            <li>Replaced CharacterController with MovementComponent</li>
-            <li>Replaced DialogueController with DialogueComponent</li>
-            <li>Replaced SaveController with SaveSystem + IOManager</li>
+            <li>
+              Fix Music Cutout or Game Reset on Camera Mode Switch (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/398"
+                >#398</a
+              >)
+            </li>
+            <li>
+              Added rudimentary color switching to TextController. (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/400"
+                >#400</a
+              >)
+            </li>
+            <li>
+              Reset menu hierarchy state on exit (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/399"
+                >#399</a
+              >)
+            </li>
+            <li>
+              Deploy Doxygen via GitHub Action (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/403"
+                >#403</a
+              >)
+            </li>
+            <li>
+              Added Text Styling (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/407"
+                >#407</a
+              >)
+            </li>
+            <li>
+              Add Doyxgen site styling (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/406"
+                >#406</a
+              >)
+            </li>
+            <li>
+              Update Dialogue Converter for new Text Engine (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/409"
+                >#409</a
+              >)
+            </li>
+            <li>
+              Added enviroments to Makefile clean target (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/411"
+                >#411</a
+              >)
+            </li>
+            <li>
+              Migrate BaseMenu to MenuBackgroundScreen (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/413"
+                >#413</a
+              >)
+            </li>
+            <li>
+              Clean up BaseView's references (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/415"
+                >#415</a
+              >)
+            </li>
+            <li>
+              Port to BlocksDS SDK (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/421"
+                >#421</a
+              >)
+            </li>
+            <li>
+              Replaced BattleController with BattleSystem (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/433"
+                >#433</a
+              >)
+            </li>
+            <li>
+              Replaced CameraController with CameraSystem + MathManager (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/436"
+                >#436</a
+              >)
+            </li>
+            <li>
+              Replaced CharacterController with MovementComponent (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/437"
+                >#437</a
+              >)
+            </li>
+            <li>
+              Replaced DialogueController with DialogueComponent (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/444"
+                >#444</a
+              >)
+            </li>
+            <li>
+              Replaced SaveController with SaveSystem + IOManager (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/445"
+                >#445</a
+              >)
+            </li>
             <li>
               Replaced GraphicsController, SpriteController with
-              GraphicsComponent
-            </li>
-            <li>Added updated icon</li>
-            <li>
-              Replaced TextController with TextManager, TextSystem, &
-              TextComponent
+              GraphicsComponent (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/446"
+                >#446</a
+              >)
             </li>
             <li>
-              Fix new textures being visible on old environment when switching
+              Added updated icon (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/471"
+                >#471</a
+              >)
             </li>
-            <li>Activate / end camera and movement im menus</li>
             <li>
-              Replaced UIController with UISystem, & created RenderManager
+              Replaced TextController with TextManager, TextSystem, &amp;
+              TextComponent (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/455"
+                >#455</a
+              >)
             </li>
-            <li>Delete CONTRIBUTING.md</li>
-            <li>Refactored BaseMenu to work with UISystem</li>
-            <li>Add customizable close behavior to UIMenu classes</li>
-            <li>Dialogue fix</li>
-            <li>Updated version number in settings to v1.1.0</li>
-            <li>Update README attributions</li>
-            <li>Deleted tools/website folder</li>
-            <li>Set correct camera configs for all Views</li>
-            <li>TextComponent: Stop text animation bleeding on screen.</li>
-            <li>Removed femc</li>
-            <li>Rename .h headers to .hpp for C++ convention</li>
-            <li>Migrate SignContractView to TextSystem</li>
             <li>
-              Updated skyBackground, skyBackgroundSub to use 16 colour palette
+              Fix new textures being visible on old environment when switching (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/478"
+                >#478</a
+              >)
             </li>
-            <li>Updated font to more legible font, correct font sizes</li>
-            <li>Reduce uisystem available slots</li>
-            <li>Separate global structs/enums from structs/enums.hpp</li>
-            <li>Fix memory leak</li>
+            <li>
+              Activate / end camera and movement im menus (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/475"
+                >#475</a
+              >)
+            </li>
+            <li>
+              Replaced UIController with UISystem, &amp; created RenderManager (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/464"
+                >#464</a
+              >)
+            </li>
+            <li>
+              Delete CONTRIBUTING.md (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/490"
+                >#490</a
+              >)
+            </li>
+            <li>
+              Refactored BaseMenu to work with UISystem (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/479"
+                >#479</a
+              >)
+            </li>
+            <li>
+              Add customizable close behavior to UIMenu classes (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/505"
+                >#505</a
+              >)
+            </li>
+            <li>
+              Dialogue fix (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/506"
+                >#506</a
+              >)
+            </li>
+            <li>
+              Updated version number in settings to v1.1.0 (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/513"
+                >#513</a
+              >)
+            </li>
+            <li>
+              Update README attributions (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/512"
+                >#512</a
+              >)
+            </li>
+            <li>
+              Deleted tools/website folder (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/511"
+                >#511</a
+              >)
+            </li>
+            <li>
+              Set correct camera configs for all Views (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/514"
+                >#514</a
+              >)
+            </li>
+            <li>
+              TextComponent: Stop text animation bleeding on screen. (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/516"
+                >#516</a
+              >)
+            </li>
+            <li>
+              Remove femc (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/517"
+                >#517</a
+              >)
+            </li>
+            <li>
+              Rename .h headers to .hpp for C++ convention (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/520"
+                >#520</a
+              >)
+            </li>
+            <li>
+              Migrate SignContractView to TextSystem (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/518"
+                >#518</a
+              >)
+            </li>
+            <li>
+              Updated skyBackground, skyBackgroundSub to use 16 colour palette (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/522"
+                >#522</a
+              >)
+            </li>
+            <li>
+              Updated font to more legible font, correct font sizes (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/524"
+                >#524</a
+              >)
+            </li>
+            <li>
+              Reduce uisystem available slots (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/527"
+                >#527</a
+              >)
+            </li>
+            <li>
+              Separate global structs/enums from structs/enums.hpp (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/504"
+                >#504</a
+              >)
+            </li>
+            <li>
+              Fix memory leak (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/526"
+                >#526</a
+              >)
+            </li>
             <li>
               EnvironmentView: Set glClearPolyID to 0 to remove outline border.
+              (<a href="https://github.com/p3d-project/persona-3-dual/pull/535"
+                >#535</a
+              >)
+            </li>
+            <li>
+              Enhance UIScreen &amp; dialogue logic (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/538"
+                >#538</a
+              >)
+            </li>
+            <li>
+              Remove duplicate sassert call in TextComponent::configureText (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/562"
+                >#562</a
+              >)
+            </li>
+            <li>
+              Auto-derive text spacing from font size (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/561"
+                >#561</a
+              >)
+            </li>
+            <li>
+              Replace floats with fixed point math (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/547"
+                >#547</a
+              >)
+            </li>
+            <li>
+              Rename menu component files from [name]Component to [name]Menu (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/565"
+                >#565</a
+              >)
+            </li>
+            <li>
+              Write new Model Conversion script (glb2model.py) (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/537"
+                >#537</a
+              >)
+            </li>
+            <li>
+              Bump pillow from 12.1.1 to 12.3.0 in /tools in the pip group
+              across 1 directory (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/569"
+                >#569</a
+              >)
+            </li>
+            <li>
+              Migrate makefiles to CMake (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/515"
+                >#515</a
+              >)
+            </li>
+            <li>
+              PauseMenu: Remove obsolete debug dialogue logic. (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/571"
+                >#571</a
+              >)
+            </li>
+            <li>
+              Fix ignored selections in Battle Menu (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/579"
+                >#579</a
+              >)
+            </li>
+            <li>
+              Create RenderManager Class for 3D Rendering (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/578"
+                >#578</a
+              >)
+            </li>
+            <li>
+              Fix videos stoping after a few seconds (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/580"
+                >#580</a
+              >)
+            </li>
+            <li>
+              Add new Intro (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/584"
+                >#584</a
+              >)
+            </li>
+            <li>
+              Create new audio system (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/585"
+                >#585</a
+              >)
+            </li>
+            <li>
+              Remove camera test (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/590"
+                >#590</a
+              >)
+            </li>
+            <li>
+              Replace all instances of MusicController with new audio system (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/591"
+                >#591</a
+              >)
+            </li>
+            <li>
+              Use alias in deploy command to comment once (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/603"
+                >#603</a
+              >)
+            </li>
+            <li>
+              Fix data abort crash in battle (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/602"
+                >#602</a
+              >)
+            </li>
+            <li>
+              Fix debug menu losing input focus after selecting a toggle option.
+              (<a href="https://github.com/p3d-project/persona-3-dual/pull/589"
+                >#589</a
+              >)
+            </li>
+            <li>
+              Updated in-game P3D logo (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/605"
+                >#605</a
+              >)
+            </li>
+            <li>
+              Fixed battle not playing music after first encounter (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/604"
+                >#604</a
+              >)
+            </li>
+            <li>
+              Added recommended &amp; auto-installable extensions (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/606"
+                >#606</a
+              >)
+            </li>
+            <li>
+              Fix off-center text in Intro View (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/611"
+                >#611</a
+              >)
+            </li>
+            <li>
+              Unload old font before loading new font (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/612"
+                >#612</a
+              >)
+            </li>
+            <li>
+              Add MeshComponent for rendering static meshes (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/607"
+                >#607</a
+              >)
+            </li>
+            <li>
+              Change MathManager atan2 to use BlocksDS atan2 implementation (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/615"
+                >#615</a
+              >)
+            </li>
+            <li>
+              Add timer util (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/610"
+                >#610</a
+              >)
+            </li>
+            <li>
+              Add version number save data (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/616"
+                >#616</a
+              >)
+            </li>
+            <li>
+              Fix main menu audio popping (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/644"
+                >#644</a
+              >)
+            </li>
+            <li>
+              Fix battle affinity array bounds (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/645"
+                >#645</a
+              >)
+            </li>
+            <li>
+              Add new SignContract UI (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/646"
+                >#646</a
+              >)
+            </li>
+            <li>
+              Add new HUD UI (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/647"
+                >#647</a
+              >)
+            </li>
+            <li>
+              Update YouTube link in README.md with link to channel, new image (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/652"
+                >#652</a
+              >)
+            </li>
+            <li>
+              Improve SignContract UI (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/651"
+                >#651</a
+              >)
+            </li>
+            <li>
+              Fix CMake clean not deleting generated files in data folder (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/620"
+                >#620</a
+              >)
+            </li>
+            <li>
+              Add stair support (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/654"
+                >#654</a
+              >)
+            </li>
+            <li>
+              Create audioDb, and add Milestone 2 music in-game (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/656"
+                >#656</a
+              >)
+            </li>
+            <li>
+              Support UI Animations (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/643"
+                >#643</a
+              >)
+            </li>
+            <li>
+              Use unique_ptr for TextComponent's appearing text (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/658"
+                >#658</a
+              >)
+            </li>
+            <li>
+              Add new Pause Menu UI (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/648"
+                >#648</a
+              >)
+            </li>
+            <li>
+              Add standardized logging (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/661"
+                >#661</a
+              >)
+            </li>
+            <li>
+              Added font licenses (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/665"
+                >#665</a
+              >)
+            </li>
+            <li>
+              Add return to menu button (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/670"
+                >#670</a
+              >)
+            </li>
+            <li>
+              Fix text position of "early morning" moving (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/671"
+                >#671</a
+              >)
+            </li>
+            <li>
+              Fix screen transition artifacts (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/674"
+                >#674</a
+              >)
+            </li>
+            <li>
+              Bump pillow from 12.3.0 to 13.0.0 in /tools in the pip group
+              across 1 directory (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/666"
+                >#666</a
+              >)
+            </li>
+            <li>
+              Replace #defines with constexpr (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/675"
+                >#675</a
+              >)
+            </li>
+            <li>
+              Add custom text box x-axis boundary (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/678"
+                >#678</a
+              >)
+            </li>
+            <li>
+              Refactor MENU_BIND macro to constexpr (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/680"
+                >#680</a
+              >)
+            </li>
+            <li>
+              Fix text being cleared after battle ends (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/681"
+                >#681</a
+              >)
+            </li>
+            <li>
+              Added new music tracks (<a
+                href="https://github.com/p3d-project/persona-3-dual/pull/684"
+                >#684</a
+              >)
             </li>
           </ul>
         </div>
@@ -276,6 +907,58 @@ import Carousel from "../components/react/Carousel.tsx";
         >
           Legacy versions
         </h2>
+
+        <article
+          class="legacy-release grid gap-8 border-b border-[#001B3D]/10 py-12 md:grid-cols-[minmax(0,1fr)_minmax(280px,400px)] md:grid-rows-[auto_auto] md:items-center lg:gap-16"
+        >
+          <div class="md:col-start-1 md:row-start-1">
+            <div class="flex w-full items-center justify-between">
+              <p
+                class="font-noto-sans text-[clamp(19px,2vw,20px)] font-semibold text-[#001B3D] underline"
+              >
+                v1.1.0
+              </p>
+
+              <p
+                class="font-noto-sans text-[clamp(14px,1.5vw,16px)] font-semibold text-[#001B3D]"
+              >
+                Sept 2nd, 2026
+              </p>
+            </div>
+
+            <p
+              class="font-noto-sans mt-6 max-w-[680px] text-[clamp(16px,1.8vw,20px)] leading-relaxed font-semibold text-[#001B3D]"
+            >
+              Introduced under-the-hood changes including major bug fixes, the
+              introduction of Aegis Engine, and the initial versions of new and
+              revamped game engine systems (including Text, Camera, UI)
+            </p>
+          </div>
+
+          <div
+            class="flex justify-center md:col-start-2 md:row-span-2 md:row-start-1 md:justify-start"
+          >
+            <img
+              src={rect6.src}
+              alt=""
+              class="mx-auto w-full max-w-[410pc] drop-shadow-[8px_8px_0_#3BAA45]"
+            />
+          </div>
+
+          <div
+            class="mt-2 flex justify-center md:col-start-1 md:row-start-2 md:mt-0 md:justify-start"
+          >
+            <Button
+              as="a"
+              href="https://github.com/p3d-project/persona-3-dual/releases/tag/v1.1.0"
+              target="_blank"
+              size="md"
+              className="mx-auto w-full max-w-[410px] justify-center py-3 text-2xl sm:text-3xl lg:w-[410px] lg:py-5"
+            >
+              Download
+            </Button>
+          </div>
+        </article>
 
         <article
           class="legacy-release grid gap-8 border-b border-[#001B3D]/10 py-12 md:grid-cols-[minmax(0,1fr)_minmax(280px,400px)] md:grid-rows-[auto_auto] md:items-center lg:gap-16"
