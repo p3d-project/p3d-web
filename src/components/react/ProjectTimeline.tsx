@@ -4,6 +4,7 @@ import { cn } from "../../lib/utils";
 import timeline1Image from "../../assets/timeline_1.webp?url";
 import timeline2Image from "../../assets/timeline_2.webp?url";
 import timeline3Image from "../../assets/timeline_3.webp?url";
+import timeline4Image from "../../assets/timeline_4.webp?url";
 import timelineFutureImage from "../../assets/timeline_future.webp?url";
 
 function TimelineItem({
@@ -100,12 +101,23 @@ export default function ProjectTimeline() {
 
       <TimelineItem
         reverse
-        heading={<>2026/XX/XX</>}
+        heading={<>2026/11/06</>}
         description={
           <>
             Milestone #2 is released. Focused on game polish, it replaces early
             prototype systems and borrowed graphics with an all-new game engine
             and custom assets, all created in-house.
+          </>
+        }
+        image={timeline4Image}
+      />
+
+    <TimelineItem
+        heading={<>2027/07/??</>}
+        description={
+          <>
+            Milestone #3 is released. Focused on the initial intro sequence, real
+            gameplay elements of the original game start to come to life.
           </>
         }
         image={timelineFutureImage}
