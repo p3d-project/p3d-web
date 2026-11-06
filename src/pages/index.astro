@@ -13,7 +13,7 @@ import xCard from "../assets/card_x.webp?url";
 import redditCard from "../assets/card_reddit.webp?url";
 import instagramCard from "../assets/card_instagram.webp?url";
 import makotoCutIn from "../assets/makoto_cutin.webp?url";
-
+import makotoPose from "../assets/makoto_pose.svg?url";
 import DownloadNowText from "../assets/download_now.svg";
 import BigChevron from "../assets/big_chevron.svg";
 ---
@@ -210,17 +210,24 @@ import BigChevron from "../assets/big_chevron.svg";
     </div>
 
     <section id="download-cta" class="relative overflow-hidden py-10">
-      <a href="/download" class="block">
-        {
-          Array.from(Array(6), () => (
-            <div class="download-now-text">
-              {Array.from(Array(10), () => (
-                <DownloadNowText />
-              ))}
-            </div>
-          ))
-        }
-      </a>
+      <div class="relative">
+        <a href="/download" class="relative block">
+          {
+            Array.from(Array(6), () => (
+              <div class="download-now-text">
+                {Array.from(Array(10), () => (
+                  <DownloadNowText />
+                ))}
+              </div>
+            ))
+          }
+        </a>
+
+        <img
+          src={makotoPose}
+          class="absolute top-0 bottom-0 left-[50%] h-full translate-x-[-30%] p-4 pointer-events-none"
+        />
+      </div>
 
       <p class="text-center text-xs uppercase">
         This project is not for profit and not affiliated with SEGA, ATLUS, or
