@@ -1,10 +1,34 @@
 ---
+import { getImage } from "astro:assets";
 import Navbar from "../components/react/Navbar";
 import Footer from "../components/Footer.astro";
 
+import shareImageSource from "../assets/icon_with_logo.png";
+
 import "../styles/global.css";
 
+const SITE_NAME = "P3D Project";
+const DEFAULT_DESCRIPTION =
+  "Persona 3 Dual is a ground-up, open-source demake that reimagines the beloved RPG for classic dual-screen hardware.";
+const SHARE_IMAGE_ALT = "Persona 3 Dual logo over Makoto's silhouette";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description = DEFAULT_DESCRIPTION } = Astro.props;
+
 const currentPath = Astro.url.pathname;
+const fullTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
+const canonicalUrl = new URL(currentPath, Astro.site);
+
+const shareImage = await getImage({
+  src: shareImageSource,
+  width: 1200,
+  format: "jpg",
+});
+const shareImageUrl = new URL(shareImage.src, Astro.site);
 ---
 
 <!doctype html>
@@ -14,7 +38,33 @@ const currentPath = Astro.url.pathname;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <title>P3D Project</title>
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="theme-color" content="#002c48" />
+
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={shareImageUrl} />
+    <meta
+      property="og:image:width"
+      content={String(shareImage.attributes.width)}
+    />
+    <meta
+      property="og:image:height"
+      content={String(shareImage.attributes.height)}
+    />
+    <meta property="og:image:alt" content={SHARE_IMAGE_ALT} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={shareImageUrl} />
+    <meta name="twitter:image:alt" content={SHARE_IMAGE_ALT} />
   </head>
   <body>
     <Navbar client:load currentPath={currentPath} />
