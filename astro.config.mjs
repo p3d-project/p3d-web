@@ -5,9 +5,13 @@ import { fileURLToPath, URL } from "node:url";
 import tailwindcss from "@tailwindcss/vite";
 
 import react from "@astrojs/react";
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
+  // used for canonical urls, og:url and the sitemap, so it has to be the live domain
+  site: "https://p3dual.com",
+
   vite: {
     plugins: [tailwindcss()],
     resolve: {
@@ -17,5 +21,5 @@ export default defineConfig({
     },
   },
 
-  integrations: [react()],
+  integrations: [react(), sitemap()],
 });
